@@ -1,0 +1,26 @@
+# Host to use for canonical URL generation (without trailing slash)
+host: https://charlesbaird-dsa.github.io/standards-catalogue
+
+# Header-related options
+show_govuk_logo: false
+service_name: Data Standards Authority
+service_link: https://charlesbaird-dsa.github.io/standards-catalogue/
+phase: Alpha
+
+# Links to show in the footer
+footer_links:
+  Technical Documentation Accessibility: /accessibility.html
+
+# Links to show on right-hand-side of header
+header_links:
+
+# Prevent robots from indexing (e.g. whilst in development)
+prevent_indexing: false
+
+show_contribution_banner: true
+github_repo: charlesbaird-dsa/standards-catalogue/
+
+# Table of contents depth – how many levels to include in the table of contents.
+# If your ToC is too long, reduce this number and we'll only show higher-level
+# headings.
+max_toc_heading_level: 4
