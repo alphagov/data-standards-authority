@@ -1,19 +1,7 @@
-# APIs in the UK government
+# Data Standards Authority
 
-This API catalogue is for central government and local government APIs.
+This is the home of the DSA Standards Catalogue, as well as various DSA artefacts
 
-If you're working on an API that publishes open data or connects government with other organisations, industry or consumers, we’d like to invite you to publish details of it in this catalogue. You can publish details of your API by submitting a [GitHub Issue](https://github.com/alphagov/api-catalogue/issues).
-
-Collecting a list of government APIs will help us understand:
-
-* what APIs are published
-* where API development is taking place
-* whether APIs are suitable for reuse
-
-If you have any questions, please contact:
-api-catalogue@digital.cabinet-office.gov.uk
-
-## Working on the API Catalogue
 
 - [Getting started](./docs/getting_started.md)
 - [Deployment workflow](./docs/deployment.md)
