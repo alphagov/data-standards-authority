@@ -2,15 +2,9 @@
 
 ## About this project
 
-The API catalogue is built with [Middleman][middleman], a static-site generator.
+The DSA site is built with [Middleman][middleman], a static-site generator.
 
-Pages describing the APIs are dynamically generated from the following CSV files:
-
-- `data/organisation.csv` details the Organisations / Departments
-- `data/catalogue.csv` details the APIs
-
-Content for other pages is based on Markdown files located in the `source`
-directory.
+Content for pages is based on Markdown files located in the `source` directory.
 
 ## Before you start
 
@@ -19,8 +13,8 @@ directory.
 
 ## Local setup
 
-1. Clone the git repository: `git clone git@github.com:alphagov/api-catalogue.git`
-1. Navigate to the project directory: `cd api-catalogue`
+1. Clone the git repostory: `git clone git@github.com:alphagov/data-standards-authority.git`
+1. Navigate to the project directory: `cd standards-catalogue`
 1. Install gems: `bundle install`
 1. Install JavaScript dependencies: `npm install`
 1. Run the test suite to verify your setup: `bundle exec rspec`
