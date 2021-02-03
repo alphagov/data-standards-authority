@@ -1,4 +1,4 @@
-# Code of conduct for `openregister`
+# Code of conduct for `alphagov`
 
 Contributors to repositories hosted in `alphagov` are expected to
 follow the Contributor Covenant Code of
@@ -11,9 +11,9 @@ The [Civil Service Code](https://www.gov.uk/government/publications/civil-servic
 ## Contributor Covenant Code of Conduct
 
 > Note: 
-> * where the code of conduct says "project" we mean GDS, `openregister` and all repositories hosted within it. 
-> * where the code of conduct says "maintainer" we mean `openregister` organisation owners
-> * where the code of conduct says "leadership" we mean both `openregister` organisation owners, line managers, and other leadership within GDS
+> * where the code of conduct says "project" we mean GDS, `alphagov` and all repositories hosted within it. 
+> * where the code of conduct says "maintainer" we mean `alphagov` organisation owners
+> * where the code of conduct says "leadership" we mean both `alphagov` organisation owners, line managers, and other leadership within GDS
 
 ### Our Pledge
 
