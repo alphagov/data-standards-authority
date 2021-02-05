@@ -29,13 +29,15 @@ dateUpdated: 2020-12-16
 | Related to: | **[ISO 19139](https://www.iso.org/standard/32557.html)** |
 | Keywords: | **Semantics** |
  
-### Use Case:
+## Use Case:
 - [https://www.agi.org.uk/agi-groups/standards-committee/why-uk-gemini-why-not-just-have-the-inspire-technical-guidance](https://www.agi.org.uk/agi-groups/standards-committee/why-uk-gemini-why-not-just-have-the-inspire-technical-guidance)
 
-### Case Studies:
+## Case Studies:
 - [https://www.agi.org.uk/about/resources/category/81-gemini?download=436:medin-a-case-study-on-how-gemini-has-been-implemented-for-marine-data](https://www.agi.org.uk/about/resources/category/81-gemini?download=436:medin-a-case-study-on-how-gemini-has-been-implemented-for-marine-data)
 - [https://www.agi.org.uk/about/resources/category/81-gemini?download=440:agi-gemini-2-3-case-study-astun-technology](https://www.agi.org.uk/about/resources/category/81-gemini?download=440:agi-gemini-2-3-case-study-astun-technology)
 
-## Guidance: [https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini](https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini)
+## Guidance:
+- [https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini](https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini)
 
-## How To: [https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini/40-gemini/1037-uk-gemini-standard-and-inspire-implementing-rules](https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini/40-gemini/1037-uk-gemini-standard-and-inspire-implementing-rules)
+## How To:
+- [https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini/40-gemini/1037-uk-gemini-standard-and-inspire-implementing-rules](https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini/40-gemini/1037-uk-gemini-standard-and-inspire-implementing-rules)
