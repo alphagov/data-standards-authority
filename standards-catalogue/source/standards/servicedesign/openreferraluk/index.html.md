@@ -19,7 +19,7 @@ The standard provides for recording sufficient data to be able to identify a sma
 | --- | --- |
 | keywords: | **"Service Referrals"** |
 | identifier: | **UK123-ZXY** |
-| Link: | **[Open Referral UK](https://openreferraluk.org/)]** |
+| Link: | **[Open Referral UK](https://openreferraluk.org/)** |
 | status: | **Active** |
 | dateAdded: | **2020-12-16** |
 | dateUpdated: | **2020-12-16** |
