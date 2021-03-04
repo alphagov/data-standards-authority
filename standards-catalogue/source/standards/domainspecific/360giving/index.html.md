@@ -1,11 +1,11 @@
 ---
 title: 360Giving Schema
-weight: 191
+weight: 620
 Category: Domain Specific
 Topic: 	5.7 Grants, Loans & Subsidies
 Subject: Payments Clearing and Settlement
-Organisation:	https://www.threesixtygiving.org/
-name:360Giving Schema
+Organisation: 360Giving
+name: 360Giving Schema
 status: External Draft
 dateAdded: 2021-02-02
 dateUpdated: 2021-02-02

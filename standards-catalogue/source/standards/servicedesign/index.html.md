@@ -1,6 +1,6 @@
 ---
-title: Service Design
-weight: 150
+title: 03 - Service Design
+weight: 400
 dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
 ---

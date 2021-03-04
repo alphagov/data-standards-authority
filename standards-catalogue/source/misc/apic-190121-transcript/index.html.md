@@ -1,6 +1,6 @@
 ---
 title: Transcript of API Community Workshop, 19th January 2021
-weight: 502
+weight: 910
 keywords: APIs, 'API Community'
 identifier: DSA-006
 name: APICommunityJan21Transcript

@@ -1,6 +1,6 @@
 ---
 title: Publish reference data for use across government
-weight: 303
+weight: 820
 keywords: 'Reference Data'
 identifier: DSA-002
 name: ReferenceArchitecture

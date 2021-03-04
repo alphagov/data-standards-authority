@@ -1,6 +1,6 @@
 ---
 title: Reference Architecture for Government Data and APIs
-weight: 302
+weight: 810
 keywords: 'Reference Architecture'
 identifier: DSA-001
 name: ReferenceArchitecture
