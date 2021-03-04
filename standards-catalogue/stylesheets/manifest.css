@@ -9,14 +9,14 @@
   font-family: "GDS Transport";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/govuk-frontend/govuk/assets/fonts/light-94a07e06a1-v2.woff2") format("woff2"), url("/assets/govuk-frontend/govuk/assets/fonts/light-f591b13f7d-v2.woff") format("woff");
+  src: url("/data-standards-authority/standards-catalogueassets/govuk-frontend/govuk/assets/fonts/light-94a07e06a1-v2.woff2") format("woff2"), url("/data-standards-authority/standards-catalogueassets/govuk-frontend/govuk/assets/fonts/light-f591b13f7d-v2.woff") format("woff");
   font-display: fallback; }
 
 @font-face {
   font-family: "GDS Transport";
   font-style: normal;
   font-weight: bold;
-  src: url("/assets/govuk-frontend/govuk/assets/fonts/bold-b542beb274-v2.woff2") format("woff2"), url("/assets/govuk-frontend/govuk/assets/fonts/bold-affa96571d-v2.woff") format("woff");
+  src: url("/data-standards-authority/standards-catalogueassets/govuk-frontend/govuk/assets/fonts/bold-b542beb274-v2.woff2") format("woff2"), url("/data-standards-authority/standards-catalogueassets/govuk-frontend/govuk/assets/fonts/bold-affa96571d-v2.woff") format("woff");
   font-display: fallback; }
   @media print {
     .technical-documentation a, .govuk-link {
@@ -809,7 +809,7 @@
   display: inline-block;
   min-width: 125px;
   padding-top: 112px;
-  background-image: url("/assets/govuk-frontend/govuk/assets/images/govuk-crest.png");
+  background-image: url("/data-standards-authority/standards-catalogueassets/govuk-frontend/govuk/assets/images/govuk-crest.png");
   background-repeat: no-repeat;
   background-position: 50% 0%;
   background-size: 125px 102px;
@@ -818,7 +818,7 @@
   white-space: nowrap; }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .govuk-footer__copyright-logo {
-      background-image: url("/assets/govuk-frontend/govuk/assets/images/govuk-crest-2x.png"); } }
+      background-image: url("/data-standards-authority/standards-catalogueassets/govuk-frontend/govuk/assets/images/govuk-crest-2x.png"); } }
 .govuk-footer__inline-list {
   margin-top: 0;
   margin-bottom: 15px;
