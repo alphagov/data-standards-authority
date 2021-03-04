@@ -1,6 +1,6 @@
 ---
 title: Common Format and MIME Type for Comma-Separated Values (CSV) Files
-weight: 173
+weight: 530
 Category: Data, Information and Records Management Lifecycle
 Topic: 4.7 Content Management
 Subject: Tabular Data

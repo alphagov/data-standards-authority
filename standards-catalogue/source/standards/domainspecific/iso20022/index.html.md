@@ -1,6 +1,6 @@
 ---
 title: Universal financial industry message scheme
-weight: 192
+weight: 610
 Category: Domain Specific
 Topic: 5.5 Payment
 Subject: Payments Clearing and Settlement

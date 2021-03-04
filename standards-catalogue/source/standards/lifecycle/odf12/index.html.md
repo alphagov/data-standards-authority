@@ -1,6 +1,6 @@
 ---
 title: ODF 1.2
-weight: 172
+weight: 520
 Category: Data, Information and Records Management Lifecycle
 Topic: 4.7 Content Management
 Subject: OpenDocuments (ODF)
