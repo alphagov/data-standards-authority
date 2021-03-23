@@ -1,3 +1,15 @@
+---
+title: API Management Guidance - 02 - Design
+keywords: 'API Management'
+identifier: DSA-003
+name: APIManagement
+organisation: Data Standards Authority
+status: Draft
+startDate: 2021-03-23
+dateAdded: 2021-03-23
+dateUpdated: 2021-03-23
+---
+
 ## Design
 
 

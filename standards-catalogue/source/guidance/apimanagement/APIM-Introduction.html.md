@@ -1,3 +1,16 @@
+---
+title: API Management Guidance - 01 - Introduction
+keywords: 'API Management'
+identifier: DSA-003
+name: APIManagement
+organisation: Data Standards Authority
+status: Draft
+startDate: 2021-03-23
+dateAdded: 2021-03-23
+dateUpdated: 2021-03-23
+---
+
+
 ## Choose an API management tool 
 
 _This is a DRAFT document for discussion. This is not finalised. All aspects of this document are subject to change. Please leave comments on any aspect of it._
