@@ -35,10 +35,10 @@ Organisations often develop their API strategy based on the first few APIs they 
 
 User research can help you challenge these assumptions and define needs. Some questions you might seek to answer include:
 
- - What technologies are in use, or might be in the future?
- - What are the different levels of maturity of development teams in the organisation? 
- - Are the APIs produced primarily internal or external facing, or a mixture?
- - What SLAs should APIs meet - do you have different SLA tiers which are appropriate for different use cases?
+- What technologies are in use, or might be in the future?
+- What are the different levels of maturity of development teams in the organisation? 
+- Are the APIs produced primarily internal or external facing, or a mixture?
+- What SLAs should APIs meet - do you have different SLA tiers which are appropriate for different use cases?
 
 
 ### Bring developers into the design process
@@ -59,10 +59,10 @@ Setting out decisions like these in a central place helps development teams get 
 
 Tooling like this can provide functionality including:
 
- - specification support
- - real time validation
- - auto-completion
- - auto generated documentation
+- specification support
+- real time validation
+- auto-completion
+- auto generated documentation
 
 These tools often form part of an API Management suite, which also includes a developer hub and an API gateway, but can also be used as standalone desig or governance modules.
 

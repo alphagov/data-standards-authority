@@ -39,7 +39,7 @@ If you have any APIs that need access management, monitoring or documentation, y
 
 There will be cases where your current ecosystem doesn’t fit with this model, perhaps because you already have APIs in production which have their own security or monitoring, or because the APIs have been developed using disparate methods and technologies, in which case you should think about how you can put in place standardised patterns. This is about processes and governance that teams will use to build and deploy APIs, rather than the specific technology they use. As an example, you should consider how prescriptive you want your publishing pipeline to be. You might decide to have strict rules only for certain things like security, while allowing other areas to be more flexible. 
 
-Keep the future in mind 
+### Keep the future in mind 
 When putting together your API strategy, it’s important to consider what your organisation’s future needs are likely to be, not just think about the first few APIs. 
 
 Maintain a high level view of your API ecosystem. Good API management provides a way to judge the maturity of an individual API compared to others in the estate, and allows you to determine how much resource needs to be invested in it. APIs at different stages of their lifecycle require different levels of investment - a coherent strategy allows you to identify these needs and meet them.
@@ -62,22 +62,22 @@ For example, it is common for a central team to run the API Gateway, and therefo
 ### What API Management tools can help with
 
 API management tools:
- - provide visibility of all your APIs, encouraging reuse
- - allow you to standardise common design patterns 
- - help you automate many administrative and operational tasks
- - provide a central place for you to share API documentation and support
- - provide data and metrics to help you understand your API’s performance and usage
- - help you implement and maintain good security and data protection practices
+- provide visibility of all your APIs, encouraging reuse
+- allow you to standardise common design patterns 
+- help you automate many administrative and operational tasks
+- provide a central place for you to share API documentation and support
+- provide data and metrics to help you understand your API’s performance and usage
+- help you implement and maintain good security and data protection practices
 
 
 
 ### Where API Management tools fit into the API Lifecycle
 
 It is useful to consider the API lifecycle as having several stages:
- - Design - guidelines and policies for API production
- - Deployment - assessment, testing and rolling out to live
- - Management - ongoing maintenance and monitoring
- - Discovery - how developers discover your APIs
+- Design - guidelines and policies for API production
+- Deployment - assessment, testing and rolling out to live
+- Management - ongoing maintenance and monitoring
+- Discovery - how developers discover your APIs
  - Retirement - decommissioning your API when it is no longer needed
 
 Each stage of the API lifecycle will benefit from having different tools and processes in place.
