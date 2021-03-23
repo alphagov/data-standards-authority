@@ -11,7 +11,7 @@ dateUpdated: 2021-03-23
 ---
 
 
-## Choose an API management tool 
+## Define an API management strategy
 
 _This is a DRAFT document for discussion. This is not finalised. All aspects of this document are subject to change. Please leave comments on any aspect of it._
 
