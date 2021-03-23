@@ -5,23 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>API Management Guidance - Data Standards Authority</title>
+    <title>API Management Guidance - 01 - Introduction - Data Standards Authority</title>
 
     <link href="/data-standards-authority/standards-catalogue/stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority//standards-catalogue/guidance/apimanagement/">
+    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority//standards-catalogue/guidance/apimanagement/APIM-Introduction.html">
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="alphagov.github.io" />
       <meta name="twitter:image" content="https://alphagov.github.io/data-standards-authority//images/govuk-large.png" />
-      <meta name="twitter:title" content="API Management Guidance - Data Standards Authority" />
-      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority//standards-catalogue/guidance/apimanagement/" />
+      <meta name="twitter:title" content="API Management Guidance - 01 - Introduction - Data Standards Authority" />
+      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority//standards-catalogue/guidance/apimanagement/APIM-Introduction.html" />
 
       <meta property="og:image" content="https://alphagov.github.io/data-standards-authority//images/govuk-large.png" />
       <meta property="og:site_name" content="Data Standards Authority" />
-      <meta property="og:title" content="API Management Guidance" />
+      <meta property="og:title" content="API Management Guidance - 01 - Introduction" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority//standards-catalogue/guidance/apimanagement/" />
+      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority//standards-catalogue/guidance/apimanagement/APIM-Introduction.html" />
 
     
   </head>
@@ -85,18 +85,6 @@
 <ul>
   <li>
     <a href="/data-standards-authority/standards-catalogue/standards/"><span>Standards Catalogue</span></a>
- <ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/metadata/"><span>01 - Metadata</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/referencedata/"><span>02 - Common Reference Data</span></a>
-    
-  </li>
-</ul>
     <ul>
   <li>
     <a href="/data-standards-authority/standards-catalogue/standards/servicedesign/"><span>03 - Service Design</span></a>
@@ -106,6 +94,18 @@
 <ul>
   <li>
     <a href="/data-standards-authority/standards-catalogue/standards/lifecycle/"><span>04 - Data Lifecycle</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/referencedata/"><span>02 - Common Reference Data</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/metadata/"><span>01 - Metadata</span></a>
     
   </li>
 </ul>
@@ -167,109 +167,72 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h2 id="api-management-guidance-draft">API Management Guidance | <em>DRAFT</em></h2>
+            <h2 id="define-an-api-management-strategy">Define an API management strategy</h2>
 <p><em>This is a DRAFT document for discussion. This is not finalised. All aspects of this document are subject to change. Please leave comments on any aspect of it.</em></p>
 <h4 id="contents">Contents:</h4>
 <ul>
 <li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/">00 - Cover Page</a></li>
-<li><a href="APIM-Introduction.html">01 - Introduction</a></li>
-<li><a href="APIM-Design.html">02 - Design</a></li>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Introduction.html">01 - Introduction</a></li>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Design.html">02 - Design</a></li>
 <li><a href="APIM-Deployment.html">03 - Deployment</a></li>
 <li><a href="APIM-Management.html">04 - Management</a></li>
 <li><a href="APIM-Discovery.html">05 - Discovery</a></li>
 <li><a href="APIM-Retirement.html">06 - Retirement</a></li>
 <li><a href="APIM-OtherConsiderations.html">07 - Other Considerations</a></li>
 </ul>
+<h3 id="api-management-tools-help-reduce-development-overhead-and-time-to-deployment-by-standardising-design-monitoring-security-and-other-aspects-of-the-api-lifecycle">API management tools help reduce development overhead and time to deployment by standardising design, monitoring, security and other aspects of the API lifecycle.</h3>
+<p>Good API governance comes from good API management, from design to deprecation.</p>
 
-<table>
-<thead>
-<tr class="header">
-<th>Doc status:</th>
-<th>In progress</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Author:</td>
-<td>Annie Streater, Charles Baird</td>
-</tr>
-<tr class="even">
-<td>Reviewers:</td>
-<td><p>Arnau Siches<br>
-Steve Evans<br>
-Alicia Matheson</p></td>
-</tr>
-<tr class="odd">
-<td>What user need does this page serve?</td>
-<td><p><strong>Who are the users?</strong></p>
-<ul>
-<li><p>Technologists in government who currently manage a small number of APIs and are considering how to scale</p></li>
-<li><p>Technologists in government who are already using an API Management solution and are looking to review best practice</p></li>
-<li><p>Senior stakeholders in government who review and approve technology spend and strategies</p></li>
-</ul>
-<p><strong>What are they looking for?</strong></p>
-<p>Guidance on:</p>
-<ul>
-<li><p>the benefits of API management tools</p></li>
-<li><p>how API management fits into the API lifecycle</p></li>
-<li>identifying when to use an API Management tool</p></li>
-<li>factors to consider when choosing a solution</p></li>
-<li>how to approach product selection to consider public-facing, open-source solutions and commercial vendors</p></li>
-<li>standards the solution may need to meet, including accessibility</p></li>
-<li>potential customisation needs</p></li>
-<li>how to plan ahead for flexibility and scale</p></li>
-</ul>
+<p>If you build or manage any number of APIs, it’s best practice to have API management in place. This guidance will outline some areas you should consider when making decisions about how to manage APIs in your team or organisation. </p>
+<h3 id="build-foundations-early">Build foundations early</h3>
+<p>If you have any APIs that need access management, monitoring or documentation, you should at the very least use an API gateway. Even a single API will benefit from the standardised tools that an API gateway provides, by not having to develop and deploy those elements of functionality. If you later build more APIs, having an API gateway in place already will mean you don’t have to build those tools again, reducing duplication of effort for future teams.</p>
 
-<p><strong>How did they find this page?</strong></p>
-<uL>
-<li><p>API design guidance collection</p></li>
-<li>Search results on GOV.UK</p></li>
-</ul>
+<p>There will be cases where your current ecosystem doesn’t fit with this model, perhaps because you already have APIs in production which have their own security or monitoring, or because the APIs have been developed using disparate methods and technologies, in which case you should think about how you can put in place standardised patterns. This is about processes and governance that teams will use to build and deploy APIs, rather than the specific technology they use. As an example, you should consider how prescriptive you want your publishing pipeline to be. You might decide to have strict rules only for certain things like security, while allowing other areas to be more flexible. </p>
 
+<p>Keep the future in mind 
+When putting together your API strategy, it’s important to consider what your organisation’s future needs are likely to be, not just think about the first few APIs. </p>
 
-<p><strong>What are the initial problem statements?</strong></p></td>
-</tr>
-<tr class="even">
-<td>Out of scope</td>
-<td>
-<p>This will not include:<br>
-Reference documentation or in-depth technical guidance on how to build</p></td>
-</tr>
-<tr class="odd">
-<td>Page URL/published location:</td>
-<td>On the DSA GitHub Repo, and linked from: <a href="https://www.api.gov.uk/apim/">api.gov.uk/apim/</a></td>
-</tr>
-<tr class="even">
-<td><p>Change note</p></td>
-<td><p>N/A</p></td>
-</tr>
-<tr class="odd">
-<td><p>Annotate the page with these metadata tags:</p></td>
-<td><p>API management, API, API tools, API platform, APIM</p></td>
-</tr>
-</tbody>
-</table>
-<h4 id="published-on-github-in-several-parts">Published on GitHub in several parts:</h4>
-<ul>
-<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/">00 - Cover Page</a></li>
-<li><a href="APIM-Introduction.html">01 - Introduction</a></li>
-<li><a href="APIM-Design.html">02 - Design</a></li>
-<li><a href="APIM-Deployment.html">03 - Deployment</a></li>
-<li><a href="APIM-Management.html">04 - Management</a></li>
-<li><a href="APIM-Discovery.html">05 - Discovery</a></li>
-<li><a href="APIM-Retirement.html">06 - Retirement</a></li>
-<li><a href="APIM-OtherConsiderations.html">07 - Other Considerations</a></li>
-</ul>
+<p>Maintain a high level view of your API ecosystem. Good API management provides a way to judge the maturity of an individual API compared to others in the estate, and allows you to determine how much resource needs to be invested in it. APIs at different stages of their lifecycle require different levels of investment - a coherent strategy allows you to identify these needs and meet them.</p>
+<h3 id="meet-user-needs">Meet user needs</h3>
+<p>You should also think how your decisions might affect user behaviour. For example, you might decide that only APIs which have been through the process of assurance and testing will be visible in your catalogue. This might make teams reluctant to try new solutions that don’t fit the pattern, which could discourage innovation. Teams who aren’t ready to standardise or hand off management might simply not use it, and instead deploy APIs in an ad-hoc way.</p>
 
-<p>| <em><a href="APIM-OtherConsiderations.html">Previous</a></em> | <em><a href="APIM-Introduction.html">Next</a></em> | </p>
+<p>User research can help you gain insight on how teams are producing and consuming APIs, or what technologies they are using or considering using.</p>
+
+<p>A robust API management process will help build credibility and trust with users of your APIs. It’s important to demonstrate that your APIs are well designed and well supported. For example, being clear about how you retire APIs will reassure developers that they will not suddenly lose access to an API without notice. </p>
+<h3 id="define-roles">Define roles</h3>
+<p>Depending on the size and structure of your organisation, you might have several teams involved in building and maintaining APIs. Your API management strategy can help set out things like:</p>
+
+<p>who owns different parts of the API lifecycle
+where ownership of a particular service lies
+how ownership changes as an API goes into service
+For example, it is common for a central team to run the API Gateway, and therefore have control over service levels and capacity. How does that responsibility interact with the design and delivery responsibilities of an API owner, for example around versioning? Having a clear structure for escalating issues will save a lot of time and energy in the future. Support from senior management or stakeholders can help formalise organisational structures and policies. </p>
+<h3 id="what-api-management-tools-can-help-with">What API Management tools can help with</h3>
+<p>API management tools:
+ - provide visibility of all your APIs, encouraging reuse
+ - allow you to standardise common design patterns 
+ - help you automate many administrative and operational tasks
+ - provide a central place for you to share API documentation and support
+ - provide data and metrics to help you understand your API’s performance and usage
+ - help you implement and maintain good security and data protection practices</p>
+<h3 id="where-api-management-tools-fit-into-the-api-lifecycle">Where API Management tools fit into the API Lifecycle</h3>
+<p>It is useful to consider the API lifecycle as having several stages:
+ - Design - guidelines and policies for API production
+ - Deployment - assessment, testing and rolling out to live
+ - Management - ongoing maintenance and monitoring
+ - Discovery - how developers discover your APIs
+ - Retirement - decommissioning your API when it is no longer needed</p>
+
+<p>Each stage of the API lifecycle will benefit from having different tools and processes in place.</p>
+
+<p><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Design.html">Next - Design</a></p>
 
           </main>
 
           <aside>
               <ul class="contribution-banner">
-                <li><a href="https://github.com/https://github.com/alphagov/data-standards-authority//blob/main/source/guidance/apimanagement/index.html.md">View source</a></li>
-                <li><a href="https://github.com/https://github.com/alphagov/data-standards-authority//issues/new?labels=bug&amp;title=Re:%20'API%20Management%20Guidance'&amp;body=Problem%20with%20'API%20Management%20Guidance'%20(https://alphagov.github.io/data-standards-authority//standards-catalogue/guidance/apimanagement/)">Report problem</a></li>
-                <li><a href="https://github.com/https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority/blob/main/standards-catalogue/source/guidance/apimanagement/APIM-Introduction.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?labels=bug&amp;title=Re:%20'API%20Management%20Guidance%20-%2001%20-%20Introduction'&amp;body=Problem%20with%20'API%20Management%20Guidance%20-%2001%20-%20Introduction'%20(https://alphagov.github.io/data-standards-authority//standards-catalogue/guidance/apimanagement/APIM-Introduction.html)">Report problem</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
               </ul>
           </aside>
 
