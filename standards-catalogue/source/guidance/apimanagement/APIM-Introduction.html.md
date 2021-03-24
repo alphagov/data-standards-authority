@@ -19,11 +19,11 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 - [00 - Cover Page](index.html)
 - [01 - Introduction](APIM-Introduction.html)
 - [02 - Design](APIM-Design.html)
-- [03 - Deployment]
-- [04 - Management]
-- [05 - Discovery]
-- [06 - Retirement]
-- [07 - Other Considerations]
+- *03 - Deployment*
+- *04 - Management*
+- *05 - Discovery*
+- *06 - Retirement*
+- *07 - Other Considerations*
 
 
 ### API management tools help reduce development overhead and time to deployment by standardising design, monitoring, security and other aspects of the API lifecycle.

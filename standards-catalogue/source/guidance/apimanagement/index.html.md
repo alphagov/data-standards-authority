@@ -21,11 +21,11 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 - [00 - Cover Page](index.html)
 - [01 - Introduction](APIM-Introduction.html)
 - [02 - Design](APIM-Design.html)
-- [03 - Deployment](APIM-Deployment.html)
-- [04 - Management](APIM-Management.html)
-- [05 - Discovery](APIM-Discovery.html)
-- [06 - Retirement](APIM-Retirement.html)
-- [07 - Other Considerations](APIM-OtherConsiderations.html)
+- *03 - Deployment*
+- *04 - Management*
+- *05 - Discovery*
+- *06 - Retirement*
+- *07 - Other Considerations*
 
 
 <table>
@@ -98,14 +98,15 @@ Reference documentation or in-depth technical guidance on how to build</p></td>
 </table>
 
 
-#### Published on GitHub in several parts:
+#### Contents:
 - [00 - Cover Page](index.html)
 - [01 - Introduction](APIM-Introduction.html)
 - [02 - Design](APIM-Design.html)
-- [03 - Deployment](APIM-Deployment.html)
-- [04 - Management](APIM-Management.html)
-- [05 - Discovery](APIM-Discovery.html)
-- [06 - Retirement](APIM-Retirement.html)
-- [07 - Other Considerations](APIM-OtherConsiderations.html)
+- *03 - Deployment*
+- *04 - Management*
+- *05 - Discovery*
+- *06 - Retirement*
+- *07 - Other Considerations*
+
 
 [Next](APIM-Introduction.html)
