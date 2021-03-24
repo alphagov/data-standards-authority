@@ -108,6 +108,4 @@ Reference documentation or in-depth technical guidance on how to build</p></td>
 - [06 - Retirement](APIM-Retirement.html)
 - [07 - Other Considerations](APIM-OtherConsiderations.html)
 
-| *[Previous](APIM-OtherConsiderations.html)* | *[Next](APIM-Introduction.html)* | 
-
-
+[Next](APIM-Introduction.html)

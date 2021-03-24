@@ -19,11 +19,11 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 - [00 - Cover Page](index.html)
 - [01 - Introduction](APIM-Introduction.html)
 - [02 - Design](APIM-Design.html)
-- [03 - Deployment](APIM-Deployment.html)
-- [04 - Management](APIM-Management.html)
-- [05 - Discovery](APIM-Discovery.html)
-- [06 - Retirement](APIM-Retirement.html)
-- [07 - Other Considerations](APIM-OtherConsiderations.html)
+- *03 - Deployment*
+- *04 - Management*
+- *05 - Discovery*
+- *06 - Retirement*
+- *07 - Other Considerations*
 
 
 Establishing design guidance helps maintain consistency across your API estate. It is difficult to manage APIs that are not consistent, so the more your APIs follow the same design principles and practices, the easier it will be to manage them at scale. 
@@ -66,4 +66,4 @@ Tooling like this can provide functionality including:
 
 These tools often form part of an API Management suite, which also includes a developer hub and an API gateway, but can also be used as standalone desig or governance modules.
 
-[Next - Deployment](APIM-Deployemnt.html)
+*Next - Deployment*
