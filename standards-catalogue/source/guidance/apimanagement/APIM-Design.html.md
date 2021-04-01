@@ -64,6 +64,6 @@ Tooling like this can provide functionality including:
 - auto-completion
 - auto generated documentation
 
-These tools often form part of an API Management suite, which also includes a developer hub and an API gateway, but can also be used as standalone design or governance modules.
+These tools often form part of an API Management suite, which also includes a developer hub and an API gateway, but can also be used as standalone design or governance modules. 
 
 *Next - Deployment*
