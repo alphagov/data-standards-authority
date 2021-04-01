@@ -11,7 +11,7 @@ dateAdded: 2021-04-01
 dateUpdated: 2021-04-01
 ---
 
-## When to use a GraphQL API
+# When to use a GraphQL API
 
 GraphQL is an API specification originally developed by Facebook to deal with the shortcomings of REST access for complex data structures. It was open-sourced in 2015 and is used by many organisations with similarly complex requirements.
 
