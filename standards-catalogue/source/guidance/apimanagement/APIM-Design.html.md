@@ -19,7 +19,7 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 - [00 - Cover Page](index.html)
 - [01 - Introduction](APIM-Introduction.html)
 - [02 - Design](APIM-Design.html)
-- *03 - Deployment*
+- [03 - Deployment](APIM-Deployment.html)
 - *04 - Management*
 - *05 - Discovery*
 - *06 - Retirement*
@@ -64,6 +64,6 @@ Tooling like this can provide functionality including:
 - auto-completion
 - auto generated documentation
 
-These tools often form part of an API Management suite, which also includes a developer hub and an API gateway, but can also be used as standalone design or governance modules. 
+These tools often form part of an API Management suite, which also includes a developer hub and an API gateway, but can also be used as standalone design or governance modules.
 
 *Next - Deployment*
