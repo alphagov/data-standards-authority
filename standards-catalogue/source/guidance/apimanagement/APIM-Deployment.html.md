@@ -55,7 +55,6 @@ Usually, testing is done by an automated tool against the specification, sometim
 A developer portal, also sometimes called a developer hub, is where developers can access everything they need to set up and manage their integration with your API. This usually includes:
 
 * documentation for your API
-* software development kits (SDKs)
 * developer authorisation
 * self service tools for things like renewing API keys and changing their password
 * a test environment - for example a mock API, a ‘sandbox’ and test users
