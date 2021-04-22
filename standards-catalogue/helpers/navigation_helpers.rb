@@ -1,7 +1,7 @@
 module NavigationHelpers
   def render_sidebar(resources)
     root_page = resources.detect { |r| r.path == "index.html" }
-    top_level_pages = navigable_pages(root_page.children).sort_by { |page| page.data.weight || 99_999 }
+    top_level_pages = navigable_pages(root_page.children).sort_by { |page| page.data.weight || 9_999 }
     navigation = []
 
     navigation << navigation_html(root_page)
