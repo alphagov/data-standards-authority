@@ -1,10 +1,11 @@
 ---
-title: Graph QL Guidance
+title: GraphQL Guidance
 weight: 840
 keywords: 'Graph QL Guidance'
 identifier: DSA-004
 name: GraphQL
 organisation: Data Standards Authority
+author_email: api-programme@digital.cabinet-office.gov.uk
 status: Draft
 startDate: 2021-04-01
 dateAdded: 2021-04-01

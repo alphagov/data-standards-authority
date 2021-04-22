@@ -1,13 +1,15 @@
 ---
-title: API Management Guidance - 02 - Design
+title: APIM - 02 - Design
+weight: 832
 keywords: 'API Management'
 identifier: DSA-003
 name: APIManagement
 organisation: Data Standards Authority
+author_email: api-programme@digital.cabinet-office.gov.uk
 status: Draft
 startDate: 2021-03-23
 dateAdded: 2021-03-23
-dateUpdated: 2021-03-23
+dateUpdated: 2021-04-22
 ---
 
 ## Design
