@@ -36,6 +36,14 @@ module GovukTechDocs
       config[:tech_docs][:github_branch] || "main"
     end
 
+    def project_name
+      config[:tech_docs][:project_name] || "standards-catalogue"
+    end
+    
+    def contact_email
+      "mailto:#{config[:tech_docs][:contact_email]}"
+    end
+
   private
 
     # If a `page` local exists, see if it has a `source_url`. This is used by the
@@ -52,7 +60,7 @@ module GovukTechDocs
 
     # As the last fallback link to the source file in this repository.
     def source_from_file
-      "#{repo_url}/blob/#{repo_branch}/source/#{current_page.file_descriptor[:relative_path]}"
+      "#{repo_url}/blob/#{repo_branch}/#{project_name}/source/#{current_page.file_descriptor[:relative_path]}"
     end
 
     def locals
