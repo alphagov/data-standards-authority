@@ -5,6 +5,7 @@ keywords: 'API Management'
 identifier: DSA-003
 name: APIManagement
 organisation: Data Standards Authority
+author_email: api-programme@digital.cabinet-office.gov.uk
 status: Draft
 startDate: 2021-03-22
 dateAdded: 2021-03-22
