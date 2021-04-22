@@ -32,5 +32,5 @@ task :publish do
   #  else
   #   puts "Nothing to commit, skipping push"
   #  end
-  end
+  # end
 end
