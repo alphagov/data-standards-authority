@@ -39,7 +39,7 @@ module GovukTechDocs
     def project_name
       config[:tech_docs][:project_name] || "standards-catalogue"
     end
-    
+
     def contact_email
       "mailto:#{config[:tech_docs][:contact_email]}"
     end
