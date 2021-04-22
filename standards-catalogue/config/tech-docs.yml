@@ -1,10 +1,10 @@
 # Host to use for canonical URL generation (without trailing slash)
-host: https://alphagov.github.io
+host: https://alphagov.github.io/data-standards-authority
 
 # Header-related options
 show_govuk_logo: false
 service_name: Data Standards Authority
-service_link: https://alphagov.github.io
+service_link: https://alphagov.github.io/data-standards-authority
 
 # Links to show in the footer
 footer_links:
