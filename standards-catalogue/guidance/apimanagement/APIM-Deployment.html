@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>API Management Guidance - 03 - Deployment - Data Standards Authority</title>
+
+    <link href="/data-standards-authority/standards-catalogue/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Deployment.html">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="alphagov.github.io" />
+      <meta name="twitter:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
+      <meta name="twitter:title" content="API Management Guidance - 03 - Deployment - Data Standards Authority" />
+      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Deployment.html" />
+
+      <meta property="og:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
+      <meta property="og:site_name" content="Data Standards Authority" />
+      <meta property="og:title" content="API Management Guidance - 03 - Deployment" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Deployment.html" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://alphagov.github.io/data-standards-authority" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          Data Standards Authority
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </a>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents">
+              <div class="search" data-module="search" data-search-index-path="/data-standards-authority/standards-catalogue/search.json">
+  <form action="https://www.google.co.uk/search" method="get" role="search">
+    <input type="hidden" name="as_sitesearch" value="https://alphagov.github.io/data-standards-authority"/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input class="govuk-input govuk-!-margin-bottom-4" id="search" name="q" type="text" aria-controls="search-results" placeholder="Search">
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="polite">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
+                <ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/"><span>Data Standards Authority</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/"><span>Standards Catalogue</span></a>
+    <ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/servicedesign/"><span>03 - Service Design</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/lifecycle/"><span>04 - Data Lifecycle</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/referencedata/"><span>02 - Common Reference Data</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/metadata/"><span>01 - Metadata</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/domainspecific/"><span>05 - Domain Specific</span></a>
+    
+  </li>
+</ul>
+
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/usecases/"><span>Use Cases</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/guidance/"><span>Guidance</span></a>
+    <ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/"><span>API Management Guidance</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/guidance/graphql/"><span>Graph QL Guidance</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/guidance/referencearchitecture/"><span>Reference Architecture for Government Data and APIs</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/guidance/referencedata/"><span>Publish reference data for use across government</span></a>
+    
+  </li>
+</ul>
+
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/misc/"><span>Miscellaneous</span></a>
+    <ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/misc/apic-190121-transcript/"><span>Transcript of API Community Workshop, 19th January 2021</span></a>
+    
+  </li>
+</ul>
+
+  </li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <h2 id="deployment">Deployment</h2>
+<p><em>This is a DRAFT document for discussion. This is not finalised. All aspects of this document are subject to change. Please leave comments on any aspect of it.</em></p>
+<h4 id="contents">Contents:</h4>
+<ul>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/">00 - Cover Page</a></li>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Introduction.html">01 - Introduction</a></li>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Design.html">02 - Design</a></li>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Deployment.html">03 - Deployment</a></li>
+<li><em>04 - Management</em></li>
+<li><em>05 - Discovery</em></li>
+<li><em>06 - Retirement</em></li>
+<li><em>07 - Other Considerations</em></li>
+</ul>
+
+<p>Deploying your API involves more than just pushing code. There are a number of things you should put in place to support the publishing process. Assurance and testing processes ensure APIs meet requirements and function properly, and developer resources help consumers through the lifecycle of their integration.</p>
+<h3 id="assurance-and-assessment">Assurance and assessment</h3>
+<p>Assurance is part of governance, and is the process of making sure that APIs meet various organisational standards. For example, an assurance process will help teams make sure they are building APIs to follow the design guidelines of your organisation.</p>
+
+<p>Assurance is likely to be a review session, and might include assessment on API:</p>
+
+<ul>
+<li>resourcing</li>
+<li>user journeys</li>
+<li>middleware</li>
+<li>domain modelling</li>
+<li>publishing</li>
+</ul>
+
+<p>Your assurance assessment programme should make sense for the teams who need to go through it. If development teams find the assurance process too rigid, they might try to avoid it, which will weaken your organisation’s governance model. Think about how you can make governance as light touch as possible, and how you can make it a positive experience for product teams. If review sessions have good outcomes for teams and provide them with useful feedback, other teams are more likely to submit to it. As a result your governance model will be more successfully embedded into organisational culture.</p>
+<h3 id="testing">Testing</h3>
+<p>Testing is the process of making sure the APIs function properly, and is more likely to be an automatic process which validates the code. Testing should be an ongoing process, and regular validation of the API should be part of a monitoring scheme.</p>
+
+<p>Usually, testing is done by an automated tool against the specification, sometimes known as the contract. Contract testing in its simplest form includes:</p>
+
+<ul>
+<li>checking the specification against internal policies to make sure that APIs submitted to the developer portal are compliant with internal standards</li>
+<li>checking the API to make sure its responses match the specification and that deployed APIs are behaving correctly in production</li>
+</ul>
+<h3 id="developer-portal">Developer portal</h3>
+<p>A developer portal, also sometimes called a developer hub, is where developers can access everything they need to set up and manage their integration with your API. This usually includes:</p>
+
+<ul>
+<li>documentation for your API</li>
+<li>developer authorisation</li>
+<li>self service tools for things like renewing API keys and changing their password</li>
+<li>a test environment - for example a mock API, a ‘sandbox’ and test users</li>
+<li>issue reporting and ticket support</li>
+</ul>
+
+<p>You can also use your developer portal to gather internal metrics about your API programme. For example, you might want to measure how quickly developers are able to set up a test version of an API. This is sometimes known as “time to live” or “time to 200” and is a useful metric to measure how easy your API is to integrate. It can also help you identify where there might be pain points for users.</p>
+<h3 id="documentation">Documentation</h3>
+<p>Your API documentation is the starting point for developers looking to use your API.</p>
+
+<p>You can use an API specification to generate and auto-update reference documentation for your API as you build and iterate it. However, do not rely solely on auto-generated documentation as it’s important to also include conceptual or practical documentation to provide developers with more context.</p>
+
+<p>You should work with a <a href="https://www.gov.uk/guidance/technical-writer">technical writer</a> from the very start of your project. If you don’t have technical writing resources in your organisation, you can reach out to the <a href="https://www.gov.uk/service-manual/communities/technical-writing-community">cross-government technical writing community</a>.</p>
+
+<p>You can use the <a href="https://tdt-documentation.london.cloudapps.digital/#technical-documentation-template">GDS Technical Documentation Template</a> to generate accessible documentation pages from simple Markdown files. It’s mainly used for standalone documentations sites (for example <a href="https://docs.payments.service.gov.uk/#gov-uk-pay-technical-documentation">GOV.UK Pay’s API documentation</a>). The Tech Docs Template is a Middleman template, so if you’re using an API management tool, you might be able to build the template into your generated documentation..</p>
+
+<p>Read the guidance on <a href="https://www.gov.uk/guidance/how-to-document-apis">how to document APIs</a> and <a href="https://www.gov.uk/guidance/writing-api-reference-documentation">writing API reference documentation</a>.</p>
+
+<p><em>Next - Management</em></p>
+
+          </main>
+
+          <aside>
+              <ul class="contribution-banner">
+                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/standards-catalogue/source/guidance/apimanagement/APIM-Deployment.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?labels=bug&amp;title=Re:%20'API%20Management%20Guidance%20-%2003%20-%20Deployment'&amp;body=Problem%20with%20'API%20Management%20Guidance%20-%2003%20-%20Deployment'%20(https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Deployment.html)">Feedback on this page</a></li>
+                <li><a href="mailto:standards-catalogue@digital.cabinet-office.gov.uk">Feedback via email</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
+              </ul>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/data-standards-authority/standards-catalogue/accessibility.html">Technical Documentation Accessibility</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    <script async defer data-domain="api.gov.uk" src="https://plausible.io/js/plausible.js"></script>
+    <script src="/data-standards-authority/standards-catalogue/javascripts/application.js"></script>
+  </body>
+</html>

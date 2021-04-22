@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Graph QL Guidance - Data Standards Authority</title>
+
+    <link href="/data-standards-authority/standards-catalogue/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/graphql/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="alphagov.github.io" />
+      <meta name="twitter:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
+      <meta name="twitter:title" content="Graph QL Guidance - Data Standards Authority" />
+      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/graphql/" />
+
+      <meta property="og:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
+      <meta property="og:site_name" content="Data Standards Authority" />
+      <meta property="og:title" content="Graph QL Guidance" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/graphql/" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://alphagov.github.io/data-standards-authority" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          Data Standards Authority
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </a>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents">
+              <div class="search" data-module="search" data-search-index-path="/data-standards-authority/standards-catalogue/search.json">
+  <form action="https://www.google.co.uk/search" method="get" role="search">
+    <input type="hidden" name="as_sitesearch" value="https://alphagov.github.io/data-standards-authority"/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input class="govuk-input govuk-!-margin-bottom-4" id="search" name="q" type="text" aria-controls="search-results" placeholder="Search">
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="polite">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
+                <ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/"><span>Data Standards Authority</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/"><span>Standards Catalogue</span></a>
+    <ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/servicedesign/"><span>03 - Service Design</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/lifecycle/"><span>04 - Data Lifecycle</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/referencedata/"><span>02 - Common Reference Data</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/metadata/"><span>01 - Metadata</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/domainspecific/"><span>05 - Domain Specific</span></a>
+    
+  </li>
+</ul>
+
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/usecases/"><span>Use Cases</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/guidance/"><span>Guidance</span></a>
+    <ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/"><span>API Management Guidance</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/guidance/graphql/"><span>Graph QL Guidance</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/guidance/referencearchitecture/"><span>Reference Architecture for Government Data and APIs</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/guidance/referencedata/"><span>Publish reference data for use across government</span></a>
+    
+  </li>
+</ul>
+
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/misc/"><span>Miscellaneous</span></a>
+    <ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/misc/apic-190121-transcript/"><span>Transcript of API Community Workshop, 19th January 2021</span></a>
+    
+  </li>
+</ul>
+
+  </li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <h1 id="when-to-use-a-graphql-api">When to use a GraphQL API</h1>
+<p><a href="GraphQL">https://graphql.org</a> is an API specification originally developed by Facebook as an alternative to REST for compiling complex data structures in real time. It was open-sourced in 2015 and is used by many organisations with similarly complex requirements.</p>
+
+<p>GraphQL is still quite a new technology with relatively low maturity compared to more widely used API styles like REST. There are not many examples of GraphQL in the public sector as it presents certain challenges which make it not always suitable for government technology teams.</p>
+
+<p>Some features of GraphQL present advantages or disadvantages depending on the context. This guidance will outline some things to keep in mind when considering using GraphQL.</p>
+<h2 id="what-graphql-can-do">What GraphQL can do</h2>
+<p>The benefits of using GraphQL include the ability for clients to:</p>
+
+<ul>
+<li>request exactly what they want and get no more (over-fetching) or no less (under-fetching) than they need</li>
+<li>get multiple unrelated resources in a single call, rather than using multiple calls to separate endpoints as with REST</li>
+<li>use the built-in introspection feature to understand what queries are supported</li>
+</ul>
+<h2 id="things-you-should-know">Things you should know</h2><h3 id="security">Security</h3>
+<p>There are established security patterns for REST, but fewer for GraphQL.</p>
+
+<p>GraphQL is transport layer protocol agnostic, which means you are not bound by using HTTP. This can provide flexibility, but can have security implications.</p>
+<h3 id="versioning">Versioning</h3>
+<p>GraphQL does not use versioning, allowing you to change your API’s data structure without requiring users to switch over to a new version. This can provide flexibility and reduce overhead from not having to manage different versions.</p>
+
+<p>However, this does not protect you from introducing breaking changes, since updates to the schema can still affect stored queries. You should still communicate changes to your users with good notice so they can make any necessary changes to their implementations.</p>
+<h3 id="caching">Caching</h3>
+<p>Since GraphQL does not use URL-based endpoints, there is no unique identifier to build cache. You will need to consider when and how to support <a href="caching">https://graphql.org/learn/caching/</a> in your GraphQL solution to ensure the service delivers the expected performance. For example, you could add a unique identifier field such as <code>id</code>.</p>
+
+<p>Without a way to cache, GraphQL APIs can end up hitting the database more frequently, which can have cost implications. You might also need dedicated database administrators to provide support and maintenance, which adds cost and overhead for your development team.</p>
+<h3 id="documentation">Documentation</h3>
+<p>GraphQL is often considered as self-documenting because it exposes the schema structure. Much like other query languages, you can use introspection to understand what resources and types are supported.</p>
+
+<p>However, you should not rely on the self-documenting features of GraphQL alone. Producing documentation is still important for:
+* providing descriptions for fields and types - while you should use clear names when designing any type of API, this does not always allow for enough context
+* onboarding users - this is particularly important for developers who are new to GraphQL and may need some hand holding, for example explaining the difference between a query and a mutation
+* presenting conceptual documentation</p>
+<h3 id="tooling">Tooling</h3>
+<p>UK government guidelines recommend using API management platforms to manage things like authentication, monitoring, and error logging. There are not many API management tools that support GraphQL, so you may need to build your own.</p>
+<h3 id="finding-the-skills-for-your-team">Finding the skills for your team</h3>
+<p>While GraphQL is becoming more popular, finding developers with the skills for GraphQL API development can be difficult.</p>
+
+<p>GraphQL developers are in high demand and can be more expensive to hire. There can be quite a steep learning curve for REST developers to unlearn REST habits and ‘think in GraphQL’.</p>
+
+<p>You should therefore consider whether your team can afford the time and money to invest in getting the right skills in place.</p>
+<h2 id="when-graphql-can-be-a-good-choice">When GraphQL can be a good choice</h2>
+<p>GraphQL can be a successful approach in certain circumstances, for example where:</p>
+
+<ul>
+<li>there is a need to minimise bandwidth use because data is being transmitted over satellite or other low-bandwidth channels, or because data transfer is expensive</li>
+<li>you anticipate needing to use multiple data sources</li>
+<li>you have several types of clients with different data needs</li>
+</ul>
+
+<p>You can read more in <a href="this%20blog%20post%20about%20recent%20uses%20of%20GraphQL%20in%20government">https://technology.blog.gov.uk/2020/08/28/what-we-learned-from-a-recent-graphql-workshop/</a>.</p>
+
+          </main>
+
+          <aside>
+              <ul class="contribution-banner">
+                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/standards-catalogue/source/guidance/graphql/index.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?labels=bug&amp;title=Re:%20'Graph%20QL%20Guidance'&amp;body=Problem%20with%20'Graph%20QL%20Guidance'%20(https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/graphql/)">Feedback on this page</a></li>
+                <li><a href="mailto:standards-catalogue@digital.cabinet-office.gov.uk">Feedback via email</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
+              </ul>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/data-standards-authority/standards-catalogue/accessibility.html">Technical Documentation Accessibility</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    <script async defer data-domain="api.gov.uk" src="https://plausible.io/js/plausible.js"></script>
+    <script src="/data-standards-authority/standards-catalogue/javascripts/application.js"></script>
+  </body>
+</html>
