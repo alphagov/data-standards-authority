@@ -17,6 +17,7 @@ require "lib/govuk_tech_docs/unique_identifier_generator"
 
 # Project setup
 project_name = "standards-catalogue"
+repo_name = "data-standards-authority"
 
 activate :sprockets
 
@@ -42,9 +43,9 @@ end
 set(:govuk_assets_path, "/assets/govuk/assets/")
 
 configure :build do
-  set(:build_dir, "build/#{project_name}")
-  set(:http_prefix, "/#{project_name}/")
-  set(:govuk_assets_path, "/#{project_name}/assets/govuk/assets/")
+  set(:build_dir, "build/#{repo_name}/#{project_name}")
+  set(:http_prefix, "/#{repo_name}/#{project_name}/")
+  set(:govuk_assets_path, "/#{repo_name}/#{project_name}/assets/govuk/assets/")
 end
 
 configure :build do

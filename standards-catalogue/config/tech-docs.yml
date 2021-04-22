@@ -1,11 +1,10 @@
 # Host to use for canonical URL generation (without trailing slash)
-host: https://alphagov.github.io/data-standards-authority
+host: https://alphagov.github.io
 
 # Header-related options
 show_govuk_logo: false
 service_name: Data Standards Authority
-service_link: https://alphagov.github.io/data-standards-authority/
-phase: Discovery
+service_link: https://alphagov.github.io
 
 # Links to show in the footer
 footer_links:
@@ -20,7 +19,13 @@ prevent_indexing: false
 show_contribution_banner: true
 github_repo: alphagov/data-standards-authority/
 
+#for gh-pages or other directory views, build the view source link
+project_name: standards-catalogue
+
+#to add feedback email address on pages:
+contact_email: standards-catalogue@digital.cabinet-office.gov.uk
+
 # Table of contents depth – how many levels to include in the table of contents.
 # If your ToC is too long, reduce this number and we'll only show higher-level
 # headings.
-max_toc_heading_level: 4
+max_toc_heading_level: 5
