@@ -13,7 +13,7 @@ dateUpdated: 2021-04-01
 
 # When to use a GraphQL API
 
-[https://graphql.org](GraphQL) is an API specification originally developed by Facebook as an alternative to REST for compiling complex data structures in real time. It was open-sourced in 2015 and is used by many organisations with similarly complex requirements.
+[GraphQL](https://graphql.org) is an API specification originally developed by Facebook as an alternative to REST for compiling complex data structures in real time. It was open-sourced in 2015 and is used by many organisations with similarly complex requirements.
 
 GraphQL is still quite a new technology with relatively low maturity compared to more widely used API styles like REST. There are not many examples of GraphQL in the public sector as it presents certain challenges which make it not always suitable for government technology teams.
 
@@ -41,7 +41,7 @@ However, this does not protect you from introducing breaking changes, since upda
 
 
 ### Caching
-Since GraphQL does not use URL-based endpoints, there is no unique identifier to build cache. You will need to consider when and how to support [https://graphql.org/learn/caching/](caching) in your GraphQL solution to ensure the service delivers the expected performance. For example, you could add a unique identifier field such as `id`.
+Since GraphQL does not use URL-based endpoints, there is no unique identifier to build cache. You will need to consider when and how to support [caching](https://graphql.org/learn/caching/) in your GraphQL solution to ensure the service delivers the expected performance. For example, you could add a unique identifier field such as `id`.
 
 Without a way to cache, GraphQL APIs can end up hitting the database more frequently, which can have cost implications. You might also need dedicated database administrators to provide support and maintenance, which adds cost and overhead for your development team.
 
@@ -76,4 +76,4 @@ GraphQL can be a successful approach in certain circumstances, for example where
 * you anticipate needing to use multiple data sources
 * you have several types of clients with different data needs
 
-You can read more in [https://technology.blog.gov.uk/2020/08/28/what-we-learned-from-a-recent-graphql-workshop/](this blog post about recent uses of GraphQL in government).
+You can read more in [this blog post about recent uses of GraphQL in government](https://technology.blog.gov.uk/2020/08/28/what-we-learned-from-a-recent-graphql-workshop/).
