@@ -22,9 +22,9 @@ module GovukTechDocs
       url = config[:source_urls]&.[](:report_issue_url)
 
       if url.nil?
-        "#{repo_url}/issues/new?labels=bug&title=Re: '#{current_page.data.title}'&body=Problem with '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page.url})"
+        "#{repo_url}/issues/new?labels=bug&title=Re: '#{current_page.data.title}'&body=Feedback on '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page.url})"
       else
-        "#{url}?subject=Re: '#{current_page.data.title}'&body=Problem with '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page.url})"
+        "#{url}?subject=Re: '#{current_page.data.title}'&body=Feedback on '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page.url})"
       end
     end
 
@@ -44,11 +44,12 @@ module GovukTechDocs
     # otherwise use the default from tech-docs.yml
     def contact_email
       email = current_page.data.author_email
+      subject = current_page.data.title
 
       if email.nil?
-        "mailto:#{config[:tech_docs][:contact_email]}"
+        "mailto:#{config[:tech_docs][:contact_email]}?subject=Feedback on #{subject}"
       else
-        "mailto:#{email}"
+        "mailto:#{email}?subject=Feedback on #{subject}"
       end
     end
 

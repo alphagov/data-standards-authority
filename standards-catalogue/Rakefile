@@ -28,10 +28,10 @@ task :publish do
   sh("rsync -a --delete --exclude .git --exclude CNAME build/data-standards-authority/standards-catalogue/ #{publish_dir}")
   sh("git -C #{publish_dir} add --all")
   sh("git -C #{publish_dir} commit -m 'Publish #{rev}'") do |ok, _|
-   if ok
-     sh("git -C #{publish_dir} push")
-   else
-    puts "Nothing to commit, skipping push"
-   end
+    if ok
+      sh("git -C #{publish_dir} push")
+    else
+      puts "Nothing to commit, skipping push"
+    end
   end
 end
