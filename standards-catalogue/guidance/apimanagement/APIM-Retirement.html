@@ -5,23 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>APIM - 05 - Discovery - Data Standards Authority</title>
+    <title>APIM - 06 - Retirement - Data Standards Authority</title>
 
     <link href="/data-standards-authority/standards-catalogue/stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM - Discovery.html">
+    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Retirement.html">
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="alphagov.github.io" />
       <meta name="twitter:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
-      <meta name="twitter:title" content="APIM - 05 - Discovery - Data Standards Authority" />
-      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM - Discovery.html" />
+      <meta name="twitter:title" content="APIM - 06 - Retirement - Data Standards Authority" />
+      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Retirement.html" />
 
       <meta property="og:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
       <meta property="og:site_name" content="Data Standards Authority" />
-      <meta property="og:title" content="APIM - 05 - Discovery" />
+      <meta property="og:title" content="APIM - 06 - Retirement" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM - Discovery.html" />
+      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Retirement.html" />
 
     
   </head>
@@ -172,40 +172,52 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h2 id="discovery">Discovery</h2>
+            <h2 id="retirement">Retirement</h2>
 <p><em>This is a DRAFT document for discussion. This is not finalised. All aspects of this document are subject to change. Please leave comments on any aspect of it.</em></p>
 <h4 id="contents">Contents:</h4>
 <ul>
-<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/">00 - Cover Page</a></li>
 <li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Introduction.html">01 - Introduction</a></li>
 <li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Design.html">02 - Design</a></li>
 <li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Deployment.html">03 - Deployment</a></li>
-<li><a href="APIM-Management.html">04 - Management</a></li>
-<li><a href="APIM-Discovery.html">05 - Discovery</a></li>
-<li><a href="APIM-Retirement.html">06 - Retirement</a></li>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Management.html">04 - Management</a></li>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Discovery.html">05 - Discovery</a></li>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Retirement.html">06 - Retirement</a></li>
 </ul>
 
-<hr>
-<h4 id="discovery-contents">Contents:</h4>
+<p>Something that is often overlooked when developing and managing APIs is planning how to take them out of service when they are no longer needed. People often use the terms retirement, deprecation, sunsetting, or decommissioning interchangeably.</p>
+
+<p>It may be useful to put together an API retirement workflow or checklist for your organisation to help teams follow a consistent process. Below is an example of what this might look like.</p>
+
+<ol>
+<li>Use analytics to support your case for deprecation</li>
+<li>Publish a blog post to explain the reasons, and offer alternatives where possible</li>
+<li>Add a deprecation notice to documentation, with the date it will happen</li>
+<li>Disable sign ups in self-service to stop new users accessing the service</li>
+<li>Email subscribed users with the date of deprecation - as the date approaches, emails should get more frequent</li>
+<li>Use Sunset or Deprecated HTTP headers, with a link to the documentation and blog post</li>
+<li>Wait and see how usage changes - make sure it’s dropping, and reach out to any remaining active users</li>
+<li>Agree an acceptable number of active users at retirement</li>
+<li>Keep the API in retired status for a while - this could be months or years </li>
+</ol>
+<h4 id="retirement-contents">Contents:</h4>
 <ul>
-<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/">00 - Cover Page</a></li>
 <li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Introduction.html">01 - Introduction</a></li>
 <li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Design.html">02 - Design</a></li>
 <li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Deployment.html">03 - Deployment</a></li>
-<li><a href="APIM-Management.html">04 - Management</a></li>
-<li><a href="APIM-Discovery.html">05 - Discovery</a></li>
-<li><a href="APIM-Retirement.html">06 - Retirement</a></li>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Management.html">04 - Management</a></li>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Discovery.html">05 - Discovery</a></li>
+<li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Retirement.html">06 - Retirement</a></li>
 </ul>
 
-<p><a href="APIM-Retirement.html">Next</a></p>
+<p><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Introduction.html">Next</a></p>
 
           </main>
 
           <aside>
               <ul class="contribution-banner">
-                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/standards-catalogue/source/guidance/apimanagement/APIM%20-%20Discovery.html.md">View source</a></li>
-                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?labels=bug&amp;title=Re:%20'APIM%20-%2005%20-%20Discovery'&amp;body=Feedback%20on%20'APIM%20-%2005%20-%20Discovery'%20(https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM%20-%20Discovery.html)">Feedback on this page</a></li>
-                <li><a href="mailto:api-programme@digital.cabinet-office.gov.uk?subject=Feedback%20on%20APIM%20-%2005%20-%20Discovery">Feedback via email</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/standards-catalogue/source/guidance/apimanagement/APIM-Retirement.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?labels=bug&amp;title=Re:%20'APIM%20-%2006%20-%20Retirement'&amp;body=Feedback%20on%20'APIM%20-%2006%20-%20Retirement'%20(https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Retirement.html)">Feedback on this page</a></li>
+                <li><a href="mailto:api-programme@digital.cabinet-office.gov.uk?subject=Feedback%20on%20APIM%20-%2006%20-%20Retirement">Feedback via email</a></li>
                 <li><a href="https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
               </ul>
           </aside>
