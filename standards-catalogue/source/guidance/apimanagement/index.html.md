@@ -23,7 +23,7 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 - [01 - Introduction](APIM-Introduction.html)
 - [02 - Design](APIM-Design.html)
 - [03 - Deployment](APIM-Deployment.html)
-- *04 - Management*
+- [04 - Management](APIM-Management.html)
 - *05 - Discovery*
 - *06 - Retirement*
 - *07 - Other Considerations*
@@ -103,8 +103,8 @@ Reference documentation or in-depth technical guidance on how to build</p></td>
 - [00 - Cover Page](index.html)
 - [01 - Introduction](APIM-Introduction.html)
 - [02 - Design](APIM-Design.html)
-- *03 - Deployment*
-- *04 - Management*
+- [03 - Deployment](APIM-Deployment.html)
+- [04 - Management](APIM-Management.html)
 - *05 - Discovery*
 - *06 - Retirement*
 - *07 - Other Considerations*
