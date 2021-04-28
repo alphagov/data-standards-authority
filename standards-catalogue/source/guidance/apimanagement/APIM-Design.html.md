@@ -9,7 +9,7 @@ author_email: api-programme@digital.cabinet-office.gov.uk
 status: Draft
 startDate: 2021-03-23
 dateAdded: 2021-03-23
-dateUpdated: 2021-04-22
+dateUpdated: 2021-04-28
 ---
 
 ## Design
@@ -22,10 +22,9 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 - [01 - Introduction](APIM-Introduction.html)
 - [02 - Design](APIM-Design.html)
 - [03 - Deployment](APIM-Deployment.html)
-- *04 - Management*
-- *05 - Discovery*
-- *06 - Retirement*
-- *07 - Other Considerations*
+- [04 - Management](APIM-Management.html)
+- [05 - Discovery](APIM-Discovery.html)
+- [06 - Retirement](APIM-Retirement.html)
 
 
 Establishing design guidance helps maintain consistency across your API estate. It is difficult to manage APIs that are not consistent, so the more your APIs follow the same design principles and practices, the easier it will be to manage them at scale.
@@ -68,4 +67,14 @@ Tooling like this can provide functionality including:
 
 These tools often form part of an API Management suite, which also includes a developer hub and an API gateway, but can also be used as standalone design or governance modules. 
 
-*Next - Deployment*
+#### Contents:
+- [00 - Cover Page](index.html)
+- [01 - Introduction](APIM-Introduction.html)
+- [02 - Design](APIM-Design.html)
+- [03 - Deployment](APIM-Deployment.html)
+- [04 - Management](APIM-Management.html)
+- [05 - Discovery](APIM-Discovery.html)
+- [06 - Retirement](APIM-Retirement.html)
+
+
+[Next](APIM-Deployment.html)

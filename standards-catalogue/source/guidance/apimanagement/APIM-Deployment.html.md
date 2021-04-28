@@ -9,7 +9,7 @@ author_email: api-programme@digital.cabinet-office.gov.uk
 status: Draft
 startDate: 2021-03-23
 dateAdded: 2021-03-23
-dateUpdated: 2021-04-22
+dateUpdated: 2021-04-28
 ---
 
 ## Deployment
@@ -22,10 +22,10 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 - [01 - Introduction](APIM-Introduction.html)
 - [02 - Design](APIM-Design.html)
 - [03 - Deployment](APIM-Deployment.html)
-- *04 - Management*
-- *05 - Discovery*
-- *06 - Retirement*
-- *07 - Other Considerations*
+- [04 - Management](APIM-Management.html)
+- [05 - Discovery](APIM-Discovery.html)
+- [06 - Retirement](APIM-Retirement.html)
+
 
 Deploying your API involves more than just pushing code. There are a number of things you should put in place to support the publishing process. Assurance and testing processes ensure APIs meet requirements and function properly, and developer resources help consumers through the lifecycle of their integration.
 
@@ -77,5 +77,14 @@ You can use the [GDS Technical Documentation Template](https://tdt-documentation
 Read the guidance on [how to document APIs](https://www.gov.uk/guidance/how-to-document-apis) and [writing API reference documentation](https://www.gov.uk/guidance/writing-api-reference-documentation).
 
 
+#### Contents:
+- [00 - Cover Page](index.html)
+- [01 - Introduction](APIM-Introduction.html)
+- [02 - Design](APIM-Design.html)
+- [03 - Deployment](APIM-Deployment.html)
+- [04 - Management](APIM-Management.html)
+- [05 - Discovery](APIM-Discovery.html)
+- [06 - Retirement](APIM-Retirement.html)
 
-*Next - Management*
+
+[Next](APIM-Management.html)
