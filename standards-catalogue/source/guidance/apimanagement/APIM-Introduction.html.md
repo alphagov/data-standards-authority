@@ -22,7 +22,7 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 - [01 - Introduction](APIM-Introduction.html)
 - [02 - Design](APIM-Design.html)
 - [03 - Deployment](APIM-Deployment.html)
-- *04 - Management*
+- [04 - Management](APIM-Management.html)
 - *05 - Discovery*
 - *06 - Retirement*
 - *07 - Other Considerations*
@@ -64,22 +64,22 @@ For example, it is common for a central team to run the API Gateway, and therefo
 ### What API Management tools can help with
 
 API management tools:
-- provide visibility of all your APIs, encouraging reuse
-- allow you to standardise common design patterns
-- help you automate many administrative and operational tasks
-- provide a central place for you to share API documentation and support
-- provide data and metrics to help you understand your API’s performance and usage
-- help you implement and maintain good security and data protection practices
+ - provide visibility of all your APIs, encouraging reuse
+ - allow you to standardise common design patterns
+ - help you automate many administrative and operational tasks
+ - provide a central place for you to share API documentation and support
+ - provide data and metrics to help you understand your API’s performance and usage
+ - help you implement and maintain good security and data protection practices
 
 
 
 ### Where API Management tools fit into the API Lifecycle
 
 It is useful to consider the API lifecycle as having several stages:
-- Design - guidelines and policies for API production
-- Deployment - assessment, testing and rolling out to live
-- Management - ongoing maintenance and monitoring
-- Discovery - how developers discover your APIs
+ - Design - guidelines and policies for API production
+ - Deployment - assessment, testing and rolling out to live
+ - Management - ongoing maintenance and monitoring
+ - Discovery - how developers discover your APIs
  - Retirement - decommissioning your API when it is no longer needed
 
 Each stage of the API lifecycle will benefit from having different tools and processes in place.
