@@ -9,7 +9,7 @@ author_email: api-programme@digital.cabinet-office.gov.uk
 status: Draft
 startDate: 2021-03-22
 dateAdded: 2021-03-22
-dateUpdated: 2021-03-22
+dateUpdated: 2021-04-28
 ---
 
 
@@ -24,10 +24,8 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 - [02 - Design](APIM-Design.html)
 - [03 - Deployment](APIM-Deployment.html)
 - [04 - Management](APIM-Management.html)
-- *05 - Discovery*
-- *06 - Retirement*
-- *07 - Other Considerations*
-
+- [05 - Discovery](APIM-Discovery.html)
+- [06 - Retirement](APIM-Retirement.html)
 
 <table>
 <thead>
@@ -39,11 +37,12 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 <tbody>
 <tr class="odd">
 <td>Author:</td>
-<td>Annie Streater, Charles Baird</td>
+<td>Annie Streater</td>
 </tr>
 <tr class="even">
 <td>Reviewers:</td>
-<td><p>Arnau Siches<br>
+<td><p> Charles Baird<br>
+Arnau Siches<br>
 Steve Evans<br>
 Alicia Matheson</p></td>
 </tr>
@@ -105,9 +104,8 @@ Reference documentation or in-depth technical guidance on how to build</p></td>
 - [02 - Design](APIM-Design.html)
 - [03 - Deployment](APIM-Deployment.html)
 - [04 - Management](APIM-Management.html)
-- *05 - Discovery*
-- *06 - Retirement*
-- *07 - Other Considerations*
+- [05 - Discovery](APIM-Discovery.html)
+- [06 - Retirement](APIM-Retirement.html)
 
 
 [Next](APIM-Introduction.html)

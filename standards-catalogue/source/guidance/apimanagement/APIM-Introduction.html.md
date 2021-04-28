@@ -9,7 +9,7 @@ author_email: api-programme@digital.cabinet-office.gov.uk
 status: Draft
 startDate: 2021-03-23
 dateAdded: 2021-03-23
-dateUpdated: 2021-04-22
+dateUpdated: 2021-04-28
 ---
 
 
@@ -23,9 +23,8 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 - [02 - Design](APIM-Design.html)
 - [03 - Deployment](APIM-Deployment.html)
 - [04 - Management](APIM-Management.html)
-- *05 - Discovery*
-- *06 - Retirement*
-- *07 - Other Considerations*
+- [05 - Discovery](APIM-Discovery.html)
+- [06 - Retirement](APIM-Retirement.html)
 
 
 ### API management tools help reduce development overhead and time to deployment by standardising design, monitoring, security and other aspects of the API lifecycle.
@@ -85,4 +84,14 @@ It is useful to consider the API lifecycle as having several stages:
 Each stage of the API lifecycle will benefit from having different tools and processes in place.
 
 
-[Next - Design](APIM-Design.html)
+#### Contents:
+- [00 - Cover Page](index.html)
+- [01 - Introduction](APIM-Introduction.html)
+- [02 - Design](APIM-Design.html)
+- [03 - Deployment](APIM-Deployment.html)
+- [04 - Management](APIM-Management.html)
+- [05 - Discovery](APIM-Discovery.html)
+- [06 - Retirement](APIM-Retirement.html)
+
+
+[Next](APIM-Design.html)
