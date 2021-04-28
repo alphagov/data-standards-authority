@@ -17,7 +17,7 @@ task :publish do
 
   rev = `git rev-parse --short HEAD`.chomp
 
-  publish_dir = ../ENV.fetch("CLONED_GH_PAGES_DIR") do
+  publish_dir = ENV.fetch("CLONED_GH_PAGES_DIR") do
     tmp_dir = Dir.mktmpdir("publish-standards-catalogue")
     repo_url = `git config --get remote.origin.url`.chomp
     sh("git clone --single-branch --branch gh-pages #{repo_url} #{tmp_dir}")
