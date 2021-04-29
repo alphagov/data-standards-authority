@@ -187,7 +187,7 @@
 <p>Good API governance comes from good API management, from design to deprecation.</p>
 
 <p>If you build or manage any number of APIs, it’s best practice to have API management in place. This guidance will outline some areas you should consider when making decisions about how to manage APIs in your team or organisation.</p>
-<h3 id="build-foundations-early">Build foundations early</h3>
+<h2 id="principles-for-your-api-strategy">Principles for your API strategy</h2><h3 id="build-foundations-early">Build foundations early</h3>
 <p>If you have any APIs that need access management, monitoring or documentation, you should at the very least use an API gateway. Even a single API will benefit from the standardised tools that an API gateway provides, by not having to develop and deploy those elements of functionality. If you later build more APIs, having an API gateway in place already will mean you don’t have to build those tools again, reducing duplication of effort for future teams.</p>
 
 <p>There will be cases where your current ecosystem doesn’t fit with this model, perhaps because you already have APIs in production which have their own security or monitoring, or because the APIs have been developed using disparate methods and technologies, in which case you should think about how you can put in place standardised patterns. This is about processes and governance that teams will use to build and deploy APIs, rather than the specific technology they use. As an example, you should consider how prescriptive you want your publishing pipeline to be. You might decide to have strict rules only for certain things like security, while allowing other areas to be more flexible.</p>
@@ -204,34 +204,37 @@
 <h3 id="define-roles">Define roles</h3>
 <p>Depending on the size and structure of your organisation, you might have several teams involved in building and maintaining APIs. Your API management strategy can help set out things like:</p>
 
-<p>who owns different parts of the API lifecycle
-where ownership of a particular service lies
-how ownership changes as an API goes into service
-For example, it is common for a central team to run the API Gateway, and therefore have control over service levels and capacity. How does that responsibility interact with the design and delivery responsibilities of an API owner, for example around versioning? Having a clear structure for escalating issues will save a lot of time and energy in the future. Support from senior management or stakeholders can help formalise organisational structures and policies.</p>
-<h3 id="what-api-management-tools-can-help-with">What API Management tools can help with</h3>
-<p>API management tools:</p>
-
 <ul>
-<li> provide visibility of all your APIs, encouraging reuse</li>
-<li> allow you to standardise common design patterns</li>
-<li> help you automate many administrative and operational tasks</li>
-<li> provide a central place for you to share API documentation and support</li>
-<li> provide data and metrics to help you understand your API’s performance and usage</li>
-<li> help you implement and maintain good security and data protection practices</li>
-</ul>
-<h3 id="where-api-management-tools-fit-into-the-api-lifecycle">Where API Management tools fit into the API Lifecycle</h3>
-<p>It is useful to consider the API lifecycle as having several stages:</p>
-
-<ul>
-<li> Design - guidelines and policies for API production</li>
-<li> Deployment - assessment, testing and rolling out to live</li>
-<li> Management - ongoing maintenance and monitoring</li>
-<li> Discovery - how developers discover your APIs</li>
-<li> Retirement - decommissioning your API when it is no longer needed</li>
+<li>who owns different parts of the API lifecycle</li>
+<li>what skills or roles API teams should include</li>
+<li>where ownership of a particular service lies</li>
+<li>how ownership changes as an API goes into service</li>
 </ul>
 
-<p>Each stage of the API lifecycle will benefit from having different tools and processes in place.</p>
-<h4 id="where-api-management-tools-fit-into-the-api-lifecycle-contents">Contents:</h4>
+<p>For example, it is common for a central team to run the API Gateway, and therefore have control over service levels and capacity. You should then consider how that responsibility might interact with the design and delivery responsibilities of an API owner, such as versioning.</p>
+
+<p>Having a clear structure for escalating issues will save a lot of time and energy in the future. Support from senior management or stakeholders can help formalise organisational structures and policies. </p>
+<h3 id="what-api-management-strategy-can-help-with">What API Management strategy can help with</h3>
+<p>An API management strategy can:
+*  provide visibility of all your APIs, encouraging reuse
+*  allow you to standardise common design patterns
+*  help you automate many administrative and operational tasks
+*  provide a central place for you to share API documentation and support
+*  provide data and metrics to help you understand your API’s performance and usage
+*  help you implement and maintain good security and data protection practices</p>
+
+<p>This guidance includes sections exploring each stage of the API lifecycle:</p>
+
+<ul>
+<li>Design - guidelines and policies for API production</li>
+<li>Deployment - assessment, testing and rolling out to live</li>
+<li>Management - ongoing maintenance and monitoring</li>
+<li>Discovery - how developers discover your APIs</li>
+<li>Retirement - decommissioning your API when it is no longer needed</li>
+</ul>
+
+<p>Each stage will benefit from having different tools and processes in place.</p>
+<h4 id="what-api-management-strategy-can-help-with-contents">Contents:</h4>
 <ul>
 <li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Introduction.html">01 - Introduction</a></li>
 <li><a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/APIM-Design.html">02 - Design</a></li>
