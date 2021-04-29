@@ -33,6 +33,7 @@ Good API governance comes from good API management, from design to deprecation.
 If you build or manage any number of APIs, it’s best practice to have API management in place. This guidance will outline some areas you should consider when making decisions about how to manage APIs in your team or organisation.
 
 
+## Principles for your API strategy
 
 ### Build foundations early
 If you have any APIs that need access management, monitoring or documentation, you should at the very least use an API gateway. Even a single API will benefit from the standardised tools that an API gateway provides, by not having to develop and deploy those elements of functionality. If you later build more APIs, having an API gateway in place already will mean you don’t have to build those tools again, reducing duplication of effort for future teams.
@@ -54,33 +55,35 @@ A robust API management process will help build credibility and trust with users
 ### Define roles
 Depending on the size and structure of your organisation, you might have several teams involved in building and maintaining APIs. Your API management strategy can help set out things like:
 
-who owns different parts of the API lifecycle
-where ownership of a particular service lies
-how ownership changes as an API goes into service
-For example, it is common for a central team to run the API Gateway, and therefore have control over service levels and capacity. How does that responsibility interact with the design and delivery responsibilities of an API owner, for example around versioning? Having a clear structure for escalating issues will save a lot of time and energy in the future. Support from senior management or stakeholders can help formalise organisational structures and policies.
+* who owns different parts of the API lifecycle
+* what skills or roles API teams should include
+* where ownership of a particular service lies
+* how ownership changes as an API goes into service
 
-### What API Management tools can help with
+For example, it is common for a central team to run the API Gateway, and therefore have control over service levels and capacity. You should then consider how that responsibility might interact with the design and delivery responsibilities of an API owner, such as versioning.
 
-API management tools:
+Having a clear structure for escalating issues will save a lot of time and energy in the future. Support from senior management or stakeholders can help formalise organisational structures and policies. 
 
--  provide visibility of all your APIs, encouraging reuse
--  allow you to standardise common design patterns
--  help you automate many administrative and operational tasks
--  provide a central place for you to share API documentation and support
--  provide data and metrics to help you understand your API’s performance and usage
--  help you implement and maintain good security and data protection practices
+### What API Management strategy can help with
 
-### Where API Management tools fit into the API Lifecycle
+An API management strategy can:
+*  provide visibility of all your APIs, encouraging reuse
+*  allow you to standardise common design patterns
+*  help you automate many administrative and operational tasks
+*  provide a central place for you to share API documentation and support
+*  provide data and metrics to help you understand your API’s performance and usage
+*  help you implement and maintain good security and data protection practices
 
-It is useful to consider the API lifecycle as having several stages:
+This guidance includes sections exploring each stage of the API lifecycle:
 
--  Design - guidelines and policies for API production
--  Deployment - assessment, testing and rolling out to live
--  Management - ongoing maintenance and monitoring
--  Discovery - how developers discover your APIs
--  Retirement - decommissioning your API when it is no longer needed
+* Design - guidelines and policies for API production
+* Deployment - assessment, testing and rolling out to live
+* Management - ongoing maintenance and monitoring
+* Discovery - how developers discover your APIs
+* Retirement - decommissioning your API when it is no longer needed
 
-Each stage of the API lifecycle will benefit from having different tools and processes in place.
+Each stage will benefit from having different tools and processes in place.
+
 
 
 #### Contents:
