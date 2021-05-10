@@ -50,6 +50,7 @@ Without a way to cache, GraphQL APIs can end up hitting the database more freque
 GraphQL is often considered as self-documenting because it exposes the schema structure. Much like other query languages, you can use introspection to understand what resources and types are supported.
 
 However, you should not rely on the self-documenting features of GraphQL alone. Producing documentation is still important for:
+
 * providing descriptions for fields and types - while you should use clear names when designing any type of API, this does not always allow for enough context
 * onboarding users - this is particularly important for developers who are new to GraphQL and may need some hand holding, for example explaining the difference between a query and a mutation
 * presenting conceptual documentation
