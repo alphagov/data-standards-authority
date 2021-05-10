@@ -86,19 +86,13 @@
     <a href="/data-standards-authority/standards-catalogue/standards/"><span>Standards Catalogue</span></a>
     <ul>
   <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/servicedesign/"><span>03 - Service Design</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
     <a href="/data-standards-authority/standards-catalogue/standards/domainspecific/"><span>05 - Domain Specific</span></a>
     
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/metadata/"><span>01 - Metadata</span></a>
+    <a href="/data-standards-authority/standards-catalogue/standards/referencedata/"><span>02 - Common Reference Data</span></a>
     
   </li>
 </ul>
@@ -110,7 +104,13 @@
 </ul>
 <ul>
   <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/referencedata/"><span>02 - Common Reference Data</span></a>
+    <a href="/data-standards-authority/standards-catalogue/standards/metadata/"><span>01 - Metadata</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/standards/servicedesign/"><span>03 - Service Design</span></a>
     
   </li>
 </ul>
@@ -128,6 +128,12 @@
     <a href="/data-standards-authority/standards-catalogue/guidance/"><span>Guidance</span></a>
     <ul>
   <li>
+    <a href="/data-standards-authority/standards-catalogue/guidance/referencedata/"><span>Publish reference data for use across government</span></a>
+    
+  </li>
+</ul>
+<ul>
+  <li>
     <a href="/data-standards-authority/standards-catalogue/guidance/referencearchitecture/"><span>Reference Architecture for Government Data and APIs</span></a>
     
   </li>
@@ -141,12 +147,6 @@
 <ul>
   <li>
     <a href="/data-standards-authority/standards-catalogue/guidance/graphql/"><span>GraphQL Guidance</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/guidance/referencedata/"><span>Publish reference data for use across government</span></a>
     
   </li>
 </ul>
@@ -201,10 +201,13 @@
 <h3 id="documentation">Documentation</h3>
 <p>GraphQL is often considered as self-documenting because it exposes the schema structure. Much like other query languages, you can use introspection to understand what resources and types are supported.</p>
 
-<p>However, you should not rely on the self-documenting features of GraphQL alone. Producing documentation is still important for:
-* providing descriptions for fields and types - while you should use clear names when designing any type of API, this does not always allow for enough context
-* onboarding users - this is particularly important for developers who are new to GraphQL and may need some hand holding, for example explaining the difference between a query and a mutation
-* presenting conceptual documentation</p>
+<p>However, you should not rely on the self-documenting features of GraphQL alone. Producing documentation is still important for:</p>
+
+<ul>
+<li>providing descriptions for fields and types - while you should use clear names when designing any type of API, this does not always allow for enough context</li>
+<li>onboarding users - this is particularly important for developers who are new to GraphQL and may need some hand holding, for example explaining the difference between a query and a mutation</li>
+<li>presenting conceptual documentation</li>
+</ul>
 <h3 id="tooling">Tooling</h3>
 <p>UK government guidelines recommend using API management platforms to manage things like authentication, monitoring, and error logging. There are not many API management tools that support GraphQL, so you may need to build your own.</p>
 <h3 id="finding-the-skills-for-your-team">Finding the skills for your team</h3>
