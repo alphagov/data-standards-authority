@@ -41,8 +41,8 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
-      - name: Prepare
-        run: bundle update --bundler
+     # - name: Prepare
+     #   run: bundle update --bundler
 
       - name: Test
         run: bundle exec rspec
