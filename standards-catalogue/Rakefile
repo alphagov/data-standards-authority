@@ -8,7 +8,7 @@ task default: ["spec", "rubocop:auto_correct"]
 
 desc "Build site"
 task :build do
-  sh("rsync -a /contents/ /standards-catalogue/source")
+  sh("rsync -a ../contents/ source")
   sh "bundle exec middleman build --clean --bail"
 end
 
