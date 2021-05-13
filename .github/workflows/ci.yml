@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env: # $BUNDLE_GEMFILE must be set at the job level, so it is set for all steps
      # BUNDLE_GEMFILE: standards-catalogue/Gemfile
-      BUNDLE_GEMFILE.lock: standards-catalogue/Gemfile.lock
+     # BUNDLE_GEMFILE.lock: standards-catalogue/Gemfile.lock
     defaults:
       run:
         working-directory: standards-catalogue
@@ -23,6 +23,7 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: 2.7
+          working-directory: standards-catalogue
 
       - uses: actions/setup-node@v1
         with:
