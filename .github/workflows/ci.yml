@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env: # $BUNDLE_GEMFILE must be set at the job level, so it is set for all steps
-      BUNDLE_GEMFILE: standards-catalogue/Gemfile
+     # BUNDLE_GEMFILE: standards-catalogue/Gemfile
       BUNDLE_GEMFILE.lock: standards-catalogue/Gemfile.lock
     defaults:
       run:
@@ -44,8 +44,8 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
-      - name: Prepare
-        run: bundle update --bundler
+      #- name: Prepare
+      #  run: bundle update --bundler
 
       - name: Test
         run: bundle exec rspec
