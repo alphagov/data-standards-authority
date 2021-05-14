@@ -26,6 +26,7 @@ The benefits of using GraphQL include the ability for clients to:
 - request exactly what they want and get no more (over-fetching) or no less (under-fetching) than they need
 - get multiple unrelated resources in a single call, rather than using multiple calls to separate endpoints as with REST
 - use the built-in introspection feature to understand what queries are supported
+- do other excellent things
 
 ## Things you should know
 
