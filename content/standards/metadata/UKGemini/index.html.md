@@ -1,6 +1,5 @@
 ---
 title: UK Gemini
-weight: 210
 keywords: Semantics
 identifier: UK-123
 link: https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini

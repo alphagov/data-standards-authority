@@ -1,8 +1,7 @@
 ---
 title: OpenReferralUK
-weight: 410
 name: OpenReferralUK
-bi/organisation: Open Referral UK
+organisation: Open Referral UK
 keywords: "Service Referrals"
 identifier: UK123-ZXY
 link: https://openreferraluk.org/

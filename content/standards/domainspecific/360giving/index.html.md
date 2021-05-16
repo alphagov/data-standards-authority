@@ -1,6 +1,5 @@
 ---
 title: 360Giving Schema
-weight: 620
 Category: Domain Specific
 Topic: 	5.7 Grants, Loans & Subsidies
 Subject: Payments Clearing and Settlement

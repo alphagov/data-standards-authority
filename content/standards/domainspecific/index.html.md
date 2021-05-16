@@ -1,6 +1,5 @@
 ---
 title: 05 - Domain Specific
-weight: 600
 dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
 ---

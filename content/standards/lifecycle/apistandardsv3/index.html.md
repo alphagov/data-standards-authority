@@ -1,6 +1,5 @@
 ---
 title: Draft API Standards v3
-weight: 510
 keywords: 'API Standards'
 identifier: DSA-002
 name: API Standards v3
