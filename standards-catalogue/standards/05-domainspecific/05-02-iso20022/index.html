@@ -5,23 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Common Format and MIME Type for Comma-Separated Values (CSV) Files - Data Standards Authority</title>
+    <title>Universal financial industry message scheme - Data Standards Authority</title>
 
     <link href="/data-standards-authority/standards-catalogue/stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/04-lifecycle/rfc4180/">
+    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/05-domainspecific/05-02-iso20022/">
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="alphagov.github.io" />
       <meta name="twitter:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
-      <meta name="twitter:title" content="Common Format and MIME Type for Comma-Separated Values (CSV) Files - Data Standards Authority" />
-      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/04-lifecycle/rfc4180/" />
+      <meta name="twitter:title" content="Universal financial industry message scheme - Data Standards Authority" />
+      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/05-domainspecific/05-02-iso20022/" />
 
       <meta property="og:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
       <meta property="og:site_name" content="Data Standards Authority" />
-      <meta property="og:title" content="Common Format and MIME Type for Comma-Separated Values (CSV) Files" />
+      <meta property="og:title" content="Universal financial industry message scheme" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/04-lifecycle/rfc4180/" />
+      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/05-domainspecific/05-02-iso20022/" />
 
     
   </head>
@@ -83,42 +83,6 @@
 </ul>
 <ul>
   <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/"><span>Standards Catalogue</span></a>
-    <ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/05-domainspecific/"><span>05 - Domain Specific</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/01-metadata/"><span>01 - Metadata</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/03-servicedesign/"><span>03 - Service Design</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/02-referencedata/"><span>02 - Common Reference Data</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/04-lifecycle/"><span>04 - Data Lifecycle</span></a>
-    
-  </li>
-</ul>
-
-  </li>
-</ul>
-<ul>
-  <li>
     <a href="/data-standards-authority/standards-catalogue/usecases/"><span>Use Cases</span></a>
     
   </li>
@@ -172,38 +136,40 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="common-format-and-mime-type-for-comma-separated-values-csv-files">Common Format and MIME Type for Comma-Separated Values (CSV) Files</h1>
-<p>You can use this standard for publishing data, where your data has a variety of uses and is for many users. This standard does not cover non-tabular models of data. For example:
-- multiple tables with relations, such as SQL
-- hierarchical/flexible records, such as XML or JSON
-- geographic, such as GeoJSON
-- graph/triples, such as RDF
-This standard does not cover extra information about the tabular data, such as the column types, or table contents validation. You should keep this type of information separate from a CSV file to avoid it conflicting with the data structure as described in RFC 4180..</p>
+            <h1 id="universal-financial-industry-message-scheme">Universal financial industry message scheme</h1>
+<p>ISO 20022 is a multi part International Standard prepared by ISO Technical Committee TC68 Financial Services. It describes a common platform for the development of messages using:
+ - a modelling methodology to capture in a syntax-independent way financial business areas, business transactions and associated message flows
+ - a central dictionary of business items used in financial communications
+ - a set of XML and ASN.1 design rules to convert the message models into XML or ASN.1 schemas, whenever the use of the ISO 20022 XML or ASN.1-based syntax is preferred.</p>
 <div class="table-container">
         <table>
           <tr>
 <th>Organisation:</th>
-<th><strong><a href="https://ietf.org/">IETF</a></strong></th>
+<th><strong>ISO</strong></th>
 </tr>
 <tr>
 <td>Topic:</td>
-<td><strong>Content Management</strong></td>
+<td><strong>Payments</strong></td>
 </tr>
 <tr>
 <td>Subject:</td>
-<td><strong>Tabular Data</strong></td>
+<td><strong>Payments Clearing and Settlement</strong></td>
 </tr>
 <tr>
 <td>Reference:</td>
-<td><strong>RFC 4180</strong></td>
+<td><strong>ISO 20022</strong></td>
+</tr>
+<tr>
+<td>Identifier:</td>
+<td><strong>pacs</strong></td>
 </tr>
 <tr>
 <td>Link:</td>
-<td><strong><a href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard#how-to-use-this-standard">GOV.UK</a></strong></td>
+<td><strong><a href="https://www.iso20022.org/iso-20022-message-definitions?search=payments">ISO20022</a></strong></td>
 </tr>
 <tr>
 <td>status:</td>
-<td><strong>Endorsed</strong></td>
+<td><strong>External Draft</strong></td>
 </tr>
 <tr>
 <td>dateAdded:</td>
@@ -215,22 +181,18 @@ This standard does not cover extra information about the tabular data, such as t
 </tr>
 
         </table>
-      </div><h2 id="guidance">Guidance:</h2>
+      </div><h2 id="how-to">How To:</h2>
 <ul>
-<li><a href="https://tools.ietf.org/html/rfc4180">https://tools.ietf.org/html/rfc4180</a></li>
-</ul>
-<h2 id="how-to">How To:</h2>
-<ul>
-<li><a href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard#how-to-use-this-standard">https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard#how-to-use-this-standard</a></li>
+<li><a href="https://www.iso20022.org/iso-20022-message-definitions?search=payments">https://www.iso20022.org/iso-20022-message-definitions?search=payments</a></li>
 </ul>
 
           </main>
 
           <aside>
               <ul class="contribution-banner">
-                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/content/standards/04-lifecycle/rfc4180/index.html.md">View source</a></li>
-                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?labels=bug&amp;title=Re:%20'Common%20Format%20and%20MIME%20Type%20for%20Comma-Separated%20Values%20(CSV)%20Files'&amp;body=Feedback%20on%20'Common%20Format%20and%20MIME%20Type%20for%20Comma-Separated%20Values%20(CSV)%20Files'%20(https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/04-lifecycle/rfc4180/)">Feedback on this page</a></li>
-                <li><a href="mailto:standards-catalogue@digital.cabinet-office.gov.uk?subject=Feedback%20on%20Common%20Format%20and%20MIME%20Type%20for%20Comma-Separated%20Values%20(CSV)%20Files">Feedback via email</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/content/standards/05-domainspecific/05-02-iso20022/index.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?labels=bug&amp;title=Re:%20'Universal%20financial%20industry%20message%20scheme'&amp;body=Feedback%20on%20'Universal%20financial%20industry%20message%20scheme'%20(https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/05-domainspecific/05-02-iso20022/)">Feedback on this page</a></li>
+                <li><a href="mailto:standards-catalogue@digital.cabinet-office.gov.uk?subject=Feedback%20on%20Universal%20financial%20industry%20message%20scheme">Feedback via email</a></li>
                 <li><a href="https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
               </ul>
           </aside>
