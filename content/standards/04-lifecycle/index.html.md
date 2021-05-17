@@ -1,6 +1,6 @@
 ---
-title: 04 - Data Lifecycle
-weight: 500
+title: Data Lifecycle
+weight: 400
 dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
 ---

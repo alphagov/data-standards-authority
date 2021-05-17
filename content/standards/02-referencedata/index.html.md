@@ -1,6 +1,6 @@
 ---
-title: 02 - Common Reference Data
-weight: 300
+title: Common Reference Data
+weight: 200
 dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
 ---

@@ -1,6 +1,6 @@
 ---
-title: 01 - Metadata
-weight: 200
+title: Metadata
+weight: 100
 dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
 ---

@@ -1,6 +1,6 @@
 ---
 title: Standards Catalogue
-weight: 100
+weight: 90
 dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
 ---
