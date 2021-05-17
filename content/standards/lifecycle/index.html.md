@@ -1,5 +1,5 @@
 ---
-title: Data Lifecycle
+title: Data, Information and Records Management Lifecycle
 weight: 400
 dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
