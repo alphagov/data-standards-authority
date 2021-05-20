@@ -1,9 +1,9 @@
 ---
 title: 360Giving Schema
-Category: Domain Specific
-Topic: 	5.7 Grants, Loans & Subsidies
-Subject: Payments Clearing and Settlement
-Organisation: 360Giving
+category: Domain Specific
+topic:	5.7 Grants, Loans & Subsidies
+subject: Payments Clearing and Settlement
+organisation: 360Giving
 name: 360Giving Schema
 status: External Draft
 dateAdded: 2021-02-02
