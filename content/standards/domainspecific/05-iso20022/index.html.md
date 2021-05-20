@@ -1,12 +1,12 @@
 ---
 title: Universal financial industry message scheme
-Category: Domain Specific
-Topic: 5.5 Payment
-Subject: Payments Clearing and Settlement
-Organisation:	ISO
-Reference:	ISO 20022
-Identifier:	pacs
-name: RFC 4180 Common Format and MIME Type for Comma-Separated Values (CSV) Files
+category: Domain Specific
+topic: 5.5 Payment
+subject: Payments Clearing and Settlement
+organisation:	ISO
+reference:	ISO 20022
+identifier:	pacs
+name: Universal financial industry message scheme
 status: External Draft
 dateAdded: 2021-02-02
 dateUpdated: 2021-02-02
