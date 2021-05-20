@@ -1,9 +1,9 @@
 ---
 title: ODF 1.2
-Category: Data, Information and Records Management Lifecycle
-Topic: 4.7 Content Management
-Subject: OpenDocuments (ODF)
-Reference:	ODF 1.2
+category: Data, Information and Records Management Lifecycle
+topic: 4.7 Content Management
+subject: OpenDocuments (ODF)
+reference:	ODF 1.2
 name: ODF 1.2
 keywords: "OpenDocuments"
 status: Active
