@@ -1,10 +1,10 @@
 ---
 title: Common Format and MIME Type for Comma-Separated Values (CSV) Files
-Category: Data, Information and Records Management Lifecycle
-Topic: 4.7 Content Management
-Subject: Tabular Data
-Organisation:	https://ietf.org/
-Reference:	RFC 4180
+category: Data, Information and Records Management Lifecycle
+topic: 4.7 Content Management
+subject: Tabular Data
+organisation:	https://ietf.org/
+reference:	RFC 4180
 name: RFC 4180 Common Format and MIME Type for Comma-Separated Values (CSV) Files
 keywords: "OpenDocuments"
 status: Active
