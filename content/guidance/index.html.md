@@ -15,4 +15,6 @@ These pieces of guidance are in development by the Data Standards Authority. We 
 | **[UK Government Reference Architecture for Data and APIs](referencearchitecture/)** | Draft |
 | **[Publish reference data for use across government](referencedata/)** | Draft |
 | **[API Management Guidance](apimanagement/)** | Draft |
+| **[api.gov.uk Domain Guidance](apidomain/)** | Draft |
+| **[GraphQL Guidance](graphql/)** | Draft |
 
