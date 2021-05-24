@@ -5,6 +5,7 @@ host: https://alphagov.github.io/data-standards-authority
 show_govuk_logo: false
 service_name: Data Standards Authority
 service_link: https://alphagov.github.io/data-standards-authority
+phase: Discovery
 
 # Links to show in the footer
 footer_links:
