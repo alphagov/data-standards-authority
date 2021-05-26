@@ -8,8 +8,9 @@ organisation: Data Standards Authority
 status: Active
 startDate: 2020-10-01
 dateAdded: 2020-12-16
-dateUpdated: 2021-05-14
+dateUpdated: 2021-05-26
 ---
+## The most recent version of this document is published on [GOV.UK](https://www.gov.uk/guidance/develop-your-data-and-apis-using-a-reference-architecture)
 
 # Develop a data and API estate using a reference architecture
 
@@ -153,7 +154,7 @@ All data should use approved open data standards and[ include metadata to allow 
 
 You should aim for an approach to services and systems in your organisation based around data, and move towards an approach [based on standardised data](https://www.gov.uk/government/publications/uk-national-data-strategy/national-data-strategy).
 
-A "service" is the method by which users interact with the government, for example [Renew your driving licence](https://www.gov.uk/renew-driving-licence). It is a group of multiple, interoperable systems that ingests, stores, manipulates, and produces data. 
+A "service" is the method by which users interact with the government, for example [Renew your driving licence](https://www.gov.uk/renew-driving-licence). It is a group of multiple, interoperable systems that ingests, stores, manipulates, and produces data.
 
 A "system" is one of the components which makes up a service. For example, the database storing the information, the sign in system, or an analytics platform.
 
