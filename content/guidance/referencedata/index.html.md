@@ -8,73 +8,12 @@ organisation: Data Standards Authority
 status: Active
 startDate: 2021-01-22
 dateAdded: 2021-01-27
-dateUpdated: 2021-02-01
+dateUpdated: 2021-05-26
 ---
 
-## DRAFT Publish reference data for use across government DRAFT
+## The most recent version of this document is published on [GOV.UK](https://www.gov.uk/guidance/publish-reference-data-for-use-across-government)
 
-
-_This is a DRAFT document for discussion. This is not finalised. All aspects of this document are subject to change. Please leave comments on any aspect of it._
-
-
-<table>
-<thead>
-<tr class="header">
-<th>Doc status:</th>
-<th>First draft</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Authors:</td>
-<td>Peter Gothard, Lalit Shah</td>
-</tr>
-<tr class="even">
-<td>Reviewers:</td>
-<td><p>Arnau Siches</p>
-<p>Gareth Heyes</p>
-<p>Gareth Watkins</p>
-<p>Emmanuel Silva</p></td>
-</tr>
-<tr class="odd">
-<td>What user need does this page serve?</td>
-<td><p><strong>What is this guidance (top line)?:</strong></p>
-<p>This guidance helps create good practice for publishing reference data across government in a useful form</p>
-<p><strong>It should contain:</strong></p>
-<p>Information and resources to help readers:</p>
-<ul>
-<li><blockquote>
-<p>publish reference data to follow best practice</p>
-</blockquote></li>
-<li><blockquote>
-<p>build a publishing, governance and support strategy</p>
-</blockquote></li>
-</ul>
-<p><strong>Who are the users?</strong></p>
-<p>Anyone in government looking to publish their organisation’s reference data for others to use</p>
-<p><strong>What are they looking for?</strong></p>
-<p>Best practice in publishing their own organisation’s reference data for the use of others</p>
-<p><strong>How did they find this page?</strong></p>
-<p>When interested parties search <a href="http://gov.uk">GOV.UK</a> they should get a top hit that leads them to the DSA reference data guidance collection, and a second hit to the Registers page</p>
-<p>Those going directly to the Registers page should be provided with links to find the DSA guidance.</p>
-<p><strong>What are the initial problem statements?</strong></p>
-<p>This is an opportunity or the DSA to introduce guidance for publishing reference data in government, in order to encourage organisations to begin managing and publishng their own data real estates rather than relying on centralised platforms managed by others</p></td>
-</tr>
-<tr class="even">
-<td>Page URL/published location</td>
-<td><a href="https://www.registers.service.gov.uk/"><u>https://www.registers.service.gov.uk/</u></a> is the existing location. The new destination will be a guidance page under a DSA address.</td>
-</tr>
-<tr class="odd">
-<td>Comments/notes</td>
-<td>N/A</td>
-</tr>
-<tr class="even">
-<td>Annotate the page with these metadata tags:</td>
-<td><em>[reference data, master data, registers]</em></td>
-</tr>
-</tbody>
-</table>
-
+# Publish reference data for use across government
 
 #### Share your reference data for use in projects and services outside your organisation
 
