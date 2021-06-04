@@ -26,7 +26,7 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 - [06 - Retirement](APIM-Retirement.html)
 
 
-### API management tools help reduce development overhead and time to deployment by standardising design, monitoring, security and other aspects of the API lifecycle.
+### API management tools help reduce development overhead and time to deployment by standardising design, monitoring, security and other aspects of the API life cycle.
 
 Good API governance comes from good API management, from design to deprecation.
 
@@ -43,7 +43,7 @@ There will be cases where your current ecosystem doesn’t fit with this model, 
 ### Keep the future in mind
 When putting together your API strategy, it’s important to consider what your organisation’s future needs are likely to be, not just think about the first few APIs.
 
-Maintain a high level view of your API ecosystem. Good API management provides a way to judge the maturity of an individual API compared to others in the estate, and allows you to determine how much resource needs to be invested in it. APIs at different stages of their lifecycle require different levels of investment - a coherent strategy allows you to identify these needs and meet them.
+Maintain a high level view of your API ecosystem. Good API management provides a way to judge the maturity of an individual API compared to others in the estate, and allows you to determine how much resource needs to be invested in it. APIs at different stages of their life cycle require different levels of investment - a coherent strategy allows you to identify these needs and meet them.
 
 ### Meet user needs
 You should also think how your decisions might affect user behaviour. For example, you might decide that only APIs which have been through the process of assurance and testing will be visible in your catalogue. This might make teams reluctant to try new solutions that don’t fit the pattern, which could discourage innovation. Teams who aren’t ready to standardise or hand off management might simply not use it, and instead deploy APIs in an ad-hoc way.
@@ -55,7 +55,7 @@ A robust API management process will help build credibility and trust with users
 ### Define roles
 Depending on the size and structure of your organisation, you might have several teams involved in building and maintaining APIs. Your API management strategy can help set out things like:
 
-* who owns different parts of the API lifecycle
+* who owns different parts of the API life cycle
 * what skills or roles API teams should include
 * where ownership of a particular service lies
 * how ownership changes as an API goes into service
@@ -74,7 +74,7 @@ An API management strategy can:
 *  provide data and metrics to help you understand your API’s performance and usage
 *  help you implement and maintain good security and data protection practices
 
-This guidance includes sections exploring each stage of the API lifecycle:
+This guidance includes sections exploring each stage of the API life cycle:
 
 * Design - guidelines and policies for API production
 * Deployment - assessment, testing and rolling out to live
