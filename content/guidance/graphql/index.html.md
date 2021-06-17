@@ -13,6 +13,8 @@ dateUpdated: 2021-05-26
 ---
 _This is a DRAFT document for discussion. This is not finalised. All aspects of this document are subject to change. Please leave comments on any aspect of it._
 
+Feedback on this draft will be open until 25th June 2021. 
+
 # *DRAFT* | When to use a GraphQL API | *DRAFT*
 
 [GraphQL](https://graphql.org) is an API specification originally developed by Facebook as an alternative to REST for compiling complex data structures in real time. It was open-sourced in 2015 and is used by many organisations with similarly complex requirements.
