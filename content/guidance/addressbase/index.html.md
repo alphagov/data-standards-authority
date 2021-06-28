@@ -11,7 +11,9 @@ dateAdded: 2021-06-28
 dateUpdated: 2021-06-28
 ---
 
-Access and record address data using the UPRN standard and AddressBase
+*This is a DRAFT document for discussion. This is not finalised. All aspects of this document are subject to change. Please leave comments on any aspect of it.*
+
+DRAFT Access and record address data using the UPRN standard and AddressBase DRAFT
 ======================================================================
 
 ### Use free property and street information to add geospatial data to your projects
