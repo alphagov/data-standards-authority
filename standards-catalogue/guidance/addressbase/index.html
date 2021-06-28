@@ -5,23 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>OpenReferralUK - Data Standards Authority</title>
+    <title>Access and record address data using the UPRN standard and AddressBase - Data Standards Authority</title>
 
     <link href="/data-standards-authority/standards-catalogue/stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/servicedesign/openreferraluk/">
+    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/addressbase/">
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="alphagov.github.io" />
       <meta name="twitter:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
-      <meta name="twitter:title" content="OpenReferralUK - Data Standards Authority" />
-      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/servicedesign/openreferraluk/" />
+      <meta name="twitter:title" content="Access and record address data using the UPRN standard and AddressBase - Data Standards Authority" />
+      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/addressbase/" />
 
       <meta property="og:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
       <meta property="og:site_name" content="Data Standards Authority" />
-      <meta property="og:title" content="OpenReferralUK" />
+      <meta property="og:title" content="Access and record address data using the UPRN standard and AddressBase" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/servicedesign/openreferraluk/" />
+      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/addressbase/" />
 
     
   </head>
@@ -173,64 +173,58 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="openreferraluk">OpenReferralUK</h1>
-<p>The standard provides for recording sufficient data to be able to identify a small target set of services that closely meet the needs of a prospective service user, as given by the user&rsquo;s location and circumstances. The OpenReferral schema defines a structure for human services data - that is, a directory of services that meet human needs. Open Referral UK extends Open Referral to support richer data where needed. It then constrains the resultant schema by means of an application profile which says what fields are recommended for English use and what external vocabularies to reference.</p>
-<div class="table-container">
-        <table>
-          <tr>
-<th>Organisation:</th>
-<th><strong>Open Referral UK</strong></th>
-</tr>
-<tr>
-<td>keywords:</td>
-<td><strong>&ldquo;Service Referrals&rdquo;</strong></td>
-</tr>
-<tr>
-<td>identifier:</td>
-<td><strong>UK123-ZXY</strong></td>
-</tr>
-<tr>
-<td>Link:</td>
-<td><strong><a href="https://openreferraluk.org/">Open Referral UK</a>]</strong></td>
-</tr>
-<tr>
-<td>status:</td>
-<td><strong>Active</strong></td>
-</tr>
-<tr>
-<td>dateAdded:</td>
-<td><strong>2020-12-16</strong></td>
-</tr>
-<tr>
-<td>dateUpdated:</td>
-<td><strong>2020-12-16</strong></td>
-</tr>
+            <p><em>This is a DRAFT document for discussion. This is not finalised. All aspects of this document are subject to change. Please leave comments on any aspect of it.</em></p>
+<h1 id="draft-access-and-record-address-data-using-the-uprn-standard-and-addressbase-draft">DRAFT Access and record address data using the UPRN standard and AddressBase DRAFT</h1><h3 id="use-free-property-and-street-information-to-add-geospatial-data-to-your-projects">Use free property and street information to add geospatial data to your projects</h3>
+<p>Follow this guidance if you&rsquo;re a public sector employee who needs to use address data, such as property and street information, in your work.</p>
 
-        </table>
-      </div><h2 id="use-cases">Use Cases:</h2>
+<p>The guidance shares best practice in accessing address data using Ordnance Survey (OS) <a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase">AddressBase</a>. This is a way to access essential geospatial data which is free for public sector workers as part of the <a href="https://www.ordnancesurvey.co.uk/business-government/public-sector-geospatial-agreement">Public Sector Geospatial Agreement (PSGA)</a>.</p>
+
+<p><a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase-core">AddressBase Core</a> is a free and easy way for public sector bodies to identify a property in Great Britain and locate it on a map with precision. The property has to exist, and not have been demolished, or yet to be built.</p>
+
+<p>All public sector bodies should <a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase-core">use AddressBase Core</a> for accessing address data rather than paying for other third party products. To be able to use AddressBase products for free, your organisation or project must be covered by the Public Sector Geospatial Agreement. You can <a href="https://www.ordnancesurvey.co.uk/business-government/partner-member/member">check if you are covered by the PSGA and if not, register for a membership</a>.</p>
+<h2 id="use-the-uprn-standard-to-identify-property-and-street-information">Use the UPRN standard to identify property and street information</h2>
+<p>AddressBase Core allows you to access every <a href="https://www.geoplace.co.uk/addresses/uprn">Unique Property Reference Number (UPRN)</a> in Great Britain.</p>
+
+<p>You must use the <a href="https://www.geoplace.co.uk/addresses/uprn">UPRN</a> standard when <a href="https://www.gov.uk/government/publications/open-standards-for-government/identifying-property-and-street-information">identifying places in the UK</a>. This allows users to easily cross-reference between different data sets and means fewer errors in data exchange and communication. Every addressable location in Great Britain has a UPRN, and using this consistent standard can save money, time, resources, and lives.</p>
+
+<p>You should consider AddressBase your source of truth for all address data in Great Britain, and use AddressBase Core whenever possible before other solutions.</p>
+<h2 id="why-you-should-use-addressbase">Why you should use AddressBase</h2>
+<p>AddressBase&rsquo;s primary source of address data is taken from local authorities. Local authorities have a legal responsibility to capture and maintain address data for Great Britain.</p>
+
+<p>This means AddressBase&rsquo;s data is authentic and accurate. It includes locations for around 33 million addresses, as well as additional metadata.</p>
+
+<p>The core underlying data is updated constantly, many times a day. OS collate and quality check the data, and publish a new version of the whole data set on AddressBase every week.</p>
+
+<p>You can use AddressBase to:</p>
+
 <ul>
-<li><a href="http://e-sd.org/IGODN/">http://e-sd.org/IGODN/</a></li>
+<li><p>include address data in any activity you are responsible for, as long as it is non-profit</p></li>
+<li><p>make any information you have created that includes AddressBase data in print, online and as data - such as a CSV or an API - available to the public</p></li>
+<li><p>meet your <a href="https://www.legislation.gov.uk/uksi/2018/1338/contents/made">INSPIRE publishing obligations</a>, making sure geospatial data is published in a consistent way</p></li>
+<li><p>share address data with anybody who is involved in providing an immediate response in emergency situations, even if they are not licensed to use OS data</p></li>
+<li><p>produce data suitable for third party research and development</p></li>
 </ul>
-<h2 id="case-studies">Case Studies:</h2>
+
+<p>To be able to use AddressBase Core, your organisation or project must be covered by the Public Sector Geospatial Agreement. You should <a href="https://www.ordnancesurvey.co.uk/business-government/partner-member/member">check if you are covered by the PSGA and if not, register for a membership</a>.</p>
+<h2 id="check-other-resources-for-finding-geospatial-data-beyond-addressbase-core">Check other resources for finding geospatial data beyond AddressBase Core</h2>
+<p>If you need further geospatial data, including map tiles, searching within polygons, and data verification, you can use the OS <a href="https://www.ordnancesurvey.co.uk/business-government/products/os-places-api">Places API</a>. This API is also covered by the PSGA and is free to members.</p>
+
+<p>If your project or use case needs more advanced or specific features, there are other versions of AddressBase available. These include:</p>
+
 <ul>
-<li><a href="https://blog.wearefuturegov.com/how-to-build-a-service-directory-with-data-standards-70f926f2ed00">https://blog.wearefuturegov.com/how-to-build-a-service-directory-with-data-standards-70f926f2ed00</a></li>
-</ul>
-<h2 id="guidance">Guidance:</h2>
-<ul>
-<li><a href="https://openreferraluk.org/Guidance/">https://openreferraluk.org/Guidance/</a></li>
-</ul>
-<h2 id="how-to">How To:</h2>
-<ul>
-<li><a href="https://openreferraluk.org/Guidance#data-structure">https://openreferraluk.org/Guidance/#data-structure</a></li>
+<li><p><a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase-plus">AddressBase Plus</a> for up-to-date local authority addresses, multi-occupancy addresses and OS MasterMap Topographic Identifier (TOID) references.</p></li>
+<li><p><a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase-premium">AddressBase Premium</a> which includes data in Geography Markup Language (GML) 3.2.1 of pre-build addresses, historic addresses, alternative addresses, OS MasterMap Topography and Integrated Transport Network Layer TOIDs</p></li>
+<li><p><a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase-islands">AddressBase Islands</a> for address data in Northern Ireland, Isle of Man and the Channel Islands\
+You can find more information about other AddressBase features, as well as contact details, <a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase">on OS&rsquo;s AddressBase website</a>.</p></li>
 </ul>
 
           </main>
 
           <aside>
               <ul class="contribution-banner">
-                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/content/standards/servicedesign/openreferraluk/index.html.md">View source</a></li>
-                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?labels=bug&amp;title=Re:%20'OpenReferralUK'&amp;body=Feedback%20on%20'OpenReferralUK'%20(https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/standards/servicedesign/openreferraluk/)">Feedback on this page</a></li>
-                <li><a href="mailto:standards-catalogue@digital.cabinet-office.gov.uk?subject=Feedback%20on%20OpenReferralUK">Feedback via email</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/content/guidance/addressbase/index.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?labels=bug&amp;title=Re:%20'Access%20and%20record%20address%20data%20using%20the%20UPRN%20standard%20and%20AddressBase'&amp;body=Feedback%20on%20'Access%20and%20record%20address%20data%20using%20the%20UPRN%20standard%20and%20AddressBase'%20(https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/guidance/addressbase/)">Feedback on this page</a></li>
+                <li><a href="mailto:standards-catalogue@digital.cabinet-office.gov.uk?subject=Feedback%20on%20Access%20and%20record%20address%20data%20using%20the%20UPRN%20standard%20and%20AddressBase">Feedback via email</a></li>
                 <li><a href="https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
               </ul>
           </aside>
