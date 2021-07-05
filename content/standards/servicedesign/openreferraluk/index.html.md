@@ -7,7 +7,7 @@ identifier: UK123-ZXY
 link: https://openreferraluk.org/
 status: Active
 dateAdded: 2020-12-16
-dateUpdated: 2020-12-16
+dateUpdated: 2021-07-05
 ---
 
 # OpenReferralUK
@@ -18,20 +18,21 @@ The standard provides for recording sufficient data to be able to identify a sma
 | --- | --- |
 | keywords: | **"Service Referrals"** |
 | identifier: | **UK123-ZXY** |
-| Link: | **[Open Referral UK](https://openreferraluk.org/)]** |
+| Link: | **[Open Referral UK](https://openreferraluk.org/)** |
 | status: | **Active** |
 | dateAdded: | **2020-12-16** |
 | dateUpdated: | **2020-12-16** |
 
 
 ## Use Cases:
- - [http://e-sd.org/IGODN/](http://e-sd.org/IGODN/)
+ - [https://openreferraluk.org/about-standard](https://openreferraluk.org/about-standard)
 
 ## Case Studies:
+  - [https://openreferraluk.org/community/case-studies](https://openreferraluk.org/community/case-studies)
   - [https://blog.wearefuturegov.com/how-to-build-a-service-directory-with-data-standards-70f926f2ed00](https://blog.wearefuturegov.com/how-to-build-a-service-directory-with-data-standards-70f926f2ed00)
 
 ## Guidance:
- - [https://openreferraluk.org/Guidance/](https://openreferraluk.org/Guidance/)
+ - [https://developers.openreferraluk.org/Guidance/](https://developers.openreferraluk.org/Guidance/)
 
 ## How To:
- - [https://openreferraluk.org/Guidance/#data-structure](https://openreferraluk.org/Guidance#data-structure)
+ - [Steps to adopting the standard](https://openreferraluk.org/how-it-works/standard-adoption-steps)
