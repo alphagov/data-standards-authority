@@ -17,7 +17,9 @@ _This is a DRAFT document for discussion. This is not finalised. All aspects of 
 
 [GraphQL](https://graphql.org) is an API specification originally developed by Facebook as an alternative to REST for compiling complex data structures in real time. It was open-sourced in 2015 and is used by many organisations with similarly complex requirements.
 
-GraphQL is still quite a new technology with relatively low maturity compared to more widely used API styles like REST. There are not many examples of GraphQL in the public sector as it presents certain challenges which make it not always suitable for government technology teams.
+GraphQL is supported by a healthy developer community, it is still a relatively new technology. Developer tooling & platform vendors are introducing native GraphQL support, however capability and maturity remains considerably behind established API patterns such as REST. GraphQL introduces new challenges for APIs, particularly in the context of security, performance & governance.
+
+There are not many examples of GraphQL in the public sector as it presents certain challenges including those mentioned previously which make it not always suitable for government technology teams.
 
 Some features of GraphQL present advantages or disadvantages depending on the context. This guidance will outline some things to keep in mind when considering using GraphQL.
 
@@ -27,11 +29,12 @@ The benefits of using GraphQL include the ability for clients to:
 - request exactly what they want and get no more (over-fetching) or no less (under-fetching) than they need
 - get multiple unrelated resources in a single call, rather than using multiple calls to separate endpoints as with REST
 - use the built-in introspection feature to understand what queries are supported
+- because GraphQL is a standard specification, there is a consistent mechanism for client interactions
 
 ## Things you should know
 
 ### Security
-There are established security patterns for REST, but fewer for GraphQL.
+There are established security patterns for REST, but fewer for GraphQL. For example, it is important to ensure that API management & gateway tooling fully support GraphQL specific type & field-based permissions, authorization, rate-limiting and security policies to mention a few. Failing this, additional development may be required to support these requirements in a standardised and repeatable way.
 
 GraphQL is transport layer protocol agnostic, which means you are not bound by using HTTP. This can provide flexibility, but can have security implications.
 
@@ -47,6 +50,7 @@ Since GraphQL does not use URL-based endpoints, there is no unique identifier to
 
 Without a way to cache, GraphQL APIs can end up hitting the database more frequently, which can have cost implications. You might also need dedicated database administrators to provide support and maintenance, which adds cost and overhead for your development team.
 
+
 ### Documentation
 GraphQL is often considered as self-documenting because it exposes the schema structure. Much like other query languages, you can use introspection to understand what resources and types are supported.
 
@@ -58,7 +62,7 @@ However, you should not rely on the self-documenting features of GraphQL alone. 
 
 
 ### Tooling
-UK government guidelines recommend using API management platforms to manage things like authentication, monitoring, and error logging. There are not many API management tools that support GraphQL, so you may need to build your own.
+UK government guidelines recommend using API management platforms to manage things like authentication, monitoring, and error logging.
 
 
 ### Finding the skills for your team
@@ -67,8 +71,6 @@ While GraphQL is becoming more popular, finding developers with the skills for G
 GraphQL developers are in high demand and can be more expensive to hire. There can be quite a steep learning curve for REST developers to unlearn REST habits and ‘think in GraphQL’.
 
 You should therefore consider whether your team can afford the time and money to invest in getting the right skills in place.
-
-
 
 
 ## When GraphQL can be a good choice
