@@ -14,23 +14,6 @@ dateUpdated: 2021-02-01
 
 DRAFT - The current version of the standards can be found on [GOV.UK](https://www.gov.uk/guidance/gds-api-technical-and-data-standards)
 
-
-| Doc status: | **In progress** |
-| --- | ---|
-| Author: | **Annie Streater** |
-| Reviewers: | Charles Baird, Arnau Siches, Steve Evans, Peter Gothard |
-| What user need does this page serve?: | |
-| It should contain: | |
-| Who are the users? | People who design, develop, manage, and use government APIs. |
-| What are they looking for? | |
-| How did they find this page? |  - From the [API Design Guidance](https://www.gov.uk/government/collections/api-design-guidance); In future, potentially from the [API Catalogue](https://api.gov.uk); Search results on [GOV.UK](https://www.gov.uk/search/all?keywords=api&order=relevance) |
-| What are the initial problem statements? | |
-| What is the scope of this piece of work? | |
-| - Will include: |  - GraphQL - General style review and tidy up |
-| - Will not include: | |
-| Page URL/published location: | - [https://www.gov.uk/guidance/gds-api-technical-and-data-standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards) |
-| Comments/notes: Annotate the page with these metadata tags: |'API Standards' |
-
 Publish your APIs over the internet by default. Email [api-standards-request@digital.cabinet-office.gov.uk](api-standards-request@digital.cabinet-office.gov.uk) if you think your
 APIs should not be published over public infrastructure.
 
