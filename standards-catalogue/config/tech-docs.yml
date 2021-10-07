@@ -1,10 +1,10 @@
 # Host to use for canonical URL generation (without trailing slash)
-host: https://alphagov.github.io/data-standards-authority
+host: https://nahteb.github.io/data-standards-authority
 
 # Header-related options
 show_govuk_logo: false
 service_name: Data Standards Authority
-service_link: https://alphagov.github.io/data-standards-authority
+service_link: https://nahteb.github.io/data-standards-authority
 phase: Discovery
 
 # Links to show in the footer
@@ -18,7 +18,7 @@ header_links:
 prevent_indexing: false
 
 show_contribution_banner: true
-github_repo: alphagov/data-standards-authority/
+github_repo: nahteb/data-standards-authority/
 
 #for gh-pages or other directory views, build the view source link
 project_name: standards-catalogue
