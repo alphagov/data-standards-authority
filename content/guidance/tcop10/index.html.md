@@ -1,6 +1,6 @@
 ---
-title: Make better use of data
-weight: 830
+title: DRAFT Technology Code of Practice Point 10: Make better use of data
+weight: 860
 keywords: 'TCOP Point 10'
 identifier: DSA-006
 name: TCOPPoint10
