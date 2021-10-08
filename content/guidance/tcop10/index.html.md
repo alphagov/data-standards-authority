@@ -103,7 +103,7 @@ The gGovernment’s [Data Standards Authority](https://www.gov.uk/government/gro
 
 Make data available in a suitable format, for example as a CSV file or through an API. Read the [guidance on using CSV file format](https://www.gov.uk/guidance/using-csv-file-format) and refer toYou should use the [API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards).
 
-You should alsoand consider:
+You should also consider:
 
 -   where you will store your data and whether the location meets your organisation’s security requirements    
 -   having a [cloud hosting strategy](https://www.gov.uk/guidance/creating-and-implementing-a-cloud-hosting-strategy)
