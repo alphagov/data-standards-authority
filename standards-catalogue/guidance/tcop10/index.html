@@ -198,11 +198,10 @@
 <li>  how you can make your data accessible across government</li>
 <li>  how the public can access your data</li>
 <li>  how you will meet any relevant regulations</li>
+<li>  how you will approach data ethics</li>
 </ul>
 
 <p>If you’re going through the <a href="https://www.gov.uk/service-manual/agile-delivery/spend-controls-check-if-you-need-approval-to-spend-money-on-a-service">spend control process</a> you must explain how you’re trying to meet point 10.</p>
-
-<p>$CTA The Central Digital and Data Office is currently collecting feedback on the Technology Code of Practice. The aim is to improve the content and make sure it meets user needs. If you want to add your feedback, please <a href="https://surveys.publishing.service.gov.uk/s/betterusedata/">complete this short survey</a>. $CTA</p>
 <h2 id="how-making-better-use-of-data-use-will-help-your-programme">How making better use of data use will help your programme</h2>
 <p>Your programme will benefit from:</p>
 
@@ -214,7 +213,7 @@
 <li>  only collecting the data you need and only collecting it once</li>
 <li>  making datasets interoperable to make data easier to share within your organisation and across other government organisations</li>
 </ul>
-<h2 id="follow-the-required-data-regulations">Follow the required data regulations</h2>
+<h2 id="follow-the-required-data-regulations-and-consider-data-ethics">Follow the required data regulations and consider data ethics</h2>
 <p>When using data you must follow the <a href="https://www.gov.uk/data-protection">Data Protection Act 2018</a> and the <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/">EU General Data Protection Regulation</a> (GDPR).</p>
 
 <p>Make sure you only hold data for specified purposes and consider the:</p>
@@ -254,6 +253,10 @@
 <li>  a purchasing strategy which considers the total cost of a technology tool or service through its full lifecycle</li>
 <li>automated decision making using the <a href="https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making">Ethics, Transparency and Accountability Framework for Automated Decision-Making</a></li>
 </ul>
+<h3 id="include-technical-debt-in-your-prioritisation">Include technical debt in your prioritisation</h3>
+<p>Technical debt can build up over time and make your service harder to maintain. Look at the hidden technical debt that may exist in your data processing and wherever possible simplify your data processing.</p>
+
+<p>Highlight technical debt and data processing issues so that appropriate spending is allocated to fix long-term issues. Look at the hidden technical debt that may exist in your data processing and wherever possible simplify your data processing.</p>
 <h3 id="agreeing-and-exiting-supplier-contracts">Agreeing and exiting supplier contracts</h3>
 <p>When you are using a supplier, you should make sure the contract provides you with access to all your data. Your contract must also specify the exit and renewal arrangements for your data. This includes making sure the supplier returns your data:</p>
 
@@ -264,9 +267,11 @@
 
 <p>If you are agreeing a contract of over £20 million, the supplier must provide this API, as outlined in the <a href="https://www.gov.uk/government/publications/model-services-contract">Model Services Contract guidance</a>.</p>
 <h3 id="storing-and-standardising-your-data">Storing and standardising your data</h3>
-<p>The Government’s <a href="https://www.gov.uk/government/groups/data-standards-authority">Data Standards Authority</a> and the <a href="https://www.gov.uk/government/groups/open-standards-board">Open Standards Board</a> have approved a number of <a href="https://www.gov.uk/government/collections/open-standards-for-government-data-and-technology">open standards for data</a> for use by the government. Where possible and appropriate, you should use these standards to make it easier to analyse data and share it with other departments.</p>
+<p>The gGovernment’s <a href="https://www.gov.uk/government/groups/data-standards-authority">Data Standards Authority</a> and the <a href="https://www.gov.uk/government/groups/open-standards-board">Open Standards Board</a> have approved a number of <a href="https://www.gov.uk/government/collections/open-standards-for-government-data-and-technology">open standards for data</a> for use by the government. Where possible and appropriate, you should use these standards to make it easier to analyse data and share it with other departments.</p>
 
-<p>You should use the <a href="https://www.gov.uk/guidance/gds-api-technical-and-data-standards">API technical and data standards</a> and consider:</p>
+<p>Make data available in a suitable format, for example as a CSV file or through an API. Read the <a href="https://www.gov.uk/guidance/using-csv-file-format">guidance on using CSV file format</a> and refer toYou should use the <a href="https://www.gov.uk/guidance/gds-api-technical-and-data-standards">API technical and data standards</a>.</p>
+
+<p>You should alsoand consider:</p>
 
 <ul>
 <li>  where you will store your data and whether the location meets your organisation’s security requirements<br></li>
@@ -275,6 +280,13 @@
 <li>  making sure your data has audit trails that show how individual data records are accessed and updated</li>
 <li>  how your organisation uses data and how easy it is to scale areas such as storage to meet your needs</li>
 </ul>
+<h3 id="securing-and-backing-up-your-data">Securing and backing up your data</h3>
+<p>Consider what security protocols you should have in place to:
+- make sure only authorised users have access to your data
+- keep back up copies of data if appropriate
+- monitor for possible threats and attacks</p>
+
+<p>You should also prepare a disaster recovery plan or incident management protocol so that your team knows what to do in the event of a data breach, attack or loss of data. Read <a href="https://www.gov.uk/guidance/make-things-secure">Point 6 of the Technology Code of Practice about how to make things secure</a>. The National Cyber Security Centre (NCSC) has also <a href="https://www.ncsc.gov.uk/collection/incident-management">guidance on incident management</a>.</p>
 <h3 id="publishing-and-sharing-your-data">Publishing and sharing your data</h3>
 <p>Follow the <a href="https://www.gov.uk/government/publications/data-ethics-framework/data-ethics-framework">Data Ethics Framework</a> to make sure you’re using data based only on user needs.</p>
 
@@ -291,11 +303,14 @@
 <p>You should also consider:</p>
 
 <ul>
-<li><p>using <a href="https://www.gov.uk/government/collections/open-standards-for-government-data-and-technology#adopted-open-standards-for-government">Open Standards</a> to make any future data analysis easier, and where appropriate, share data with other departments</p></li>
-<li><p>where you publish your data</p></li>
-<li><p>how you can share your non-sensitive data to help minimise duplicate data sets</p></li>
-<li><p>what <a href="https://www.gov.uk/guidance/choose-tools-and-infrastructure-to-make-better-use-of-your-data">data tools and infrastructure</a> you need to keep pace with user needs and encourage collaboration</p></li>
+<li>  using <a href="https://www.gov.uk/government/collections/open-standards-for-government-data-and-technology#adopted-open-standards-for-government">Open Standards</a> to make any future data analysis easier, and where appropriate, share data with other departments</li>
+<li>attaching metadata to your data so that users have all the information they need<br></li>
+<li>  where you publish your data</li>
+<li>  how you can share your non-sensitive data to help minimise duplicate data sets</li>
+<li>  what <a href="https://www.gov.uk/guidance/choose-tools-and-infrastructure-to-make-better-use-of-your-data">data tools and infrastructure</a> you need to keep pace with user needs and encourage collaboration</li>
 </ul>
+
+<p>When documenting your data architecture, consider whether you can explain concepts using text or whether you need a diagram supported by text. Follow the GOV.UK content design guidance on using images to make sure your documentation is accessible.</p>
 <h3 id="archiving-deleting-or-renewing-data">Archiving, deleting or renewing data</h3>
 <p>You should only keep data for as long as necessary. You will need to put a process in place to help you decide when to update, delete, retire or archive your data. You should have processes to:</p>
 
@@ -306,7 +321,7 @@
 <li>  securely delete data when it’s no longer needed</li>
 </ul>
 
-<p>$CTA Next: Technology Code of Practice Point 11 - <a href="https://www.gov.uk/guidance/define-your-purchasing-strategy">Define your purchasing strategy</a> $CTA</p>
+<p>The <a href="https://www.nationalarchives.gov.uk/information-management/">National Archives has guidance on information management</a> and can help with archiving data.</p>
 <h2 id="related-guides">Related guides</h2>
 <p>Policies and guidance available includes:</p>
 
