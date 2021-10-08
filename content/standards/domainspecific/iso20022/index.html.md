@@ -12,7 +12,7 @@ dateAdded: 2021-02-02
 dateUpdated: 2021-02-02
 ---
 
-# Universal financial industry message scheme
+
 
 ISO 20022 is a multi part International Standard prepared by ISO Technical Committee TC68 Financial Services. It describes a common platform for the development of messages using:
  - a modelling methodology to capture in a syntax-independent way financial business areas, business transactions and associated message flows

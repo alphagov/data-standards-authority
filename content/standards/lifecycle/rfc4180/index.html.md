@@ -12,7 +12,7 @@ dateAdded: 2021-02-02
 dateUpdated: 2021-02-02
 ---
 
-# Common Format and MIME Type for Comma-Separated Values (CSV) Files
+
 
 You can use this standard for publishing data, where your data has a variety of uses and is for many users. This standard does not cover non-tabular models of data. For example:
 - multiple tables with relations, such as SQL

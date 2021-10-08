@@ -10,7 +10,7 @@ dateAdded: 2021-02-02
 dateUpdated: 2021-02-02
 ---
 
-# 360Giving Schema
+
 
 The 360Giving Data Standard is:
  - Open data driven - providing a common way to share information on grantmaking.

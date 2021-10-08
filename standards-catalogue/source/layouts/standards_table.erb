@@ -1,16 +1,17 @@
 <% wrap_layout :layout do %>
 
   <div style = "overflow-x:auto;">
+    <h1><%= current_page.data.title %></h1>
     <table style="width:100%">
-      <% current_page.data.each do |f, g| %>
+      <% current_page.data.each do |key, value| %>
         <tr>
-          <td nowrap><%= f %>: </td>
-          <td nowrap><strong><%= g %></strong> </td>
+          <td nowrap><%= key %>: </td>
+          <td nowrap><strong><%= value %></strong> </td>
         </tr>
       <% end %>
     </table>
   </div>
 
-<%= yield %>
+  <%= yield %>
 
 <% end %>

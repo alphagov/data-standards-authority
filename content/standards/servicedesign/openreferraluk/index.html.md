@@ -10,7 +10,7 @@ dateAdded: 2020-12-16
 dateUpdated: 2021-07-05
 ---
 
-# OpenReferralUK
+
 
 The standard provides for recording sufficient data to be able to identify a small target set of services that closely meet the needs of a prospective service user, as given by the user's location and circumstances. The OpenReferral schema defines a structure for human services data - that is, a directory of services that meet human needs. Open Referral UK extends Open Referral to support richer data where needed. It then constrains the resultant schema by means of an application profile which says what fields are recommended for English use and what external vocabularies to reference.
 

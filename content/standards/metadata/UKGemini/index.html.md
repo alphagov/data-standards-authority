@@ -14,7 +14,7 @@ dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
 ---
 
-# UK Gemini
+
 
 "GEMINI" is the UK geographic metadata standard. It provides guidance on how to publish geographic metadata in a way that conforms to relevant ISO standards and the UK's implementation of the European INSPIRE regulations. UK GEMINI (GEo-spatial Metadata INteroperability Initiative) is a specification for a set of metadata elements for describing geospatial data resources. It has been produced and is maintained by the Standards Committee.
 
