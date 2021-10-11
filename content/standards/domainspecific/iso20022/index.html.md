@@ -19,17 +19,6 @@ ISO 20022 is a multi part International Standard prepared by ISO Technical Commi
  - a central dictionary of business items used in financial communications
  - a set of XML and ASN.1 design rules to convert the message models into XML or ASN.1 schemas, whenever the use of the ISO 20022 XML or ASN.1-based syntax is preferred.
 
-| Organisation: | **ISO**|
-| --- | --- |
-| Topic: | **Payments** | 
-| Subject: | **Payments Clearing and Settlement** |
-| Reference: | **ISO 20022** |
-| Identifier: |	**pacs** |
-| Link: | **[ISO20022](https://www.iso20022.org/iso-20022-message-definitions?search=payments)** |
-| status: | **External Draft** |
-| dateAdded: | **2021-02-02** |
-| dateUpdated: | **2021-02-02** |
-
 
 ## How To:
  - [https://www.iso20022.org/iso-20022-message-definitions?search=payments](https://www.iso20022.org/iso-20022-message-definitions?search=payments)

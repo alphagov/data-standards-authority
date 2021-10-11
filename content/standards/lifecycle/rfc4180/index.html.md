@@ -21,15 +21,6 @@ You can use this standard for publishing data, where your data has a variety of 
 - graph/triples, such as RDF
 This standard does not cover extra information about the tabular data, such as the column types, or table contents validation. You should keep this type of information separate from a CSV file to avoid it conflicting with the data structure as described in RFC 4180..
 
-| Organisation: | **[IETF](https://ietf.org/)**|
-| --- | --- |
-| Topic: | **Content Management** | 
-| Subject: | **Tabular Data** |
-| Reference: | **RFC 4180** |
-| Link: | **[GOV.UK](https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard#how-to-use-this-standard)** |
-| status: | **Endorsed** |
-| dateAdded: | **2021-02-02** |
-| dateUpdated: | **2021-02-02** |
 
 
 ## Guidance:
