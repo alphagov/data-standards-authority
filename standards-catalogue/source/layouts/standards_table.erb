@@ -6,7 +6,11 @@
       <% current_page.data.each do |key, value| %>
         <tr>
           <td nowrap><%= key %>: </td>
-          <td nowrap><strong><%= value %></strong> </td>
+          <% if key == 'link' %>
+            <td nowrap><strong><a href='<%= value %>'><%= value %></a></strong> </td>
+          <% else %>
+            <td nowrap><strong><%= value %></strong> </td>
+          <% end %>
         </tr>
       <% end %>
     </table>
