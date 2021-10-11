@@ -7,27 +7,18 @@ isRelatedTo: ISO 19139
 name: UK Gemini
 supersededBy: 2.3
 organisation: Geospatial Commission
-validFrom: 2018-06-01
+validFrom: Jun-18
 status: Active
 startDate: 2020-12-01
 dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
 ---
 
-# UK Gemini
+
 
 "GEMINI" is the UK geographic metadata standard. It provides guidance on how to publish geographic metadata in a way that conforms to relevant ISO standards and the UK's implementation of the European INSPIRE regulations. UK GEMINI (GEo-spatial Metadata INteroperability Initiative) is a specification for a set of metadata elements for describing geospatial data resources. It has been produced and is maintained by the Standards Committee.
 
-| Organisation: | **<%= current_page.data.organisation %>** |
-| --- | --- |
-| Identifier: | **<%= current_page.data.identifier %>** |
-| Link: | [UK GEMINI standard](<%= current_page.data.link %>)|
-| Valid From: | **<%= current_page.data.validFrom %>** |
-| Status: | **<%= current_page.data.status %>** |
-| Superseded By: | **<%= current_page.data.supersededBy %>** |
-| Related to: | **[<%= current_page.data.isRelatedTo %>](https://www.iso.org/standard/32557.html)** |
-| Keywords: | **<%= current_page.data.keywords %>** |
-
+ 
 ### Use Case:
 - [https://www.agi.org.uk/agi-groups/standards-committee/why-uk-gemini-why-not-just-have-the-inspire-technical-guidance](https://www.agi.org.uk/agi-groups/standards-committee/why-uk-gemini-why-not-just-have-the-inspire-technical-guidance)
 

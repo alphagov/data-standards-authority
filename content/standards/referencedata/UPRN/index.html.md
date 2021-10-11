@@ -12,20 +12,9 @@ dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
 ---
 
-# UPRN
+
 
 UPRN stands for Unique Property Reference Number and was created by the Ordnance Survey (OS). It consists of numbers of up to 12 digits in length. Local governments in the UK have allocated a unique number for each land or property.
-
-| Organisation: | **<%= current_page.data.organisation %>** |
-| --- | ---|
-| Identifier: | **<%= current_page.data.identifier %>** |
-| Link: | **[GOV.UK](current_page.data.link)** |
-| Keywords: | **<%= current_page.data.keywords %>** |
-| Related To:  | **[BS7666-2:2006](https://shop.bsigroup.com/ProductDetail?pid=000000000030127196)** |
-| Valid From: | **<%= current_page.data.validFrom %>** |
-| status: | **<%= current_page.data.status %>** |
-| dateAdded: | **<%= current_page.data.dateAdded %>** |
-| dateUpdated: | **<%= current_page.data.dateUpdated %>** |
 
 
 ## Use Cases:
