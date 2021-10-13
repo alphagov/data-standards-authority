@@ -1,7 +1,11 @@
 <% wrap_layout :layout do %>
 
   <div style = "overflow-x:auto;">
-    <h1><%= current_page.data.title %></h1>
+    <% if !current_page.data.title.nil? %>
+      <h1><%= current_page.data.title %></h1>
+    <% else %>
+      <h1><%= current_page.data.name %></h1>
+    <% end %>
     <table style="width:100%">
       <% current_page.data.each do |key, value| %>
         <tr>
