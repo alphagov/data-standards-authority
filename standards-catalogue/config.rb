@@ -75,11 +75,20 @@ helpers do
       !current_page.data.parent.nil? && current_page.data.parent.to_s == page_path,
     ].any?
   end
+
+  def display_organisation(id)
+    if !data.organisations[id].nil?
+      link_to data.organisations[id].name, data.organisations[id].url
+    else
+      id
+    end
+  end
 end
 
 page "/*.xml", layout: false
 page "/*.json", layout: false
 page "/*.txt", layout: false
+page "/standards/*/*/index.*", layout: "standards_table"
 
 activate :search do |search|
   search.resources = [""]

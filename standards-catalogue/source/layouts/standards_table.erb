@@ -1,0 +1,23 @@
+<% wrap_layout :layout do %>
+
+  <div style = "overflow-x:auto;">
+    <h1><%= current_page.data.title %></h1>
+    <table style="width:100%">
+      <% current_page.data.each do |key, value| %>
+        <tr>
+          <td nowrap><%= key.titleize.capitalize %>: </td>
+          <% if key == 'link' %>
+            <td nowrap><strong><a href='<%= value %>'><%= value %></a></strong> </td>
+          <% elsif key == 'organisation' %>
+            <td nowrap><strong><%= display_organisation(value) %></strong> </td>
+          <% else %>
+            <td nowrap><strong><%= value %></strong> </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <%= yield %>
+
+<% end %>
