@@ -90,7 +90,6 @@ page "/*.json", layout: false
 page "/*.txt", layout: false
 page "/standards/*/*/index.*", layout: "standards_table"
 
-
 activate :search do |search|
   search.resources = [""]
 
