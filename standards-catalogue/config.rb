@@ -75,6 +75,14 @@ helpers do
       !current_page.data.parent.nil? && current_page.data.parent.to_s == page_path,
     ].any?
   end
+
+  def display_organisation(id)
+    if !data.organisations[id].nil?
+      link_to data.organisations[id].name, data.organisations[id].url
+    else
+      id
+    end
+  end
 end
 
 page "/*.xml", layout: false
