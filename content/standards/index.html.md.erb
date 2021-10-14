@@ -1,0 +1,33 @@
+---
+title: Standards Catalogue
+weight: 90
+dateAdded: 2020-12-16
+dateUpdated: 2020-12-16
+---
+
+# Data Standards
+
+## Description:
+The Data Standards Catalogue currently contains the following Standards:
+
+<div style = "overflow-x:auto;">
+  <table style="width:100%">
+    <tr>
+      <th nowrap>Name</th>
+      <th>Classification</th>
+      <th>Status</th>
+    </tr>
+    <% current_resource.children.each do |f| %>
+      <% if f.content_type.include? "html" %>
+        <tr>
+          <td nowrap><%= link_to f.data.title, f.path.delete_prefix("standards/") %> </td>
+          <td nowrap><%= f.data.classification %> </td>
+          <td nowrap><%= f.data.status %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+
+
