@@ -22,7 +22,7 @@ The Data Standards Catalogue currently contains the following Standards:
         <tr>
           <td nowrap><%= link_to f.data.title, f.path.delete_prefix("standards/") %> </td>
           <td nowrap><%= f.data.classification %> </td>
-          <td nowrap><%= f.data.status %></td>
+          <td nowrap><%= display_status(f.data.status) %></td>
         </tr>
       <% end %>
     <% end %>

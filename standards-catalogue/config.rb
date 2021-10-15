@@ -83,6 +83,14 @@ helpers do
       id
     end
   end
+
+  def display_status(id)
+    if !data.statuses[id].nil?
+      data.statuses[id].name
+    else
+      id
+    end
+  end
 end
 
 page "/*.xml", layout: false
