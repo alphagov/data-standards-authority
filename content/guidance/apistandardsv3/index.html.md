@@ -14,6 +14,8 @@ dateUpdated: 2021-02-01
 
 DRAFT - The current version of the standards can be found on [GOV.UK](https://www.gov.uk/guidance/gds-api-technical-and-data-standards)
 
+## This is the beginning of the DSA's update to the API Standards. We will begin to mark passages for deletion, as well as note where new sections will be added. Please use the links below to add your feedback to the process.
+
 Publish your APIs over the internet by default. Email [api-standards-request@digital.cabinet-office.gov.uk](api-standards-request@digital.cabinet-office.gov.uk) if you think your
 APIs should not be published over public infrastructure.
 
