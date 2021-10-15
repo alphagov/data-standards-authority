@@ -20,16 +20,16 @@ The Data Standards Catalogue currently contains the following Standards:
       </tr>
     </thead>
     <tbody class="govuk-table__body">
-<% current_resource.children.each do |f| %>
-<% if f.content_type.include? "html" %>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><%= link_to f.data.title, f.path.delete_prefix("standards/") %> </td>
-            <td class="govuk-table__cell"><%= f.data.classification %> </td>
-            <td class="govuk-table__cell"><%= display_status(f.data.status) %></td>
-          </tr>
+      <% current_resource.children.sort_by{ |page| page.data.title.downcase }.each do |f| %>
+        <% if f.content_type.include? "html" %>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><%= link_to f.data.title, f.path.delete_prefix("standards/") %> </td>
+              <td class="govuk-table__cell"><%= f.data.classification %> </td>
+              <td class="govuk-table__cell"><%= display_status(f.data.status) %></td>
+            </tr>
         <% end %>
+      <% end %>
     </tbody>
-<% end %>
   </table>
 </div>
 
