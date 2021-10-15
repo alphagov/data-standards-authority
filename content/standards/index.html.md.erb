@@ -11,21 +11,25 @@ dateUpdated: 2020-12-16
 The Data Standards Catalogue currently contains the following Standards:
 
 <div style = "overflow-x:auto;">
-  <table style="width:100%">
-    <tr>
-      <th nowrap>Name</th>
-      <th>Classification</th>
-      <th>Status</th>
-    </tr>
-    <% current_resource.children.each do |f| %>
-      <% if f.content_type.include? "html" %>
-        <tr>
-          <td nowrap><%= link_to f.data.title, f.path.delete_prefix("standards/") %> </td>
-          <td nowrap><%= f.data.classification %> </td>
-          <td nowrap><%= display_status(f.data.status) %></td>
-        </tr>
-      <% end %>
-    <% end %>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Classification</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+<% current_resource.children.each do |f| %>
+<% if f.content_type.include? "html" %>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><%= link_to f.data.title, f.path.delete_prefix("standards/") %> </td>
+            <td class="govuk-table__cell"><%= f.data.classification %> </td>
+            <td class="govuk-table__cell"><%= display_status(f.data.status) %></td>
+          </tr>
+        <% end %>
+    </tbody>
+<% end %>
   </table>
 </div>
 
