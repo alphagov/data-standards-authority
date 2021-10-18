@@ -91,6 +91,16 @@ helpers do
       id
     end
   end
+
+  def get_link_text(page)
+    if page.data.title
+      page.data.title
+    elsif page.data.name
+      page.data.name
+    else
+      page.path.delete_prefix("standards/").chomp("/index.html")
+    end
+  end
 end
 
 page "/*.xml", layout: false
