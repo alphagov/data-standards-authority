@@ -1784,6 +1784,157 @@
   @media print {
     .govuk-warning-text__text {
       color: #000000; } }
+.govuk-table {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  width: 100%;
+  margin-bottom: 20px;
+  border-spacing: 0;
+  border-collapse: collapse; }
+  @media print {
+    .govuk-table {
+      font-family: sans-serif; } }
+  @media (min-width: 40.0625em) {
+    .govuk-table {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.3157894737; } }
+  @media print {
+    .govuk-table {
+      font-size: 14pt;
+      line-height: 1.15; } }
+  @media print {
+    .govuk-table {
+      color: #000000; } }
+  @media (min-width: 40.0625em) {
+    .govuk-table {
+      margin-bottom: 30px; } }
+.govuk-table__header {
+  font-weight: 700; }
+
+.govuk-table__header,
+.govuk-table__cell {
+  padding: 10px 20px 10px 0;
+  border-bottom: 1px solid #b1b4b6;
+  text-align: left;
+  vertical-align: top; }
+
+.govuk-table__cell--numeric {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "tnum" 1;
+  font-weight: 400; }
+  @media print {
+    .govuk-table__cell--numeric {
+      font-family: sans-serif; } }
+  @supports (font-variant-numeric: tabular-nums) {
+    .govuk-table__cell--numeric {
+      font-feature-settings: normal;
+      font-variant-numeric: tabular-nums; } }
+
+.govuk-table__header--numeric,
+.govuk-table__cell--numeric {
+  text-align: right; }
+
+.govuk-table__header:last-child,
+.govuk-table__cell:last-child {
+  padding-right: 0; }
+
+.govuk-table__caption {
+  font-weight: 700;
+  display: table-caption;
+  text-align: left; }
+
+.govuk-table__caption--xl {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.09375;
+  margin-bottom: 15px; }
+  @media print {
+    .govuk-table__caption--xl {
+      font-family: sans-serif; } }
+  @media (min-width: 40.0625em) {
+    .govuk-table__caption--xl {
+      font-size: 48px;
+      font-size: 3rem;
+      line-height: 1.0416666667; } }
+  @media print {
+    .govuk-table__caption--xl {
+      font-size: 32pt;
+      line-height: 1.15; } }
+.govuk-table__caption--l {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.0416666667;
+  margin-bottom: 15px; }
+  @media print {
+    .govuk-table__caption--l {
+      font-family: sans-serif; } }
+  @media (min-width: 40.0625em) {
+    .govuk-table__caption--l {
+      font-size: 36px;
+      font-size: 2.25rem;
+      line-height: 1.1111111111; } }
+  @media print {
+    .govuk-table__caption--l {
+      font-size: 24pt;
+      line-height: 1.05; } }
+.govuk-table__caption--m {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.1111111111;
+  margin-bottom: 15px; }
+  @media print {
+    .govuk-table__caption--m {
+      font-family: sans-serif; } }
+  @media (min-width: 40.0625em) {
+    .govuk-table__caption--m {
+      font-size: 24px;
+      font-size: 1.5rem;
+      line-height: 1.25; } }
+  @media print {
+    .govuk-table__caption--m {
+      font-size: 18pt;
+      line-height: 1.15; } }
+.govuk-table__caption--s {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25; }
+  @media print {
+    .govuk-table__caption--s {
+      font-family: sans-serif; } }
+  @media (min-width: 40.0625em) {
+    .govuk-table__caption--s {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.3157894737; } }
+  @media print {
+    .govuk-table__caption--s {
+      font-size: 14pt;
+      line-height: 1.15; } }
 .govuk-clearfix:after {
   content: "";
   display: block;
