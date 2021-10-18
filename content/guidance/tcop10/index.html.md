@@ -26,7 +26,7 @@ To meet point 10 of the [Technology Code of Practice](https://www.gov.uk/guidanc
 -   how you can make your data accessible across government
 -   how the public can access your data
 -   how you will meet any relevant regulations
--   how you will approach data ethics
+-   *how you will approach data ethics*
 
 If you’re going through the [spend control process](https://www.gov.uk/service-manual/agile-delivery/spend-controls-check-if-you-need-approval-to-spend-money-on-a-service) you must explain how you’re trying to meet point 10.
 
@@ -41,7 +41,7 @@ Your programme will benefit from:
 -   only collecting the data you need and only collecting it once
 -   making datasets interoperable to make data easier to share within your organisation and across other government organisations
 
-## Follow the required data regulations and consider data ethics
+## Follow the required data regulations and consider *data ethics*
 
 When using data you must follow the [Data Protection Act 2018](https://www.gov.uk/data-protection) and the [EU General Data Protection Regulation](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/) (GDPR).
 
@@ -82,11 +82,11 @@ Also consider whether your business processes include:
 - automated decision making using the [Ethics, Transparency and Accountability Framework for Automated Decision-Making](https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making)
 
 
-### Include technical debt in your prioritisation
+*### Include technical debt in your prioritisation*
 
-Technical debt can build up over time and make your service harder to maintain. Look at the hidden technical debt that may exist in your data processing and wherever possible simplify your data processing.
+*Technical debt can build up over time and make your service harder to maintain. Look at the hidden technical debt that may exist in your data processing and wherever possible simplify your data processing.*
 
-Highlight technical debt and data processing issues so that appropriate spending is allocated to fix long-term issues. Look at the hidden technical debt that may exist in your data processing and wherever possible simplify your data processing.
+*Highlight technical debt and data processing issues so that appropriate spending is allocated to fix long-term issues. Look at the hidden technical debt that may exist in your data processing and wherever possible simplify your data processing.*
 
 ### Agreeing and exiting supplier contracts
 
@@ -101,7 +101,7 @@ If you are agreeing a contract of over £20 million, the supplier must provide t
 
 The gGovernment’s [Data Standards Authority](https://www.gov.uk/government/groups/data-standards-authority) and the [Open Standards Board](https://www.gov.uk/government/groups/open-standards-board) have approved a number of [open standards for data](https://www.gov.uk/government/collections/open-standards-for-government-data-and-technology) for use by the government. Where possible and appropriate, you should use these standards to make it easier to analyse data and share it with other departments.
 
-Make data available in a suitable format, for example as a CSV file or through an API. Read the [guidance on using CSV file format](https://www.gov.uk/guidance/using-csv-file-format) and refer toYou should use the [API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards).
+*Make data available in a suitable format, for example as a CSV file or through an API. Read the [guidance on using CSV file format](https://www.gov.uk/guidance/using-csv-file-format) and refer toYou should use the [API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards).*
 
 You should alsoand consider:
 
