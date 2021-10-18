@@ -8,6 +8,7 @@ name: 360Giving Schema
 status: External Draft
 dateAdded: 2021-02-02
 dateUpdated: 2021-02-02
+classification: Domain Specific
 ---
 
 
