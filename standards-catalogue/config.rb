@@ -77,7 +77,7 @@ helpers do
   end
 
   def display_organisation(id)
-    if !data.organisations[id].nil?
+    if data.organisations[id]
       link_to data.organisations[id].name, data.organisations[id].url
     else
       id
@@ -85,7 +85,7 @@ helpers do
   end
 
   def display_status(id)
-    if !data.statuses[id].nil?
+    if data.statuses[id]
       data.statuses[id].name
     else
       id
