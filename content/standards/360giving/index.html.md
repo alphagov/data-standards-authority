@@ -5,9 +5,10 @@ topic:	5.7 Grants, Loans & Subsidies
 subject: Payments Clearing and Settlement
 organisation: threesixtygiving
 name: 360Giving Schema
-status: External Draft
+status: draft
 dateAdded: 2021-02-02
 dateUpdated: 2021-02-02
+classification: Domain Specific
 ---
 
 

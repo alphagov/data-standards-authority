@@ -7,9 +7,10 @@ link: https://www.gov.uk/government/publications/open-standards-for-government/i
 keywords: Identification, geospatial
 isRelatedTo: BS 7666-2:2006
 validFrom: 2020-07-1
-status: Active
+status: active
 dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
+classification: Common Reference Data
 ---
 
 

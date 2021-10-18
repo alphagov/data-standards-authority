@@ -7,9 +7,10 @@ organisation: ietf
 reference:	RFC 4180
 name: RFC 4180 Common Format and MIME Type for Comma-Separated Values (CSV) Files
 keywords: "OpenDocuments"
-status: Active
+status: active
 dateAdded: 2021-02-02
 dateUpdated: 2021-02-02
+classification: Data, Information and Records Management Lifecycle
 ---
 
 

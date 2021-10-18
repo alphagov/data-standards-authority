@@ -77,10 +77,28 @@ helpers do
   end
 
   def display_organisation(id)
-    if !data.organisations[id].nil?
+    if data.organisations[id]
       link_to data.organisations[id].name, data.organisations[id].url
     else
       id
+    end
+  end
+
+  def display_status(id)
+    if data.statuses[id]
+      data.statuses[id].name
+    else
+      id
+    end
+  end
+
+  def get_link_text(page)
+    if page.data.title
+      page.data.title
+    elsif page.data.name
+      page.data.name
+    else
+      page.path.delete_prefix("standards/").chomp("/index.html")
     end
   end
 end
