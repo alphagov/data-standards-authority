@@ -10,3 +10,7 @@ This site holds a catalogue of data standards endorsed by the [Data Standards Au
 If you have any questions, [please contact us](mailto:standards-catalogue@digital.cabinet-office.gov.uk).
 
 If you'd like to comment on or contribute to any of these documents, please use the link at the bottom of the page to submit a github issue. You can view the original documents in our github repo, linked below
+
+- [Standards Catalogue](/standards/)
+- [Use Cases](/usecases/)
+- [Guidance](/guidance/)
