@@ -20,19 +20,7 @@ module SchemaOrg
     end
 
     def to_json(*_args)
-      # ---
-      # topic: 5.5 Payment
-      # subject: Payments Clearing and Settlement
-      # organisation:	ISO
-      # reference:	ISO 20022
-      # identifier:	pacs
-      # name: Universal financial industry message scheme
-      # status: draft
-      # dateAdded: 2021-02-02
-      # dateUpdated: 2021-02-02
-      # classification: Domain Specific
-      # ---
-
+      # Dir.glob('source/standards/**/*.md').map {|f| (YAML.load_file f).keys }.flatten.uniq
       add_if_present(:topic)
       add_if_present(:category)
       add_if_present(:reference) # TODO: type?
@@ -41,13 +29,13 @@ module SchemaOrg
       add_if_present(:dateCreated, :dateAdded)
       add_if_present(:dateModified, :dateUpdated)
       add_if_present(:classification, :classification) # TODO: type
-      # TODO: keywords
-      # TODO: link
-      # TODO: supersededBy
-      # TODO: startDate
-      # TODO: validFrom
-      # TODO: subject
-      # TODO: reference
+      add_if_present(:keywords) # TODO
+      add_if_present(:link) # TODO
+      add_if_present(:supersededBy) # TODO
+      add_if_present(:isRelatedTo) # TODO
+      add_if_present(:validFrom) # TODO
+      add_if_present(:startDate)
+      add_if_present(:subject)
 
       @obj.to_json
     end
