@@ -51,9 +51,8 @@ module GovukTechDocs
     def contact_email
       email = current_page.data.author_email || config[:tech_docs][:contact_email]
 
-      subject = current_page.data.title
       params = {
-        subject: "Feedback on #{subject}",
+        subject: "Feedback on '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page.url})",
       }
 
       "mailto:#{email}?#{URI.encode_www_form(params)}"
