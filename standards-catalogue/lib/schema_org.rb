@@ -65,7 +65,7 @@ module SchemaOrg
     end
 
     def add_date_if_present(page_key, schema_key = page_key)
-      @obj[schema_key] = Time.parse(@page.data[page_key]).iso8601 if @page.data[page_key]
+      @obj[schema_key] = Time.parse(@page.data[page_key]).iso8601 if @page.data[page_key] # TODO: optional parse
     end
   end
 end
