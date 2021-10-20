@@ -105,8 +105,8 @@ helpers do
   end
 
   def standard_to_schema(page)
-    generator = SchemaOrg.new
-    generator.from_standard(page, data)
+    standard = SchemaOrg::Standard.new(page, data)
+    standard.to_json
   end
 end
 
