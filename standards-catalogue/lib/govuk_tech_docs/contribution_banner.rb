@@ -20,12 +20,18 @@ module GovukTechDocs
 
     def report_issue_url
       url = config[:source_urls]&.[](:report_issue_url)
+      params = {
+        body: "Feedback on '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page.url})",
+      }
 
       if url.nil?
-        "#{repo_url}/issues/new?labels=bug&title=Re: '#{current_page.data.title}'&body=Feedback on '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page.url})"
+        url = "#{repo_url}/issues/new"
+        params["labels"] = "bug"
+        params["title"] = "Re: '#{current_page.data.title}'"
       else
-        "#{url}?subject=Re: '#{current_page.data.title}'&body=Feedback on '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page.url})"
+        params["subject"] = "Re: '#{current_page.data.title}'"
       end
+      "#{url}?#{URI.encode_www_form(params)}"
     end
 
     def repo_url
@@ -45,11 +51,14 @@ module GovukTechDocs
     def contact_email
       email = current_page.data.author_email
       subject = current_page.data.title
+      params = {
+        subject: "Feedback on #{subject}",
+      }
 
       if email.nil?
-        "mailto:#{config[:tech_docs][:contact_email]}?subject=Feedback on #{subject}"
+        "mailto:#{config[:tech_docs][:contact_email]}?#{URI.encode_www_form(params)}"
       else
-        "mailto:#{email}?subject=Feedback on #{subject}"
+        "mailto:#{email}?#{URI.encode_www_form(params)}"
       end
     end
 
