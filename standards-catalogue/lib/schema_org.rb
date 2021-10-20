@@ -34,6 +34,7 @@ module SchemaOrg
 
   private
 
+
     def name
       if @page.data.title
         @page.data.title
@@ -59,11 +60,7 @@ module SchemaOrg
       }
     end
 
-    def add_if_present(page_and_schema_key)
-      add_if_present(page_and_schema_key, page_and_schema_key)
-    end
-
-    def add_if_present(page_key, schema_key)
+    def add_if_present(page_key, schema_key = page_key)
       @obj[schema_key] = @page.data[page_key] if @page.data[page_key]
     end
   end

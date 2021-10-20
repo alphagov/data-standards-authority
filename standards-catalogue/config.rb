@@ -60,6 +60,7 @@ config[:tech_docs] = YAML.load_file(config_file).with_indifferent_access
 activate :unique_identifier
 
 helpers do
+  include SchemaOrg
   include GovukTechDocs::ContributionBanner
 
   def meta_tags
