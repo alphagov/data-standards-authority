@@ -28,6 +28,8 @@ group :development, :test do
   gem "pry"
 end
 
+gem 'schema_dot_org'
+
 # From tech-docs-gem - to be revised
 gem "activesupport"
 gem "middleman", ">= 4.4.0", "<5.0"
