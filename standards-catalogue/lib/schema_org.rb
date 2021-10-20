@@ -28,14 +28,21 @@ class SchemaOrg
       name: name(page),
     }
 
-    add_if_present(:topic, :topic, page, obj)
-    add_if_present(:category, :category, page, obj)
-    add_if_present(:reference, :reference, page, obj) # TODO: type?
-    add_if_present(:identifier, :identifier, page, obj) # TODO: type?
-    add_if_present(:status, :status, page, obj) # TODO: type
+    add_if_present(:topic, page, obj)
+    add_if_present(:category, page, obj)
+    add_if_present(:reference, page, obj) # TODO: type?
+    add_if_present(:identifier, page, obj) # TODO: type?
+    add_if_present(:status, page, obj) # TODO: type
     add_if_present(:dateCreated, :dateAdded, page, obj)
     add_if_present(:dateModified, :dateUpdated, page, obj)
     add_if_present(:classification, :classification, page, obj) # TODO: type
+    # TODO: keywords
+    # TODO: link
+    # TODO: supersededBy
+    # TODO: startDate
+    # TODO: validFrom
+    # TODO: subject
+    # TODO: reference
 
     obj[:organisation] = to_organisation(page, data) if page.data.organisation
 
@@ -53,6 +60,10 @@ class SchemaOrg
       "name": data.organisations[o].name,
       "url": data.organisations[o].url,
     }
+  end
+
+  def add_if_present(page_and_schema_key, page, obj)
+    add_if_present(page_and_schema_key, page_and_schema_key, page, obj)
   end
 
   def add_if_present(page_key, schema_key, page, obj)
