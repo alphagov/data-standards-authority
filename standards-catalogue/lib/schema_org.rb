@@ -27,9 +27,9 @@ module SchemaOrg
       add_if_present(:subject)
     end
 
-    def to_json(*_args)
+    def to_json(*args)
       # Dir.glob('source/standards/**/*.md').map {|f| (YAML.load_file f).keys }.flatten.uniq
-      @obj.to_json
+      @obj.to_json(args)
     end
 
   private
