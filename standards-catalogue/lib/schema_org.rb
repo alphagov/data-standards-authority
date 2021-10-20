@@ -15,15 +15,15 @@ module SchemaOrg
       add_if_present(:reference) # TODO: type?
       add_if_present(:identifier) # TODO: type?
       add_if_present(:status) # TODO: type
-      add_if_present(:dateCreated, :dateAdded)
-      add_if_present(:dateModified, :dateUpdated)
+      add_date_if_present(:dateCreated, :dateAdded)
+      add_date_if_present(:dateModified, :dateUpdated)
       add_if_present(:classification, :classification) # TODO: type
       add_if_present(:keywords) # TODO
       add_if_present(:link) # TODO
       add_if_present(:supersededBy) # TODO
       add_if_present(:isRelatedTo) # TODO
-      add_if_present(:validFrom) # TODO
-      add_if_present(:startDate)
+      add_date_if_present(:validFrom) # TODO
+      add_date_if_present(:startDate)
       add_if_present(:subject)
     end
 
@@ -62,6 +62,10 @@ module SchemaOrg
 
     def add_if_present(page_key, schema_key = page_key)
       @obj[schema_key] = @page.data[page_key] if @page.data[page_key]
+    end
+
+    def add_date_if_present(page_key, schema_key = page_key)
+      @obj[schema_key] = Time.parse(@page.data[page_key]).iso8601 if @page.data[page_key]
     end
   end
 end
