@@ -49,17 +49,14 @@ module GovukTechDocs
     # If an author_email is specified in the frontmatter, use that;
     # otherwise use the default from tech-docs.yml
     def contact_email
-      email = current_page.data.author_email
+      email = current_page.data.author_email || config[:tech_docs][:contact_email]
+
       subject = current_page.data.title
       params = {
         subject: "Feedback on #{subject}",
       }
 
-      if email.nil?
-        "mailto:#{config[:tech_docs][:contact_email]}?#{URI.encode_www_form(params)}"
-      else
-        "mailto:#{email}?#{URI.encode_www_form(params)}"
-      end
+      "mailto:#{email}?#{URI.encode_www_form(params)}"
     end
 
   private
