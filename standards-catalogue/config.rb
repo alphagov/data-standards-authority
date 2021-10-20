@@ -101,6 +101,53 @@ helpers do
       page.path.delete_prefix("standards/").chomp("/index.html")
     end
   end
+
+  def standard_to_schema(page)
+    name = if page.data.title
+             page.data.title
+           elsif page.data.name
+             page.data.name
+           end
+
+    # ---
+    # topic: 5.5 Payment
+    # subject: Payments Clearing and Settlement
+    # organisation:	ISO
+    # reference:	ISO 20022
+    # identifier:	pacs
+    # name: Universal financial industry message scheme
+    # status: draft
+    # dateAdded: 2021-02-02
+    # dateUpdated: 2021-02-02
+    # classification: Domain Specific
+    # ---
+
+    obj = {
+      "@context": "https://schema.org/",
+      "@type": "Thing", # TODO
+      name: name,
+    }
+    obj[:topic] = page.data.topic if page.data.respond_to? :topic
+    obj[:category] = page.data.category if page.data.respond_to? :category
+
+    if page.data.respond_to? :organisation
+
+      organisation = if data.organisations[page.data.organisation]
+                       {
+
+                         "@context": "https://schema.org",
+                         "@type": "Organization",
+                         "name": data.organisations[page.data.organisation].name,
+                         "url": data.organisations[page.data.organisation].url,
+                       }
+                     else
+                       page.data.organisation
+                     end
+      obj[:organisation] = organisation
+    end
+
+    obj.to_json
+  end
 end
 
 page "/*.xml", layout: false

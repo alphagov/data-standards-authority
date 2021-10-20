@@ -24,4 +24,9 @@
 
   <%= yield %>
 
+<script type="application/ld+json">
+	<%= standard_to_schema(current_page) %>
+  </script>
+
+
 <% end %>
