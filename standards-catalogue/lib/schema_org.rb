@@ -9,18 +9,7 @@ module SchemaOrg
         "@type": "Thing", # TODO
         name: name,
       }
-    end
 
-    def name
-      if @page.data.title
-        @page.data.title
-      elsif @page.data.name
-        @page.data.name
-      end
-    end
-
-    def to_json(*_args)
-      # Dir.glob('source/standards/**/*.md').map {|f| (YAML.load_file f).keys }.flatten.uniq
       add_if_present(:topic)
       add_if_present(:category)
       add_if_present(:reference) # TODO: type?
@@ -36,8 +25,21 @@ module SchemaOrg
       add_if_present(:validFrom) # TODO
       add_if_present(:startDate)
       add_if_present(:subject)
+    end
 
+    def to_json(*_args)
+      # Dir.glob('source/standards/**/*.md').map {|f| (YAML.load_file f).keys }.flatten.uniq
       @obj.to_json
+    end
+
+  private
+
+    def name
+      if @page.data.title
+        @page.data.title
+      elsif @page.data.name
+        @page.data.name
+      end
     end
 
     def add_organisation
