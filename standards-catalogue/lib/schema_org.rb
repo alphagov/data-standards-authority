@@ -20,7 +20,7 @@ module SchemaOrg
       add_if_present(:classification, :classification) # TODO: type
       add_if_present(:keywords) # TODO
       add_if_present(:link) # TODO
-      add_if_present(:supersededBy) # TODO
+      add_if_present(:supersededBy) # TODO, `2.3`
       add_if_present(:isRelatedTo) # TODO
       add_date_if_present(:validFrom) # TODO
       add_date_if_present(:startDate)
@@ -61,7 +61,7 @@ module SchemaOrg
     end
 
     def add_if_present(page_key, schema_key = page_key)
-      @obj[schema_key] = @page.data[page_key] if @page.data[page_key]
+      @obj[schema_key] = @page.data[page_key].to_s if @page.data[page_key]
     end
 
     def add_date_if_present(page_key, schema_key = page_key)
