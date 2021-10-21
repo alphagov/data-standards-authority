@@ -41,19 +41,15 @@
       <% end %>
 
       <div class="app-pane__body"<%= " data-module=\"#{yield_content(:toc_module)}\"" if content_for? :toc_module %>>
-        <% if content_for? :sidebar %>
-          <div class="app-pane__toc">
-            <div class="toc" data-module="table-of-contents">
-              <%= partial "layouts/search" %>
-              <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
-              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
-                <%= yield_content :sidebar %>
-              </nav>
-            </div>
-          </div>
-        <% end %>
-
         <div class="app-pane__content toc-open-disabled">
+          <nav>
+            <ul class="contribution-banner navbar">
+              <li><%= partial 'layouts/search' %></li>
+              <li><%= link_to "Standards", "/standards/" %></li>
+              <li><%= link_to "Use Cases", "/usecases/" %></li>
+              <li><%= link_to "Guidance", "/guidance/" %></li>
+            </ul>
+          </nav>
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             <%= yield %>
           </main>
@@ -69,9 +65,10 @@
             <% end %>
           </aside>
 
-          <%= partial "layouts/footer" %>
+
         </div>
       </div>
+      <%= partial "layouts/footer" %>
     </div>
 
     <script async defer data-domain="api.gov.uk" src="https://plausible.io/js/plausible.js"></script>
