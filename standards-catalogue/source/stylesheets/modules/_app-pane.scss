@@ -10,7 +10,7 @@
     .app-pane {
       display: flex;
       flex-direction: column;
-      overflow: hidden;
+      overflow-x: hidden;
       height: 100vh;
     }
 
@@ -27,8 +27,9 @@
     .app-pane__body {
       display: flex;
       flex: 1 1 100%;
-      min-height: 0;
       position: relative;
+      max-width: 800px;
+      margin: auto;
 
       > * {
         overflow-x: scroll;
