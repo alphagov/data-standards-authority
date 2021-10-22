@@ -45,9 +45,7 @@
           <nav>
             <ul class="contribution-banner navbar">
               <li><%= partial 'layouts/search' %></li>
-              <li><%= link_to "Standards", "/standards/" %></li>
-              <li><%= link_to "Use Cases", "/usecases/" %></li>
-              <li><%= link_to "Guidance", "/guidance/" %></li>
+              <%= populate_navbar(sitemap.resources) %>
             </ul>
           </nav>
           <main id="content" class="technical-documentation" data-module="anchored-headings">
