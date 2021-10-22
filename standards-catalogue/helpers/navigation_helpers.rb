@@ -1,11 +1,11 @@
 module NavigationHelpers
-  def render_sidebar(resources)
+  def populate_navbar(resources)
     root_page = resources.detect { |r| r.path == "index.html" }
     top_level_pages = navigable_pages(root_page.children).sort_by { |page| page.data.weight || 99_999 }
     navigation = []
 
     navigation << navigation_html(root_page)
-    navigation += top_level_pages.map { |page| navigation_html_with_subpages(page) }
+    navigation += top_level_pages.map { |page| navigation_html(page) }
     navigation.join
   end
 
@@ -18,26 +18,13 @@ private
   end
 
   def navigation_html(page)
-    <<~HTML
-      <ul>
+    unless page.data.title.include? "DSA"
+      <<~HTML
         <li>
           <a href="#{page.url}"><span>#{page.data.title}</span></a>
           #{yield if block_given?}
         </li>
-      </ul>
-    HTML
-  end
-
-  def navigation_html_with_subpages(page)
-    nested_navigation = nil
-    navigable_children = navigable_pages(page.children)
-
-    if navigable_children.any?
-      nested_navigation = navigable_children
-        .map { |child_page| navigation_html(child_page) }
-        .join
+      HTML
     end
-
-    navigation_html(page) { nested_navigation }
   end
 end
