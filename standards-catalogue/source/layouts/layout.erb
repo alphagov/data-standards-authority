@@ -2,10 +2,6 @@
 wrap_layout :core do
   html = yield
 
-  content_for(:toc_module, "in-page-navigation")
-
-  content_for(:sidebar, render_sidebar(sitemap.resources))
-
   html
 end
 %>
