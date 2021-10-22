@@ -48,16 +48,12 @@
 
       </div>
 
-        <div id="toc-heading" class="toc-show fixedsticky">
-          <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
-            Table of contents <span class="toc-show__icon"></span>
-          </a>
-        </div>
 
-      <div class="app-pane__body" data-module="in-page-navigation">
-          <div class="app-pane__toc">
-            <div class="toc" data-module="table-of-contents">
-              <div class="search" data-module="search" data-search-index-path="/data-standards-authority/standards-catalogue/search.json">
+      <div class="app-pane__body">
+        <div class="app-pane__content toc-open-disabled">
+          <nav>
+            <ul class="contribution-banner navbar">
+              <li><div class="search" data-module="search" data-search-index-path="/data-standards-authority/standards-catalogue/search.json">
   <form action="https://www.google.co.uk/search" method="get" role="search">
     <input type="hidden" name="as_sitesearch" value="https://alphagov.github.io/data-standards-authority"/>
     <label class="govuk-label search__label" for="search">
@@ -73,135 +69,12 @@
     </div>
   </div>
 </div>
-
-              <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
-              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
-                <ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/"><span>DSA</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/"><span>Standards Catalogue</span></a>
-    <ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/iso20022/"><span>Universal financial industry message scheme</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/UKGemini/"><span>UK Gemini</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/360giving/"><span>360Giving Schema</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/UPRN/"><span>UPRN</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/openreferraluk/"><span>OpenReferralUK</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/odf12/"><span>ODF 1.2</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/standards/rfc4180/"><span>Common Format and MIME Type for Comma-Separated Values (CSV) Files</span></a>
-    
-  </li>
-</ul>
-
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/usecases/"><span>Use Cases</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/guidance/"><span>Guidance</span></a>
-    <ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/guidance/referencedata/"><span>Publish reference data for use across government</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/guidance/tcop10/"><span>DRAFT Technology Code of Practice point 10 - Make better use of data</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/guidance/apistandardsv3/"><span>Draft API Standards v3</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/guidance/apidomain/"><span>api.gov.uk Domain Guidance</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/guidance/addressbase/"><span>Access and record address data using the UPRN standard and AddressBase</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/guidance/spreadsheets/"><span>Spreadsheets guidance</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/guidance/referencearchitecture/"><span>Reference Architecture for Government Data and APIs</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/guidance/graphql/"><span>DRAFT GraphQL Guidance</span></a>
-    
-  </li>
-</ul>
-<ul>
-  <li>
-    <a href="/data-standards-authority/standards-catalogue/guidance/apimanagement/"><span>DRAFT API Management Guidance</span></a>
-    
-  </li>
-</ul>
-
-  </li>
-</ul>
-
-              </nav>
-            </div>
-          </div>
-
-        <div class="app-pane__content toc-open-disabled">
+</li>
+              <li><a href="/standards/">Standards</a></li>
+              <li><a href="/usecases/">Use Cases</a></li>
+              <li><a href="/guidance/">Guidance</a></li>
+            </ul>
+          </nav>
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             <h1 id="dsa-guidance">DSA Guidance</h1><h2 id="description">Description:</h2>
 <p>These pieces of guidance are in development by the Data Standards Authority. We welcome your feedback on them, please open an issue from the link on the relevant page to add your comments. The following documents are currently open:</p>
@@ -245,7 +118,9 @@
               </ul>
           </aside>
 
-          <footer class="govuk-footer app-footer" role="contentinfo">
+        </div>
+      </div>
+      <footer class="govuk-footer app-footer" role="contentinfo">
   <div class="govuk-footer__meta">
     <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
 
@@ -281,8 +156,6 @@
   </div>
 </footer>
 
-        </div>
-      </div>
     </div>
 
     <script async defer data-domain="api.gov.uk" src="https://plausible.io/js/plausible.js"></script>

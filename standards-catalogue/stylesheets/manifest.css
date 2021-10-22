@@ -2666,7 +2666,7 @@
   .flexbox .app-pane, .flexboxtweener .app-pane {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
     height: 100vh; }
   .flexbox .app-pane__header, .flexboxtweener .app-pane__header {
     display: flex;
@@ -2677,8 +2677,10 @@
   .flexbox .app-pane__body, .flexboxtweener .app-pane__body {
     display: flex;
     flex: 1 1 100%;
-    min-height: 0;
-    position: relative; }
+    position: relative;
+    max-width: 800px;
+    max-width: 50rem;
+    margin: auto; }
     .flexbox .app-pane__body > *, .flexboxtweener .app-pane__body > * {
       overflow-x: scroll;
       -webkit-overflow-scrolling: touch;
@@ -3353,6 +3355,9 @@ html.has-search-results-open {
   .collapsible.is-open .collapsible__toggle-icon::after {
     transform: rotate(315deg);
     margin-top: 18px; }
+
+.navbar li {
+  margin: 2px 15px 2px 0; }
 
 .fixedsticky {
   position: -moz-sticky;
