@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "api-catalogue",
+  "name": "data-standards-authority",
   "license": "MIT",
   "scripts": {
     "lint": "standard"
