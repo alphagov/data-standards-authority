@@ -47,7 +47,8 @@ html.has-search-results-open {
       padding: govuk-spacing(6);
       top: 0;
       // The width of the sidebar
-      left: 330px;
+      left: 230px;
+      left: 14.375rem;
     }
 
     a:link, a:visited {
@@ -74,7 +75,7 @@ html.has-search-results-open {
   max-width: 40rem;
   padding: 15px;
   @include govuk-media-query(tablet) {
-    padding: 15px 200px 50px 40px;
+    padding: 15px 0px 50px 40px;
     border: 1px solid govuk-colour("mid-grey");
     &::after {
       content: '';
