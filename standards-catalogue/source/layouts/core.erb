@@ -26,22 +26,14 @@
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     <div class="app-pane">
-      <div class="app-pane__header toc-open-disabled">
+      <div class="app-pane__header">
         <a href="#content" class="govuk-skip-link">Skip to main content</a>
 
         <%= partial 'layouts/header' %>
       </div>
 
-      <% if content_for? :sidebar %>
-        <div id="toc-heading" class="toc-show fixedsticky">
-          <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
-            Table of contents <span class="toc-show__icon"></span>
-          </a>
-        </div>
-      <% end %>
-
       <div class="app-pane__body"<%= " data-module=\"#{yield_content(:toc_module)}\"" if content_for? :toc_module %>>
-        <div class="app-pane__content toc-open-disabled">
+        <div class="app-pane__content">
           <nav>
             <ul class="contribution-banner navbar">
               <li><%= partial 'layouts/search' %></li>
