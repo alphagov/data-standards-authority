@@ -1,16 +1,20 @@
 ---
-title: UPRN
 name: UPRN
-organisation: Ordnance Survey
+contraction: UPRN
+specification:
+  name: 'Identifying property and street information'
+  url: https://www.gov.uk/government/publications/open-standards-for-government/identifying-property-and-street-information
+  published: '' # maybe 2020-12-04
+maintainer: Ordnance Survey
+catalogue_status_events:
+- status: active
+  date: "2020-12-02"
+topics:
+- Identification
+- Geospatial
+- Common Reference Data
 identifier: UKABC-123
-link: https://www.gov.uk/government/publications/open-standards-for-government/identifying-property-and-street-information
-keywords: Identification, geospatial
-isRelatedTo: BS 7666-2:2006
-validFrom: 2020-07-1
-status: active
-dateAdded: 2020-12-16
-dateUpdated: 2020-12-16
-classification: Common Reference Data
+license_id: 'OGL-UK-3.0'
 ---
 
 

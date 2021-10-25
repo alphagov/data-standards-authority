@@ -99,6 +99,31 @@ helpers do
       page.path.delete_prefix("standards/").chomp("/index.html")
     end
   end
+
+  def license_information(license_id)
+    if license_id == "Proprietary"
+      {
+        type: "Proprietary",
+        description: "License is not based on an Open Standard, and may require payment or contract to use",
+      }
+    elsif license_id == "Unknown"
+      {
+        type: "Unknown",
+        description: "The license could not be determined - it may be an Open Standard that is unclear, or it may be Proprietary",
+      }
+    elsif Spdx.license_exists?(license_id)
+      license = Spdx.licenses[license_id]
+      {
+        type: "Open Standard",
+        description: "<a href='#{license['seeAlso'][0]}'>#{license['name']}</a>",
+      }
+    else
+      {
+        type: "Unknown",
+        description: "The license, <code>#{license_id}</code>, is not a known license",
+      }
+    end
+  end
 end
 
 page "/*.xml", layout: false

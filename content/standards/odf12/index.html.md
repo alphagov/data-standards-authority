@@ -1,15 +1,20 @@
 ---
-title: ODF 1.2
-category: Data, Information and Records Management Lifecycle
-topic: 4.7 Content Management
-subject: OpenDocuments (ODF)
-reference:	ODF 1.2
 name: ODF 1.2
-keywords: "OpenDocuments"
-status: active
-dateAdded: 2021-02-02
-dateUpdated: 2021-02-02
-classification: Data, Information and Records Management Lifecycle
+contraction: ODF1.2
+specification:
+  name: Open Document Format for Office Applications (OpenDocument) Version 1.2
+  url: https://docs.oasis-open.org/office/v1.2/OpenDocument-v1.2.html
+  published: "2011-09-29"
+maintainer: OASIS ODF Technical Committee
+catalogue_status_events:
+- status: active
+  date: "2012-02-02"
+topics:
+- 4.7 Content Management
+- Data, Information and Records Management Lifecycle
+- "OpenDocuments"
+identifier: ODF 1.2
+license_id: '' # TODO: https://en.wikipedia.org/wiki/OpenDocument#Licensing
 ---
 
 

@@ -1,16 +1,20 @@
 ---
-title: Universal financial industry message scheme
-category: Domain Specific
-topic: 5.5 Payment
-subject: Payments Clearing and Settlement
-organisation:	ISO
-reference:	ISO 20022
-identifier:	pacs
 name: Universal financial industry message scheme
-status: review
-dateAdded: 2021-02-02
-dateUpdated: 2021-02-02
-classification: Domain Specific
+contraction: ISO20022
+specification:
+  name: Universal financial industry message scheme
+  url: https://www.iso20022.org/iso-20022-message-definitions
+  published: "2013-05"
+maintainer: ISO
+license_id: 'Proprietary'
+catalogue_status_events:
+- status: review
+  date: "2012-02-02"
+topics:
+- Domain Specific
+- '5.5 Payment'
+- Payments Clearing and Settlement
+identifier:	pacs
 ---
 
 

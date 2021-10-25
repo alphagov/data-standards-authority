@@ -51,6 +51,9 @@ jobs:
       - name: Lint
         run: bundle exec rubocop --parallel
 
+      - name: Validate schemas
+        run: bundle exec rake schema
+
       - name: Build
         run: bundle exec rake build
 

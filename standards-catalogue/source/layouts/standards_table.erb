@@ -1,26 +1,60 @@
 <% wrap_layout :layout do %>
 
   <div style = "overflow-x:auto;">
-    <% if !current_page.data.title.nil? %>
-      <h1><%= current_page.data.title %></h1>
-    <% else %>
-      <h1><%= current_page.data.name %></h1>
-    <% end %>
+    <h1><%= current_page.data.name %></h1>
     <table style="width:100%">
-      <% current_page.data.each do |key, value| %>
-        <tr>
-          <td nowrap><%= key.titleize.capitalize %>: </td>
-          <% if key == 'link' %>
-            <td nowrap><strong><a href='<%= value %>'><%= value %></a></strong> </td>
-          <% elsif key == 'organisation' %>
-            <td nowrap><strong><%= display_organisation(value) %></strong> </td>
-          <% elsif key == 'status' %>
-            <td nowrap><strong><%= display_status(:standard, value) %></strong> </td>
-          <% else %>
-            <td nowrap><strong><%= value %></strong> </td>
-          <% end %>
-        </tr>
-      <% end %>
+      <tr>
+        <td>Name</td>
+        <td>
+          <strong><%= current_page.data.name %></strong>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Also Known As</td>
+        <td>
+          <strong><%= current_page.data.contraction %></strong>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Status</td>
+        <td>
+          <% status = current_page.data.catalogue_status_events.last.status %>
+          <strong><%= display_status(:standard, status) %></strong>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Specification</td>
+        <td>
+          <strong><a href="<%= current_page.data.specification.url %>"><%= current_page.data.specification.name %></a></strong> (published <%= current_page.data.specification.published %>)
+        </td>
+      </tr>
+
+      <tr>
+        <td>License</td>
+        <td>
+          <% license_info = license_information(current_page.data.license_id) %>
+          <strong> <%= license_info[:type] %></strong> - <%= license_info[:description] %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Maintained By</td>
+        <td><strong><%= display_organisation(current_page.data.maintainer) %></strong> </td>
+      </tr>
+
+      <tr>
+        <td>Topics</td>
+        <td>
+          <ul>
+            <% current_page.data.topics.each do |topic| %>
+              <li><strong><%= topic %></strong></li>
+            <% end %>
+          </ul>
+        </td>
+      </tr>
     </table>
   </div>
 
