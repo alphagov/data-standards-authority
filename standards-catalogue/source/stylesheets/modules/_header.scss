@@ -7,10 +7,15 @@
   // Give the product name in the header more space so it does not wrap early on smaller screens.
   @include govuk-media-query($from: desktop) {
     .govuk-header__logo {
-      width: 45%;
+      width: 55%;
     }
     .govuk-header__content {
       width: 55%;
     }
+  }
+  .header-content {
+    max-width: 800px;
+    max-width: 50rem;
+    margin: auto;
   }
 }
