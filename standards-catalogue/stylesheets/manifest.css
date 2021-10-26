@@ -2748,7 +2748,8 @@ html.has-search-results-open {
 
 .search-results {
   position: absolute;
-  top: 60px;
+  top: 200px;
+  top: 12.5rem;
   left: 0;
   right: 0;
   bottom: 0;
@@ -2759,8 +2760,8 @@ html.has-search-results-open {
   @media (min-width: 40.0625em) {
     .search-results {
       padding: 30px;
-      top: 0;
-      left: 330px; } }
+      top: 100px;
+      top: 6.25rem; } }
   .search-results a:link, .search-results a:visited {
     text-decoration: none;
     color: #1d70b8; }
@@ -2784,7 +2785,7 @@ html.has-search-results-open {
   padding: 15px; }
   @media (min-width: 40.0625em) {
     .search-results__inner {
-      padding: 15px 200px 50px 40px;
+      padding: 15px 0px 50px 40px;
       border: 1px solid #b1b4b6; }
       .search-results__inner::after {
         content: '';
