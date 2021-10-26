@@ -45,10 +45,8 @@ html.has-search-results-open {
     -ms-overflow-style: none;
     @include govuk-media-query(tablet) {
       padding: govuk-spacing(6);
-      top: 0;
-      // The width of the sidebar
-      left: 230px;
-      left: 14.375rem;
+      top: 100px;
+      top: 6.25rem;
     }
 
     a:link, a:visited {
