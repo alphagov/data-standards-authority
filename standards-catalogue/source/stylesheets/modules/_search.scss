@@ -75,16 +75,6 @@ html.has-search-results-open {
   @include govuk-media-query(tablet) {
     padding: 15px 0px 50px 40px;
     border: 1px solid govuk-colour("mid-grey");
-    &::after {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: -9px;
-      width: 10px;
-      height: 20px;
-      background: no-repeat image-url('/images/search-result-caret.svg') center right;
-      background-size: contain;
-    }
   }
 }
 .search-results__title {
