@@ -2786,16 +2786,7 @@ html.has-search-results-open {
   @media (min-width: 40.0625em) {
     .search-results__inner {
       padding: 15px 0px 50px 40px;
-      border: 1px solid #b1b4b6; }
-      .search-results__inner::after {
-        content: '';
-        position: absolute;
-        top: 10px;
-        left: -9px;
-        width: 10px;
-        height: 20px;
-        background: no-repeat url(/data-standards-authority/standards-catalogue/images/search-result-caret.svg) center right;
-        background-size: contain; } }
+      border: 1px solid #b1b4b6; } }
 .search-results__title {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
