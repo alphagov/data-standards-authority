@@ -6,4 +6,11 @@
     padding-left: govuk-spacing(6);
     padding-right: govuk-spacing(6);
   }
+  @include govuk-media-query($from: desktop) {
+    .govuk-footer__meta-item {
+      max-width: 790px;
+      max-width: 49.375rem;
+      margin: auto;
+    }
+  }
 }
