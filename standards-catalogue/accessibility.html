@@ -30,7 +30,7 @@
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     <div class="app-pane">
-      <div class="app-pane__header">
+      <div class="app-pane__header toc-open-disabled">
         <a href="#content" class="govuk-skip-link">Skip to main content</a>
 
         <header class="govuk-header app-header" role="banner" data-module="govuk-header">
@@ -48,11 +48,16 @@
 
       </div>
 
-      <div class="app-pane__body">
-        <div class="app-pane__content">
-          <nav>
-            <ul class="contribution-banner navbar">
-              <li><div class="search" data-module="search" data-search-index-path="/data-standards-authority/standards-catalogue/search.json">
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </a>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents">
+              <div class="search" data-module="search" data-search-index-path="/data-standards-authority/standards-catalogue/search.json">
   <form action="https://www.google.co.uk/search" method="get" role="search">
     <input type="hidden" name="as_sitesearch" value="https://alphagov.github.io/data-standards-authority"/>
     <label class="govuk-label search__label" for="search">
@@ -68,25 +73,24 @@
     </div>
   </div>
 </div>
-</li>
-              <li>
-  <a href="/data-standards-authority/standards-catalogue/standards/"><span>Standards Catalogue</span></a>
-  
-</li>
-<li>
-  <a href="/data-standards-authority/standards-catalogue/usecases/"><span>Use Cases</span></a>
-  
-</li>
-<li>
-  <a href="/data-standards-authority/standards-catalogue/guidance/"><span>Guidance</span></a>
-  
-</li>
 
-            </ul>
-          </nav>
+              <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
+                <ul>
+  <li>
+    <a href="/data-standards-authority/standards-catalogue/"><span>DSA</span></a>
+    
+  </li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             <h1 id="accessibility-statement-for-the-data-standards-authority-catalogue">Accessibility statement for the Data Standards Authority Catalogue</h1>
-<p>This accessibility statement applies to the Data Standards Authority Catalogue at <a href="https://alphagov.github.io/data-standards-authority/">alphagov.github.io/data-standards-authority</a>.</p>
+<p>This accessibility statement applies to the Data Standards Authority Catalogue at [https://alphagov.github.io/datastandardsauthority/.</p>
 
 <p>This website is run by the Data Standards Authority team at the Government Digital Service (GDS). We want as many people as possible to be able to use this website. For example, that means you should be able to:</p>
 
@@ -156,21 +160,19 @@
           <aside>
               <ul class="contribution-banner">
                 <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/content/accessibility.html.md.erb">View source</a></li>
-                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?body=Feedback+on+%27Accessibility+statement+for+the+Data+Standards+Authority+Catalogue%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Fdata-standards-authority%2Fstandards-catalogue%2Faccessibility.html%29&amp;labels=bug&amp;title=Re%3A+%27Accessibility+statement+for+the+Data+Standards+Authority+Catalogue%27">Feedback on this page</a></li>
-                <li><a href="mailto:standards-catalogue@digital.cabinet-office.gov.uk?subject=Feedback+on+%27Accessibility+statement+for+the+Data+Standards+Authority+Catalogue%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Fdata-standards-authority%2Fstandards-catalogue%2Faccessibility.html%29">Feedback via email</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?labels=bug&amp;title=Re:%20'Accessibility%20statement%20for%20the%20Data%20Standards%20Authority%20Catalogue'&amp;body=Feedback%20on%20'Accessibility%20statement%20for%20the%20Data%20Standards%20Authority%20Catalogue'%20(https://alphagov.github.io/data-standards-authority/data-standards-authority/standards-catalogue/accessibility.html)">Feedback on this page</a></li>
+                <li><a href="mailto:standards-catalogue@digital.cabinet-office.gov.uk?subject=Feedback%20on%20Accessibility%20statement%20for%20the%20Data%20Standards%20Authority%20Catalogue">Feedback via email</a></li>
                 <li><a href="https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
               </ul>
           </aside>
 
-        </div>
-      </div>
-      <footer class="govuk-footer app-footer" role="contentinfo">
+          <footer class="govuk-footer app-footer" role="contentinfo">
   <div class="govuk-footer__meta">
     <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
 
         <ul class="govuk-footer__inline-list">
             <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="/data-standards-authority/standards-catalogue/accessibility.html">Accessibility Statement</a>
+              <a class="govuk-footer__link" href="/data-standards-authority/standards-catalogue/accessibility.html">Technical Documentation Accessibility</a>
             </li>
         </ul>
 
@@ -200,6 +202,8 @@
   </div>
 </footer>
 
+        </div>
+      </div>
     </div>
 
     <script async defer data-domain="api.gov.uk" src="https://plausible.io/js/plausible.js"></script>
