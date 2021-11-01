@@ -12,9 +12,6 @@ gem "tzinfo-data", platforms: %i[mswin mingw jruby]
 
 gem "sqlite3"
 
-# For data attributes
-gem "activemodel"
-
 group :test do
   gem "factory_bot"
   gem "rspec"

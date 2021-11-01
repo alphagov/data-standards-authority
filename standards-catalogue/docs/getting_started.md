@@ -33,7 +33,7 @@ navigate to `http://localhost:4567` to view the site.
 
 ## Preview your changes locally
 
-To preview the API catalogue locally run:
+To preview the DSA site locally run:
 
 ```sh
 bundle exec middleman server
