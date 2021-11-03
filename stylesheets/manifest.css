@@ -2706,6 +2706,11 @@
     .app-footer {
       padding-left: 30px;
       padding-right: 30px; } }
+  @media (min-width: 48.0625em) {
+    .app-footer .govuk-footer__meta-item {
+      max-width: 790px;
+      max-width: 49.375rem;
+      margin: auto; } }
 .app-header .govuk-header__container--full-width {
   padding-left: 20px;
   padding-right: 20px; }
@@ -2717,9 +2722,14 @@
       padding-right: 30px; } }
 @media (min-width: 48.0625em) {
   .app-header .govuk-header__logo {
-    width: 45%; }
+    width: 55%; }
   .app-header .govuk-header__content {
     width: 55%; } }
+
+.app-header .header-content {
+  max-width: 750px;
+  max-width: 46.875rem;
+  margin: auto; }
 
 @media screen {
   .page-title + .search {
