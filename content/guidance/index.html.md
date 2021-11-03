@@ -2,7 +2,7 @@
 title: Guidance
 weight: 800
 dateAdded: 2021-01-22
-dateUpdated: 2021-02-01
+dateUpdated: 2021-11-03
 ---
 
 # DSA Guidance
@@ -12,8 +12,8 @@ These pieces of guidance are in development by the Data Standards Authority. We 
 
 | Name | Status |
 | --- | --- |
-| **[UK Government Reference Architecture for Data and APIs](referencearchitecture/)** | Draft |
-| **[Publish reference data for use across government](referencedata/)** | Draft |
 | **[API Management Guidance](apimanagement/)** | Draft |
-| **[api.gov.uk Domain Guidance](apidomain/)** | Draft |
-| **[GraphQL Guidance](graphql/)** | Draft |
+| **[UK Government Reference Architecture for Data and APIs](referencearchitecture/)** | Live |
+| **[Publish reference data for use across government](referencedata/)** | Live |
+| **[api.gov.uk Domain Guidance](apidomain/)** | Live |
+| **[GraphQL Guidance](graphql/)** | Live |
