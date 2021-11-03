@@ -99,11 +99,11 @@ If you are agreeing a contract of over £20 million, the supplier must provide t
 
 ### Storing and standardising your data
 
-The gGovernment’s [Data Standards Authority](https://www.gov.uk/government/groups/data-standards-authority) and the [Open Standards Board](https://www.gov.uk/government/groups/open-standards-board) have approved a number of [open standards for data](https://www.gov.uk/government/collections/open-standards-for-government-data-and-technology) for use by the government. Where possible and appropriate, you should use these standards to make it easier to analyse data and share it with other departments.
+The government’s [Data Standards Authority](https://www.gov.uk/government/groups/data-standards-authority) and the [Open Standards Board](https://www.gov.uk/government/groups/open-standards-board) have approved a number of [open standards for data](https://www.gov.uk/government/collections/open-standards-for-government-data-and-technology) for use by the government. Where possible and appropriate, you should use these standards to make it easier to analyse data and share it with other departments.
 
-Make data available in a suitable format, for example as a CSV file or through an API. Read the [guidance on using CSV file format](https://www.gov.uk/guidance/using-csv-file-format) and refer toYou should use the [API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards).
+Make data available in a suitable format, for example as a CSV file or through an API. Read the [guidance on using CSV file format](https://www.gov.uk/guidance/using-csv-file-format) and refer to the [API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards).
 
-You should alsoand consider:
+You should also consider:
 
 -   where you will store your data and whether the location meets your organisation’s security requirements    
 -   having a [cloud hosting strategy](https://www.gov.uk/guidance/creating-and-implementing-a-cloud-hosting-strategy)
