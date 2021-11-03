@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Access and record address data using the UPRN standard and AddressBase - Data Standards Authority</title>
+
+    <link href="/data-standards-authority/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/addressbase/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="alphagov.github.io" />
+      <meta name="twitter:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
+      <meta name="twitter:title" content="Access and record address data using the UPRN standard and AddressBase - Data Standards Authority" />
+      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/addressbase/" />
+
+      <meta property="og:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
+      <meta property="og:site_name" content="Data Standards Authority" />
+      <meta property="og:title" content="Access and record address data using the UPRN standard and AddressBase" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/addressbase/" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://alphagov.github.io/data-standards-authority" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          Data Standards Authority
+        </span>
+      </a>
+        <strong class="govuk-tag">Discovery</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+      <div class="app-pane__body">
+        <div class="app-pane__content">
+          <nav>
+            <ul class="contribution-banner navbar">
+              <li><div class="search" data-module="search" data-search-index-path="/data-standards-authority/search.json">
+  <form action="https://www.google.co.uk/search" method="get" role="search">
+    <input type="hidden" name="as_sitesearch" value="https://alphagov.github.io/data-standards-authority"/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input class="govuk-input govuk-!-margin-bottom-4" id="search" name="q" type="text" aria-controls="search-results" placeholder="Search">
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="polite">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+</li>
+              <li>
+  <a href="/data-standards-authority/standards/"><span>Standards Catalogue</span></a>
+  
+</li>
+<li>
+  <a href="/data-standards-authority/usecases/"><span>Use Cases</span></a>
+  
+</li>
+<li>
+  <a href="/data-standards-authority/guidance/"><span>Guidance</span></a>
+  
+</li>
+
+            </ul>
+          </nav>
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <p><em>This is a DRAFT document for discussion. This is not finalised. All aspects of this document are subject to change. Please leave comments on any aspect of it.</em></p>
+<h1 id="draft-access-and-record-address-data-using-the-uprn-standard-and-addressbase-draft">DRAFT Access and record address data using the UPRN standard and AddressBase DRAFT</h1><h3 id="use-free-property-and-street-information-to-add-geospatial-data-to-your-projects">Use free property and street information to add geospatial data to your projects</h3>
+<p>Follow this guidance if you&rsquo;re a public sector employee who needs to use address data, such as property and street information, in your work.</p>
+
+<p>The guidance shares best practice in accessing address data using Ordnance Survey (OS) <a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase">AddressBase</a>. This is a way to access essential geospatial data which is free for public sector workers as part of the <a href="https://www.ordnancesurvey.co.uk/business-government/public-sector-geospatial-agreement">Public Sector Geospatial Agreement (PSGA)</a>.</p>
+
+<p><a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase-core">AddressBase Core</a> is a free and easy way for public sector bodies to identify a property in Great Britain and locate it on a map with precision. The property has to exist, and not have been demolished, or yet to be built.</p>
+
+<p>All public sector bodies should <a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase-core">use AddressBase Core</a> for accessing address data rather than paying for other third party products. To be able to use AddressBase products for free, your organisation or project must be covered by the Public Sector Geospatial Agreement. You can <a href="https://www.ordnancesurvey.co.uk/business-government/partner-member/member">check if you are covered by the PSGA and if not, register for a membership</a>.</p>
+<h2 id="use-the-uprn-standard-to-identify-property-and-street-information">Use the UPRN standard to identify property and street information</h2>
+<p>AddressBase Core allows you to access every <a href="https://www.geoplace.co.uk/addresses/uprn">Unique Property Reference Number (UPRN)</a> in Great Britain.</p>
+
+<p>You must use the <a href="https://www.geoplace.co.uk/addresses/uprn">UPRN</a> standard when <a href="https://www.gov.uk/government/publications/open-standards-for-government/identifying-property-and-street-information">identifying places in the UK</a>. This allows users to easily cross-reference between different data sets and means fewer errors in data exchange and communication. Every addressable location in Great Britain has a UPRN, and using this consistent standard can save money, time, resources, and lives.</p>
+
+<p>You should consider AddressBase your source of truth for all address data in Great Britain, and use AddressBase Core whenever possible before other solutions.</p>
+<h2 id="why-you-should-use-addressbase">Why you should use AddressBase</h2>
+<p>AddressBase&rsquo;s primary source of address data is taken from local authorities. Local authorities have a legal responsibility to capture and maintain address data for Great Britain.</p>
+
+<p>This means AddressBase&rsquo;s data is authentic and accurate. It includes locations for around 33 million addresses, as well as additional metadata.</p>
+
+<p>The core underlying data is updated constantly, many times a day. OS collate and quality check the data, and publish a new version of the whole data set on AddressBase every week.</p>
+
+<p>You can use AddressBase to:</p>
+
+<ul>
+<li><p>include address data in any activity you are responsible for, as long as it is non-profit</p></li>
+<li><p>make any information you have created that includes AddressBase data in print, online and as data - such as a CSV or an API - available to the public</p></li>
+<li><p>meet your <a href="https://www.legislation.gov.uk/uksi/2018/1338/contents/made">INSPIRE publishing obligations</a>, making sure geospatial data is published in a consistent way</p></li>
+<li><p>share address data with anybody who is involved in providing an immediate response in emergency situations, even if they are not licensed to use OS data</p></li>
+<li><p>produce data suitable for third party research and development</p></li>
+</ul>
+
+<p>To be able to use AddressBase Core, your organisation or project must be covered by the Public Sector Geospatial Agreement. You should <a href="https://www.ordnancesurvey.co.uk/business-government/partner-member/member">check if you are covered by the PSGA and if not, register for a membership</a>.</p>
+<h2 id="check-other-resources-for-finding-geospatial-data-beyond-addressbase-core">Check other resources for finding geospatial data beyond AddressBase Core</h2>
+<p>If you need further geospatial data, including map tiles, searching within polygons, and data verification, you can use the OS <a href="https://www.ordnancesurvey.co.uk/business-government/products/os-places-api">Places API</a>. This API is also covered by the PSGA and is free to members.</p>
+
+<p>If your project or use case needs more advanced or specific features, there are other versions of AddressBase available. These include:</p>
+
+<ul>
+<li><p><a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase-plus">AddressBase Plus</a> for up-to-date local authority addresses, multi-occupancy addresses and OS MasterMap Topographic Identifier (TOID) references.</p></li>
+<li><p><a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase-premium">AddressBase Premium</a> which includes data in Geography Markup Language (GML) 3.2.1 of pre-build addresses, historic addresses, alternative addresses, OS MasterMap Topography and Integrated Transport Network Layer TOIDs</p></li>
+<li><p><a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase-islands">AddressBase Islands</a> for address data in Northern Ireland, Isle of Man and the Channel Islands\
+You can find more information about other AddressBase features, as well as contact details, <a href="https://www.ordnancesurvey.co.uk/business-government/products/addressbase">on OS&rsquo;s AddressBase website</a>.</p></li>
+</ul>
+
+          </main>
+
+          <aside>
+              <ul class="contribution-banner">
+                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/content/guidance/addressbase/index.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?body=Feedback+on+%27Access+and+record+address+data+using+the+UPRN+standard+and+AddressBase%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Fdata-standards-authority%2Fguidance%2Faddressbase%2F%29&amp;labels=bug&amp;title=Re%3A+%27Access+and+record+address+data+using+the+UPRN+standard+and+AddressBase%27">Feedback on this page</a></li>
+                <li><a href="mailto:standards-catalogue@digital.cabinet-office.gov.uk?subject=Feedback+on+%27Access+and+record+address+data+using+the+UPRN+standard+and+AddressBase%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Fdata-standards-authority%2Fguidance%2Faddressbase%2F%29">Feedback via email</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
+              </ul>
+          </aside>
+
+        </div>
+      </div>
+      <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/data-standards-authority/accessibility.html">Accessibility Statement</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+    <script src="/data-standards-authority/javascripts/application.js"></script>
+  </body>
+</html>

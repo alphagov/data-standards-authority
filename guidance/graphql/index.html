@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>DRAFT GraphQL Guidance - Data Standards Authority</title>
+
+    <link href="/data-standards-authority/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/graphql/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="alphagov.github.io" />
+      <meta name="twitter:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
+      <meta name="twitter:title" content="DRAFT GraphQL Guidance - Data Standards Authority" />
+      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/graphql/" />
+
+      <meta property="og:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
+      <meta property="og:site_name" content="Data Standards Authority" />
+      <meta property="og:title" content="DRAFT GraphQL Guidance" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/graphql/" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://alphagov.github.io/data-standards-authority" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          Data Standards Authority
+        </span>
+      </a>
+        <strong class="govuk-tag">Discovery</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+      <div class="app-pane__body">
+        <div class="app-pane__content">
+          <nav>
+            <ul class="contribution-banner navbar">
+              <li><div class="search" data-module="search" data-search-index-path="/data-standards-authority/search.json">
+  <form action="https://www.google.co.uk/search" method="get" role="search">
+    <input type="hidden" name="as_sitesearch" value="https://alphagov.github.io/data-standards-authority"/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input class="govuk-input govuk-!-margin-bottom-4" id="search" name="q" type="text" aria-controls="search-results" placeholder="Search">
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="polite">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+</li>
+              <li>
+  <a href="/data-standards-authority/standards/"><span>Standards Catalogue</span></a>
+  
+</li>
+<li>
+  <a href="/data-standards-authority/usecases/"><span>Use Cases</span></a>
+  
+</li>
+<li>
+  <a href="/data-standards-authority/guidance/"><span>Guidance</span></a>
+  
+</li>
+
+            </ul>
+          </nav>
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <p>The current version of <a href="https://www.gov.uk/guidance/using-graphql-for-your-api">guidance on Using GraphQL for your API</a> is published on GOV.UK.</p>
+
+<p><em>The content below is a DRAFT document for discussion. All aspects of this document are subject to change. Please leave comments on any aspect of it.</em></p>
+<h1 id="draft-using-graphql-for-your-api-draft"><em>DRAFT</em> | Using GraphQL for your API | <em>DRAFT</em></h1>
+<p>Understand the challenges and considerations around using GraphQL such as security, versioning, caching, tooling and team skills.</p>
+
+<p><a href="https://graphql.org">GraphQL</a> is an API specification originally developed by Facebook as an alternative to REST for querying complex data structures.</p>
+
+<p>GraphQL was open-sourced in 2015.  It’s still evolving and has relatively low adoption compared with other API styles like REST. However, there’s an active GraphQL developer community, and more tooling and platform vendors are starting to introduce native support for GraphQL.</p>
+<h2 id="benefits-of-graphql">Benefits of GraphQL</h2>
+<p>Using a GraphQL API provides your users with the ability to:</p>
+
+<ul>
+<li>request exactly what they need from multiple combined resources in a single call</li>
+<li>filter the returned data from a call as part of the query process</li>
+<li>use the <a href="https://graphql.org/learn/introspection/">introspection</a> feature to understand what resources and types are supported</li>
+</ul>
+
+<p>Because GraphQL is a specification, API developers must follow a standard set of interactions. This means GraphQL can be easier to understand and use than less rigid API frameworks.</p>
+<h2 id="before-you-decide-to-use-graphql">Before you decide to use GraphQL</h2>
+<p>You should only use GraphQL if you and your team can set up and manage the necessary:</p>
+
+<ul>
+<li>team skills</li>
+<li>security</li>
+<li>tooling</li>
+<li>versioning</li>
+<li>caching</li>
+<li>documentation</li>
+</ul>
+<h3 id="team-skills">Team skills</h3>
+<p>While GraphQL is becoming more popular, finding developers with the skills for GraphQL API development can be difficult.</p>
+
+<p>GraphQL developers are in high demand and can be more expensive to hire. There can be a steep learning curve for REST developers to unlearn REST habits and ‘think in GraphQL’. You should consider whether your team can afford the time and money to invest in getting the right skills in place.</p>
+<h3 id="security">Security</h3>
+<p>There are established security patterns for REST, but fewer for GraphQL. Because GraphQL is a query language, your users have more flexibility in what data they can request and can query across large amounts of connected data. This larger, more complex data set means there can be a higher risk of unexpected security holes.</p>
+
+<p>For this reason, it’s important to understand the whole data set the API covers and set the appropriate level of permissions so users can only access data they need to. This will improve the security of your data and improve the performance of your service by making sure your API does not return overly large result sets.</p>
+
+<p>You should set permissions so they’re granular, multi-level and role-based. In GraphQL, permissions can be set at the level of individual fields to restrict or allow access either at a user or a role level. For example, you can allow access to a particular field only to specific developer users, or to all users in a ‘Developer’ role.</p>
+
+<p>Given the level of access GraphQL gives to your data, you should implement rate limiting, set request timeouts and limit query depth and complexity, to avoid queries overloading (‘choking’) the system.</p>
+<h3 id="tooling">Tooling</h3>
+<p>Use an API management tool or API gateway for your permissions, authorisation, rate limiting and security policies, rather than building tools for this yourself. You must monitor and audit queries to make sure your service remains secure, so make sure you use an API gateway that can deal with GraphQL services.</p>
+
+<p>There are not many API management tools that support GraphQL, so you’ll need to look into what specialised tooling is available and suitable for your project.</p>
+<h3 id="versioning">Versioning</h3>
+<p>Using GraphQL does not protect you from introducing breaking changes. If you remove or rename fields, you’ll still need to communicate changes to your users in advance so they can make any necessary changes to their implementations.</p>
+
+<p>GraphQL can make communicating these changes easier. For example, you can flag deprecated fields or changes in query responses so developers can see them more easily. However, it’s important to reflect these changes in your documentation as well.</p>
+
+<p>You should also monitor whether any users are still using deprecated features, so you can offer them support.</p>
+
+<p>An example of where using a ‘versionless’ API can be helpful is for rapid prototyping. Using a single evolving version lets you experiment quickly with iterative changes to the schema without needing to keep updating the version. In production, however, you should use versioning for GraphQL in the same way as you would with other APIs.</p>
+<h3 id="caching">Caching</h3>
+<p>You&rsquo;ll need to consider when and <a href="https://graphql.org/learn/caching/">how to support caching in your GraphQL API</a> to ensure the service delivers the expected performance.</p>
+
+<p>You cannot use HTTP caching with GraphQL. Because GraphQL queries are so flexible and have infinite possibilities, you cannot cache all the possible results your API might return, so you’ll need to build special tooling to do caching.</p>
+
+<p>If you do not implement a cache, your GraphQL API might put more load on the database more frequently than an equivalent REST API, which can add costs and lower performance. You might also need dedicated database administrators to provide support and maintenance, which adds cost and operational overhead for your development team.</p>
+<h3 id="documentation">Documentation</h3>
+<p>Using GraphQL allows your users to use introspection to understand what resources and types your API supports, so you will need to make sure that your schema descriptions are correct and useful.</p>
+
+<p>However, introspection only helps your users when they are building queries. To help your users at different stages of integrating your API, you should produce a range of documentation including:</p>
+
+<ul>
+<li>conceptual documentation to introduce your API - an overview of the benefits as well as any conditions users should be aware of such as costs or technical prerequisites</li>
+<li>practical information to onboard users - for example, a ‘get started’ guide with information about your API’s rate limits and how to get authorisation</li>
+<li>task-based documentation, which might include template examples of queries</li>
+<li>reference documentation with descriptions for fields and types - to provide additional context about resources and types</li>
+</ul>
+
+<p>Your documentation should be relevant to what your users need. You might include information to help your users understand the basics of GraphQL, for example by linking to official documentation.</p>
+
+<p>You can read more about <a href="https://www.gov.uk/guidance/how-to-document-apis">how to document APIs</a> and <a href="https://www.gov.uk/guidance/writing-api-reference-documentation">writing API reference documentation</a>.</p>
+<h2 id="examples-of-when-graphql-can-be-a-good-choice">Examples of when GraphQL can be a good choice</h2>
+<p>You might want to use a GraphQL API if you:</p>
+
+<ul>
+<li>need to minimise bandwidth use, because you’re transmitting data over satellite or other low-bandwidth channels, or because data transfer is expensive</li>
+<li>need to use multiple data sources in a single query - for example, HM Passport Office uses a single GraphQL API so users can combine and query 3 different data sets</li>
+<li>have applications with different data needs, for example a mobile app and website - GraphQL can send the appropriate size of data to different applications</li>
+<li>are in a discovery phase and exploring what data you want to use - GraphQL lets you pull different data sets into a UI, which can be useful for rapid prototyping</li>
+</ul>
+
+<p>You can read more in <a href="https://technology.blog.gov.uk/2020/08/28/what-we-learned-from-a-recent-graphql-workshop/">a blog post about recent uses of GraphQL in government</a>.</p>
+
+          </main>
+
+          <aside>
+              <ul class="contribution-banner">
+                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/content/guidance/graphql/index.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?body=Feedback+on+%27DRAFT+GraphQL+Guidance%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Fdata-standards-authority%2Fguidance%2Fgraphql%2F%29&amp;labels=bug&amp;title=Re%3A+%27DRAFT+GraphQL+Guidance%27">Feedback on this page</a></li>
+                <li><a href="mailto:api-programme@digital.cabinet-office.gov.uk?subject=Feedback+on+%27DRAFT+GraphQL+Guidance%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Fdata-standards-authority%2Fguidance%2Fgraphql%2F%29">Feedback via email</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
+              </ul>
+          </aside>
+
+        </div>
+      </div>
+      <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/data-standards-authority/accessibility.html">Accessibility Statement</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+    <script src="/data-standards-authority/javascripts/application.js"></script>
+  </body>
+</html>

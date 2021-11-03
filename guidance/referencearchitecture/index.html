@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Reference Architecture for Government Data and APIs - Data Standards Authority</title>
+
+    <link href="/data-standards-authority/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/referencearchitecture/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="alphagov.github.io" />
+      <meta name="twitter:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
+      <meta name="twitter:title" content="Reference Architecture for Government Data and APIs - Data Standards Authority" />
+      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/referencearchitecture/" />
+
+      <meta property="og:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
+      <meta property="og:site_name" content="Data Standards Authority" />
+      <meta property="og:title" content="Reference Architecture for Government Data and APIs" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/referencearchitecture/" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://alphagov.github.io/data-standards-authority" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          Data Standards Authority
+        </span>
+      </a>
+        <strong class="govuk-tag">Discovery</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+      <div class="app-pane__body">
+        <div class="app-pane__content">
+          <nav>
+            <ul class="contribution-banner navbar">
+              <li><div class="search" data-module="search" data-search-index-path="/data-standards-authority/search.json">
+  <form action="https://www.google.co.uk/search" method="get" role="search">
+    <input type="hidden" name="as_sitesearch" value="https://alphagov.github.io/data-standards-authority"/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input class="govuk-input govuk-!-margin-bottom-4" id="search" name="q" type="text" aria-controls="search-results" placeholder="Search">
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="polite">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+</li>
+              <li>
+  <a href="/data-standards-authority/standards/"><span>Standards Catalogue</span></a>
+  
+</li>
+<li>
+  <a href="/data-standards-authority/usecases/"><span>Use Cases</span></a>
+  
+</li>
+<li>
+  <a href="/data-standards-authority/guidance/"><span>Guidance</span></a>
+  
+</li>
+
+            </ul>
+          </nav>
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <h2 id="the-most-recent-version-of-this-document-is-published-on-gov-uk">The most recent version of this document is published on <a href="https://www.gov.uk/guidance/develop-your-data-and-apis-using-a-reference-architecture">GOV.UK</a></h2><h1 id="develop-a-data-and-api-estate-using-a-reference-architecture">Develop a data and API estate using a reference architecture</h1>
+<p>This guidance is a reference architecture. It will help you build your IT infrastructure so it supports operational and analytical processes that focus on using data and APIs. It suggests best practices and a maturity model.</p>
+
+<p>Developing your government organisation’s technical estate can help you to:</p>
+
+<ul>
+<li>  reduce your IT spend by increasing functionality, reusability and availability of your technology</li>
+<li>  reduce government technology lock-in by increasing your organisation’s interoperability with other government technology</li>
+<li>  reduce the time and money you spend on Freedom of Information requests by proactively publishing data</li>
+<li>  promote technical innovation across government services by using new technologies</li>
+<li>  improve the way you communicate across government, by making it easier to share data between organisations</li>
+<li>  standardise your technology, by helping you understand how different technical and data standards fit together</li>
+<li>  encourage you to adopt existing open standards, and engage with the standards’ development</li>
+<li>  move away from document-based processes and systems to those based on standardised data, as <a href="https://www.gov.uk/government/publications/uk-national-data-strategy/national-data-strategy#open-data">suggested by the National Data Strategy</a></li>
+<li>  encourage cultural change in your organisation by building services that are interoperable with others both inside and outside government</li>
+<li>  respond to feedback from users and resolve identified problems</li>
+</ul>
+
+<p>By following this reference architecture, your services will meet the main requirements of the <a href="https://www.gov.uk/service-manual/service-standard">Service Standard</a> and the <a href="https://www.gov.uk/guidance/digital-and-technology-spend-controls-version-5">spend controls process</a>. This does not replace the spend controls process, or the need to go through a <a href="https://www.gov.uk/service-manual/service-assessments">service assessment</a>.</p>
+<h2 id="plan-your-architecture-using-a-maturity-model">Plan your architecture using a maturity model</h2>
+<p>You will need to assess the maturity of your reference architecture.</p>
+
+<p>At a minimum, the architecture you build should:</p>
+
+<ul>
+<li>  offer a service which can scale with demand using <a href="https://www.gov.uk/guidance/government-cloud-first-policy">cloud technology</a></li>
+<li>  provide access <a href="https://docs.publishing.service.gov.uk/manual/add-authentication-to-an-application.html">through a common authentication standard</a>, such as <a href="https://oauth.net/2/">OAuth</a></li>
+<li>  produce data <a href="https://www.gov.uk/government/publications/open-standards-principles">using the Open Standards Principles</a></li>
+<li>  give users access to data using a documented API</li>
+<li>  use <a href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/describing-restful-apis-with-openapi-3">OpenAPI 3</a> to document REST APIs</li>
+<li>  let external users access the system where appropriate</li>
+</ul>
+
+<p>This model is one way of assessing and developing the maturity of your architecture:</p>
+
+<table>
+  <tr>
+   <td>
+   </td>
+   <td><strong>Documenting existing systems</strong>
+   </td>
+   <td><strong>API</strong>
+   </td>
+   <td><strong>OAuth</strong>
+   </td>
+   <td><strong>Open standards</strong>
+   </td>
+   <td><strong>Data</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Maturity level 1</strong>
+   </td>
+   <td>Your systems are not all documented
+   </td>
+   <td>Most of your systems do not support APIs
+   </td>
+   <td>The OAuth security protocol is available for users in your organisation
+   </td>
+   <td>Some of your systems use open standards
+   </td>
+   <td>Your organisation data is mostly entered manually
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Maturity level 2</strong>
+   </td>
+   <td>Your systems are all documented
+   </td>
+   <td>The majority of your systems support APIs
+   </td>
+   <td>OAuth is available for cross- government users
+   </td>
+   <td>All of your systems use open standards
+   </td>
+   <td>Data is only entered manually to collect information that cannot be collected any other way
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Maturity level 3</strong>
+   </td>
+   <td>Your documentation is automated and self-updating
+   </td>
+   <td>Your APIs are published to <a href="https://www.api.gov.uk/">API catalogue</a>
+<p>
+You have OpenAPI documentation
+   </td>
+   <td>OAuth is available for users outside government, as well as all users inside government
+   </td>
+   <td>You work with standards development organisations to define standards
+   </td>
+   <td>Your organisation produces high quality reference data for other systems
+   </td>
+  </tr>
+</table>
+<h2 id="build-an-architecture-that-promotes-data-exchange-across-government">Build an architecture that promotes data exchange across government</h2>
+<p>Government organisations use different systems for different needs, for example HR, communications or statistical systems. Sometimes these can be unique to an organisation.</p>
+
+<p>You should aim to build an architecture that makes it easier to exchange data with other government organisations. You can do this by making sure your:</p>
+
+<ul>
+<li>  system can exchange data with other systems by being as interoperable as possible</li>
+<li>  system produces data in an <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles">open standard format</a></li>
+<li>  system has an API</li>
+<li>  API is documented according to <a href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/describing-restful-apis-with-openapi-3">the OpenAPI specification</a></li>
+<li>  API uses a <a href="https://www.gov.uk/guidance/gds-api-technical-and-data-standards#to-provide-application-level-authorisation">common authentication protocol</a></li>
+<li>  systems documentation is up to date and clearly shows how they connect to other systems</li>
+</ul>
+
+<p>You should also make sure:</p>
+
+<ul>
+<li>  users outside of government are able to access your data, where appropriate, using an <a href="https://www.gov.uk/guidance/gds-api-technical-and-data-standards#when-to-authenticate-your-api">appropriately authenticated API</a></li>
+<li>  external organisations can reuse software you create</li>
+<li>  data you use is gathered from core data sets and does not <a href="https://www.gov.uk/guidance/manage-your-data-for-access-and-reuse">replicate core data</a></li>
+</ul>
+<h3 id="reuse-applications-and-common-data">Reuse applications and common data</h3>
+<p>When building your architecture, you should <a href="https://www.gov.uk/guidance/share-and-reuse-technology">look for existing software and services</a> which fit your needs, and reuse them. This includes those developed by other organisations.</p>
+
+<p>Your organisation should decide whether to <a href="https://www.gov.uk/guidance/define-your-purchasing-strategy">buy or build</a>, but you must follow the <a href="https://www.gov.uk/guidance/digital-and-technology-spend-controls-version-5">GDS spend controls process</a>. You should make as much of your data as interoperable as possible by <a href="https://www.gov.uk/guidance/integrate-and-adapt-technology">following point 9 of the Technology Code of Practice</a>.</p>
+
+<p>Where possible, you should make use of shared platforms such as <a href="https://www.cloud.service.gov.uk/">GOV.UK PaaS</a>, which can host your service in the government cloud. You can also use existing government platforms that carry out specific services. For example, instead of building a new payment system, you should use <a href="https://www.payments.service.gov.uk/">GOV.UK Pay</a>.</p>
+
+<p>If a cross-government solution does not yet exist, you should consult with other teams to see if they have solved a similar issue and work together on developing a common solution.</p>
+
+<p>You should design and develop technology with the expectation that it could become part of Government as a Platform in the future. This means following <a href="https://www.gov.uk/service-manual/service-standard/point-14-operate-a-reliable-service">GDS Service Manual guidelines</a> on operating a reliable and scalable platform.</p>
+
+<p>Technology development should <a href="https://www.gov.uk/government/publications/open-source-guidance">happen in the open</a>. Where appropriate, all your code should be open source, and licenced for other people to reuse. You should understand the intellectual property (IP) rights if you’re using technology developed by a third party. \</p>
+
+<p>You should reuse existing datasets whenever possible. You should be careful not to rebuild datasets that already exist.</p>
+
+<p>All data should use approved open data standards and<a href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/using-metadata-to-describe-csv-data"> include metadata to allow other people to reuse it</a>.</p>
+<h3 id="follow-a-services-and-systems-model-based-on-data">Follow a services and systems model based on data</h3>
+<p>You should aim for an approach to services and systems in your organisation based around data, and move towards an approach <a href="https://www.gov.uk/government/publications/uk-national-data-strategy/national-data-strategy">based on standardised data</a>.</p>
+
+<p>A &ldquo;service&rdquo; is the method by which users interact with the government, for example <a href="https://www.gov.uk/renew-driving-licence">Renew your driving licence</a>. It is a group of multiple, interoperable systems that ingests, stores, manipulates, and produces data.</p>
+
+<p>A &ldquo;system&rdquo; is one of the components which makes up a service. For example, the database storing the information, the sign in system, or an analytics platform.</p>
+
+<p>Your organisation should follow a model which transforms unstructured data into structured data as soon as possible when the data arrives.</p>
+
+<p>This model should create a record of all events and transactions relating to that data, then store both the data and its record in a database. This allows for more consistent data that is easy to manipulate and retrieve. It also helps to <a href="https://www.gov.uk/guidance/manage-your-data-for-access-and-reuse">make sure that data is accessible and reusable</a>.</p>
+
+<p>When your data is requested by other people, it must be provided as structured data through an API. <a href="https://www.gov.uk/government/collections/api-design-guidance">Read guidance about designing, building and running APIs</a> to best suit your organisation’s needs.</p>
+
+<p>Your data-based model can transform this into unstructured data, for example customer data being turned into a postable paper document.</p>
+
+<p><a href="https://www.gov.uk/guidance/choose-tools-and-infrastructure-to-make-better-use-of-your-data">Read guidance on choosing tools and infrastructure</a> to make better use of data to help you choose software and standards to suit your organisation.</p>
+
+          </main>
+
+          <aside>
+              <ul class="contribution-banner">
+                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/content/guidance/referencearchitecture/index.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?body=Feedback+on+%27Reference+Architecture+for+Government+Data+and+APIs%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Fdata-standards-authority%2Fguidance%2Freferencearchitecture%2F%29&amp;labels=bug&amp;title=Re%3A+%27Reference+Architecture+for+Government+Data+and+APIs%27">Feedback on this page</a></li>
+                <li><a href="mailto:standards-catalogue@digital.cabinet-office.gov.uk?subject=Feedback+on+%27Reference+Architecture+for+Government+Data+and+APIs%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Fdata-standards-authority%2Fguidance%2Freferencearchitecture%2F%29">Feedback via email</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
+              </ul>
+          </aside>
+
+        </div>
+      </div>
+      <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/data-standards-authority/accessibility.html">Accessibility Statement</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+    <script src="/data-standards-authority/javascripts/application.js"></script>
+  </body>
+</html>
