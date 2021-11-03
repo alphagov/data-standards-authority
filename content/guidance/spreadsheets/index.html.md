@@ -5,7 +5,7 @@ keywords: 'spreadsheets'
 identifier: DSA-006
 name: Spreadsheets
 organisation: Data Standards Authority
-status: Active
+status: active
 startDate: 2021-06-28
 dateAdded: 2021-06-28
 dateUpdated: 2021-06-28
