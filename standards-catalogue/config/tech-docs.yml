@@ -20,9 +20,6 @@ prevent_indexing: false
 show_contribution_banner: true
 github_repo: alphagov/data-standards-authority/
 
-#for gh-pages or other directory views, build the view source link
-project_name: standards-catalogue
-
 #to add feedback email address on pages:
 contact_email: standards-catalogue@digital.cabinet-office.gov.uk
 
