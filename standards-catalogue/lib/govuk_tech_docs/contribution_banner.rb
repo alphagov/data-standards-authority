@@ -20,8 +20,9 @@ module GovukTechDocs
 
     def report_issue_url
       url = config[:source_urls]&.[](:report_issue_url)
+
       params = {
-        body: "Feedback on '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page.url})",
+        body: "Feedback on '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page_url})",
       }
 
       if url.nil?
@@ -52,7 +53,7 @@ module GovukTechDocs
       email = current_page.data.author_email || config[:tech_docs][:contact_email]
 
       params = {
-        subject: "Feedback on '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page.url})",
+        subject: "Feedback on '#{current_page.data.title}' (#{config[:tech_docs][:host]}#{current_page_url})",
       }
 
       "mailto:#{email}?#{URI.encode_www_form(params)}"
@@ -79,6 +80,12 @@ module GovukTechDocs
 
     def locals
       current_page.metadata[:locals]
+    end
+
+    def current_page_url
+      # remove the prefix that appears on the published site, breaking contribution links
+      current_page.url
+        .sub(/\/data-standards-authority/, "")
     end
   end
 end
