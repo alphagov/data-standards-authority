@@ -1,10 +1,10 @@
 ---
-title: Draft API Standards v3
+title: API Standards v3
 keywords: 'API Standards'
 identifier: DSA-002
 name: API Standards v3
 organisation: Data Standards Authority
-status: Active
+status: published
 startDate: 2020-12-01
 dateAdded: 2020-12-16
 dateUpdated: 2021-02-01

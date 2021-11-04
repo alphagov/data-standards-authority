@@ -6,7 +6,7 @@ identifier: DSA-005
 name: APIDomains
 organisation: Data Standards Authority
 author_email: api-programme@digital.cabinet-office.gov.uk
-status: Draft
+status: published
 startDate: 2019-07-17
 dateAdded: 2021-05-24
 dateUpdated: 2021-01-19

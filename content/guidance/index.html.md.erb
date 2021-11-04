@@ -1,0 +1,29 @@
+---
+title: Guidance
+weight: 800
+---
+# DSA Guidance
+
+## Description:
+These pieces of guidance are in development by the Data Standards Authority. We welcome your feedback on them, please open an issue from the link on the relevant page to add your comments. The following documents are currently open:
+
+<div style = "overflow-x:auto;">
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <% current_resource.children.sort_by{ |page| get_link_text(page).downcase }.each do |f| %>
+        <% if f.content_type.include? "html" %>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><%= link_to get_link_text(f), f.path.delete_prefix("guidance/") %> </td>
+              <td class="govuk-table__cell"><%= display_status(f.data.status) %></td>
+            </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

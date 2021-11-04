@@ -1,12 +1,12 @@
 ---
-title: DRAFT API Management Guidance
+title: API Management Guidance
 weight: 830
 keywords: 'API Management'
 identifier: DSA-003
 name: APIManagement
 organisation: Data Standards Authority
 author_email: api-programme@digital.cabinet-office.gov.uk
-status: Draft
+status: draft
 startDate: 2021-03-22
 dateAdded: 2021-03-22
 dateUpdated: 2021-05-26
