@@ -1,6 +1,6 @@
 ---
 title: External Standards Catalogues
-
+exclude_from_list: true
 ---
 
 # External Standards Catalogues
