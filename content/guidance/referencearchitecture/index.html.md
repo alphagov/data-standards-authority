@@ -5,7 +5,7 @@ keywords: 'Reference Architecture'
 identifier: DSA-001
 name: ReferenceArchitecture
 organisation: Data Standards Authority
-status: active
+status: published
 startDate: 2020-10-01
 dateAdded: 2020-12-16
 dateUpdated: 2021-05-26

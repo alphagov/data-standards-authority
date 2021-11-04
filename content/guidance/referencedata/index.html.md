@@ -5,7 +5,7 @@ keywords: 'Reference Data'
 identifier: DSA-002
 name: ReferenceArchitecture
 organisation: Data Standards Authority
-status: active
+status: published
 startDate: 2021-01-22
 dateAdded: 2021-01-27
 dateUpdated: 2021-05-26

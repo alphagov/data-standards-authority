@@ -5,7 +5,7 @@ keywords: 'TCOP Point 10'
 identifier: DSA-006
 name: TCOPPoint10
 organisation: Data Standards Authority
-status: active
+status: published
 startDate: 2021-10-07
 dateAdded: 2021-10-07
 dateUpdated: 2021-10-07

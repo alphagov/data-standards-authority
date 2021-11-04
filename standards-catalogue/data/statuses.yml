@@ -4,3 +4,5 @@ draft:
   name: Draft
 review:
   name: Review
+published:
+  name: Published

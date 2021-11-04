@@ -6,7 +6,7 @@ identifier: DSA-004
 name: GraphQL
 organisation: Data Standards Authority
 author_email: api-programme@digital.cabinet-office.gov.uk
-status: active
+status: published
 startDate: 2021-04-01
 dateAdded: 2021-04-01
 dateUpdated: 2021-10-06

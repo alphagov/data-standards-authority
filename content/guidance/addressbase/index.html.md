@@ -5,7 +5,7 @@ keywords: 'AddressBase'
 identifier: DSA-001
 name: AddressBase
 organisation: Data Standards Authority
-status: active
+status: published
 startDate: 
 dateAdded: 2021-06-28
 dateUpdated: 2021-06-28
