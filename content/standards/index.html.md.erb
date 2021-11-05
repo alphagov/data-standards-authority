@@ -20,8 +20,8 @@ The Data Standards Catalogue currently contains the following Standards:
       </tr>
     </thead>
     <tbody class="govuk-table__body">
-      <% current_resource.children.sort_by{ |page| get_link_text(page).downcase }.each do |f| %>
-        <% if f.content_type.include? "html" %>
+      <% current_resource.children.reject{|page| page.data.exclude_from_list}.sort_by{ |page| get_link_text(page).downcase }.each do |f| %>
+      <% if f.content_type.include? "html" %>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><%= link_to get_link_text(f), f.path.delete_prefix("standards/") %> </td>
               <td class="govuk-table__cell"><%= f.data.classification %> </td>
@@ -33,5 +33,6 @@ The Data Standards Catalogue currently contains the following Standards:
   </table>
 </div>
 
+## External Standards Catalogues
 
-
+We also have a list of [external standards catalogues](/standards/external-standards.html).
