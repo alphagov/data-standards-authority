@@ -5,8 +5,8 @@ draft:
   name: Draft
   styling: status-draft
 review:
-  name: Review
-  styling: status-review
+  name: In review
+  styling: status-draft
 published:
   name: Published
   styling: status-active

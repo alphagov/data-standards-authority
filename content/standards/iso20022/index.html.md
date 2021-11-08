@@ -7,7 +7,7 @@ organisation:	ISO
 reference:	ISO 20022
 identifier:	pacs
 name: Universal financial industry message scheme
-status: draft
+status: review
 dateAdded: 2021-02-02
 dateUpdated: 2021-02-02
 classification: Domain Specific
