@@ -25,7 +25,7 @@ The Data Standards Catalogue currently contains the following Standards:
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><%= link_to get_link_text(f), f.path.delete_prefix("standards/") %> </td>
               <td class="govuk-table__cell"><%= f.data.classification %> </td>
-              <td class="govuk-table__cell"><%= display_status(f.data.status) %></td>
+              <td class="govuk-table__cell"><span class=<%= data.statuses[f.data.status].styling %>><%= display_status(f.data.status) %></span></td>
             </tr>
         <% end %>
       <% end %>

@@ -20,7 +20,7 @@ These pieces of guidance are in development by the Data Standards Authority. We 
         <% if f.content_type.include? "html" %>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><%= link_to get_link_text(f), f.path.delete_prefix("guidance/") %> </td>
-              <td class="govuk-table__cell"><%= display_status(f.data.status) %></td>
+              <td class="govuk-table__cell"><span class=<%= data.statuses[f.data.status].styling %>><%= display_status(f.data.status) %></span></td>
             </tr>
         <% end %>
       <% end %>
