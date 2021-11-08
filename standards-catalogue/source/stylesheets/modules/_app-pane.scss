@@ -61,5 +61,13 @@
       margin-left: $toc-width;
     }
   }
+
+  .status-active {
+    background-color: #8D5;
+  }
+
+  .status-draft {
+    background-color: #ffdd00;
+  }
 }
 

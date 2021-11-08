@@ -1,8 +1,12 @@
 active:
   name: Endorsed
+  styling: status-active
 draft:
   name: Draft
+  styling: status-draft
 review:
-  name: Review
+  name: In review
+  styling: status-draft
 published:
   name: Published
+  styling: status-active
