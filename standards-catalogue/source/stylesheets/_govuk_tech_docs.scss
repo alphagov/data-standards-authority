@@ -22,3 +22,5 @@ $govuk-assets-path: "/assets/govuk-frontend/govuk/assets/" !default;
 
 @import "core";
 @import "vendor/fixedsticky";
+
+@import "@ministryofjustice/frontend/moj/components/sortable-table/sortable-table";

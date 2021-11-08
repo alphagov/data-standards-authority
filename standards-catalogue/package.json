@@ -6,6 +6,7 @@
     "lint": "standard"
   },
   "dependencies": {
+    "@ministryofjustice/frontend": "^1.0.0",
     "govuk-frontend": "^3.11.0",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
