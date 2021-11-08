@@ -28,9 +28,21 @@ task :build do
   sh "bundle exec middleman build --clean --bail"
 end
 
-task schema: ["schema:standards"]
+task schema: ["schema:standards", "schema:data_files"]
 
 namespace :schema do
+  namespace :data_files do
+    desc "Validate that the Status data file matches standards"
+    task :sync_standards_status do
+      schema = schema("standards")
+      schema_options = schema["definitions"]["status"]["enum"]
+      data_options = YAML.load_file("data/statuses.yml")["standard"]
+      raise "Statuses are mismatched between schema and data file" unless schema_options == data_options.keys
+    end
+  end
+
+  task data_files: ["data_files:sync_standards_status"]
+
   desc "Validate Standards are schema compliant"
   task :standards do
     schema = schema("standards")
