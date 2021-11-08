@@ -2697,7 +2697,11 @@
     width: 330px; }
   .no-flexbox.no-flexboxtweener .app-pane__content,
   .no-js .app-pane__content {
-    margin-left: 330px; } }
+    margin-left: 330px; }
+  .status-active {
+    background-color: #8D5; }
+  .status-draft {
+    background-color: #ffdd00; } }
 
 .app-footer {
   padding-left: 15px;
