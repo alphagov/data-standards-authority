@@ -2697,11 +2697,7 @@
     width: 330px; }
   .no-flexbox.no-flexboxtweener .app-pane__content,
   .no-js .app-pane__content {
-    margin-left: 330px; }
-  .status-active {
-    background-color: #8D5; }
-  .status-draft {
-    background-color: #ffdd00; } }
+    margin-left: 330px; } }
 
 .app-footer {
   padding-left: 15px;
@@ -3165,6 +3161,12 @@ html.has-search-results-open {
 
 .navbar li {
   margin: 2px 15px 2px 0; }
+
+.status-active {
+  background-color: #8D5; }
+
+.status-draft {
+  background-color: #ffdd00; }
 
 .fixedsticky {
   position: -moz-sticky;
