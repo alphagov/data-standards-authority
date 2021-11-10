@@ -1,5 +1,5 @@
 ---
-name: UPRN
+name: Unique Property Reference Number
 contraction: UPRN
 specification:
   name: 'Identifying property and street information'
