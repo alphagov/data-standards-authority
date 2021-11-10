@@ -81,9 +81,9 @@ helpers do
     end
   end
 
-  def display_status(id)
-    if data.statuses[id]
-      status = data.statuses[id]
+  def display_status(type, id)
+    if data.statuses[type] && data.statuses[type][id]
+      status = data.statuses[type][id]
       "<span class='#{status.styling}'>#{status.name}</span>"
     else
       id
