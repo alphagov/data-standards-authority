@@ -83,7 +83,8 @@ helpers do
 
   def display_status(id)
     if data.statuses[id]
-      data.statuses[id].name
+      status = data.statuses[id]
+      "<span class='#{status.styling}'>#{status.name}</span>"
     else
       id
     end
