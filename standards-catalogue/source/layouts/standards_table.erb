@@ -15,7 +15,7 @@
           <% elsif key == 'organisation' %>
             <td nowrap><strong><%= display_organisation(value) %></strong> </td>
           <% elsif key == 'status' %>
-            <td nowrap><strong class=<%= data.statuses[value].styling %>><%= display_status(value) %></strong> </td>
+            <td nowrap><strong><%= display_status(:standard, value) %></strong> </td>
           <% else %>
             <td nowrap><strong><%= value %></strong> </td>
           <% end %>
