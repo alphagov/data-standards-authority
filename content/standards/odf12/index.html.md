@@ -6,7 +6,7 @@ subject: OpenDocuments (ODF)
 reference:	ODF 1.2
 name: ODF 1.2
 keywords: "OpenDocuments"
-status: active
+status: endorsed
 dateAdded: 2021-02-02
 dateUpdated: 2021-02-02
 classification: Data, Information and Records Management Lifecycle

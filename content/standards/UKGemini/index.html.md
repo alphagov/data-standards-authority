@@ -8,7 +8,7 @@ name: UK Gemini
 supersededBy: 2.3
 organisation: Geospatial Commission
 validFrom: Jun-18
-status: active
+status: endorsed
 startDate: 2020-12-01
 dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
