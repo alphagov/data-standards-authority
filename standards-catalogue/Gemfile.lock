@@ -55,6 +55,8 @@ GEM
     http_parser.rb (0.6.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
+    json-schema (2.8.1)
+      addressable (>= 2.4)
     kramdown (2.3.1)
       rexml
     listen (3.0.8)
@@ -210,6 +212,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   factory_bot
+  json-schema
   middleman (>= 4.4.0, < 5.0)
   middleman-autoprefixer
   middleman-compass

@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://github.com/alphagov/data-standards-authority/blob/main/standards-catalogue/.schema/standards.json",
+  "title": "Data Standards Authority Standards objects",
+  "description": "A JSON Schema to manage the format of Standards objects",
+  "type": "object",
+  "required": [
+    "name",
+    "contraction",
+    "specification_url",
+    "maintainer_id",
+    "endorsement_status_events",
+    "tags",
+    "license_id"
+  ],
+  "properties": {
+    "identifier": {
+      "$comment": "The unique identifier assigned to this standard",
+      "type": "string"
+    },
+    "name": {
+      "$comment": "The title or name of the standard",
+      "type": "string",
+      "maxLength": 70
+    },
+    "contraction": {
+      "$comment": "A shorter way of referring to the standard, for instance via an acronym",
+      "type": "string",
+      "maxLength": 10
+    },
+    "specification_url": {
+      "$comment": "A link to a publicly accessible specification for the standard",
+      "type": "string",
+      "pattern": "^https?://.*"
+    },
+    "maintainer_id": {
+      "$comment": "The identifier of the organisation that maintains the standard",
+      "type": "string"
+    },
+    "endorsement_status_events": {
+      "$comment": "The events that this standard's status has been through",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/endorsement_status_events"
+      }
+    },
+    "tags": {
+      "$comment": "The overarching tags that this fits under",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/tag_id"
+      }
+    },
+    "description": {
+      "$comment": "The long-form description of the standard, for instance written using Markdown",
+      "type": "string"
+    },
+    "license_id": {
+      "$comment": "A Software Package Data Exchange (SPDX) license identifier, if applicable, or `Proprietary` / `Unknown`",
+      "type": "string",
+      "pattern": "(Proprietary|Unknown|.+)",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "tag_id": {
+      "$comment": "The tag identifier that this standard relates to",
+      "type": "string"
+    },
+    "endorsement_status_event": {
+      "$comment": "A change in endorsement for a standard, for the purpose of the standards workflow",
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/status"
+        },
+        "date": {
+          "$comment": "Date that the change in status occurred",
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "endorsed",
+        "review"
+      ]
+    }
+  }
+}
