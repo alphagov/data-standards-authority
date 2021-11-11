@@ -67,6 +67,7 @@ Having a clear structure for escalating issues will save a lot of time and energ
 ### What API Management strategy can help with
 
 An API management strategy can:
+
 *  provide visibility of all your APIs, encouraging reuse
 *  allow you to standardise common design patterns
 *  help you automate many administrative and operational tasks
