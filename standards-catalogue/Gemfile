@@ -36,3 +36,5 @@ gem "middleman-sprockets"
 gem "redcarpet"
 gem "sass"
 gem "sprockets"
+
+gem "json-schema"

@@ -1,15 +1,44 @@
 require "rspec/core/rake_task"
 require "rubocop/rake_task"
+require "json-schema"
+
+def schema(schema_name)
+  JSON.parse(File.read(".schema/#{schema_name}.json"))
+end
+
+def is_valid_schema(schema, file_to_validate)
+  to_validate = YAML.load_file(file_to_validate)
+
+  errors = JSON::Validator.fully_validate(schema, to_validate).to_a
+  return true if errors.empty?
+
+  puts "Validation failed while trying to validate `#{file_to_validate}`: "
+  jj errors
+  false
+end
 
 RSpec::Core::RakeTask.new(:spec)
 RuboCop::RakeTask.new
 
-task default: ["spec", "rubocop:auto_correct"]
+task default: ["spec", "rubocop:auto_correct", "schema"]
 
 desc "Build site"
 task :build do
   sh("rsync -a ../content/ source")
   sh "bundle exec middleman build --clean --bail"
+end
+
+task schema: ["schema:standards"]
+
+namespace :schema do
+  desc "Validate Standards are schema compliant"
+  task :standards do
+    schema = schema("standards")
+    errors = Dir.glob("../content/standards/*/*.md").map do |f|
+      is_valid_schema(schema, f)
+    end
+    raise unless errors.all?
+  end
 end
 
 desc "Publish build to Github pages"
