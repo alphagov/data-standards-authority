@@ -1,7 +1,7 @@
 ---
 title: UPRN
 name: UPRN
-organisation: Ordnance Survey
+organisation: ordnancesurvey
 identifier: UKABC-123
 link: https://www.gov.uk/government/publications/open-standards-for-government/identifying-property-and-street-information
 keywords: Identification, geospatial

@@ -3,7 +3,7 @@ title: Universal financial industry message scheme
 category: Domain Specific
 topic: 5.5 Payment
 subject: Payments Clearing and Settlement
-organisation:	ISO
+organisation: iso
 reference:	ISO 20022
 identifier:	pacs
 name: Universal financial industry message scheme

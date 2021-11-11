@@ -4,3 +4,18 @@ threesixtygiving:
 ietf:
   name: IETF
   url: 'https://www.ietf.org/'
+odf:
+  name: OASIS ODF Technical Committee
+  url: 'https://www.oasis-open.org/'
+openreferraluk:
+  name: Open Referral UK
+  url: 'https://openreferraluk.org/'
+geospatialcommission:
+  name: Geospatial Commission
+  url: 'https://www.agi.org.uk/'
+iso:
+  name: ISO
+  url: 'https://www.iso.org/'
+ordnancesurvey:
+  name: Ordnance Survey
+  url: 'https://www.ordnancesurvey.co.uk/'
