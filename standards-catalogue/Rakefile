@@ -58,9 +58,19 @@ namespace :schema do
       end
       raise unless errors.all?
     end
+
+    desc "Validate licences are schema compliant"
+    task :licences do
+      schema = schema("licence")
+      organisations = YAML.load_file("data/licences.yml")
+      errors = organisations.map do |f|
+        is_valid_schema(schema, f[1])
+      end
+      raise unless errors.all?
+    end
   end
 
-  task data_files: %w[data_files:sync_standards_status data_files:organisations]
+  task data_files: %w[data_files:sync_standards_status data_files:organisations data_files:licences]
 
   desc "Validate Standards are schema compliant"
   task :standards do
