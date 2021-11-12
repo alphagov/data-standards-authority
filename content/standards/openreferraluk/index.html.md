@@ -1,7 +1,7 @@
 ---
 title: OpenReferralUK
 name: OpenReferralUK
-organisation: openreferraluk
+organisation: open-referral-uk
 keywords: "Service Referrals"
 identifier: UK123-ZXY
 link: https://openreferraluk.org/
