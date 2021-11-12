@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://github.com/alphagov/data-standards-authority/blob/main/standards-catalogue/.schema/organisation.json",
+  "title": "Data Standards Authority Organisations objects",
+  "description": "A JSON Schema to manage the format of organisation objects",
+  "type": "object",
+  "required": [
+    "name",
+    "url"
+  ],
+  "properties": {
+    "name": {
+      "$comment": "The name of the organisation",
+      "type": "string",
+      "minLength": 2
+    },
+    "url": {
+      "$comment": "A link to the organisation",
+      "type": "string",
+      "pattern": "^https?://.*"
+    }
+  }
+}

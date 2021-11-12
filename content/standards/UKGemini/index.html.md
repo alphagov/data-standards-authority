@@ -6,7 +6,7 @@ link: https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini
 isRelatedTo: ISO 19139
 name: UK Gemini
 supersededBy: 2.3
-organisation: Geospatial Commission
+organisation: geospatial-commission
 validFrom: Jun-18
 status: endorsed
 startDate: 2020-12-01

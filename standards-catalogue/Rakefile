@@ -6,13 +6,22 @@ def schema(schema_name)
   JSON.parse(File.read(".schema/#{schema_name}.json"))
 end
 
-def is_valid_schema(schema, file_to_validate)
+def does_file_match_schema(schema, file_to_validate)
   to_validate = YAML.load_file(file_to_validate)
 
   errors = JSON::Validator.fully_validate(schema, to_validate).to_a
   return true if errors.empty?
 
   puts "Validation failed while trying to validate `#{file_to_validate}`: "
+  jj errors
+  false
+end
+
+def is_valid_schema(schema, to_validate)
+  errors = JSON::Validator.fully_validate(schema, to_validate).to_a
+  return true if errors.empty?
+
+  puts "Validation failed while trying to validate `#{to_validate}`: "
   jj errors
   false
 end
@@ -39,15 +48,25 @@ namespace :schema do
       data_options = YAML.load_file("data/statuses.yml")["standard"]
       raise "Statuses are mismatched between schema and data file" unless schema_options == data_options.keys
     end
+
+    desc "Validate organisations are schema compliant"
+    task :organisations do
+      schema = schema("organisation")
+      organisations = YAML.load_file("data/organisations.yml")
+      errors = organisations.map do |f|
+        is_valid_schema(schema, f[1])
+      end
+      raise unless errors.all?
+    end
   end
 
-  task data_files: ["data_files:sync_standards_status"]
+  task data_files: %w[data_files:sync_standards_status data_files:organisations]
 
   desc "Validate Standards are schema compliant"
   task :standards do
     schema = schema("standards")
     errors = Dir.glob("../content/standards/*/*.md").map do |f|
-      is_valid_schema(schema, f)
+      does_file_match_schema(schema, f)
     end
     raise unless errors.all?
   end
