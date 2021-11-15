@@ -68,9 +68,19 @@ namespace :schema do
       end
       raise unless errors.all?
     end
+
+    desc "Validate tags are schema compliant"
+    task :tags do
+      schema = schema("tag")
+      tags = YAML.load_file("data/tags.yml")
+      errors = tags.map do |_, tag|
+        is_valid_schema(schema, tag)
+      end
+      raise unless errors.all?
+    end
   end
 
-  task data_files: %w[data_files:sync_standards_status data_files:organisations data_files:licences]
+  task data_files: %w[data_files:sync_standards_status data_files:organisations data_files:licences data_files:tags]
 
   desc "Validate Standards are schema compliant"
   task :standards do
