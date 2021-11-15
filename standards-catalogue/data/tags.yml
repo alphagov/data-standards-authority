@@ -1,0 +1,24 @@
+domain-specific:
+  name: Domain Specific
+payments:
+  name: Payments Clearing and Settlement
+metadata:
+  name: Metadata
+semantics:
+  name: Semantics
+identification:
+  name: Identification
+geopsatial:
+  name: Geospatial
+common-reference-data:
+  name: Common Reference Data
+data-info-and-records-management:
+  name: Data, Information and Records Management Lifecycle
+open-documents:
+  name: Open Documents
+service-referrals:
+  name: Service Referrals
+tabular-data:
+  name: Tabular Data
+service-design:
+  name: Service, Product, Application, System or Platform Design

@@ -1,14 +1,15 @@
 ---
 title: OpenReferralUK
+tags:
+- service-referrals
+- service-design
 name: OpenReferralUK
 organisation: open-referral-uk
-keywords: "Service Referrals"
 identifier: UK123-ZXY
 link: https://openreferraluk.org/
 status: review
 dateAdded: 2020-12-16
 dateUpdated: 2021-07-05
-classification: Service, Product, Application, System or Platform Design
 licence_id: CC-BY-SA-4.0
 ---
 
