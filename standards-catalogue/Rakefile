@@ -53,8 +53,8 @@ namespace :schema do
     task :organisations do
       schema = schema("organisation")
       organisations = YAML.load_file("data/organisations.yml")
-      errors = organisations.map do |f|
-        is_valid_schema(schema, f[1])
+      errors = organisations.map do |_, organisation|
+        is_valid_schema(schema, organisation)
       end
       raise unless errors.all?
     end
@@ -62,9 +62,9 @@ namespace :schema do
     desc "Validate licences are schema compliant"
     task :licences do
       schema = schema("licence")
-      organisations = YAML.load_file("data/licences.yml")
-      errors = organisations.map do |f|
-        is_valid_schema(schema, f[1])
+      licences = YAML.load_file("data/licences.yml")
+      errors = licences.map do |_, licence|
+        is_valid_schema(schema, licence)
       end
       raise unless errors.all?
     end
