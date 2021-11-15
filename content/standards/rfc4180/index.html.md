@@ -1,16 +1,16 @@
 ---
-title: Common Format and MIME Type for Comma-Separated Values (CSV) Files
+name: Common Format and MIME Type for Comma-Separated Values (CSV) Files
+contraction: RFC4180
+specification_url: https://tools.ietf.org/html/rfc4180
 tags:
 - tabular-data
 - data-info-and-records-management
 - open-documents
-organisation: ietf
-reference:	RFC 4180
-name: RFC 4180 Common Format and MIME Type for Comma-Separated Values (CSV) Files
-status: endorsed
-dateAdded: 2021-02-02
-dateUpdated: 2021-02-02
-license_id: unknown
+maintainer_id: ietf 
+licence_id: unknown
+endorsement_status_events:
+- status: endorsed
+  date: '2021-02-02'
 ---
 
 

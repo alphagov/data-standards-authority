@@ -1,36 +1,52 @@
 <% wrap_layout :layout do %>
 
   <div style = "overflow-x:auto;">
-    <% if !current_page.data.title.nil? %>
-      <h1><%= current_page.data.title %></h1>
-    <% else %>
-      <h1><%= current_page.data.name %></h1>
-    <% end %>
+    <h1><%= current_page.data.name %></h1>
     <table style="width:100%">
-      <% current_page.data.each do |key, value| %>
-        <tr>
-          <td nowrap><%= key.titleize.capitalize %>: </td>
-          <% if key == 'link' %>
-            <td nowrap><strong><a href='<%= value %>'><%= value %></a></strong> </td>
-          <% elsif key == 'organisation' %>
-            <td nowrap><strong><%= display_organisation(value) %></strong> </td>
-          <% elsif key == 'status' %>
-            <td nowrap><strong><%= display_status(:standard, value) %></strong> </td>
-          <% elsif key == 'licence_id' %>
-            <%= display_licence(value) %>
-          <% elsif key == 'tags' %>
-            <td nowrap>
-              <ul>
-                <% current_page.data.tags.each do |tag| %>
-                  <li><strong><%= tag %></strong></li>
-                <% end %>
-              </ul>
-            </td>
-          <% else %>
-            <td nowrap><strong><%= value %></strong> </td>
-          <% end %>
-        </tr>
-      <% end %>
+      <tr>
+        <td>Name</td>
+        <td>
+          <strong><%=link_to current_page.data.name, current_page.data.specification_url %></strong>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Also Known As</td>
+        <td>
+          <strong><%= current_page.data.contraction %></strong>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Tags</td>
+        <td>
+          <ul>
+            <% current_page.data.tags.each do |tag| %>
+              <li><strong><%= data.tags[tag].name %></strong></li>
+            <% end %>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Maintained By</td>
+        <td><strong><%= display_organisation(current_page.data.maintainer_id) %></strong> </td>
+      </tr>
+
+      <tr>
+        <td>Licence</td>
+        <td>
+          <%= display_licence(current_page.data.licence_id) %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Status</td>
+        <td>
+          <% status = current_page.data.endorsement_status_events.last.status %>
+          <strong><%= display_status(:standard, status) %></strong>
+        </td>
+      </tr>
     </table>
   </div>
 

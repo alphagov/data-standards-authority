@@ -1,16 +1,15 @@
 ---
-title: OpenReferralUK
+name: OpenReferralUK
+contraction: ORUK
+specification_url: https://openreferraluk.org/about-standard
 tags:
 - service-referrals
 - service-design
-name: OpenReferralUK
-organisation: open-referral-uk
-identifier: UK123-ZXY
-link: https://openreferraluk.org/
-status: review
-dateAdded: 2020-12-16
-dateUpdated: 2021-07-05
+maintainer_id: open-referral-uk 
 licence_id: CC-BY-SA-4.0
+endorsement_status_events:
+- status: review
+  date: '2020-12-16'
 ---
 
 
