@@ -1,0 +1,18 @@
+CC-BY-4.0:
+  name: Creative Commons Attribution 4.0 International
+  type: Open standard
+  url: 'https://spdx.org/licenses/CC-BY-4.0.html'
+OGL-UK-3.0:
+  name: Open Government Licence v3.0
+  type: Open standard
+  url: 'https://spdx.org/licenses/OGL-UK-3.0.html'
+CC-BY-SA-4.0:
+  name: Creative Commons Attribution Share Alike 4.0 International
+  type: Open standard
+  url: 'https://spdx.org/licenses/CC-BY-SA-4.0.html'
+proprietary:
+  name: Proprietary
+  type: Proprietary
+unknown:
+  name: Unknown
+  type: Unknown

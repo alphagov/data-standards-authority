@@ -90,6 +90,15 @@ helpers do
     end
   end
 
+  def display_licence(id)
+    licence = data.licences[id]
+    if licence.url
+      "<td nowrap><strong>#{licence.type} - <a href=#{licence.url}>#{licence.name}</a></strong></td>"
+    else
+      "<td nowrap><strong>#{licence.name}</strong></td>"
+    end
+  end
+
   def get_link_text(page)
     if page.data.title
       page.data.title

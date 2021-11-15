@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://github.com/alphagov/data-standards-authority/blob/main/standards-catalogue/.schema/licences.json",
+  "title": "Data Standards Authority Licences objects",
+  "description": "A JSON Schema to manage the format of licence objects",
+  "type": "object",
+  "required": [
+    "name",
+    "type"
+  ],
+  "properties": {
+    "name": {
+      "$comment": "The name of the licence",
+      "type": "string",
+      "minLength": 2
+    },
+    "url": {
+      "$comment": "A link to the licence",
+      "type": "string",
+      "pattern": "^https?://.*"
+    },
+    "type": {
+      "$comment": "The type of licence",
+      "type": "string",
+      "enum": [
+        "Proprietary",
+        "Unknown",
+        "Open standard"
+      ]
+    }
+  }
+}

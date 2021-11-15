@@ -16,6 +16,8 @@
             <td nowrap><strong><%= display_organisation(value) %></strong> </td>
           <% elsif key == 'status' %>
             <td nowrap><strong><%= display_status(:standard, value) %></strong> </td>
+          <% elsif key == 'licence_id' %>
+            <%= display_licence(value) %>
           <% else %>
             <td nowrap><strong><%= value %></strong> </td>
           <% end %>
