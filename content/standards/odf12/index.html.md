@@ -1,16 +1,14 @@
 ---
 title: ODF 1.2
-category: Data, Information and Records Management Lifecycle
-topic: 4.7 Content Management
-subject: OpenDocuments (ODF)
+tags:
+- data-info-and-records-management
+- open-documents
 organisation: odf
 reference:	ODF 1.2
 name: ODF 1.2
-keywords: "OpenDocuments"
 status: endorsed
 dateAdded: 2021-02-02
 dateUpdated: 2021-02-02
-classification: Data, Information and Records Management Lifecycle
 licence_id: unknown
 ---
 

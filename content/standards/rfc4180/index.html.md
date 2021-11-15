@@ -1,16 +1,15 @@
 ---
 title: Common Format and MIME Type for Comma-Separated Values (CSV) Files
-category: Data, Information and Records Management Lifecycle
-topic: 4.7 Content Management
-subject: Tabular Data
+tags:
+- tabular-data
+- data-info-and-records-management
+- open-documents
 organisation: ietf
 reference:	RFC 4180
 name: RFC 4180 Common Format and MIME Type for Comma-Separated Values (CSV) Files
-keywords: "OpenDocuments"
 status: endorsed
 dateAdded: 2021-02-02
 dateUpdated: 2021-02-02
-classification: Data, Information and Records Management Lifecycle
 license_id: unknown
 ---
 

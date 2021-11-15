@@ -26,6 +26,15 @@ def is_valid_schema(schema, to_validate)
   false
 end
 
+def is_data_file_schema_compliant(schema, to_validate)
+  schema = schema(schema)
+  objects = YAML.load_file(to_validate)
+  errors = objects.map do |_, object|
+    is_valid_schema(schema, object)
+  end
+  raise unless errors.all?
+end
+
 RSpec::Core::RakeTask.new(:spec)
 RuboCop::RakeTask.new
 
@@ -51,26 +60,21 @@ namespace :schema do
 
     desc "Validate organisations are schema compliant"
     task :organisations do
-      schema = schema("organisation")
-      organisations = YAML.load_file("data/organisations.yml")
-      errors = organisations.map do |_, organisation|
-        is_valid_schema(schema, organisation)
-      end
-      raise unless errors.all?
+      is_data_file_schema_compliant("organisation", "data/organisations.yml")
     end
 
     desc "Validate licences are schema compliant"
     task :licences do
-      schema = schema("licence")
-      licences = YAML.load_file("data/licences.yml")
-      errors = licences.map do |_, licence|
-        is_valid_schema(schema, licence)
-      end
-      raise unless errors.all?
+      is_data_file_schema_compliant("licence", "data/licences.yml")
+    end
+
+    desc "Validate tags are schema compliant"
+    task :tags do
+      is_data_file_schema_compliant("tag", "data/tags.yml")
     end
   end
 
-  task data_files: %w[data_files:sync_standards_status data_files:organisations data_files:licences]
+  task data_files: %w[data_files:sync_standards_status data_files:organisations data_files:licences data_files:tags]
 
   desc "Validate Standards are schema compliant"
   task :standards do

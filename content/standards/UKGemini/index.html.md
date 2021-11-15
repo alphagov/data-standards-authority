@@ -1,6 +1,8 @@
 ---
 title: UK Gemini
-keywords: Semantics
+tags:
+- semantics
+- metadata
 identifier: UK-123
 link: https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini
 isRelatedTo: ISO 19139
@@ -12,7 +14,6 @@ status: endorsed
 startDate: 2020-12-01
 dateAdded: 2020-12-16
 dateUpdated: 2020-12-16
-classification: Metadata
 licence_id: CC-BY-4.0
 ---
 
