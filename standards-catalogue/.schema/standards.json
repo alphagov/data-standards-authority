@@ -11,7 +11,7 @@
     "maintainer_id",
     "endorsement_status_events",
     "tags",
-    "license_id"
+    "licence_id"
   ],
   "properties": {
     "identifier": {
@@ -41,7 +41,7 @@
       "$comment": "The events that this standard's status has been through",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/endorsement_status_events"
+        "$ref": "#/definitions/endorsement_status_event"
       }
     },
     "tags": {
@@ -56,7 +56,7 @@
       "$comment": "The long-form description of the standard, for instance written using Markdown",
       "type": "string"
     },
-    "license_id": {
+    "licence_id": {
       "$comment": "A Software Package Data Exchange (SPDX) license identifier, if applicable, or `Proprietary` / `Unknown`",
       "type": "string",
       "pattern": "(Proprietary|Unknown|.+)",

@@ -93,9 +93,9 @@ helpers do
   def display_licence(id)
     licence = data.licences[id]
     if licence.url
-      "<td nowrap><strong>#{licence.type} - <a href=#{licence.url}>#{licence.name}</a></strong></td>"
+      "<strong>#{licence.type} - <a href=#{licence.url}>#{licence.name}</a></strong>"
     else
-      "<td nowrap><strong>#{licence.name}</strong></td>"
+      "<strong>#{licence.name}</strong>"
     end
   end
 

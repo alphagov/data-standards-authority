@@ -1,19 +1,16 @@
 ---
-title: UPRN
+name: Unique Property Reference Number
+contraction: UPRN
+specification_url: https://www.gov.uk/government/publications/open-standards-for-government/identifying-property-and-street-information
 tags:
 - identification
 - geospatial
 - common-reference-data
-name: UPRN
-organisation: ordnance-survey
-identifier: UKABC-123
-link: https://www.gov.uk/government/publications/open-standards-for-government/identifying-property-and-street-information
-isRelatedTo: BS 7666-2:2006
-validFrom: 2020-07-1
-status: endorsed
-dateAdded: 2020-12-16
-dateUpdated: 2020-12-16
+maintainer_id: ordnance-survey
 licence_id: OGL-UK-3.0
+endorsement_status_events:
+- status: endorsed
+  date: "2020-12-16"
 ---
 
 

@@ -1,20 +1,15 @@
 ---
-title: UK Gemini
+name: UK Gemini
+contraction: GEMINI
+specification_url: https://www.agi.org.uk/gemini/40-gemini/1037-uk-gemini-standard-and-inspire-implementing-rules/
 tags:
 - semantics
 - metadata
-identifier: UK-123
-link: https://www.agi.org.uk/agi-groups/standards-committee/uk-gemini
-isRelatedTo: ISO 19139
-name: UK Gemini
-supersededBy: 2.3
-organisation: geospatial-commission
-validFrom: Jun-18
-status: endorsed
-startDate: 2020-12-01
-dateAdded: 2020-12-16
-dateUpdated: 2020-12-16
+maintainer_id: geospatial-commission 
 licence_id: CC-BY-4.0
+endorsement_status_events:
+- status: endorsed
+  date: "2020-12-01"
 ---
 
 

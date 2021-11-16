@@ -1,15 +1,15 @@
 ---
-title: ODF 1.2
+name: ODF 1.2
+contraction: ODF1.2
+specification_url: https://docs.oasis-open.org/office/v1.2/OpenDocument-v1.2.html
 tags:
 - data-info-and-records-management
 - open-documents
-organisation: odf
-reference:	ODF 1.2
-name: ODF 1.2
-status: endorsed
-dateAdded: 2021-02-02
-dateUpdated: 2021-02-02
+maintainer_id: odf 
 licence_id: unknown
+endorsement_status_events: 
+- status: endorsed 
+  date: "2021-02-02"
 ---
 
 

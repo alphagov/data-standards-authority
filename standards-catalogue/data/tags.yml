@@ -8,7 +8,7 @@ semantics:
   name: Semantics
 identification:
   name: Identification
-geopsatial:
+geospatial:
   name: Geospatial
 common-reference-data:
   name: Common Reference Data

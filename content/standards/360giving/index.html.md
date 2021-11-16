@@ -1,14 +1,15 @@
 ---
-title: 360Giving Schema
+name: 360Giving Schema
+contraction: 360GS
+specification_url: https://standard.threesixtygiving.org/en/latest/reference/#spreadsheet-format
 tags:
 - domain-specific
 - payments
-organisation: three-sixty-giving
-name: 360Giving Schema
-status: review
-dateAdded: 2021-02-02
-dateUpdated: 2021-02-02
+maintainer_id: three-sixty-giving
 licence_id: CC-BY-4.0
+endorsement_status_events:
+- status: review
+  date: "2021-02-02"
 ---
 
 
