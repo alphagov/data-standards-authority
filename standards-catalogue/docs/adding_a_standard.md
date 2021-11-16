@@ -6,23 +6,7 @@ To add a new standard in Github:
 
 - Go to the [standards](../../content/standards) directory
 - Create a new file called `index.html.md` inside a directory named after the standard. For example to create a standard for `360 Giving` you'd create a file called `360giving/index.html.md`.
-- Copy and paste the frontmatter template below to the top of the file and fill out the missing information:   
-
-
-```
----
-name:  
-contraction:   
-specification_url:   
-tags:
--
-maintainer_id:   
-licence_id:   
-endorsement_status_events:   
-- status:   
-  date: ""
----
-```
+- Copy and paste the [standard template](standard_template.md) to the top of the file and fill out the missing information:
 
 The information in the frontmatter will be displayed in a table. Any other content can be added below it.
 
