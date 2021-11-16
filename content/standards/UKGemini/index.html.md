@@ -9,7 +9,7 @@ maintainer_id: geospatial-commission
 licence_id: CC-BY-4.0
 endorsement_status_events:
 - status: endorsed
-  date: '2020-12-01'
+  date: "2020-12-01"
 ---
 
 
