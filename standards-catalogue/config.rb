@@ -77,7 +77,7 @@ helpers do
     if data.organisations[id]
       link_to data.organisations[id].name, data.organisations[id].url
     else
-      id
+      raise "maintainer_id must match an entry in organisations.yml"
     end
   end
 
