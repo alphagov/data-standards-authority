@@ -3168,6 +3168,9 @@ html.has-search-results-open {
 .status-draft {
   background-color: #ffdd00; }
 
+.list-of-tags {
+  padding-left: 20px; }
+
 .fixedsticky {
   position: -moz-sticky;
   position: -ms-sticky;
