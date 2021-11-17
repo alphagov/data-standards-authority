@@ -1,12 +1,11 @@
 # Adding a new standard
 
-To see a finished example of a standard, see any of the existing standards, for example [360giving](https://raw.githubusercontent.com/alphagov/data-standards-authority/adding-a-standard-docs/content/standards/360giving/index.html.md).
-
 To add a new standard in Github:
 
-- Go to the [standards](../../content/standards) directory
+- Go to the [standards directory](../../content/standards).
 - Create a new file called `index.html.md` inside a directory named after the standard. For example to create a standard for `360 Giving` you'd create a file called `360giving/index.html.md`.
-- Copy and paste the [standard template](standard_template.md) to the top of the file and fill out the missing information:
+- For an example to copy, see [the existing standards](../../content/standards/). Open one of them and click on 'raw' to see the markdown content. 
+- Copy and paste this to the top of your new file and replace the values with the relevant ones for the new standard.
 
 The information in the frontmatter will be displayed in a table. Any other content can be added below it.
 
