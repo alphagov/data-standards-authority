@@ -5,6 +5,7 @@ This is the home of the DSA Standards Catalogue, as well as various DSA artefact
 
 - [Getting started](./docs/getting_started.md)
 - [Deployment workflow](./docs/deployment.md)
+- [Adding a new standard](./docs/adding_a_standard.md)
 
 ## Licence
 
