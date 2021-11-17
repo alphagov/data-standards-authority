@@ -7,6 +7,7 @@ require "middleman-search"
 
 require "active_support/all"
 
+require "lib/schemaorg"
 require "lib/govuk_tech_docs/contribution_banner"
 require "lib/govuk_tech_docs/meta_tags"
 require "lib/govuk_tech_docs/tech_docs_html_renderer"
@@ -56,6 +57,7 @@ activate :unique_identifier
 
 helpers do
   include GovukTechDocs::ContributionBanner
+  include SchemaOrg
 
   def meta_tags
     @meta_tags ||= GovukTechDocs::MetaTags.new(config, current_page)
@@ -107,6 +109,10 @@ helpers do
     else
       page.path.delete_prefix("standards/").chomp("/index.html")
     end
+  end
+
+  def standard_to_schemaorg(page_data)
+    SchemaOrg::Standard.new(data, page_data).to_json
   end
 end
 

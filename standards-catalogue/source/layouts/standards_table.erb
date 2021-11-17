@@ -52,4 +52,8 @@
 
   <%= yield %>
 
+  <script type="application/ld+json">
+    <%= standard_to_schemaorg(current_page.data) %>
+  </script>
+
 <% end %>
