@@ -19,3 +19,6 @@ iso:
 ordnance-survey:
   name: Ordnance Survey
   url: 'https://www.ordnancesurvey.co.uk/'
+schema-org:
+  name: Schema.org
+  url: 'https://schema.org/'
