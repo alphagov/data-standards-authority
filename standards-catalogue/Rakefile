@@ -86,7 +86,7 @@ namespace :schema do
   end
 end
 
-desc "Publish build to Github pages"
+desc "Publish build to GitHub pages"
 task :publish do
   require "tmpdir"
 
