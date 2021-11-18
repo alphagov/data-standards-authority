@@ -1,6 +1,6 @@
 # Adding a new standard
 
-To add a new standard in Github:
+To add a new standard in GitHub:
 
 - Go to the [standards directory](../../content/standards)
 - Create a new file called `index.html.md` inside a directory named after the standard. For example to create a standard for `360 Giving` you'd create a file called `360giving/index.html.md`
