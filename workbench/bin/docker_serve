@@ -10,5 +10,5 @@ set -euo pipefail
 
 host_port=${PORT:-0.0.0.0:4567}
 
-docker build -t alphagov/standards-catalogue:latest .
-docker run --rm -p "$host_port:4567" alphagov/standards-catalogue:latest
+docker build -t alphagov/workbench:latest .
+docker run --rm -p "$host_port:4567" alphagov/workbench:latest
