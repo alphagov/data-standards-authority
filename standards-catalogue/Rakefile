@@ -26,11 +26,13 @@ def is_valid_schema(schema, to_validate)
   false
 end
 
-def is_data_file_schema_compliant(schema, to_validate)
+def is_data_file_schema_compliant(schema, to_validate, key_validation)
   schema = schema(schema)
   objects = YAML.load_file(to_validate)
-  errors = objects.map do |_, object|
-    is_valid_schema(schema, object)
+  errors = objects.map do |key, object|
+    key_valid = key_validation[:regex] =~ key
+    puts "#{to_validate} failed validation: `#{key}` #{key_validation[:message]}" unless key_valid
+    is_valid_schema(schema, object) && key_valid
   end
   raise unless errors.all?
 end
@@ -60,17 +62,29 @@ namespace :schema do
 
     desc "Validate organisations are schema compliant"
     task :organisations do
-      is_data_file_schema_compliant("organisation", "data/organisations.yml")
+      key_validation = {
+        regex: /^[a-z-]+$/,
+        message: "must be hyphenated (kebab-cased) and only include lowercase letters",
+      }
+      is_data_file_schema_compliant("organisation", "data/organisations.yml", key_validation)
     end
 
     desc "Validate licences are schema compliant"
     task :licences do
-      is_data_file_schema_compliant("licence", "data/licences.yml")
+      key_validation = {
+        regex: /^[a-zA-Z0-9.-]+$/,
+        message: "must be hyphenated (kebab-cased) and only include a mix of uppercase, lowercase, numbers and `.`",
+      }
+      is_data_file_schema_compliant("licence", "data/licences.yml", key_validation)
     end
 
     desc "Validate tags are schema compliant"
     task :tags do
-      is_data_file_schema_compliant("tag", "data/tags.yml")
+      key_validation = {
+        regex: /^[a-z-]+$/,
+        message: "must be hyphenated (kebab-cased) and only include lowercase letters",
+      }
+      is_data_file_schema_compliant("tag", "data/tags.yml", key_validation)
     end
   end
 
