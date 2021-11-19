@@ -6,7 +6,6 @@
   "type": "object",
   "required": [
     "name",
-    "contraction",
     "specification_url",
     "maintainer_id",
     "endorsement_status_events",
@@ -26,6 +25,7 @@
     "contraction": {
       "$comment": "A shorter way of referring to the standard, for instance via an acronym",
       "type": "string",
+      "minLength": 1,
       "maxLength": 10
     },
     "specification_url": {

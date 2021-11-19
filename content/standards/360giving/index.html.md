@@ -1,6 +1,5 @@
 ---
 name: 360Giving Schema
-contraction: 360GS
 specification_url: https://standard.threesixtygiving.org/en/latest/reference/#spreadsheet-format
 tags:
 - domain-specific

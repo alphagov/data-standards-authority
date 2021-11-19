@@ -1,6 +1,5 @@
 ---
 name: OpenReferralUK
-contraction: ORUK
 specification_url: https://openreferraluk.org/about-standard
 tags:
 - service-referrals

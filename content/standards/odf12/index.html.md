@@ -1,6 +1,5 @@
 ---
 name: ODF 1.2
-contraction: ODF1.2
 specification_url: https://docs.oasis-open.org/office/v1.2/OpenDocument-v1.2.html
 tags:
 - data-info-and-records-management

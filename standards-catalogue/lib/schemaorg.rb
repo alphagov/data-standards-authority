@@ -22,13 +22,16 @@ module SchemaOrg
         "@context": "https://schema.org/",
         "@type": "Thing",
         "name": page_data.name,
-        "contraction": page_data.contraction,
         "isBasedOn": specification,
         "license": licence_info, # this needs to be US spelling
         "category": categories,
         "maintainer": maintainer_info,
         "endorsementStatus": endorsement_status,
       }
+
+      if page_data.contraction
+        @obj["contraction"] = page_data.contraction
+      end
     end
 
   private
