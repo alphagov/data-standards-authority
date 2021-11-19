@@ -10,12 +10,14 @@
         </td>
       </tr>
 
+      <% if current_page.data.contraction %>
       <tr>
         <td>Also Known As</td>
         <td>
           <strong><%= current_page.data.contraction %></strong>
         </td>
       </tr>
+      <% end %>
 
       <tr>
         <td>Tags</td>
