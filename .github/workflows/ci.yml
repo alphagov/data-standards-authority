@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: standards-catalogue
+        working-directory: workbench
     steps:
       - uses: actions/checkout@v2
 
@@ -20,7 +20,7 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: 2.7
-          working-directory: standards-catalogue
+          working-directory: workbench
 
       - uses: actions/setup-node@v1
         with:

@@ -14,7 +14,7 @@ Content for pages is based on Markdown files located in the `source` directory.
 ## Local setup
 
 1. Clone the git repostory: `git clone git@github.com:alphagov/data-standards-authority.git`
-1. Navigate to the project directory: `cd standards-catalogue`
+1. Navigate to the project directory: `cd workbench`
 1. Install gems: `bundle install`
 1. Install JavaScript dependencies: `npm install`
 1. Run the test suite to verify your setup: `bundle exec rspec`

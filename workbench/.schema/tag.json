@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://github.com/alphagov/data-standards-authority/blob/main/standards-catalogue/.schema/tag.json",
+  "id": "https://github.com/alphagov/data-standards-authority/blob/main/workbench/.schema/tag.json",
   "title": "Data Standards Authority Tag objects",
   "description": "A JSON Schema to manage the format of tag objects",
   "type": "object",

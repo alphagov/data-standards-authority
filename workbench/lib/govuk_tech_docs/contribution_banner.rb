@@ -44,7 +44,7 @@ module GovukTechDocs
     end
 
     def project_name
-      config[:tech_docs][:project_name] || "standards-catalogue"
+      config[:tech_docs][:project_name] || "workbench"
     end
 
     # If an author_email is specified in the frontmatter, use that;
