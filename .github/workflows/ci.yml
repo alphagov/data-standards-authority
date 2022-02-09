@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     defaults:
       run:
         working-directory: standards-catalogue
@@ -68,6 +70,8 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main' }}
     needs: build
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v2
 
