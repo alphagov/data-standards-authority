@@ -72,6 +72,9 @@ jobs:
     needs: build
     permissions:
       contents: write
+    defaults:
+      run:
+        working-directory: standards-catalogue
     steps:
       - uses: actions/checkout@v2
 
@@ -85,7 +88,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: site
-          path: build
+          path: standards-catalogue/build
 
       # Checkout stripped-down gh-pages branch to a subdirectory, for publishing
       - name: Checkout gh-pages branch
@@ -98,4 +101,4 @@ jobs:
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
-          bundle exec rake publish CLONED_GH_PAGES_DIR="tmp/publish"
+          bundle exec rake publish CLONED_GH_PAGES_DIR="../tmp/publish"
