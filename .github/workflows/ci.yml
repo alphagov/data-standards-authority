@@ -85,7 +85,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: site
-          path: build
+          path: built-site
+
+      - name: 'Prepare directory structure for `rake publish`'
+        run: mv built-site/standards-catalogue build
 
       # Checkout stripped-down gh-pages branch to a subdirectory, for publishing
       - name: Checkout gh-pages branch
