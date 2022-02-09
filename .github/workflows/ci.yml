@@ -78,6 +78,8 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          ruby-version: 2.7
+          working-directory: standards-catalogue
 
       - name: Download built site
         uses: actions/download-artifact@v2
