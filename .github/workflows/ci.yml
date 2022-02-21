@@ -7,29 +7,30 @@ on:
     branches-ignore:
       - gh-pages
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     defaults:
       run:
         working-directory: standards-catalogue
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
 
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@e5517072e87f198d9533967ae13d97c11b604005
         with:
           bundler-cache: true
           ruby-version: 2.7
           working-directory: standards-catalogue
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561
         with:
           node-version: '14'
 
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         env:
           cache-name: cache-node-modules
         with:
@@ -60,7 +61,7 @@ jobs:
         run: bundle exec rake build
 
       - name: Upload built site
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
         with:
           name: site
           path: standards-catalogue/build
@@ -76,23 +77,23 @@ jobs:
       run:
         working-directory: standards-catalogue
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
 
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@e5517072e87f198d9533967ae13d97c11b604005
         with:
           bundler-cache: true
           ruby-version: 2.7
           working-directory: standards-catalogue
 
       - name: Download built site
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@f023be2c48cc18debc3bacd34cb396e0295e2869
         with:
           name: site
           path: standards-catalogue/build
 
       # Checkout stripped-down gh-pages branch to a subdirectory, for publishing
       - name: Checkout gh-pages branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
         with:
           ref: gh-pages
           path: tmp/publish
