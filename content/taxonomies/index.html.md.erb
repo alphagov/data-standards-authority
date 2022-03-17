@@ -1,0 +1,32 @@
+---
+title: Taxonomies
+weight: 700
+dateAdded: 2022-03-17
+dateUpdated: 2022-03-17
+---
+
+# Taxonomies
+
+## Description:
+The Taxonomy Catalogue currently contains the following taxonomies:
+
+<div style = "overflow-x:auto;">
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <% current_resource.children.reject{|page| page.data.exclude_from_list}.sort_by{ |page| get_link_text(page).downcase }.each do |f| %>
+      <% if f.content_type.include? "html" %>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><%= link_to get_link_text(f), f.path.delete_prefix("taxonomies/") %> </td>
+              <td class="govuk-table__cell"><%= display_status(:taxonomies, f.data.status) %></td>
+            </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -12,3 +12,10 @@ guidance:
   published:
     name: Published
     styling: status-active
+taxonomies:
+  endorsed:
+    name: Endorsed
+    styling: status-active
+  review:
+    name: In review
+    styling: status-draft

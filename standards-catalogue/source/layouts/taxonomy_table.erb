@@ -1,0 +1,34 @@
+<% wrap_layout :layout do %>
+
+  <div style = "overflow-x:auto;">
+    <h1><%= current_page.data.name %></h1>
+    <table style="width:100%">
+      <tr>
+        <td>Name</td>
+        <td>
+          <strong><%=current_page.data.name %></strong>
+        </td>
+      </tr>
+
+      <% if current_page.data.contraction %>
+        <tr>
+          <td>Also Known As</td>
+          <td>
+            <strong><%= current_page.data.contraction %></strong>
+          </td>
+        </tr>
+      <% end %>
+
+      <tr>
+        <td>Status</td>
+        <td>
+          <% status = current_page.data.status %>
+          <strong><%= display_status(:taxonomies, status) %></strong>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <%= yield %>
+
+<% end %>
