@@ -5,23 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>APIM - 06 - Retirement - Data Standards Authority</title>
+    <title>Data Standards Authority</title>
 
     <link href="/data-standards-authority/stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/apimanagement/APIM-Retirement.html">
+    <link rel="canonical" href="https://alphagov.github.io/data-standards-authority/data-standards-authority/taxonomies/esco/">
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="alphagov.github.io" />
       <meta name="twitter:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
-      <meta name="twitter:title" content="APIM - 06 - Retirement - Data Standards Authority" />
-      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/apimanagement/APIM-Retirement.html" />
+      <meta name="twitter:title" content="Data Standards Authority" />
+      <meta name="twitter:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/taxonomies/esco/" />
 
       <meta property="og:image" content="https://alphagov.github.io/data-standards-authority/images/govuk-large.png" />
       <meta property="og:site_name" content="Data Standards Authority" />
-      <meta property="og:title" content="APIM - 06 - Retirement" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/guidance/apimanagement/APIM-Retirement.html" />
+      <meta property="og:url" content="https://alphagov.github.io/data-standards-authority/data-standards-authority/taxonomies/esco/" />
 
     
   </head>
@@ -87,52 +86,70 @@
             </ul>
           </nav>
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h2 id="retirement">Retirement</h2>
-<p><em>This is a DRAFT document for discussion. This is not finalised. All aspects of this document are subject to change. Please leave comments on any aspect of it.</em></p>
-<h4 id="contents">Contents:</h4>
+            
+  <div style = "overflow-x:auto;">
+    <h1>European Skills, Competences, Qualifications and Occupations</h1>
+    <table style="width:100%">
+      <tr>
+        <td>Name</td>
+        <td>
+          <strong>European Skills, Competences, Qualifications and Occupations</strong>
+        </td>
+      </tr>
+
+        <tr>
+          <td>Also Known As</td>
+          <td>
+            <strong>ESCO</strong>
+          </td>
+        </tr>
+
+      <tr>
+        <td>Status</td>
+        <td>
+          <strong><span class=status-draft>In review</span></strong>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <p>ESCO (European Skills, Competences, Qualifications and Occupations) is the European multilingual classification of Skills, Competences and Occupations.  </p>
+
+<p>ESCO works as a dictionary, describing, identifying and classifying professional occupations and skills relevant for the EU labour market and education and training. ESCO provides descriptions of 2942 occupations and 13,485 skills linked to these occupations, translated into 27 languages (all official EU languages plus Icelandic, Norwegian and Arabic).  </p>
+
+<p>The most recent version ESCO 1.1.0 was published 27/01/2022. ESCO is a European Commission project, run by Directorate General Employment, Social Affairs and Inclusion (DG EMPL).  </p>
+
+<p>ESCO is published as Linked Open Data (LOD) so it can be easily reused and linked to other data sources. Extensive information covering the development of ESCO, use cases and how it can be implemented are available via <a href="https://ec.europa.eu/esco/portal/documents">the website</a>.  </p>
+
+<p>There is also an <a href="https://ec.europa.eu/esco/portal/api">ESCO Web Services API</a>.</p>
+<h3 id="documentation">Documentation:</h3>
 <ul>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Introduction.html">01 - Introduction</a></li>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Design.html">02 - Design</a></li>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Deployment.html">03 - Deployment</a></li>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Management.html">04 - Management</a></li>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Discovery.html">05 - Discovery</a></li>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Retirement.html">06 - Retirement</a></li>
+<li><a href="https://ec.europa.eu/esco/portal">https://ec.europa.eu/esco/portal</a></li>
 </ul>
+<h3 id="metadata">Metadata:</h3>
+<p>The ESCO classification is published in SKOS-RDF and CSV formats, in order to enable users to integrate it into their applications and services.  </p>
 
-<p>Something that is often overlooked when developing and managing APIs is planning how to take them out of service when they are no longer needed. People often use the terms retirement, deprecation, sunsetting, or decommissioning interchangeably.</p>
+<p><a href="https://www.w3.org/2004/02/skos/intro">SKOS is a W3C recommendation</a> within the Semantic Web vision of the Web of linked data.</p>
+<h3 id="crosswalks-and-limitations">Crosswalks and limitations:</h3>
+<p>In ESCO, each occupation is mapped to exactly one ISCO-08 code. ISCO-08 can therefore be used as a hierarchical structure for the occupations pillar. ISCO-08 provides the top four levels for the occupations pillar. ESCO occupations are located at level 5 and lower.  </p>
 
-<p>It may be useful to put together an API retirement workflow or checklist for your organisation to help teams follow a consistent process. Below is an example of what this might look like.</p>
+<p>The occupations pillar of ESCO is currently significantly more complex than SOC 2020 which contains 412 occupational groupings. The development of a crosswalk would be necessary to align the two taxonomies.  </p>
 
-<ol>
-<li>Use analytics to support your case for deprecation</li>
-<li>Publish a blog post to explain the reasons, and offer alternatives where possible</li>
-<li>Add a deprecation notice to documentation, with the date it will happen</li>
-<li>Disable sign ups in self-service to stop new users accessing the service</li>
-<li>Email subscribed users with the date of deprecation - as the date approaches, emails should get more frequent</li>
-<li>Use Sunset or Deprecated HTTP headers, with a link to the documentation and blog post</li>
-<li>Wait and see how usage changes - make sure it’s dropping, and reach out to any remaining active users</li>
-<li>Agree an acceptable number of active users at retirement</li>
-<li>Keep the API in retired status for a while - this could be months or years </li>
-</ol>
-<h4 id="retirement-contents">Contents:</h4>
-<ul>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Introduction.html">01 - Introduction</a></li>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Design.html">02 - Design</a></li>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Deployment.html">03 - Deployment</a></li>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Management.html">04 - Management</a></li>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Discovery.html">05 - Discovery</a></li>
-<li><a href="/data-standards-authority/guidance/apimanagement/APIM-Retirement.html">06 - Retirement</a></li>
-</ul>
+<p>Whilst the purpose of ESCO is clear, it was not primarily developed for UK use. Some of the skills listed in ESCO are considered not distinct enough. This makes defining and comparing jobs and an individual&rsquo;s transferable skills much harder. For UK use as a skills taxonomy we need it to be non-overlapping. Whilst this may be overcome in future this is a current weakness of the ESCO taxonomy.  </p>
+<h3 id="contact">Contact:</h3>
+<p>European Commission point of contact: Directorate General Employment, Social Affairs and Inclusion (DG EMPL).  https://ec.europa.eu/esco/portal/escopedia/ESCO_governance</p>
 
-<p><a href="/data-standards-authority/guidance/apimanagement/APIM-Introduction.html">Next</a></p>
+<p>UK point of contact: Office for National Statistics occupation.information@ons.gov.uk </p>
+
+
 
           </main>
 
           <aside>
               <ul class="contribution-banner">
-                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/content/guidance/apimanagement/APIM-Retirement.html.md">View source</a></li>
-                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?body=Feedback+on+%27APIM+-+06+-+Retirement%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Fguidance%2Fapimanagement%2FAPIM-Retirement.html%29&amp;labels=bug&amp;title=Re%3A+%27APIM+-+06+-+Retirement%27">Feedback on this page</a></li>
-                <li><a href="mailto:api-programme@digital.cabinet-office.gov.uk?subject=Feedback+on+%27APIM+-+06+-+Retirement%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Fguidance%2Fapimanagement%2FAPIM-Retirement.html%29">Feedback via email</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//blob/main/content/taxonomies/esco/index.html.md">View source</a></li>
+                <li><a href="https://github.com/alphagov/data-standards-authority//issues/new?body=Feedback+on+%27%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Ftaxonomies%2Fesco%2F%29&amp;labels=bug&amp;title=Re%3A+%27%27">Feedback on this page</a></li>
+                <li><a href="mailto:standards-catalogue@digital.cabinet-office.gov.uk?subject=Feedback+on+%27%27+%28https%3A%2F%2Falphagov.github.io%2Fdata-standards-authority%2Ftaxonomies%2Fesco%2F%29">Feedback via email</a></li>
                 <li><a href="https://github.com/alphagov/data-standards-authority/">GitHub Repo</a></li>
               </ul>
           </aside>
