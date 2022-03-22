@@ -3,6 +3,7 @@ name: UK Standard Occupation Classification
 contraction: SOC
 status: review
 ---
+The evaluation document is available [in PDF format](/taxonomies/soc/Taxonomy_Evaluation_Document_SOC_FINAL.pdf) and [in ODT format](/taxonomies/soc/Taxonomy_Evaluation_Document_SOC_FINAL.odt).
 
 SOC is hierarchical in structure and is used to classify occupations (jobs) by skill level and specialisation.  Skill levels are approximated by the length of time necessary for a person to become fully competent in the performance of the tasks associated with a job, including training and qualifications. SOC 2020 is categorised into four skill levels.
 
