@@ -4,6 +4,8 @@ contraction: ESCO
 status: review
 ---
 
+The evaluation document is available [in PDF format](/taxonomies/esco/Taxonomy_Evaluation_Document_ESCO_FINAL.pdf) and [in ODT format](/taxonomies/esco/Taxonomy_Evaluation_Document_ESCO_FINAL.odt).
+
 ESCO (European Skills, Competences, Qualifications and Occupations) is the European multilingual classification of Skills, Competences and Occupations.  
 
 ESCO works as a dictionary, describing, identifying and classifying professional occupations and skills relevant for the EU labour market and education and training. ESCO provides descriptions of 2942 occupations and 13,485 skills linked to these occupations, translated into 27 languages (all official EU languages plus Icelandic, Norwegian and Arabic).  

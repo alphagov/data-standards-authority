@@ -5,7 +5,7 @@ documentation: https://www.onetcenter.org/taxonomy.html
 status: review
 ---
 
-
+The evaluation document is available [in PDF format](/taxonomies/onet/Taxonomy_Evaluation_Document_ONET_FINAL.pdf) and [in ODT format](/taxonomies/onet/Taxonomy_Evaluation_Document_ONET_FINAL.odt).  
 
 The O\*NET (The Occupational Information Network) programme is the US's primary source of occupational information. The skill taxonomy within it categorises skill areas at the top most level as Basic Skills & Cross Functional Skills and further into 7 mid-level and finally comprehensively defines 46 lower level skill areas (e.g. Reading, decision making etc.).
 
