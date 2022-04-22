@@ -19,3 +19,6 @@ iso:
 ordnance-survey:
   name: Ordnance Survey
   url: 'https://www.ordnancesurvey.co.uk/'
+open-ownership:
+  name: Open Ownership
+  url: https://www.openownership.org/
