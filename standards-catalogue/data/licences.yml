@@ -10,6 +10,10 @@ CC-BY-SA-4.0:
   name: Creative Commons Attribution Share Alike 4.0 International
   type: Open standard
   url: 'https://spdx.org/licenses/CC-BY-SA-4.0.html'
+Apache-2.0:
+  name: Apache License 2.0
+  type: Open standard
+  url: 'https://spdx.org/licenses/Apache-2.0.html'
 proprietary:
   name: Proprietary
   type: Proprietary
