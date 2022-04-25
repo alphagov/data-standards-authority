@@ -10,7 +10,8 @@
     "maintainer_id",
     "endorsement_status_events",
     "tags",
-    "licence_id"
+    "licence_id",
+    "short_description"
   ],
   "properties": {
     "identifier": {
@@ -60,6 +61,11 @@
       "$comment": "A Software Package Data Exchange (SPDX) license identifier, if applicable, or `Proprietary` / `Unknown`",
       "type": "string",
       "pattern": "(Proprietary|Unknown|.+)",
+      "minLength": 1
+    },
+    "short_description": {
+      "$comment": "A short description one or two sentences long, giving an overview of the standard",
+      "type": ["string", "null"],
       "minLength": 1
     }
   },

@@ -15,15 +15,29 @@ The Data Standards Catalogue currently contains the following Standards:
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Tags</th>
         <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header">Date updated</th>
       </tr>
     </thead>
     <tbody class="govuk-table__body">
       <% current_resource.children.reject{|page| page.data.exclude_from_list}.sort_by{ |page| get_link_text(page).downcase }.each do |f| %>
-      <% if f.content_type.include? "html" %>
+        <% if f.content_type.include? "html" %>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><%= link_to get_link_text(f), f.path.delete_prefix("standards/") %> </td>
+              <td class="govuk-table__cell">
+                  <%= link_to get_link_text(f), f.path.delete_prefix("standards/") %>
+                  <br><br>
+                  <%= f.data.short_description %>
+              </td>
+              <td class="govuk-table__cell">
+                  <ul>
+                        <% f.data.tags.each do |g| %>
+                              <li><%= display_tags(g) %></li>
+                        <% end %>
+                  </ul>
+              </td>
               <td class="govuk-table__cell"><%= display_status(:standard, f.data.endorsement_status_events.last.status) %></td>
+              <td class="govuk-table__cell"><%= display_status(:standard, f.data.endorsement_status_events.last.date) %></td>
             </tr>
         <% end %>
       <% end %>
