@@ -5,12 +5,12 @@ specification_url: https://www.agi.org.uk/gemini/40-gemini/1037-uk-gemini-standa
 tags:
 - semantics
 - metadata
-maintainer_id: geospatial-commission 
+maintainer_id: agi 
 licence_id: CC-BY-4.0
 endorsement_status_events:
 - status: review
   date: "2020-12-01"
-short_description:
+short_description: “UK GEMINI is the UK geographic metadata standard"
 ---
 
 
