@@ -83,6 +83,14 @@ helpers do
     end
   end
 
+  def display_tags(id)
+    if data.tags[id]
+      data.tags[id].name
+    else
+      raise "tags must match an entry in tags.yml"
+    end
+  end
+
   def display_status(type, id)
     if data.statuses[type] && data.statuses[type][id]
       status = data.statuses[type][id]
