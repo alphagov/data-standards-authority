@@ -7,9 +7,9 @@ tags:
 maintainer_id: open-referral-uk 
 licence_id: CC-BY-SA-4.0
 endorsement_status_events:
-- status: review
-  date: "2020-12-16"
-short_description:
+- status: endorsed
+  date: "2021-03-16"
+short_description: Making it easy to publish, find and use community services data
 ---
 
 

@@ -10,7 +10,7 @@ licence_id: CC-BY-4.0
 endorsement_status_events:
 - status: review
   date: "2020-12-01"
-short_description: “UK GEMINI is the UK geographic metadata standard"
+short_description: UK GEMINI is the UK geographic metadata standard
 ---
 
 

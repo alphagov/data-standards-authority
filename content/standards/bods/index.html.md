@@ -8,8 +8,8 @@ maintainer_id: open-ownership
 licence_id: Apache-2.0
 endorsement_status_events:
 - status: endorsed
-  date: "2022-04-22"
-short_description:
+  date: "2022-03-16"
+short_description: Defines a common data format that provides a consistent way to collect, use, exchange and publish beneficial ownership information.
 ---
 
 
