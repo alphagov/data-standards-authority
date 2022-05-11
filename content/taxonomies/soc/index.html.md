@@ -1,7 +1,7 @@
 ---
 name: UK Standard Occupation Classification
 contraction: SOC
-status: review
+status: endorsed
 ---
 The evaluation document is available [in PDF format](/taxonomies/soc/Taxonomy_Evaluation_Document_SOC_FINAL.pdf) and [in ODT format](/taxonomies/soc/Taxonomy_Evaluation_Document_SOC_FINAL.odt).
 
