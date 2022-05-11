@@ -2,7 +2,7 @@
 name: The Occupational Information Network Taxonomy 
 contraction: O*NET
 documentation: https://www.onetcenter.org/taxonomy.html
-status: review
+status: endorsed
 ---
 
 The evaluation document is available [in PDF format](/taxonomies/onet/Taxonomy_Evaluation_Document_ONET_FINAL.pdf) and [in ODT format](/taxonomies/onet/Taxonomy_Evaluation_Document_ONET_FINAL.odt).  

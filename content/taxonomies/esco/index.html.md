@@ -1,7 +1,7 @@
 ---
 name: European Skills, Competences, Qualifications and Occupations 
 contraction: ESCO
-status: review
+status: endorsed
 ---
 
 The evaluation document is available [in PDF format](/taxonomies/esco/Taxonomy_Evaluation_Document_ESCO_FINAL.pdf) and [in ODT format](/taxonomies/esco/Taxonomy_Evaluation_Document_ESCO_FINAL.odt).
