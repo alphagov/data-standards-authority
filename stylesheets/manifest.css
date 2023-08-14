@@ -1750,7 +1750,6 @@
   text-align: center;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none; }
   @media print {
     .govuk-warning-text__icon {
@@ -3204,7 +3203,6 @@ th[role=columnheader]:not(.no-sort):after {
   border-color: #404040 transparent;
   visibility: hidden;
   opacity: 0;
-  -ms-user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none; }
