@@ -10,6 +10,9 @@
 # Ignore the build directory
 /build
 
+# Ignore the source directory as content is defined source and is synced with source during build
+/source
+
 # Ignore cache
 /.sass-cache
 /.cache
@@ -24,3 +27,4 @@ spec/examples.txt
 /tmp
 
 node_modules
+yarn.lock
