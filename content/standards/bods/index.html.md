@@ -1,6 +1,6 @@
 ---
-name: Beneficial Ownership Data Standard (BODS) v0.2
-specification_url: https://standard.openownership.org/en/0.2.0/about/index.html
+name: Beneficial Ownership Data Standard (BODS) v0.3
+specification_url: https://standard.openownership.org/en/0.3.0/about/index.html
 tags:
 - service-referrals
 - service-design
