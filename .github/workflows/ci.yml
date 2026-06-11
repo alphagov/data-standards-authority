@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: ruby/setup-ruby@4.0.4
+      - uses: ruby/setup-ruby@v4.0.4
         with:
           bundler-cache: true
           ruby-version: 4.0.4
@@ -82,7 +82,7 @@ jobs:
       - uses: ruby/setup-ruby@v4.0.4
         with:
           bundler-cache: true
-          ruby-version: v4.0.4
+          ruby-version: 4.0.4
           working-directory: standards-catalogue
 
       - name: Download built site
