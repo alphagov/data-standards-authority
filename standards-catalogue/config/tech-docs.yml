@@ -21,7 +21,7 @@ show_contribution_banner: true
 github_repo: alphagov/data-standards-authority/
 
 #to add feedback email address on pages:
-contact_email: standards-catalogue@digital.cabinet-office.gov.uk
+contact_email: data-standards-authority@dsit.gov.uk
 
 # Table of contents depth – how many levels to include in the table of contents.
 # If your ToC is too long, reduce this number and we'll only show higher-level
