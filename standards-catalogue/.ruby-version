@@ -1,1 +1,2 @@
-3.2.2
+v1
+ # Important: Prefer ruby/setup-ruby@v1. If you pin to a commit or release, only the Ruby versions available at the time of the commit will be available.
