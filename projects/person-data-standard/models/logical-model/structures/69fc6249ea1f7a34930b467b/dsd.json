@@ -1,0 +1,19 @@
+{
+    "name": "Psychological Characteristics",
+    "Attributes": [],
+    "status": "in use",
+    "_id": "69fc6249ea1f7a34930b467b",
+    "createdAt": "2026-05-07T09:58:33.513Z",
+    "updatedAt": "2026-05-07T09:58:46.281Z",
+    "description": "Psychological Characteristics refer to non‑clinical, non‑diagnostic attributes that describe an individual’s typical cognitive, emotional, and behavioural tendencies. These characteristics represent stable patterns of thinking and behaviour, not mental health conditions, and do not uniquely identify a person. They may include personality traits, cognitive style descriptors, and general behavioural dispositions.",
+    "DataDictionary": {
+        "_id": "69fb72fbea1f7a349308088b",
+        "name": "Person Domain",
+        "description": "Common reusable structures for the Person Domain\n\n\n\nJames Strachan",
+        "idUser": 999,
+        "seq": 12,
+        "createdAt": "2026-05-06T16:57:31.054Z",
+        "updatedAt": "2026-05-07T09:59:33.898Z",
+        "__v": 0
+    }
+}
