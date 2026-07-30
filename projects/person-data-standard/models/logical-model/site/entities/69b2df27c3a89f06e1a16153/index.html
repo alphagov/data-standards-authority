@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Residence Status</title>
+  <link rel="stylesheet" href="../../style.css">
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m817f42addf14c9a838da36e78800043 msdt:dt="string">GDS|444fcede-209e-4852-86df-859b7c4e54f8</mso:m817f42addf14c9a838da36e78800043>
+<mso:c6f593ada1854b629148449de059396b msdt:dt="string">DSIT|9b2b16d8-8f0e-f9f9-8d2e-30d6eeb93788</mso:c6f593ada1854b629148449de059396b>
+<mso:h573c97cf80c4aa6b446c5363dc3ac94 msdt:dt="string">Office of the Government Chief Data Officer|5618b818-b448-4ff4-8bc4-3bf6387f1b52</mso:h573c97cf80c4aa6b446c5363dc3ac94>
+<mso:TaxCatchAll msdt:dt="string">3;#DSIT;#2;#Office of the Government Chief Data Officer;#1;#GDS</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">M7F6KF7KFYNX-983861426-91227</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">728b12f5-cae9-4d2b-b43f-1ced4a87367c</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://beisgov.sharepoint.com/sites/OCDO/_layouts/15/DocIdRedir.aspx?ID=M7F6KF7KFYNX-983861426-91227, M7F6KF7KFYNX-983861426-91227</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav aria-label="Breadcrumb" id="breadcrumb" hidden></nav>
+  <main class="page-content" id="main-content">
+    <h1 id="residence-status">Residence Status</h1>
+<p>Residence Type specifies the role, purpose, and legal/operational meaning of a residency relationship between a place or property and a person.</p>
+<h2 id="implements-concepts-from-person-domain-concept-model">Implements Concepts from Person Domain, Concept Model</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residence Status</td>
+<td>Residence Type specifies the role, purpose, and legal/operational meaning of a residency relationship between a place or property and a person.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../../entities/69b2df27c3a89f06e1a16153/image.svg" alt="Residence Status" /></p>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residence type</td>
+<td>Residence Type describes what kind of residence a Residence Fact represents — such as primary, secondary, historical, declared, inferred, or statutory — providing semantic clarity for business rules, compliance, and interpretation.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Current</td>
+<td>Current Residence is the Residence Fact for which the Residence Status is Active, the effective period includes today, and the record has not been superseded or ended.</td>
+<td>yes/no</td>
+<td>once</td>
+</tr>
+<tr>
+<td>For Taxation</td>
+<td>Residence for Tax is the legally recognised tax residency of a Party, determined by statutory criteria and supported by verified residency facts, used to establish tax obligations, compliance, reporting, and regulatory responsibilities.</td>
+<td>yes/no</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Status source</td>
+<td>Declared and Observed are semantic qualifiers that describe how a residence fact was created or asserted:  * Declared Residence — the Party (person or legal entity representative) told you this is their residence. * Observed Residence — the organisation inferred or detected this residence from system behaviour, external signals, or passive data sources.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relationships">Relationships</h2>
+<ul>
+<li><a href="../../relationships/69b2df3ec3a89f06e1a1655f/index.html">Residence may have Residence Status</a> ← <a href="../../entities/69b2a6ddc3a89f06e1a0de69/index.html">Residence</a></li>
+</ul>
+  </main>
+  <script>(function(){
+  var K='dsd_trail',pid="entities/69b2df27c3a89f06e1a16153",ptitle="Residence Status",phref="entities/69b2df27c3a89f06e1a16153/index.html";
+  var rootPfx="../../";
+  function h(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  var nav=document.getElementById('breadcrumb');
+  var trail=[];
+  try{trail=JSON.parse(sessionStorage.getItem(K)||'[]');}catch(e){}
+  var idx=-1;
+  for(var i=0;i<trail.length;i++){if(trail[i].id===pid){idx=i;break;}}
+  if(idx>=0){trail=trail.slice(0,idx+1);}
+  else{trail.push({id:pid,href:phref,title:ptitle});}
+  sessionStorage.setItem(K,JSON.stringify(trail));
+  if(!nav)return;
+  var ht="Person Domain, Logical Model";
+  var c='<ol><li><a href="'+rootPfx+'index.html">'+h(ht)+'</a></li>';
+  for(var j=0;j<trail.length-1;j++){c+='<li><a href="'+rootPfx+h(trail[j].href)+'">'+h(trail[j].title)+'</a></li>';}
+  c+='<li><span aria-current="page">'+h(ptitle)+'</span></li></ol>';
+  nav.innerHTML=c;
+  nav.removeAttribute('hidden');
+})();</script>
+</body>
+</html>
