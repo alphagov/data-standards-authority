@@ -1,0 +1,19 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a4a6a0f751de507cd5f910 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Self-Identified Nationality</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Self-Identified Country or Group</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a4a6a0f751de507cd5f912' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Type of Affiliation</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a4a6a0f751de507cd5f913' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Recognition Status</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a4a6a0f751de507cd5f914' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Primary Motivation</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a4a6a0f751de507cd5f915' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Dates</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4a6a0f751de507cd5f916' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a4a6a0f751de507cd5f910"]; 
+        concept_69945875f751de507ccc2095 [ label="Nationality", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945875f751de507ccc2095"]; 
+        concept_69945875f751de507ccc2095 -> entity_69a4a6a0f751de507cd5f910 [style="solid" xlabel="MayInclude\l" ];}
+        
