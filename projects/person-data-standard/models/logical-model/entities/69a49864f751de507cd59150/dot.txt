@@ -1,0 +1,24 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a49864f751de507cd59150 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Physical Characteristics</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Height</td><td align='left' balign='left' valign='top'>number</td><td PORT='attribute_69a49864f751de507cd59152' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Weight</td><td align='left' balign='left' valign='top'>number</td><td PORT='attribute_69a49864f751de507cd59153' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Body Build</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49864f751de507cd59154' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Eye Colour</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49864f751de507cd59155' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Hair Colour</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49864f751de507cd59156' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Skin Tone</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49864f751de507cd59157' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Distinguishing Features</td><td align='left' balign='left' valign='top'>text</td><td PORT='attribute_69a49864f751de507cd59158' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Facial Hair</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49864f751de507cd59159' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Dates</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a49864f751de507cd5915a' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a49864f751de507cd59150"]; 
+        concept_69945ad7f751de507ccc3db5 [ label="Biological
+Attributes", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945ad7f751de507ccc3db5"]; 
+        concept_69945ad7f751de507ccc3db5 -> entity_69a49864f751de507cd59150 [style="solid" xlabel="Includes\l" ];}
+        

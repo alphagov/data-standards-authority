@@ -1,0 +1,342 @@
+{
+    "name": "Physiological Information",
+    "Concepts": [
+        {
+            "idConcept": "69987985f751de507ccfd09b",
+            "_id": "69a49fbdf751de507cd5a26d",
+            "Concept": {
+                "name": "Physiological Information",
+                "SuperConcepts": [
+                    {}
+                ],
+                "status": "in use",
+                "seq": 296,
+                "_id": "69987985f751de507ccfd09b",
+                "createdAt": "2026-02-20T15:11:01.711Z",
+                "updatedAt": "2026-05-03T17:47:08.687Z",
+                "description": "Physiological Information in the Person domain represents non‑clinical, non‑diagnostic information about an individual’s biological and bodily functions. This includes measurable or observable physiological attributes that describe how the body operates (for example blood type, genetic traits, or organ donor status), rather than cognitive, emotional, or behavioural characteristics. These attributes are descriptive and operational in nature and do not, by themselves, uniquely identify a person",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Attributes": [
+        {
+            "name": "Blood Type",
+            "description": "Blood Type is a categorical physiological attribute representing an individual’s blood group classification based on recognised antigen systems, primarily the ABO and RhD systems (e.g., A+, O‑, AB−). It describes a stable biological characteristic with operational relevance in certain safety, welfare, and emergency contexts.\nIt is not a diagnostic or medical condition.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a49fbdf751de507cd5a26e"
+        },
+        {
+            "name": "Genetic Traits",
+            "description": "Genetic Traits represent stable, inherited biological characteristics that are encoded in an individual’s DNA and manifest as observable, non‑clinical traits (e.g., eye colour predisposition, lactose tolerance, natural hair colour tendency).\nThis attribute captures general genetic tendencies, not medical diagnoses, disease markers, or full genomic data.",
+            "type": "data type",
+            "dataType": "text",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a49fbdf751de507cd5a26f"
+        },
+        {
+            "name": "Self-reported disability",
+            "description": "Also known as impairment.\n\nSelf-reported disability is a rights‑based characteristic indicating that an individual has a long‑term physical, mental, cognitive, or sensory impairment which, in interaction with barriers, may limit equal participation in daily activities or environments.\nThis attribute reflects functional impact and support needs, not medical diagnoses or clinical details.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a49fbdf751de507cd5a270"
+        },
+        {
+            "name": "Organ Donor",
+            "description": "Organ Donor indicates whether an individual has formally recorded consent, objection, or preference regarding the donation of their organs and/or tissues after death. This attribute reflects a person’s legally or administratively recognized donor decision, not medical suitability or clinical screening.\n\nIt records consent status, not medical data.\n\nMay be known as Tissue donor.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a49fbdf751de507cd5a272"
+        },
+        {
+            "name": "Dates",
+            "description": "Dates for Physiological Information define the time period during which a specific physiological measurement or observation is valid, active, or considered accurate for operational or analytical use.\nBecause physiological attributes (e.g., heart rate, oxygen saturation, resting blood pressure, metabolic rate) can change frequently, these dates provide temporal context for correctness, safety, and interpretation.\n\nThe attribute set typically includes:\n\n* measurement\\_date — when the physiological value was captured\n* effective\\_from — when the value first becomes valid for use\n* effective\\_to — when it stops being valid (nullable if still active)\n\nThese are per‑attribute timestamps, not global to the person.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4a003f751de507cd5a8bf"
+        }
+    ],
+    "status": "in use",
+    "seq": 81,
+    "_id": "69a49fbdf751de507cd5a26c",
+    "createdAt": "2026-03-01T20:21:17.871Z",
+    "updatedAt": "2026-05-07T20:36:59.803Z",
+    "description": "Physiological Information describes non‑clinical, non‑diagnostic information about an individual’s biological and bodily functions. It includes physiological or biologically‑derived attributes such as blood type, genetic traits, self‑reported disability, and organ donor status. These attributes are descriptive and operational in nature, rather than cognitive, emotional, or behavioural characteristics, and do not uniquely identify a person",
+    "Links": [
+        {
+            "name": "Physiological Information as Biological Attribute",
+            "label": "Includes",
+            "idConceptFrom": "69945ad7f751de507ccc3db5",
+            "idConceptTo": "69987985f751de507ccfd09b",
+            "status": "in use",
+            "seq": 311,
+            "_id": "69a477f2f751de507cd47452",
+            "createdAt": "2026-03-01T17:31:30.812Z",
+            "updatedAt": "2026-03-01T17:31:30.812Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Biological Attributes",
+                "description": "Inherent physical, physiological, or genetic characteristics of a Natural Person that arise from biology rather than social, cultural, or legal identity.&#x20;\n\nBiological Attributes describe intrinsic properties of the human body and are distinct from personal identity attributes (e.g., name), demographic identity (e.g., ethnicity), or legal identity (e.g., citizenship).",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 239,
+                "_id": "69945ad7f751de507ccc3db5",
+                "createdAt": "2026-02-17T12:11:03.090Z",
+                "updatedAt": "2026-03-04T17:28:49.435Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Physiological Information",
+                "SuperConcepts": [
+                    {}
+                ],
+                "status": "in use",
+                "seq": 296,
+                "_id": "69987985f751de507ccfd09b",
+                "createdAt": "2026-02-20T15:11:01.711Z",
+                "updatedAt": "2026-05-03T17:47:08.687Z",
+                "description": "Physiological Information in the Person domain represents non‑clinical, non‑diagnostic information about an individual’s biological and bodily functions. This includes measurable or observable physiological attributes that describe how the body operates (for example blood type, genetic traits, or organ donor status), rather than cognitive, emotional, or behavioural characteristics. These attributes are descriptive and operational in nature and do not, by themselves, uniquely identify a person",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Revisions": [
+        {
+            "_id": "69a4a003f751de507cd5a846",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 566,
+            "createdAt": "2026-03-01T20:22:27.355Z",
+            "updatedAt": "2026-03-01T20:22:27.355Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a4bd7df751de507cd66692",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 574,
+            "createdAt": "2026-03-01T22:28:13.989Z",
+            "updatedAt": "2026-03-01T22:28:13.989Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a87005f751de507cd76fa2",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 636,
+            "createdAt": "2026-03-04T17:46:45.842Z",
+            "updatedAt": "2026-03-04T17:46:45.842Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a87243f751de507cd79e83",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 644,
+            "createdAt": "2026-03-04T17:56:19.143Z",
+            "updatedAt": "2026-03-04T17:56:19.143Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a87812f751de507cd7c21f",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 648,
+            "createdAt": "2026-03-04T18:21:06.411Z",
+            "updatedAt": "2026-03-04T18:21:06.411Z",
+            "__v": 0
+        },
+        {
+            "_id": "69c6fffc9f84c55e29931274",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 1003,
+            "createdAt": "2026-03-27T22:09:00.368Z",
+            "updatedAt": "2026-03-27T22:09:00.368Z",
+            "__v": 0
+        },
+        {
+            "_id": "69c7005d9f84c55e29932030",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 1004,
+            "createdAt": "2026-03-27T22:10:37.973Z",
+            "updatedAt": "2026-03-27T22:10:37.973Z",
+            "__v": 0
+        },
+        {
+            "_id": "69f222342f9c85da4fb43124",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 1112,
+            "createdAt": "2026-04-29T15:22:28.251Z",
+            "updatedAt": "2026-04-29T15:22:28.251Z",
+            "__v": 0
+        },
+        {
+            "_id": "69f784f6ea1f7a349306b268",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 1118,
+            "createdAt": "2026-05-03T17:25:10.943Z",
+            "updatedAt": "2026-05-03T17:25:10.943Z",
+            "__v": 0
+        },
+        {
+            "_id": "69f784ffea1f7a349306c051",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 1119,
+            "createdAt": "2026-05-03T17:25:19.416Z",
+            "updatedAt": "2026-05-03T17:25:19.416Z",
+            "__v": 0
+        },
+        {
+            "_id": "69f785e7ea1f7a349306ce63",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 1120,
+            "createdAt": "2026-05-03T17:29:11.350Z",
+            "updatedAt": "2026-05-03T17:29:11.350Z",
+            "__v": 0
+        },
+        {
+            "_id": "69f795fcea1f7a349306e357",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 1122,
+            "createdAt": "2026-05-03T18:37:48.222Z",
+            "updatedAt": "2026-05-03T18:37:48.222Z",
+            "__v": 0
+        },
+        {
+            "_id": "69f79eaaea1f7a349306f169",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 1123,
+            "createdAt": "2026-05-03T19:14:50.061Z",
+            "updatedAt": "2026-05-03T19:14:50.061Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fc614fea1f7a34930aef8f",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 1182,
+            "createdAt": "2026-05-07T09:54:23.591Z",
+            "updatedAt": "2026-05-07T09:54:23.591Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fc6181ea1f7a34930b090d",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 1184,
+            "createdAt": "2026-05-07T09:55:13.205Z",
+            "updatedAt": "2026-05-07T09:55:13.205Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fcf7ecea1f7a34930eba49",
+            "idAbout": "69a49fbdf751de507cd5a26c",
+            "report": true,
+            "idUser": 999,
+            "seq": 1230,
+            "createdAt": "2026-05-07T20:37:00.300Z",
+            "updatedAt": "2026-05-07T20:37:00.300Z",
+            "__v": 0
+        }
+    ],
+    "LogicalModel": {
+        "_id": "699dbdcbf751de507cd22dc5",
+        "name": "Person Domain, Logical Model",
+        "description": "Person Logical Domain Model.\n\nModel ID: DEPoP013.&#x20;\n\nLinking concepts to data items in the Person Domain.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202604.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+        "idUser": 999,
+        "status": "under construction",
+        "seq": 10,
+        "createdAt": "2026-02-24T15:03:39.212Z",
+        "updatedAt": "2026-06-02T16:18:27.733Z",
+        "__v": 0,
+        "id": "699dbdcbf751de507cd22dc5",
+        "uri": "http://def.digitalservicedesigner.com/logicalmodel/10",
+        "Owner": {
+            "id": 999,
+            "username": "madeup",
+            "organisation": "Made Up Organisation - as a Sandbox for the Designer",
+            "uriOrganisation": "http://id.savviuk.org/organisations/madeup"
+        },
+        "Version": {
+            "_id": "6a1f03840eda6fffbbdd9e83",
+            "idAbout": "699dbdcbf751de507cd22dc5",
+            "name": "Logical Model:Person Domain, Logical Model V1 02/06/2026",
+            "type": "logicalmodel",
+            "idUser": 999,
+            "seq": 69,
+            "createdAt": "2026-06-02T16:23:33.248Z",
+            "updatedAt": "2026-06-02T16:23:33.248Z",
+            "__v": 0
+        }
+    }
+}

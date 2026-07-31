@@ -1,0 +1,239 @@
+{
+    "name": "Military Titles",
+    "Concepts": [
+        {
+            "idConcept": "69987904f751de507ccfb34a",
+            "_id": "69a4bc47f751de507cd64639",
+            "Concept": {
+                "name": "Military Titles",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 291,
+                "_id": "69987904f751de507ccfb34a",
+                "createdAt": "2026-02-20T15:08:52.620Z",
+                "updatedAt": "2026-03-04T17:21:57.569Z",
+                "description": "Military Titles represent the official ranks, grades, and honorific forms of address assigned to individuals within armed forces or uniformed services (e.g., Lieutenant, Captain, Colonel). These titles indicate hierarchical position, authority, and command responsibility. They are role‑based, not personal, and may change throughout a career.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Attributes": [
+        {
+            "name": "Military Rank",
+            "description": "Military Rank is an official, authority‑granted title that indicates an individual’s position, hierarchy level, and role status within an armed forces organisation (e.g., Army, Navy, Air Force, Marines, Space Force).\nIt is a formal, regulated, and legally controlled title issued by a recognised military authority and subject to strict rules, protocols, and temporal validity.\n\nMilitary Rank is distinct from:\n\n* Job role titles (e.g., Platoon Commander)\n* Professional titles (e.g., Dr, Prof)\n* Civil courtesy titles (Mr, Ms)\n* Honorary military titles (different governance)",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4bc47f751de507cd6463a"
+        },
+        {
+            "name": "Service Branch",
+            "description": "Service Branch identifies the specific branch of the armed forces in which an individual serves or has served (e.g., Army, Navy, Air Force, Marine Corps, Space Force).\nIt provides the contextual organisational structure for interpreting military rank, military titles, service numbers, and authority-based entitlements.\n\nIt is a formal identity attribute within the military domain and must be authoritatively sourced from official service records.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4bc47f751de507cd6463b"
+        },
+        {
+            "name": "Service Number",
+            "description": "Service Number is the unique identifier assigned to an individual by a military authority upon enlistment, commission, or service enrolment.\nIt serves as the primary official identifier for the individual within the context of military personnel systems, similar to but distinct from:\n\n* National identity numbers\n* Unit assignment identifiers\n* Veteran reference numbers\n* Military occupational codes\n\nIt enables unambiguous identification of service members throughout their military career, across promotions, transfers, deployments, and administrative processes.",
+            "type": "data type",
+            "dataType": "line",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4bc47f751de507cd6463c"
+        },
+        {
+            "name": "Country",
+            "description": "Country of Defence Force identifies the nation‑state or recognised sovereign entity to which the defence force the individual serves (or has served) belongs.\nIt anchors the Service Branch, Military Rank, and Service Number to the correct national military authority, clarifying jurisdiction, regulatory rules, rank hierarchy, and entitlements.\n\nIt does not infer nationality, citizenship, or ethnicity — it strictly identifies the country that operates the defence force.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4bc47f751de507cd6463e"
+        },
+        {
+            "name": "Status",
+            "description": "Country of Defence Force identifies the nation‑state or recognised sovereign entity to which the defence force the individual serves (or has served) belongs.\nIt anchors the Service Branch, Military Rank, and Service Number to the correct national military authority, clarifying jurisdiction, regulatory rules, rank hierarchy, and entitlements.\n\nIt does not infer nationality, citizenship, or ethnicity — it strictly identifies the country that operates the defence force.",
+            "type": "data type",
+            "dataType": "yes/no",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4bc47f751de507cd6463f"
+        },
+        {
+            "name": "Verification Source",
+            "description": "Verification Source of Rank identifies the authoritative system, documentation, or military body used to verify the accuracy, legitimacy, and current status of an individual’s military rank.\nIt answers the question:\n“Where did we confirm this rank came from, and how do we know it is valid?”\n\nThis attribute ensures that only evidence-backed, formally recognised ranks are reflected in identity and personnel systems. It also supports governance, entitlement validation, and auditability.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4bc47f751de507cd64640"
+        },
+        {
+            "name": "Dates",
+            "description": "Dates for Rank specify the time period during which a specific military rank is valid, active, or historically recorded for an individual.\nThese dates define the rank lifecycle — when the rank was granted, active, suspended, superseded, revoked, or transitioned to another status (e.g., retired).\n\nMilitary rank is temporal and authoritative, meaning these dates must represent official, evidence‑based events (e.g., promotion orders, demotion decisions, retirement notices).\n\nTypical fields include:\n\n* rank\\_effective\\_from — the date the rank officially took effect\n* rank\\_effective\\_to — the date the rank ceased to be active (nullable if current)\n* rank\\_grant\\_date — when promotion/appointment was formally approved\n* rank\\_revocation\\_date — where applicable\n* capture\\_date — when the system recorded the rank\n\nThese dates apply per rank record, not per person.",
+            "type": "structure",
+            "dataType": "date",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4bc47f751de507cd6463d"
+        }
+    ],
+    "status": "in use",
+    "seq": 94,
+    "_id": "69a4bc47f751de507cd64638",
+    "createdAt": "2026-03-01T22:23:03.952Z",
+    "updatedAt": "2026-05-07T21:03:47.413Z",
+    "description": "Military Titles represent the official ranks, grades, and honorific forms of address assigned to individuals within armed forces or uniformed services (e.g., Lieutenant, Captain, Colonel). These titles indicate hierarchical position, authority, and command responsibility. They are role‑based, not personal, and may change throughout a career.",
+    "Links": [
+        {
+            "name": "Military Titles Included in Title",
+            "label": "May Include",
+            "idConceptFrom": "6994574ff751de507ccc0fa3",
+            "idConceptTo": "69987904f751de507ccfb34a",
+            "status": "in use",
+            "seq": 303,
+            "_id": "69a4762df751de507cd41bff",
+            "createdAt": "2026-03-01T17:23:57.092Z",
+            "updatedAt": "2026-03-01T17:24:41.620Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Titles",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 230,
+                "_id": "6994574ff751de507ccc0fa3",
+                "createdAt": "2026-02-17T11:55:59.821Z",
+                "updatedAt": "2026-04-29T14:02:19.981Z",
+                "description": "An honorific or form of address associated with a Natural Person, used to indicate courtesy, social status, professional standing, or preference. It does not identify the person and does not imply any legal role or relationship—it's simply an attribute describing how the person chooses (or is required) to be addressed.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Military Titles",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 291,
+                "_id": "69987904f751de507ccfb34a",
+                "createdAt": "2026-02-20T15:08:52.620Z",
+                "updatedAt": "2026-03-04T17:21:57.569Z",
+                "description": "Military Titles represent the official ranks, grades, and honorific forms of address assigned to individuals within armed forces or uniformed services (e.g., Lieutenant, Captain, Colonel). These titles indicate hierarchical position, authority, and command responsibility. They are role‑based, not personal, and may change throughout a career.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Revisions": [
+        {
+            "_id": "69a86f53f751de507cd74823",
+            "idAbout": "69a4bc47f751de507cd64638",
+            "report": true,
+            "idUser": 999,
+            "seq": 628,
+            "createdAt": "2026-03-04T17:43:47.413Z",
+            "updatedAt": "2026-03-04T17:43:47.413Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a888c6f751de507cd832f0",
+            "idAbout": "69a4bc47f751de507cd64638",
+            "report": true,
+            "idUser": 999,
+            "seq": 666,
+            "createdAt": "2026-03-04T19:32:22.572Z",
+            "updatedAt": "2026-03-04T19:32:22.572Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fcfe25ea1f7a34930fac6d",
+            "idAbout": "69a4bc47f751de507cd64638",
+            "report": true,
+            "idUser": 999,
+            "seq": 1244,
+            "createdAt": "2026-05-07T21:03:33.561Z",
+            "updatedAt": "2026-05-07T21:03:33.561Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fcfe33ea1f7a34930fc128",
+            "idAbout": "69a4bc47f751de507cd64638",
+            "report": true,
+            "idUser": 999,
+            "seq": 1245,
+            "createdAt": "2026-05-07T21:03:47.872Z",
+            "updatedAt": "2026-05-07T21:03:47.872Z",
+            "__v": 0
+        }
+    ],
+    "LogicalModel": {
+        "_id": "699dbdcbf751de507cd22dc5",
+        "name": "Person Domain, Logical Model",
+        "description": "Person Logical Domain Model.\n\nModel ID: DEPoP013.&#x20;\n\nLinking concepts to data items in the Person Domain.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202604.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+        "idUser": 999,
+        "status": "under construction",
+        "seq": 10,
+        "createdAt": "2026-02-24T15:03:39.212Z",
+        "updatedAt": "2026-06-02T16:18:27.733Z",
+        "__v": 0,
+        "id": "699dbdcbf751de507cd22dc5",
+        "uri": "http://def.digitalservicedesigner.com/logicalmodel/10",
+        "Owner": {
+            "id": 999,
+            "username": "madeup",
+            "organisation": "Made Up Organisation - as a Sandbox for the Designer",
+            "uriOrganisation": "http://id.savviuk.org/organisations/madeup"
+        },
+        "Version": {
+            "_id": "6a1f03840eda6fffbbdd9e83",
+            "idAbout": "699dbdcbf751de507cd22dc5",
+            "name": "Logical Model:Person Domain, Logical Model V1 02/06/2026",
+            "type": "logicalmodel",
+            "idUser": 999,
+            "seq": 69,
+            "createdAt": "2026-06-02T16:23:33.248Z",
+            "updatedAt": "2026-06-02T16:23:33.248Z",
+            "__v": 0
+        }
+    }
+}

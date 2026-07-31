@@ -1,0 +1,24 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a48be5f751de507cd4e22e [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Birth</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Date of Birth Registration Date </td><td align='left' balign='left' valign='top'>date</td><td PORT='attribute_69a48be5f751de507cd4e230' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Birth Date</td><td align='left' balign='left' valign='top'>date</td><td PORT='attribute_69a48be5f751de507cd4e231' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Place of Birth</td><td align='left' balign='left' valign='top'>line</td><td PORT='attribute_69a48be5f751de507cd4e232' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Country of Birth</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a48be5f751de507cd4e233' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Time of Birth</td><td align='left' balign='left' valign='top'>time</td><td PORT='attribute_69a48efef751de507cd50261' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Birth Registration Number</td><td align='left' balign='left' valign='top'>line</td><td PORT='attribute_69a48efef751de507cd50262' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Multiple Birth Indicator</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a48efef751de507cd50263' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Facility/ Location Type</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a48efef751de507cd50264' align='left' balign='left' valign='top'>once</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a48be5f751de507cd4e22e"]; 
+        concept_699457cbf751de507ccc19df [ label="Person Event", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_699457cbf751de507ccc19df"]; 
+        concept_69fb66b0ea1f7a349307cbcf [ label="Date of Birth", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69fb66b0ea1f7a349307cbcf"]; 
+        concept_699457cbf751de507ccc19df -> entity_69a48be5f751de507cd4e22e [style="solid" xlabel="MayInclude\l" ];
+        entity_69a48be5f751de507cd4e22e -> concept_69fb66b0ea1f7a349307cbcf [style="solid" xlabel="Was on\l" ];}
+        
