@@ -1,0 +1,259 @@
+{
+    "name": "Self-Identified Nationality",
+    "Concepts": [
+        {
+            "idConcept": "69987a29f751de507ccfe869",
+            "_id": "69a4a6a0f751de507cd5f911",
+            "Concept": {
+                "name": "Self-Identified Nationality",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 300,
+                "_id": "69987a29f751de507ccfe869",
+                "createdAt": "2026-02-20T15:13:45.812Z",
+                "updatedAt": "2026-03-04T17:28:06.928Z",
+                "description": "Self‑Identified Nationality represents how an individual personally defines or expresses their own national identity, independent of citizenship, passport, or legal status. It reflects cultural affiliation, heritage, or personal identification, and is self‑reported, non‑authoritative, and used solely for demographic, engagement, or inclusion‑related purposes.\n\nThis attribute does not confer any legal rights or obligations.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Attributes": [
+        {
+            "name": "Self-Identified Country or Group",
+            "description": "Self‑Identified Country or Group represents the country, cultural group, territory, people, or national identity that an individual personally associates with, irrespective of legal citizenship or official nationality.\nIt is self‑reported, non‑authoritative, and used exclusively for demographic insight, inclusion, and respectful identity handling.\n\nThis attribute captures the label the individual uses for their own national or cultural identity, such as Scottish, Basque, Catalan, Hong Konger, Welsh, Kurdish, Sámi, Galician, Palestinian, Tamil, Bavarian, Inuit, or American.\n\nIt is a personal identity expression, not a legal classification.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a4a6a0f751de507cd5f912"
+        },
+        {
+            "name": "Type of Affiliation",
+            "description": "Type of Affiliation describes the basis or nature of a person’s self‑identified national or group identity. It categorises how an individual relates to a self‑identified country, territory, cultural group, or people — whether through heritage, cultural identity, lived experience, belonging, community membership, or personal self‑identification.\n\nThis attribute is self‑reported, non‑authoritative, and strictly for demographic insight, inclusion, and respectful representation — not for legal, operational, or compliance decisions.\n\nValues should be drawn from a controlled vocabulary rather than free text, to ensure consistency and interoperability. A specific value set is not mandated at this stage and will be defined through future governance and alignment.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a4a6a0f751de507cd5f913"
+        },
+        {
+            "name": "Recognition Status",
+            "description": "Recognition Status indicates how receiving organisations or systems may acknowledge, interpret, or display an individual’s self‑identified nationality, country, or group in operational systems or reporting.&#x20;\n\nIt captures organisational handling rules (e.g. approved, restricted, suppressed) applied to a self‑reported identity that has no legal standing but is relevant to inclusion, engagement, or user experience.&#x20;\n\nValues should be drawn from a controlled vocabulary rather than free text, to ensure consistency and interoperability.&#x20;\n\nThis represents how the self‑identified value is handled in practice, not whether a state or international body formally recognises the group.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a4a6a0f751de507cd5f914"
+        },
+        {
+            "name": "Primary Motivation",
+            "description": "Primary Motivation describes the main reason or basis an individual chooses to self‑identify with a specific nationality, country, territory, cultural group, or people.\n\nIt captures the personal rationale behind the identity — such as heritage, upbringing, cultural alignment, lived experience, or personal meaning — and is self‑reported, non‑authoritative, and used solely for identity expression, inclusion, and engagement insights.\n\nThis attribute clarifies why the self‑identified nationality is meaningful to the individual.\n\nValues should be drawn from a controlled vocabulary rather than free text, to ensure consistency and interoperability",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a4a6a0f751de507cd5f915"
+        },
+        {
+            "name": "Dates",
+            "description": "A self‑identified nationality is a statement made by the person about the nationality (or nationalities) they identify with. The date fields should describe the validity period of that self‑identification, not necessarily legal citizenship dates.\n\nSelf‑Identified Nationality Start Date (Valid From) - The date the person first reports (or you first record) that they self‑identify with the specified nationality.\n\nSelf‑Identified Nationality End Date (Valid To) - The date the person stops reporting (or you stop treating as current) that they self‑identify with the specified nationality.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4a6a0f751de507cd5f916"
+        }
+    ],
+    "status": "in use",
+    "seq": 88,
+    "_id": "69a4a6a0f751de507cd5f910",
+    "createdAt": "2026-03-01T20:50:40.197Z",
+    "updatedAt": "2026-05-07T21:31:42.288Z",
+    "description": "Self‑Identified Nationality represents how an individual personally defines or expresses their own national identity, independent of citizenship, passport, or legal status. It reflects cultural affiliation, heritage, or personal identification, and is self‑reported, non‑authoritative, and used solely for demographic, engagement, or inclusion‑related purposes.\n\nThis attribute does not confer any legal rights or obligations.",
+    "Links": [
+        {
+            "name": "Self-Identified Nationality as Nationality",
+            "label": "MayInclude",
+            "idConceptFrom": "69945875f751de507ccc2095",
+            "idConceptTo": "69987a29f751de507ccfe869",
+            "status": "in use",
+            "seq": 313,
+            "_id": "69a4784ef751de507cd485d1",
+            "createdAt": "2026-03-01T17:33:02.203Z",
+            "updatedAt": "2026-03-01T17:33:02.203Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Nationality",
+                "description": "A person’s formal affiliation to a nation or cultural identity, typically associated with the country or nation with which they identify or are recognised as belonging. In a conceptual model, Nationality represents a descriptive, identity‑based attribute of a Natural Person that may be based on heritage, birth, culture, or personal identification.",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 234,
+                "_id": "69945875f751de507ccc2095",
+                "createdAt": "2026-02-17T12:00:53.491Z",
+                "updatedAt": "2026-03-04T17:32:52.701Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Self-Identified Nationality",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 300,
+                "_id": "69987a29f751de507ccfe869",
+                "createdAt": "2026-02-20T15:13:45.812Z",
+                "updatedAt": "2026-03-04T17:28:06.928Z",
+                "description": "Self‑Identified Nationality represents how an individual personally defines or expresses their own national identity, independent of citizenship, passport, or legal status. It reflects cultural affiliation, heritage, or personal identification, and is self‑reported, non‑authoritative, and used solely for demographic, engagement, or inclusion‑related purposes.\n\nThis attribute does not confer any legal rights or obligations.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Revisions": [
+        {
+            "_id": "69a87102f751de507cd7990c",
+            "idAbout": "69a4a6a0f751de507cd5f910",
+            "report": true,
+            "idUser": 999,
+            "seq": 643,
+            "createdAt": "2026-03-04T17:50:58.610Z",
+            "updatedAt": "2026-03-04T17:50:58.610Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a87c36f751de507cd7e577",
+            "idAbout": "69a4a6a0f751de507cd5f910",
+            "report": true,
+            "idUser": 999,
+            "seq": 655,
+            "createdAt": "2026-03-04T18:38:46.670Z",
+            "updatedAt": "2026-03-04T18:38:46.670Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fbb952ea1f7a3493091f89",
+            "idAbout": "69a4a6a0f751de507cd5f910",
+            "report": true,
+            "idUser": 999,
+            "seq": 1151,
+            "createdAt": "2026-05-06T21:57:38.651Z",
+            "updatedAt": "2026-05-06T21:57:38.651Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fbbfffea1f7a3493092bec",
+            "idAbout": "69a4a6a0f751de507cd5f910",
+            "report": true,
+            "idUser": 999,
+            "seq": 1152,
+            "createdAt": "2026-05-06T22:26:07.584Z",
+            "updatedAt": "2026-05-06T22:26:07.584Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fbc97dea1f7a3493093bed",
+            "idAbout": "69a4a6a0f751de507cd5f910",
+            "report": true,
+            "idUser": 999,
+            "seq": 1153,
+            "createdAt": "2026-05-06T23:06:37.621Z",
+            "updatedAt": "2026-05-06T23:06:37.621Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fbca33ea1f7a3493095a14",
+            "idAbout": "69a4a6a0f751de507cd5f910",
+            "report": true,
+            "idUser": 999,
+            "seq": 1154,
+            "createdAt": "2026-05-06T23:09:39.790Z",
+            "updatedAt": "2026-05-06T23:09:39.790Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fbcab1ea1f7a3493096a15",
+            "idAbout": "69a4a6a0f751de507cd5f910",
+            "report": true,
+            "idUser": 999,
+            "seq": 1155,
+            "createdAt": "2026-05-06T23:11:45.922Z",
+            "updatedAt": "2026-05-06T23:11:45.922Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd04beea1f7a3493104f54",
+            "idAbout": "69a4a6a0f751de507cd5f910",
+            "report": true,
+            "idUser": 999,
+            "seq": 1250,
+            "createdAt": "2026-05-07T21:31:42.414Z",
+            "updatedAt": "2026-05-07T21:31:42.414Z",
+            "__v": 0
+        }
+    ],
+    "LogicalModel": {
+        "_id": "699dbdcbf751de507cd22dc5",
+        "name": "Person Domain, Logical Model",
+        "description": "Person Logical Domain Model.\n\nModel ID: DEPoP013.&#x20;\n\nLinking concepts to data items in the Person Domain.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202604.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+        "idUser": 999,
+        "status": "under construction",
+        "seq": 10,
+        "createdAt": "2026-02-24T15:03:39.212Z",
+        "updatedAt": "2026-06-02T16:18:27.733Z",
+        "__v": 0,
+        "id": "699dbdcbf751de507cd22dc5",
+        "uri": "http://def.digitalservicedesigner.com/logicalmodel/10",
+        "Owner": {
+            "id": 999,
+            "username": "madeup",
+            "organisation": "Made Up Organisation - as a Sandbox for the Designer",
+            "uriOrganisation": "http://id.savviuk.org/organisations/madeup"
+        },
+        "Version": {
+            "_id": "6a1f03840eda6fffbbdd9e83",
+            "idAbout": "699dbdcbf751de507cd22dc5",
+            "name": "Logical Model:Person Domain, Logical Model V1 02/06/2026",
+            "type": "logicalmodel",
+            "idUser": 999,
+            "seq": 69,
+            "createdAt": "2026-06-02T16:23:33.248Z",
+            "updatedAt": "2026-06-02T16:23:33.248Z",
+            "__v": 0
+        }
+    }
+}

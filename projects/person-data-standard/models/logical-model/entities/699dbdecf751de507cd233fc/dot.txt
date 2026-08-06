@@ -1,0 +1,43 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_699dbdecf751de507cd233fc [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Person</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Biological Attributes</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a474fdf751de507cd3ff5e' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Citizenship</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a474fdf751de507cd3ff5f' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Ethnicity (Cultural identify)</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a47aadf751de507cd4a5ee' align='left' balign='left' valign='top'></td></tr>
+                <tr><td align='left' balign='left' valign='top'>Genetic Ethnicity</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a47aadf751de507cd4a5ef' align='left' balign='left' valign='top'></td></tr>
+                <tr><td align='left' balign='left' valign='top'>Name</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a47aadf751de507cd4a5f0' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Nationality</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a47aadf751de507cd4a5f1' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Person Event</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a47aadf751de507cd4a5f2' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Identifiers</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a47aadf751de507cd4a5f3' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Titles</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a47aadf751de507cd4a5f5' align='left' balign='left' valign='top'>once</td></tr>
+        </table>>, shape=plaintext, URL="entity_699dbdecf751de507cd233fc"]; 
+        concept_69945ad7f751de507ccc3db5 [ label="Biological
+Attributes", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945ad7f751de507ccc3db5"]; 
+        concept_69945a48f751de507ccc3159 [ label="Ethnicity (Cultural
+identify)", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945a48f751de507ccc3159"]; 
+        concept_69945a9ff751de507ccc35ed [ label="Genetic Ethnicity", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945a9ff751de507ccc35ed"]; 
+        concept_69945770f751de507ccc13f5 [ label="Name", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945770f751de507ccc13f5"]; 
+        concept_69945875f751de507ccc2095 [ label="Nationality", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945875f751de507ccc2095"]; 
+        concept_699457cbf751de507ccc19df [ label="Person Event", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_699457cbf751de507ccc19df"]; 
+        concept_69945b19f751de507ccc4842 [ label="Identifiers", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945b19f751de507ccc4842"]; 
+        concept_6994574ff751de507ccc0fa3 [ label="Titles", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_6994574ff751de507ccc0fa3"]; 
+        concept_69945984f751de507ccc2ced [ label="Citizenship", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945984f751de507ccc2ced"]; 
+        concept_69b2a1bcc3a89f06e1a0948e [ label="Residence", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69b2a1bcc3a89f06e1a0948e"]; 
+        entity_699dbdecf751de507cd233fc -> concept_69945ad7f751de507ccc3db5 [style="solid" xlabel="has\l" ];
+        entity_699dbdecf751de507cd233fc -> concept_69945a48f751de507ccc3159 [style="solid" xlabel="has\l" ];
+        entity_699dbdecf751de507cd233fc -> concept_69945a9ff751de507ccc35ed [style="solid" xlabel="Has\l" ];
+        entity_699dbdecf751de507cd233fc -> concept_69945770f751de507ccc13f5 [style="solid" xlabel="MayHave\l" ];
+        entity_699dbdecf751de507cd233fc -> concept_69945875f751de507ccc2095 [style="solid" xlabel="Has\l" ];
+        entity_699dbdecf751de507cd233fc -> concept_699457cbf751de507ccc19df [style="solid" xlabel="Has\l" ];
+        entity_699dbdecf751de507cd233fc -> concept_69945b19f751de507ccc4842 [style="solid" xlabel="Has\l" ];
+        entity_699dbdecf751de507cd233fc -> concept_6994574ff751de507ccc0fa3 [style="solid" xlabel="MayHave\l" ];
+        entity_699dbdecf751de507cd233fc -> concept_69945984f751de507ccc2ced [style="solid" xlabel="Has\l" ];
+        entity_699dbdecf751de507cd233fc -> concept_69b2a1bcc3a89f06e1a0948e [style="solid" xlabel="May have\l" ];}
+        

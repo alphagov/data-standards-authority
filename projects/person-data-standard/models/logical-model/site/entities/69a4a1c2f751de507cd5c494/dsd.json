@@ -1,0 +1,217 @@
+{
+    "name": "Biometric Identifiers",
+    "Concepts": [
+        {
+            "idConcept": "69987964f751de507ccfcab4",
+            "_id": "69a4a1c2f751de507cd5c495",
+            "Concept": {
+                "name": "Biometric Identifiers",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 295,
+                "_id": "69987964f751de507ccfcab4",
+                "createdAt": "2026-02-20T15:10:28.233Z",
+                "updatedAt": "2026-03-04T17:29:18.698Z",
+                "description": "Biometric Identifiers are data elements that capture a person’s unique biological or behavioural traits for the purpose of identification, authentication, or verification. This includes raw biometric measurements (e.g., fingerprints), biometric templates derived from those measurements, and any metadata required to process or match them.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Attributes": [
+        {
+            "name": "Fingerprints",
+            "description": "Fingerprints are unique biometric identifiers derived from the ridge patterns present on an individual’s fingers. They are captured as digital biometric templates, images, or encoded representations, and used solely for high‑assurance identity verification, authentication, or law‑enforcement purposes where legally justified.\n\nFingerprints are immutable, uniquely identifying, and classified as special category biometric data under data‑protection law.\n\nThis attribute does not store raw images unless explicitly permitted. Biometric templates (mathematically encoded forms) are the standard for secure storage.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4a1c2f751de507cd5c496"
+        },
+        {
+            "name": "Facial Recognition Data",
+            "description": "Facial Recognition Data refers to biometric templates or encoded vectors generated from an individual’s facial features for the purpose of identity verification, authentication, or uniqueness checks, under strictly governed legal circumstances.\n\nIt may include:\n\n* Face embeddings (vectorised mathematical representations)\n* Biometric templates compliant with standards (e.g., ISO/IEC 19794‑5)\n* Minimal faceprint data necessary for matching\n\nIt does not include raw photographs unless stored separately under distinct image-governance policies.\n\nFacial recognition data is unique, unavoidable, permanent, and highly sensitive, and therefore must never be used outside lawful, authorised workflows.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4a1c2f751de507cd5c497"
+        },
+        {
+            "name": "Voice Pattern",
+            "description": "Voice Pattern refers to the digitally captured and mathematically encoded representation of an individual’s vocal characteristics (pitch, timbre, rhythm, formants, spectral features).\nIt is stored as a voice biometric template or voiceprint, not as raw audio.\n\nVoice patterns enable high‑assurance identity verification or authentication when legally authorised, but must never be used for emotion detection, demographic inference, or behavioural profiling.\n\nVoice Pattern ≠ raw recording; it is an irreversible, encrypted biometric template.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4a1c2f751de507cd5c498"
+        },
+        {
+            "name": "Biometric ID Reference",
+            "description": "Biometric IDs are unique, immutable physiological or behavioural identifiers derived from an individual's biological characteristics (e.g., fingerprints, facial geometry, iris patterns, voice patterns) used for high‑assurance identity verification or authentication under strict legal and governance controls.\n\nA Biometric ID refers specifically to the unique biometric template or identifier representing a biometric modality—not the raw data itself.\nExamples: fingerprint template ID, facial recognition template ID, iris scan template ID.\n\nBiometric IDs must be stored as non-reversible encrypted templates or reference tokens, never as raw biometric images or recordings.",
+            "type": "data type",
+            "dataType": "line",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4a1c2f751de507cd5c499"
+        },
+        {
+            "name": "Dates",
+            "description": "Biometrics are time‑bounded credentials\n\nBiometric Identifier Valid From (Effective From) - The date/time from which the biometric identifier is considered valid for use (e.g., after successful enrolment and any required verification/quality checks).\n\nBiometric Identifier Valid To (Effective To) - The date/time at which the biometric identifier ceases to be valid for use, due to expiry, revocation, replacement, compromise, or policy change.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69fd0551ea1f7a3493105f6d"
+        }
+    ],
+    "status": "in use",
+    "seq": 84,
+    "_id": "69a4a1c2f751de507cd5c494",
+    "createdAt": "2026-03-01T20:29:54.398Z",
+    "updatedAt": "2026-05-07T21:34:09.236Z",
+    "description": "Biometric Identifiers are data elements that capture a person’s unique biological or behavioural traits for the purpose of identification, authentication, or verification. This includes raw biometric measurements (e.g., fingerprints), biometric templates derived from those measurements, and any metadata required to process or match them.",
+    "Links": [
+        {
+            "name": "Biometric Identifiers as Person's Identifier",
+            "label": "Includes",
+            "idConceptFrom": "69945b19f751de507ccc4842",
+            "idConceptTo": "69987964f751de507ccfcab4",
+            "status": "in use",
+            "seq": 310,
+            "_id": "69a477bff751de507cd46b9a",
+            "createdAt": "2026-03-01T17:30:39.805Z",
+            "updatedAt": "2026-03-01T17:30:39.805Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Identifiers",
+                "description": "Unique references that distinguish one Natural Person from all others within a given context, system, or jurisdiction. They are assigned by an authority (e.g., a government, organisation, or system) for the purpose of uniquely recognising, managing, or relating to that person across processes and datasets.\n\nIdentifiers are not the person, and they are not personal attributes (like name, gender, or date of birth). They are tokens that point to the person.",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 240,
+                "_id": "69945b19f751de507ccc4842",
+                "createdAt": "2026-02-17T12:12:09.668Z",
+                "updatedAt": "2026-04-29T10:48:38.401Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Biometric Identifiers",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 295,
+                "_id": "69987964f751de507ccfcab4",
+                "createdAt": "2026-02-20T15:10:28.233Z",
+                "updatedAt": "2026-03-04T17:29:18.698Z",
+                "description": "Biometric Identifiers are data elements that capture a person’s unique biological or behavioural traits for the purpose of identification, authentication, or verification. This includes raw biometric measurements (e.g., fingerprints), biometric templates derived from those measurements, and any metadata required to process or match them.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Revisions": [
+        {
+            "_id": "69a86e63f751de507cd7168d",
+            "idAbout": "69a4a1c2f751de507cd5c494",
+            "report": true,
+            "idUser": 999,
+            "seq": 617,
+            "createdAt": "2026-03-04T17:39:47.047Z",
+            "updatedAt": "2026-03-04T17:39:47.047Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a8847cf751de507cd7f4e5",
+            "idAbout": "69a4a1c2f751de507cd5c494",
+            "report": true,
+            "idUser": 999,
+            "seq": 658,
+            "createdAt": "2026-03-04T19:14:04.435Z",
+            "updatedAt": "2026-03-04T19:14:04.435Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fc5802ea1f7a34930a92bb",
+            "idAbout": "69a4a1c2f751de507cd5c494",
+            "report": true,
+            "idUser": 999,
+            "seq": 1177,
+            "createdAt": "2026-05-07T09:14:42.657Z",
+            "updatedAt": "2026-05-07T09:14:42.657Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd0551ea1f7a349310644f",
+            "idAbout": "69a4a1c2f751de507cd5c494",
+            "report": true,
+            "idUser": 999,
+            "seq": 1251,
+            "createdAt": "2026-05-07T21:34:09.883Z",
+            "updatedAt": "2026-05-07T21:34:09.883Z",
+            "__v": 0
+        }
+    ],
+    "LogicalModel": {
+        "_id": "699dbdcbf751de507cd22dc5",
+        "name": "Person Domain, Logical Model",
+        "description": "Person Logical Domain Model.\n\nModel ID: DEPoP013.&#x20;\n\nLinking concepts to data items in the Person Domain.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202604.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+        "idUser": 999,
+        "status": "under construction",
+        "seq": 10,
+        "createdAt": "2026-02-24T15:03:39.212Z",
+        "updatedAt": "2026-06-02T16:18:27.733Z",
+        "__v": 0,
+        "id": "699dbdcbf751de507cd22dc5",
+        "uri": "http://def.digitalservicedesigner.com/logicalmodel/10",
+        "Owner": {
+            "id": 999,
+            "username": "madeup",
+            "organisation": "Made Up Organisation - as a Sandbox for the Designer",
+            "uriOrganisation": "http://id.savviuk.org/organisations/madeup"
+        },
+        "Version": {
+            "_id": "6a1f03840eda6fffbbdd9e83",
+            "idAbout": "699dbdcbf751de507cd22dc5",
+            "name": "Logical Model:Person Domain, Logical Model V1 02/06/2026",
+            "type": "logicalmodel",
+            "idUser": 999,
+            "seq": 69,
+            "createdAt": "2026-06-02T16:23:33.248Z",
+            "updatedAt": "2026-06-02T16:23:33.248Z",
+            "__v": 0
+        }
+    }
+}

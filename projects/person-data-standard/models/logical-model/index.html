@@ -1,0 +1,2897 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Person Domain, Logical Model</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                   Oxygen, Ubuntu, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1a1a1a;          /* contrast ratio > 7:1 on white — WCAG AAA */
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* ── Typography ── */
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 1.25;
+      margin-top: 1.5em;
+      margin-bottom: 0.4em;
+    }
+    h1 { font-size: 2rem;    border-bottom: 2px solid #949494; padding-bottom: 0.3em; }
+    h2 { font-size: 1.5rem;  border-bottom: 1px solid #949494; padding-bottom: 0.2em; }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.1rem;  }
+    p  { margin: 0.4em 0 0.9em; }
+
+    a       { color: #0550ae; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus { outline: 2px solid #0550ae; outline-offset: 2px; } /* keyboard nav */
+
+    /* ── Images — fluid, never overflow ── */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1em 0;
+    }
+
+    /* ── Tables — horizontally scrollable on small screens ── */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      display: block;
+      overflow-x: auto;          /* scroll rather than overflow on narrow screens */
+      -webkit-overflow-scrolling: touch;
+    }
+    th, td {
+      border: 1px solid #949494;
+      padding: 0.45em 0.75em;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f6f8fa;
+      font-weight: 600;
+    }
+    tr:nth-child(even) td { background: #f9f9f9; }
+
+    /* ── Code ── */
+    code {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 0.875em;
+      background: #f0f0f0;
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f6f8fa;
+      border: 1px solid #949494;
+      border-radius: 6px;
+      padding: 1em;
+      overflow-x: auto;
+    }
+    pre code { background: none; padding: 0; font-size: 0.875em; }
+
+    /* ── Blockquotes (used for version sections) ── */
+    blockquote {
+      border-left: 4px solid #949494;
+      margin: 0.5em 0;
+      padding: 0.25em 1em;
+      color: #555;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #949494;
+      margin: 2em 0;
+    }
+
+    /* ── Skip link (site pages only; harmless in makeHtmlPage which has no .skip-link element) ── */
+    .skip-link { position: absolute; top: -40px; left: 0; background: #0550ae; color: #fff; padding: 0.5rem 1rem; z-index: 100; text-decoration: none; }
+    .skip-link:focus { top: 0; }
+    /* ── Breadcrumb (site pages only; harmless without a #breadcrumb element) ── */
+    #breadcrumb { padding: 0.5rem 1.5rem; font-size: 0.875em; background: #f6f8fa; border-bottom: 1px solid #949494; }
+    #breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; }
+    #breadcrumb li { display: flex; align-items: center; }
+    #breadcrumb li + li::before { content: '›'; margin: 0 0.4rem; color: #57606a; }
+    #breadcrumb a { color: #0550ae; }
+
+    /* ── Responsive breakpoint ── */
+    @media (max-width: 640px) {
+      .page-content { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.25rem; }
+    }
+
+    /* ── Print ── */
+    @media print {
+      a            { color: #000; }
+      a::after     { content: ' (' attr(href) ')'; font-size: 0.8em; color: #555; }
+      .page-content { max-width: 100%; padding: 0; }
+      table        { display: table; overflow: visible; }
+    }
+  </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m817f42addf14c9a838da36e78800043 msdt:dt="string">GDS|444fcede-209e-4852-86df-859b7c4e54f8</mso:m817f42addf14c9a838da36e78800043>
+<mso:c6f593ada1854b629148449de059396b msdt:dt="string">DSIT|9b2b16d8-8f0e-f9f9-8d2e-30d6eeb93788</mso:c6f593ada1854b629148449de059396b>
+<mso:h573c97cf80c4aa6b446c5363dc3ac94 msdt:dt="string">Office of the Government Chief Data Officer|5618b818-b448-4ff4-8bc4-3bf6387f1b52</mso:h573c97cf80c4aa6b446c5363dc3ac94>
+<mso:TaxCatchAll msdt:dt="string">3;#DSIT;#2;#Office of the Government Chief Data Officer;#1;#GDS</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">M7F6KF7KFYNX-983861426-90927</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">1b301e2a-05c1-4f6a-9713-ab5395d83615</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://beisgov.sharepoint.com/sites/OCDO/_layouts/15/DocIdRedir.aspx?ID=M7F6KF7KFYNX-983861426-90927, M7F6KF7KFYNX-983861426-90927</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+  <main class="page-content" id="main-content">
+    <h1 id="logical-model-person-domain-logical-model">logical model: Person Domain, Logical Model</h1>
+<blockquote>
+  <h2 id="version-logical-modelperson-domain-logical-model-v1-02062026">Version: Logical Model:Person Domain, Logical Model V1 02/06/2026</h2>
+  <p><em>Created: 2 June 2026</em></p>
+</blockquote>
+<p>Person Logical Domain Model.</p>
+<p>Model ID: DEPoP013.&#x20;</p>
+<p>Linking concepts to data items in the Person Domain.&#x20;</p>
+<p>Published as part of the Person Data Standard (Alpha), PRG202604.</p>
+<p>An individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.</p>
+<p>The&nbsp;Department&nbsp;for&nbsp;Science,&nbsp;Innovation&nbsp;and&nbsp;Technology</p>
+<p><img src="image.svg" alt="Person Domain, Logical Model" /></p>
+<h2 id="renditions">Renditions</h2>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Graphviz DOT</td>
+<td><a href="dot.txt">dot.txt</a></td>
+</tr>
+<tr>
+<td>DSD JSON</td>
+<td><a href="dsd.json">dsd.json</a></td>
+</tr>
+<tr>
+<td>CSV</td>
+<td><a href="logicalmodel.csv">logicalmodel.csv</a></td>
+</tr>
+<tr>
+<td>RDF Schema (Turtle)</td>
+<td><a href="logicalmodel.ttl">logicalmodel.ttl</a></td>
+</tr>
+<tr>
+<td>XSD</td>
+<td><a href="Person_Domain,_Logical_Model.xsd">Person_Domain,_Logical_Model.xsd</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="index">Index</h2>
+<h3 id="entities">Entities</h3>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#69a49610f751de507cd5766e">Biological Attributes</a></td>
+<td>Inherent physical, physiological, or genetic characteristics of a Natural Person that arise from biology rather than social, cultural, or legal identity. Biological Attributes describe intrinsic properties of the human body and are distinct from personal identity attributes (e.g., name), demographic identity (e.g. ethnicity), or legal identity (e.g, citizenship).<br><br><em>Implements Concepts</em><br>• Biological Attributes — Inherent physical, physiological, or genetic characteristics of a Natural Person…</td>
+</tr>
+<tr>
+<td><a href="#69a4a1c2f751de507cd5c494">Biometric Identifiers</a></td>
+<td>Biometric Identifiers are data elements that capture a person’s unique biological or behavioural traits for the purpose of identification, authentication, or verification. This includes raw biometric measurements (e.g., fingerprints), biometric templates derived from those measurements, and any metadata required to process or match them.<br><br><em>Implements Concepts</em><br>• Biometric Identifiers — Biometric Identifiers are data elements that capture a person’s unique biologica…</td>
+</tr>
+<tr>
+<td><a href="#69a48be5f751de507cd4e22e">Birth</a></td>
+<td>Birth covers data elements that record the circumstances of an individual’s birth. It includes factual, verifiable attributes such as date, place, and conditions of birth, along with any official registration details issued by an authority.<br><br><em>Implements Concepts</em><br>• Birth — Birth covers data elements that record the circumstances of an individual’s birt…</td>
+</tr>
+<tr>
+<td><a href="#69fb660aea1f7a349307ba09">Birth Date</a></td>
+<td>This is the structure defining date of birth and how it's been defined.&#x20;<br><br><em>Implements Concepts</em><br>• Date of Birth — Date of Birth (DOB) is the official calendar date on which an individual was bor…</td>
+</tr>
+<tr>
+<td><a href="#69a49420f751de507cd55a75">Citizenship</a></td>
+<td>A person’s legal relationship with a state, which grants rights, protections, and obligations under that state’s laws. In a conceptual model, Citizenship is a legal‑status attribute of a Natural Person that identifies the country or sovereign entity recognising them as a citizen.<br><br><em>Implements Concepts</em><br>• Citizenship — A person’s legal relationship with a state, which grants rights, protections, an…</td>
+</tr>
+<tr>
+<td><a href="#69a4a99af751de507cd6242d">Civil Social Titles</a></td>
+<td>Civil Social Titles are non‑professional, non‑noble honorifics used in everyday civil contexts to address or refer to individuals (e.g., Mr, Mrs, Miss, Ms, Mx). They facilitate respectful forms of address, correspondence, and identity presentation but do not indicate rank, role, or qualification.<br><br><em>Implements Concepts</em><br>• Civil Social Titles — Civil Social Titles are non‑professional, non‑noble honorifics used in everyday …</td>
+</tr>
+<tr>
+<td><a href="#69a49009f751de507cd507d6">Death</a></td>
+<td>The factual, legally recognised details surrounding the end of an individual’s life. It includes authoritative attributes such as the date, time, and location of death, as well as official registration information issued by a competent authority. This event provides a definitive closure point for identity records and downstream operational processes.<br><br><em>Implements Concepts</em><br>• Death — The factual, legally recognised details surrounding the end of an individual’s l…</td>
+</tr>
+<tr>
+<td><a href="#69a4a915f751de507cd611f1">Ethnicity (Cultural identify)</a></td>
+<td>Ethnicity is a cultural identity concept that reflects a person’s connection to a group or community defined by shared heritage, ancestry, traditions, culture, language, and/or social experience. It describes how people identify culturally, socially, or historically, not their legal status or nationality. In a conceptual model, Ethnicity is a self‑identified, culturally grounded attribute of a Natural Person and is separate from Nationality (cultural/national belonging) and Citizenship (legal status).<br><br><em>Implements Concepts</em><br>• Ethnicity (Cultural identify) — Ethnicity is a cultural identity concept that reflects a person’s connection to …</td>
+</tr>
+<tr>
+<td><a href="#69a49187f751de507cd52317">Formal Name</a></td>
+<td>Formal Name represents the official, legally recognised version of an individual’s name, as recorded by an authoritative source such as a civil registry, passport, birth certificate, or government-issued identity document. It is the canonical name used in contexts requiring legal identity, compliance, or formal verification.<br><br><em>Implements Concepts</em><br>• Formal Name — Formal Name represents the official, legally recognised version of an individual…</td>
+</tr>
+<tr>
+<td><a href="#69a4943ff751de507cd5619b">Formally Recognised Citizenship </a></td>
+<td>Formally Recognised Citizenship captures a person’s legally conferred nationality status as recognised by a sovereign state or authority. It reflects official citizenship(s) in force, with provenance to authoritative sources (e.g., passport, national identity registry, certificate of naturalisation).<br><br><em>Implements Concepts</em><br>• Formally Recognised Citizenship — Formally Recognised Citizenship captures a person’s legally conferred nationalit…</td>
+</tr>
+<tr>
+<td><a href="#6a182eac4055a62b0ab568ab">Full Name</a></td>
+<td>Full Name represents a combined or displayable expression of a person’s name. It may be formed from formal name components, informal name components, or both, depending on context. In some cases, Full Name may reflect the authoritative identity as it is presented or used. However, it is not the authoritative structured identity record and must not replace Formal Name or Informal Name in the underlying model.<br><br><em>Implements Concepts</em><br>• Full Name — Full Name represents a combined or displayable expression of a person’s name. It…</td>
+</tr>
+<tr>
+<td><a href="#69a4a737f751de507cd60353">Genetic Ethnicity</a></td>
+<td>A scientific estimate of a person’s ancestral origins based on the analysis of their DNA. It represents inferred biological population groups, expressed as probabilities or percentages, and reflects patterns of genetic similarity shared with reference populations. It does not represent cultural identity, heritage, nationality, or citizenship—it is a biologically inferred attribute, not a social or legal one.<br><br><em>Implements Concepts</em><br>• Genetic Ethnicity — A scientific estimate of a person’s ancestral origins based on the analysis of t…</td>
+</tr>
+<tr>
+<td><a href="#69a4a242f751de507cd5cfb1">Identifiers</a></td>
+<td>Unique references that distinguish one Natural Person from all others within a given context, system, or jurisdiction. They are assigned by an authority (e.g., a government, organisation, or system) for the purpose of uniquely recognising, managing, or relating to that person across processes and datasets. Identifiers are not the person, and they are not personal attributes (like name, gender, or date of birth). They are tokens that point to the person.<br><br><em>Implements Concepts</em><br>• Identifiers — Unique references that distinguish one Natural Person from all others within a g…</td>
+</tr>
+<tr>
+<td><a href="#69a4939cf751de507cd54f65">Informal Name</a></td>
+<td>The Informal Name sub‑domain captures non‑legal, non‑official name forms that an individual uses in everyday social, cultural, or operational contexts. These names support familiarity, personal preference, and communication ease but hold no legal standing and should not be used for identity verification or regulatory decisioning.<br><br><em>Implements Concepts</em><br>• Informal Name — The Informal Name sub‑domain captures non‑legal, non‑official name forms that an…</td>
+</tr>
+<tr>
+<td><a href="#69a4bc47f751de507cd64638">Military Titles</a></td>
+<td>Military Titles represent the official ranks, grades, and honorific forms of address assigned to individuals within armed forces or uniformed services (e.g., Lieutenant, Captain, Colonel). These titles indicate hierarchical position, authority, and command responsibility. They are role‑based, not personal, and may change throughout a career.<br><br><em>Implements Concepts</em><br>• Military Titles — Military Titles represent the official ranks, grades, and honorific forms of add…</td>
+</tr>
+<tr>
+<td><a href="#69a4741df751de507cd3f284">Name</a></td>
+<td>A textual identifier used to refer to or represent a Natural Person, Organisation, Place, or other entity. In conceptual modelling, a Name describes how something is known or addressed, not what it is. Names may consist of multiple components, may vary by context, and may change over time. At least one Formal Name is required for a Person to ensure a minimum identity representation, while Informal Name remains optional.<br><br><em>Implements Concepts</em><br>• Name — A textual identifier used to refer to or represent a Natural Person, Organisatio…</td>
+</tr>
+<tr>
+<td><a href="#69a4a3e2f751de507cd5e547">Nationality</a></td>
+<td>Describes how an individual identifies with one or more nations, countries, or national groups. In the Person domain, nationality is treated as a matter of personal identity and self‑expression, rather than legal status. Formal legal nationality or citizenship is modelled separately under Citizenship.<br><br><em>Implements Concepts</em><br>• Nationality — A person’s formal affiliation to a nation or cultural identity, typically associ…</td>
+</tr>
+<tr>
+<td><a href="#699dbdecf751de507cd233fc">Person</a></td>
+<td>An individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.<br><br><em>Implements Concepts</em><br>• Person — An individual human who participates in business activities or interactions. The…</td>
+</tr>
+<tr>
+<td><a href="#699dbe0ef751de507cd23a3f">Person Event</a></td>
+<td>An occurrence or change in circumstance that happens to a specific Natural Person at a point in time (or over a period of time) and is relevant to business processes, reporting, or understanding that person’s history. It captures something that happens to or is experienced by the person, rather than a role or relationship they hold.<br><br><em>Implements Concepts</em><br>• Person Event — An occurrence or change in circumstance that happens to a specific Natural Perso…</td>
+</tr>
+<tr>
+<td><a href="#69a4a2f7f751de507cd5d9d0">Personal Identifiers</a></td>
+<td>Personal Identifier IDs are unique identifiers assigned to a person by an authority or system for identification, linkage, or entitlement. This domain includes government‑issued IDs (e.g., national IDs), organisational master IDs, and cross‑system surrogate keys used to unambiguously reference a person across processes and systems.<br><br><em>Implements Concepts</em><br>• Personal Identifiers — Personal Identifier IDs are unique identifiers assigned to a person by an author…</td>
+</tr>
+<tr>
+<td><a href="#69a49864f751de507cd59150">Physical Characteristics</a></td>
+<td>Physical Characteristics refers to observable, measurable, and non‑biometric biological traits of an individual. These features describe physical form or appearance but do not uniquely identify a person on their own. The sub‑domain includes raw descriptive attributes and standardised measurements recorded for classification, profiling, or operational purposes.<br><br><em>Implements Concepts</em><br>• Physical Characteristics — Physical Characteristics refers to observable, measurable, and non‑biometric bio…</td>
+</tr>
+<tr>
+<td><a href="#69a49fbdf751de507cd5a26c">Physiological Information</a></td>
+<td>Physiological Information describes non‑clinical, non‑diagnostic information about an individual’s biological and bodily functions. It includes physiological or biologically‑derived attributes such as blood type, genetic traits, self‑reported disability, and organ donor status. These attributes are descriptive and operational in nature, rather than cognitive, emotional, or behavioural characteristics, and do not uniquely identify a person<br><br><em>Implements Concepts</em><br>• Physiological Information — Physiological Information in the Person domain represents non‑clinical, non‑diag…</td>
+</tr>
+<tr>
+<td><a href="#69a4bd06f751de507cd65b7f">Post-Nominal Titles</a></td>
+<td>Post‑Nominal Titles are letters placed after a person’s name that denote orders, decorations, honours, academic degrees, professional memberships, licensure, or fellowships (e.g., OBE, PhD, FRCS, CPA). They confer recognition or qualification, not forms of address, and are typically governed by awarding bodies with formal usage rules.<br><br><em>Implements Concepts</em><br>• Post-Nominal Titles — Post‑Nominal Titles are letters placed after a person’s name that denote orders,…</td>
+</tr>
+<tr>
+<td><a href="#69a87051f751de507cd77aec">Pregnancy</a></td>
+<td>Pregnancy is a time‑bound life event that records the fact that an individual is pregnant, including the start, expected milestones, and outcome of the pregnancy where relevant for operational, safeguarding, or service‑eligibility purposes. It captures non‑clinical, administrative facts only—not medical diagnoses, treatment notes, or clinical assessments.<br><br><em>Implements Concepts</em><br>• Pregnancy — Pregnancy is a time‑bound life event that records the fact that an individual is…</td>
+</tr>
+<tr>
+<td><a href="#69a4aa60f751de507cd6338d">Professional Occupational Titles</a></td>
+<td>Professional Occupational Titles are titles or prefixes associated with a person’s profession, occupation, or accredited role, used to indicate an individual’s professional standing, qualification, or occupational function. They are not academic degrees or post‑nominals, but pre‑nominal markers tied to recognised professions (e.g., Dr, Prof, Eng, Nurse, Architect). These titles support appropriate address, professional recognition, and role‑based communication.<br><br><em>Implements Concepts</em><br>• Professional Occupational Titles — Professional Occupational Titles are titles or prefixes associated with a person…</td>
+</tr>
+<tr>
+<td><a href="#69a4a08df751de507cd5b7c3">Psychological Characteristics</a></td>
+<td>Psychological Characteristics refer to non‑clinical, non‑diagnostic attributes that describe an individual’s typical cognitive, emotional, and behavioural tendencies. These characteristics represent stable patterns of thinking and behaviour, not mental health conditions, and do not uniquely identify a person. They may include personality traits, cognitive style descriptors, and general behavioural dispositions.</td>
+</tr>
+<tr>
+<td><a href="#69a4bccef751de507cd651e0">Religious Titles</a></td>
+<td>Religious Titles are formal honorifics, ranks, or styles of address associated with roles, positions, or consecrated statuses within recognised religious traditions (e.g., Reverend, Rabbi, Imam, Sister, Monsignor, Guru). These titles indicate spiritual authority, clerical office, or religious vocation, and are used in formal or community contexts to show respect and denote role-based standing.<br><br><em>Implements Concepts</em><br>• Religious Titles — Religious Titles are formal honorifics, ranks, or styles of address associated w…</td>
+</tr>
+<tr>
+<td><a href="#69b2a6ddc3a89f06e1a0de69">Residence</a></td>
+<td>A time‑bounded assertion that a Person resides at a Location with a specified Residence. Includes legal/primary residence, secondary residences, historical changes, validation against jurisdictional reference data. Excludes temporary contact addresses, delivery addresses, lodging/travel events, property ownership details (unless used to evidence residence).<br><br><em>Implements Concepts</em><br>• Residence — A time‑bounded assertion that a Person resides at a Location with a specified Re…</td>
+</tr>
+<tr>
+<td><a href="#69b2e04bc3a89f06e1a1850f">Residence Handling</a></td>
+<td>Residence Handling refers to the governed rules, behaviours, and constraints that define how residency data may be collected, processed, stored, shared, updated, retained, secured, and used within a data domain.<br><br><em>Implements Concepts</em><br>• Residence Handling — Residence Handling refers to the governed rules, behaviours, and constraints tha…</td>
+</tr>
+<tr>
+<td><a href="#69b2df27c3a89f06e1a16153">Residence Status</a></td>
+<td>Residence Type specifies the role, purpose, and legal/operational meaning of a residency relationship between a place or property and a person.<br><br><em>Implements Concepts</em><br>• Residence Status — Residence Type specifies the role, purpose, and legal/operational meaning of a r…</td>
+</tr>
+<tr>
+<td><a href="#69b2e007c3a89f06e1a17a7d">Residence Verification</a></td>
+<td>Residence Verification describes the degree of confidence, method, and evidence supporting the assertion that a Party (Person or Legal Entity) resides at a given Location.<br><br><em>Implements Concepts</em><br>• Residence Verification — Residence Verification describes the degree of confidence, method, and evidence …</td>
+</tr>
+<tr>
+<td><a href="#69b2a79fc3a89f06e1a0e8c8">Residence identification</a></td>
+<td>Residence Identification refers uniquely and consistently identify, reference, and distinguish one residence fact from another within a Party domain.<br><br><em>Implements Concepts</em><br>• Residence identification — Residence Identification refers uniquely and consistently identify, reference, a…</td>
+</tr>
+<tr>
+<td><a href="#69a4a6a0f751de507cd5f910">Self-Identified Nationality</a></td>
+<td>Self‑Identified Nationality represents how an individual personally defines or expresses their own national identity, independent of citizenship, passport, or legal status. It reflects cultural affiliation, heritage, or personal identification, and is self‑reported, non‑authoritative, and used solely for demographic, engagement, or inclusion‑related purposes. This attribute does not confer any legal rights or obligations.<br><br><em>Implements Concepts</em><br>• Self-Identified Nationality — Self‑Identified Nationality represents how an individual personally defines or e…</td>
+</tr>
+<tr>
+<td><a href="#69a4a038f751de507cd5b038">Sex and Gender</a></td>
+<td>The Sex and Gender sub‑domain covers data elements that describe an individual’s biological sex characteristics and gender identity attributes for the purposes of identity management, demographic classification, and service personalisation. It differentiates between sex‑related biological attributes and self‑described gender identity, reflecting both regulatory expectations and modern data‑standards practice. It also include how these relate to and define Legal Sex.</td>
+</tr>
+<tr>
+<td><a href="#69a4a95ef751de507cd61b0a">Titles</a></td>
+<td>An honorific or form of address associated with a Natural Person, used to indicate courtesy, social status, professional standing, or preference. It does not identify the person and does not imply any legal role or relationship—it's simply an attribute describing how the person chooses (or is required) to be addressed.<br><br><em>Implements Concepts</em><br>• Titles — An honorific or form of address associated with a Natural Person, used to indica…</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relationships">Relationships</h3>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Entity from</th>
+<th>Entity to</th>
+<th>Cardinality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#69b2cab8c3a89f06e1a0fb00">Person May have Residence</a></td>
+<td><a href="#699dbdecf751de507cd233fc">Person</a></td>
+<td><a href="#69b2a6ddc3a89f06e1a0de69">Residence</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a4a6ddf751de507cd5fb94">Nationality MayInclude Self-Identified Nationality</a></td>
+<td><a href="#69a4a3e2f751de507cd5e547">Nationality</a></td>
+<td><a href="#69a4a6a0f751de507cd5f910">Self-Identified Nationality</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a4a8fdf751de507cd60a2e">Person Has Genetic Ethnicity</a></td>
+<td><a href="#699dbdecf751de507cd233fc">Person</a></td>
+<td><a href="#69a4a737f751de507cd60353">Genetic Ethnicity</a></td>
+<td>one to one</td>
+</tr>
+<tr>
+<td><a href="#69a4a92bf751de507cd61341">Person has Ethnicity (Cultural identify)</a></td>
+<td><a href="#699dbdecf751de507cd233fc">Person</a></td>
+<td><a href="#69a4a915f751de507cd611f1">Ethnicity (Cultural identify)</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a4a973f751de507cd61c5e">Person MayHave Titles</a></td>
+<td><a href="#699dbdecf751de507cd233fc">Person</a></td>
+<td><a href="#69a4a95ef751de507cd61b0a">Titles</a></td>
+<td>one to one</td>
+</tr>
+<tr>
+<td><a href="#69a4aa2ff751de507cd62bac">Titles MayInclude Civil Social Titles</a></td>
+<td><a href="#69a4a95ef751de507cd61b0a">Titles</a></td>
+<td><a href="#69a4a99af751de507cd6242d">Civil Social Titles</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a4bc5ef751de507cd647c1">Titles May Include Military Titles</a></td>
+<td><a href="#69a4a95ef751de507cd61b0a">Titles</a></td>
+<td><a href="#69a4bc47f751de507cd64638">Military Titles</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a4bce3f751de507cd65374">Titles MayInclude Religious Titles</a></td>
+<td><a href="#69a4a95ef751de507cd61b0a">Titles</a></td>
+<td><a href="#69a4bccef751de507cd651e0">Religious Titles</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a4bd1bf751de507cd65d15">Titles MayInclude Post-Nominal Titles</a></td>
+<td><a href="#69a4a95ef751de507cd61b0a">Titles</a></td>
+<td><a href="#69a4bd06f751de507cd65b7f">Post-Nominal Titles</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a87073f751de507cd77c94">Person Event MayInclude Pregnancy</a></td>
+<td><a href="#699dbe0ef751de507cd23a3f">Person Event</a></td>
+<td><a href="#69a87051f751de507cd77aec">Pregnancy</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a4a6bdf751de507cd5fa55">Person Has Nationality</a></td>
+<td><a href="#699dbdecf751de507cd233fc">Person</a></td>
+<td><a href="#69a4a3e2f751de507cd5e547">Nationality</a></td>
+<td>one to one</td>
+</tr>
+<tr>
+<td><a href="#69b2cae2c3a89f06e1a0fcae">Residence MayHave Residence identification</a></td>
+<td><a href="#69b2a6ddc3a89f06e1a0de69">Residence</a></td>
+<td><a href="#69b2a79fc3a89f06e1a0e8c8">Residence identification</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69b2df3ec3a89f06e1a1655f">Residence may have Residence Status</a></td>
+<td><a href="#69b2a6ddc3a89f06e1a0de69">Residence</a></td>
+<td><a href="#69b2df27c3a89f06e1a16153">Residence Status</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69b2e018c3a89f06e1a17e95">Residence may have Residence Verification</a></td>
+<td><a href="#69b2a6ddc3a89f06e1a0de69">Residence</a></td>
+<td><a href="#69b2e007c3a89f06e1a17a7d">Residence Verification</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69b2e072c3a89f06e1a18933">Residence Requires Residence Handling</a></td>
+<td><a href="#69b2a6ddc3a89f06e1a0de69">Residence</a></td>
+<td><a href="#69b2e04bc3a89f06e1a1850f">Residence Handling</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69c6d3d59f84c55e29926b22">Informal Name MayInclude Formal Name</a></td>
+<td><a href="#69a4939cf751de507cd54f65">Informal Name</a></td>
+<td><a href="#69a49187f751de507cd52317">Formal Name</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69d4ee109f84c55e2993a1aa">Informal Name May contribute to Full Name</a></td>
+<td><a href="#69a4939cf751de507cd54f65">Informal Name</a></td>
+<td><a href="#6a182eac4055a62b0ab568ab">Full Name</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69fb6770ea1f7a349307e89d">Birth Was on Date of Birth</a></td>
+<td><a href="#69a48be5f751de507cd4e22e">Birth</a></td>
+<td><a href="#69fb660aea1f7a349307ba09">Birth Date</a></td>
+<td>one to one</td>
+</tr>
+<tr>
+<td><a href="#6a1834fe4055a62b0ab5926a">Formal Name MayContributeTo Full Name</a></td>
+<td><a href="#69a49187f751de507cd52317">Formal Name</a></td>
+<td><a href="#6a182eac4055a62b0ab568ab">Full Name</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#6a183a704055a62b0ab5a6b7">Informal Name May Be Included In Full Name</a></td>
+<td><a href="#69a4939cf751de507cd54f65">Informal Name</a></td>
+<td><a href="#69a4929af751de507cd542c8">Full Name</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a49621f751de507cd5773a">Person has Biological Attributes</a></td>
+<td><a href="#699dbdecf751de507cd233fc">Person</a></td>
+<td><a href="#69a49610f751de507cd5766e">Biological Attributes</a></td>
+<td>one to one</td>
+</tr>
+<tr>
+<td><a href="#69a4743cf751de507cd3f2b3">Person MayHave Name</a></td>
+<td><a href="#699dbdecf751de507cd233fc">Person</a></td>
+<td><a href="#69a4741df751de507cd3f284">Name</a></td>
+<td>one to one</td>
+</tr>
+<tr>
+<td><a href="#69a48c8ff751de507cd4eac0">Person Event MayInclude Birth</a></td>
+<td><a href="#699dbe0ef751de507cd23a3f">Person Event</a></td>
+<td><a href="#69a48be5f751de507cd4e22e">Birth</a></td>
+<td>one to one</td>
+</tr>
+<tr>
+<td><a href="#69a4901bf751de507cd50856">Person Event MayInclude Death</a></td>
+<td><a href="#699dbe0ef751de507cd23a3f">Person Event</a></td>
+<td><a href="#69a49009f751de507cd507d6">Death</a></td>
+<td>one to one</td>
+</tr>
+<tr>
+<td><a href="#69a491a2f751de507cd5239e">Name MayInclude Formal Name</a></td>
+<td><a href="#69a4741df751de507cd3f284">Name</a></td>
+<td><a href="#69a49187f751de507cd52317">Formal Name</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a492b2f751de507cd5435b">Formal Name MayContributeTo Full Name</a></td>
+<td><a href="#69a4929af751de507cd542c8">Full Name</a></td>
+<td><a href="#69a49187f751de507cd52317">Formal Name</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a492c8f751de507cd543ec">Name MayInclude Full Name</a></td>
+<td><a href="#69a4741df751de507cd3f284">Name</a></td>
+<td><a href="#69a4929af751de507cd542c8">Full Name</a></td>
+<td>one to one</td>
+</tr>
+<tr>
+<td><a href="#69a493f2f751de507cd55354">Name MayInclude Informal Name</a></td>
+<td><a href="#69a4741df751de507cd3f284">Name</a></td>
+<td><a href="#69a4939cf751de507cd54f65">Informal Name</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a49565f751de507cd56e68">Citizenship Has Formally Recognised Citizenship</a></td>
+<td><a href="#69a49420f751de507cd55a75">Citizenship</a></td>
+<td><a href="#69a4943ff751de507cd5619b">Formally Recognised Citizenship </a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a49576f751de507cd56f2d">Person Has Citizenship</a></td>
+<td><a href="#699dbdecf751de507cd233fc">Person</a></td>
+<td><a href="#69a49420f751de507cd55a75">Citizenship</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#699dbe50f751de507cd23a63">Person Has Person Event</a></td>
+<td><a href="#699dbdecf751de507cd233fc">Person</a></td>
+<td><a href="#699dbe0ef751de507cd23a3f">Person Event</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a49878f751de507cd59245">Biological Attributes Includes Physical Characteristics</a></td>
+<td><a href="#69a49610f751de507cd5766e">Biological Attributes</a></td>
+<td><a href="#69a49864f751de507cd59150">Physical Characteristics</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a49fd8f751de507cd5a36d">Titles MayInclude Professional Occupational Titles</a></td>
+<td><a href="#69a4a95ef751de507cd61b0a">Titles</a></td>
+<td><a href="#69a4aa60f751de507cd6338d">Professional Occupational Titles</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a4a0c7f751de507cd5b8cb">Biological Attributes Has Sex and Gender</a></td>
+<td><a href="#69a49610f751de507cd5766e">Biological Attributes</a></td>
+<td><a href="#69a4a038f751de507cd5b038">Sex and Gender</a></td>
+<td>one to one</td>
+</tr>
+<tr>
+<td><a href="#69a4a0dbf751de507cd5b9d4">Biological Attributes Includes Physiological Information</a></td>
+<td><a href="#69a49610f751de507cd5766e">Biological Attributes</a></td>
+<td><a href="#69a49fbdf751de507cd5a26c">Physiological Information</a></td>
+<td>one to one</td>
+</tr>
+<tr>
+<td><a href="#69a4a127f751de507cd5bc26">Biological Attributes Includes Psychological Characteristics</a></td>
+<td><a href="#69a49610f751de507cd5766e">Biological Attributes</a></td>
+<td><a href="#69a4a08df751de507cd5b7c3">Psychological Characteristics</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a4a25bf751de507cd5d0d5">Person Has Identifiers</a></td>
+<td><a href="#699dbdecf751de507cd233fc">Person</a></td>
+<td><a href="#69a4a242f751de507cd5cfb1">Identifiers</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a4a288f751de507cd5d20d">Identifiers Includes Biometric Identifiers</a></td>
+<td><a href="#69a4a242f751de507cd5cfb1">Identifiers</a></td>
+<td><a href="#69a4a1c2f751de507cd5c494">Biometric Identifiers</a></td>
+<td>one to many</td>
+</tr>
+<tr>
+<td><a href="#69a4a312f751de507cd5dafa">Identifiers MayInclude Personal Identifiers</a></td>
+<td><a href="#69a4a242f751de507cd5cfb1">Identifiers</a></td>
+<td><a href="#69a4a2f7f751de507cd5d9d0">Personal Identifiers</a></td>
+<td>one to many</td>
+</tr>
+</tbody>
+</table>
+<h2 id="entities-1">Entities</h2>
+<p><a id="69a49610f751de507cd5766e"></a></p>
+<h3 id="biological-attributes">Biological Attributes</h3>
+<p>Inherent physical, physiological, or genetic characteristics of a Natural Person that arise from biology rather than social, cultural, or legal identity.</p>
+<p>Biological Attributes describe intrinsic properties of the human body and are distinct from personal identity attributes (e.g., name), demographic identity (e.g. ethnicity), or legal identity (e.g, citizenship).</p>
+<h4 id="implements-concepts-from-person-domain-concept-model">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biological Attributes</td>
+<td>Inherent physical, physiological, or genetic characteristics of a Natural Person that arise from biology rather than social, cultural, or legal identity.&#x20;  Biological Attributes describe intrinsic properties of the human body and are distinct from personal identity attributes (e.g., name), demographic identity (e.g., ethnicity), or legal identity (e.g., citizenship).</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a49610f751de507cd5766e/image.svg" alt="Biological Attributes" /></p>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physical Characteristics</td>
+<td></td>
+<td>data type</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Physiological Information</td>
+<td></td>
+<td>data type</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Psychological Characteristics</td>
+<td></td>
+<td>data type</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Sex and Gender</td>
+<td></td>
+<td>data type</td>
+<td>once</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-1">Relationships</h4>
+<ul>
+<li><a href="#69a49621f751de507cd5773a">Person has Biological Attributes</a> ← <a href="#699dbdecf751de507cd233fc">Person</a></li>
+<li><a href="#69a49878f751de507cd59245">Biological Attributes Includes Physical Characteristics</a> → <a href="#69a49864f751de507cd59150">Physical Characteristics</a></li>
+<li><a href="#69a4a0c7f751de507cd5b8cb">Biological Attributes Has Sex and Gender</a> → <a href="#69a4a038f751de507cd5b038">Sex and Gender</a></li>
+<li><a href="#69a4a0dbf751de507cd5b9d4">Biological Attributes Includes Physiological Information</a> → <a href="#69a49fbdf751de507cd5a26c">Physiological Information</a></li>
+<li><a href="#69a4a127f751de507cd5bc26">Biological Attributes Includes Psychological Characteristics</a> → <a href="#69a4a08df751de507cd5b7c3">Psychological Characteristics</a></li>
+</ul>
+<hr />
+<p><a id="69a4a1c2f751de507cd5c494"></a></p>
+<h3 id="biometric-identifiers">Biometric Identifiers</h3>
+<p>Biometric Identifiers are data elements that capture a person’s unique biological or behavioural traits for the purpose of identification, authentication, or verification. This includes raw biometric measurements (e.g., fingerprints), biometric templates derived from those measurements, and any metadata required to process or match them.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-1">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biometric Identifiers</td>
+<td>Biometric Identifiers are data elements that capture a person’s unique biological or behavioural traits for the purpose of identification, authentication, or verification. This includes raw biometric measurements (e.g., fingerprints), biometric templates derived from those measurements, and any metadata required to process or match them.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4a1c2f751de507cd5c494/image.svg" alt="Biometric Identifiers" /></p>
+<h4 id="attributes-1">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fingerprints</td>
+<td>Fingerprints are unique biometric identifiers derived from the ridge patterns present on an individual’s fingers. They are captured as digital biometric templates, images, or encoded representations, and used solely for high‑assurance identity verification, authentication, or law‑enforcement purposes where legally justified.  Fingerprints are immutable, uniquely identifying, and classified as special category biometric data under data‑protection law.  This attribute does not store raw images unless explicitly permitted. Biometric templates (mathematically encoded forms) are the standard for secure storage.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Facial Recognition Data</td>
+<td>Facial Recognition Data refers to biometric templates or encoded vectors generated from an individual’s facial features for the purpose of identity verification, authentication, or uniqueness checks, under strictly governed legal circumstances.  It may include:  * Face embeddings (vectorised mathematical representations) * Biometric templates compliant with standards (e.g., ISO/IEC 19794‑5) * Minimal faceprint data necessary for matching  It does not include raw photographs unless stored separately under distinct image-governance policies.  Facial recognition data is unique, unavoidable, permanent, and highly sensitive, and therefore must never be used outside lawful, authorised workflows.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Voice Pattern</td>
+<td>Voice Pattern refers to the digitally captured and mathematically encoded representation of an individual’s vocal characteristics (pitch, timbre, rhythm, formants, spectral features). It is stored as a voice biometric template or voiceprint, not as raw audio.  Voice patterns enable high‑assurance identity verification or authentication when legally authorised, but must never be used for emotion detection, demographic inference, or behavioural profiling.  Voice Pattern ≠ raw recording; it is an irreversible, encrypted biometric template.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Biometric ID Reference</td>
+<td>Biometric IDs are unique, immutable physiological or behavioural identifiers derived from an individual's biological characteristics (e.g., fingerprints, facial geometry, iris patterns, voice patterns) used for high‑assurance identity verification or authentication under strict legal and governance controls.  A Biometric ID refers specifically to the unique biometric template or identifier representing a biometric modality—not the raw data itself. Examples: fingerprint template ID, facial recognition template ID, iris scan template ID.  Biometric IDs must be stored as non-reversible encrypted templates or reference tokens, never as raw biometric images or recordings.</td>
+<td>line</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Biometrics are time‑bounded credentials  Biometric Identifier Valid From (Effective From) - The date/time from which the biometric identifier is considered valid for use (e.g., after successful enrolment and any required verification/quality checks).  Biometric Identifier Valid To (Effective To) - The date/time at which the biometric identifier ceases to be valid for use, due to expiry, revocation, replacement, compromise, or policy change.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-2">Relationships</h4>
+<ul>
+<li><a href="#69a4a288f751de507cd5d20d">Identifiers Includes Biometric Identifiers</a> ← <a href="#69a4a242f751de507cd5cfb1">Identifiers</a></li>
+</ul>
+<hr />
+<p><a id="69a48be5f751de507cd4e22e"></a></p>
+<h3 id="birth">Birth</h3>
+<p>Birth covers data elements that record the circumstances of an individual’s birth. It includes factual, verifiable attributes such as date, place, and conditions of birth, along with any official registration details issued by an authority.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-2">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Birth</td>
+<td>Birth covers data elements that record the circumstances of an individual’s birth. It includes factual, verifiable attributes such as date, place, and conditions of birth, along with any official registration details issued by an authority.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a48be5f751de507cd4e22e/image.svg" alt="Birth" /></p>
+<h4 id="attributes-2">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date of Birth Registration Date</td>
+<td>Date of Birth Registration Date is the official date on which a birth is formally recorded by the relevant civil authority (e.g., civil registry, vital records office, statistical authority). It reflects the administrative recognition of the birth event and is distinct from the Date of Birth itself.  This date marks when the birth record enters the official civil registration system, thereby enabling issuance of certificates, identity documentation, and subsequent legal processes.</td>
+<td>date</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Birth Date</td>
+<td>Date of Birth (DOB) is the official calendar date on which an individual was born, as recognised by the appropriate civil authority or as evidenced by legally accepted documentation. It is a core identity anchor, used across legal, administrative, operational, and analytical systems, and is typically immutable once verified.  DOB is distinct from the Birth Registration Date (administrative) and the Birth Notification Date (clinical/operational).</td>
+<td>date</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Place of Birth</td>
+<td>Place of Birth is the geographical location where the birth took place, as recorded by the relevant civil authority or evidenced through legally recognised documentation. It is a core identity attribute, supporting identity verification, eligibility checks, historical lineage, and demographic reporting. It denotes the physical location of the birth event, not the parents’ domicile, ancestral origins, or nationality.</td>
+<td>line</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Country of Birth</td>
+<td>Country of Birth is the sovereign state or recognised territory in which an individual was born, recorded as part of the Birth life event. It reflects the geopolitical jurisdiction at the time of birth, typically captured using ISO‑3166‑1 country codes, and is often used as part of a person’s core identity record.  It is distinct from:  * Place of Birth (full locality: region, town, facility) * Nationality (legal status) * Self‑Identified Nationality (identity expression) * Ancestry or ethnicity (demographic domain)</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Time of Birth</td>
+<td>Time of Birth is the precise time at which an individual was born, recorded in hours and minutes (and optionally seconds) according to the local time zone of the birth location. It is a supplementary birth event attribute, not always available in all jurisdictions, and is typically captured when medically or administratively relevant (e.g., in maternity hospitals or civil registries that store time).  Time of Birth supports identity accuracy, medical lineage, and birth event completeness, but is not a core identity anchor in the same way that Date of Birth is.</td>
+<td>time</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Birth Registration Number</td>
+<td>Birth Registration Number is the unique identifier assigned by a civil registration authority to a recorded birth event. It serves as the official reference number for the birth within the civil registry system and is used to:  * Link the birth record to authoritative registers * Support identity establishment * Enable issuance of certificates and identity documents * Ensure auditability and traceability of birth‑related updates  This number is assigned by the registering authority, not by the individual or the organisation storing it.</td>
+<td>line</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Multiple Birth Indicator</td>
+<td>Multiple Birth Indicator identifies whether an individual is part of a multiple birth event, such as twins, triplets, quadruplets, or higher‑order multiples. It provides a binary and/or categorical classification that indicates:  * Whether the birth was part of a multi‑child event, and * Optionally, which child in the birth order the individual is.  This attribute supports identity integrity, clinical lineage, and birth record linkage. It does not store medical detail about pregnancy or delivery.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Facility/ Location Type</td>
+<td>Birth Facility Location Type identifies the kind of location where an individual was born. It classifies the type of physical setting in which the birth occurred — such as a hospital, clinic, home, or other medically or administratively recognised environment.  This attribute enables a structured and standardised classification, independent of the specific facility name or address.  It does not store clinical details or health outcomes.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-3">Relationships</h4>
+<ul>
+<li><a href="#69fb6770ea1f7a349307e89d">Birth Was on Date of Birth</a> → <a href="#69fb660aea1f7a349307ba09">Birth Date</a></li>
+<li><a href="#69a48c8ff751de507cd4eac0">Person Event MayInclude Birth</a> ← <a href="#699dbe0ef751de507cd23a3f">Person Event</a></li>
+</ul>
+<hr />
+<p><a id="69fb660aea1f7a349307ba09"></a></p>
+<h3 id="birth-date">Birth Date</h3>
+<p>This is the structure defining date of birth and how it's been defined.&#x20;</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-3">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date of Birth</td>
+<td>Date of Birth (DOB) is the official calendar date on which an individual was born, as recognised by the appropriate civil authority or as evidenced by legally accepted documentation.  It is a core identity anchor, used across legal, administrative, operational, and analytical systems, and is typically immutable once verified.  DOB is distinct from the Birth Registration Date (administrative) and the Birth Notification Date (clinical/operational).  It may be an estimate.&#x20;</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69fb660aea1f7a349307ba09/image.svg" alt="Birth Date" /></p>
+<h4 id="attributes-3">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date of Birth</td>
+<td>Date of Birth (DOB) is the official calendar date on which an individual was born, as recognised by the appropriate civil authority or as evidenced by legally accepted documentation.  It is a core identity anchor, used across legal, administrative, operational, and analytical systems, and is typically immutable once verified.  DOB is distinct from the Birth Registration Date (administrative) and the Birth Notification Date (clinical/operational).</td>
+<td>date</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Estimated DOB</td>
+<td>Estimated DOB is a data quality indicator used when precise dates of birth are unavailable for identification purposes. Per POLE Data Standards, estimated DOB must pass validation checks: must not be future dates, current dates, or ages exceeding 120 years</td>
+<td>yes/no</td>
+<td>once</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-4">Relationships</h4>
+<ul>
+<li><a href="#69fb6770ea1f7a349307e89d">Birth Was on Date of Birth</a> ← <a href="#69a48be5f751de507cd4e22e">Birth</a></li>
+</ul>
+<hr />
+<p><a id="69a49420f751de507cd55a75"></a></p>
+<h3 id="citizenship">Citizenship</h3>
+<p>A person’s legal relationship with a state, which grants rights, protections, and obligations under that state’s laws. In a conceptual model, Citizenship is a legal‑status attribute of a Natural Person that identifies the country or sovereign entity recognising them as a citizen.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-4">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Citizenship</td>
+<td>A person’s legal relationship with a state, which grants rights, protections, and obligations under that state’s laws. In a conceptual model, Citizenship is a legal‑status attribute of a Natural Person that identifies the country or sovereign entity recognising them as a citizen.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a49420f751de507cd55a75/image.svg" alt="Citizenship" /></p>
+<h4 id="attributes-4">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Formally Recognized Citizenship</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-5">Relationships</h4>
+<ul>
+<li><a href="#69a49565f751de507cd56e68">Citizenship Has Formally Recognised Citizenship</a> → <a href="#69a4943ff751de507cd5619b">Formally Recognised Citizenship </a></li>
+<li><a href="#69a49576f751de507cd56f2d">Person Has Citizenship</a> ← <a href="#699dbdecf751de507cd233fc">Person</a></li>
+</ul>
+<hr />
+<p><a id="69a4a99af751de507cd6242d"></a></p>
+<h3 id="civil-social-titles">Civil Social Titles</h3>
+<p>Civil Social Titles are non‑professional, non‑noble honorifics used in everyday civil contexts to address or refer to individuals (e.g., Mr, Mrs, Miss, Ms, Mx). They facilitate respectful forms of address, correspondence, and identity presentation but do not indicate rank, role, or qualification.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-5">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Civil Social Titles</td>
+<td>Civil Social Titles are non‑professional, non‑noble honorifics used in everyday civil contexts to address or refer to individuals (e.g., Mr, Mrs, Miss, Ms, Mx). They facilitate respectful forms of address, correspondence, and identity presentation but do not indicate rank, role, or qualification.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4a99af751de507cd6242d/image.svg" alt="Civil Social Titles" /></p>
+<h4 id="attributes-5">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preferred Form of Address</td>
+<td>Preferred Form of Address captures how a person wishes to be addressed in communications, independent of legal name or formal titles.  It reflects user preference, not legal identity.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Civil Title</td>
+<td>Civil Social Titles are non‑professional, non‑noble honorifics used in everyday civil contexts to address or refer to individuals (e.g., Mr, Mrs, Miss, Ms, Mx). They facilitate respectful forms of address, correspondence, and identity presentation but do not indicate rank, role, or qualification.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Title Source</td>
+<td>Title Source identifies where a person’s title comes from, i.e., the origin, authority, or method by which the title is recognised. It specifies whether the title:  * is legally granted, * assigned by a professional body, * self‑declared, * organisationally assigned, * or derived from official documents.  Title Source tells the system why this title exists and how it should be trusted, without conflating different types of titles.  It is critical for determining verification, usage rights, display rules, and legal compliance.</td>
+<td>line</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Dates for Titles define the period of time during which a given title is valid, active, recognised, or in use for an individual. Titles may be permanent (e.g., “Sir”), fixed-term (e.g., elected roles), conditional (e.g., military rank), or time-limited (e.g., honorary fellowships). Temporal attributes allow organisations to manage title history, render names correctly, and respect changes in status, role, or personal preference.  Typical date fields include:  * effective_from — when the title became valid or was first adopted * effective_to — when the title ceased being valid or used (nullable if active) * capture_date — when the system recorded the title (optional)  These dates apply per title record.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-6">Relationships</h4>
+<ul>
+<li><a href="#69a4aa2ff751de507cd62bac">Titles MayInclude Civil Social Titles</a> ← <a href="#69a4a95ef751de507cd61b0a">Titles</a></li>
+</ul>
+<hr />
+<p><a id="69a49009f751de507cd507d6"></a></p>
+<h3 id="death">Death</h3>
+<p>The factual, legally recognised details surrounding the end of an individual’s life. It includes authoritative attributes such as the date, time, and location of death, as well as official registration information issued by a competent authority. This event provides a definitive closure point for identity records and downstream operational processes.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-6">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Death</td>
+<td>The factual, legally recognised details surrounding the end of an individual’s life. It includes authoritative attributes such as the date, time, and location of death, as well as official registration information issued by a competent authority. This event provides a definitive closure point for identity records and downstream operational processes.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a49009f751de507cd507d6/image.svg" alt="Death" /></p>
+<h4 id="attributes-6">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registered Date of Death</td>
+<td>Registered Date of Death is the official date on which a death is formally recorded by the competent civil authority (e.g., civil registry, vital statistics office, municipal registration authority). It reflects the administrative timestamp at which the death was legally recognised and entered into the official civil registration system. It is distinct from the Date of Death (the factual date the individual died).  This attribute underpins legality, auditability, entitlement cessation, and identity lifecycle closure.</td>
+<td>date</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Date of Death</td>
+<td>Date of Death is the official calendar date on which an individual died, as determined by an authorised certifying professional (e.g., medical practitioner, coroner) or documented on an official death certificate. It represents the actual event date of death — distinct from administrative or registration dates.  This attribute is a core life‑event anchor used across legal, identity, civil‑registration, financial, and operational systems.</td>
+<td>date</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Time of Death</td>
+<td>Time of Death is the precise time at which an individual is determined to have died, as recorded by a qualified certifying authority (e.g., medical practitioner, coroner, forensic examiner). It is a clinical and/or legal timestamp, distinct from the Date of Death and the Registered Date of Death, and may represent:  * Physiological time of death (actual biological death), or * Pronounced time of death (time a clinician confirmed death), depending on jurisdictional standards.</td>
+<td>time</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Place of Death</td>
+<td>Place of Death is the geographical location where the individual died, as recorded by the certifying authority (medical practitioner, coroner, hospital administrator) or entered by a civil registration body. It describes the physical setting and locality of the death event, not the registration location or the place where the body was later moved.  Place of Death is a legally relevant identity event attribute that provides context for verification, audit, lineage, and civil‑registration accuracy.</td>
+<td>line</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Country of Death</td>
+<td>Country of Death is the sovereign state or recognised territory in which an individual died, as recorded by a certifying authority (medical practitioner, coroner, registrar) or by an official civil registration system. It identifies the geopolitical jurisdiction where the death event occurred, using ISO‑3166‑1 country codes for canonical storage.  It is separate from:  * Place of Death (region, city, facility name) * Registered Place of Death (administrative location) * Cause of Death (clinical domain) * Country of Birth (birth event)</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Death Registration Number</td>
+<td>Death Registration Number is the unique identifier assigned by a civil registration authority to the official record of an individual’s death. It provides the authoritative reference for the death entry within the vital records or civil registration system, enabling:  * Legal recognition of the death * Issuance of death certificates * Identity lifecycle closure across systems * Audit and verification of death‑related updates  This identifier is assigned by the registering authority, not by the data‑processing organisation.</td>
+<td>line</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Burial or Cremation Number</td>
+<td>Burial or Cremation Number is the official identifier assigned to a burial or cremation event by the relevant authority (e.g., cemetery authority, crematorium, local registrar, funeral director, or municipal burial office). It serves as a formal reference number linking the deceased to the specific burial or cremation record, supporting auditability, traceability, and compliance with local regulatory requirements.  It is distinct from the Death Registration Number and any Coroner/Medical Examiner references.</td>
+<td>line</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Place of Burial or Cremation</td>
+<td>Place of Burial or Cremation is the geographical location where the deceased was formally buried, cremated, or otherwise disposed of, according to the disposition method legally recorded. It identifies the country, region, locality, and facility associated with the post‑death disposition event and is distinct from:  * Place of Death (where the person died) * Registered Place of Death (administrative) * Death Registration Number (legal identifier) * Burial/Cremation Number (disposition identifier)  It provides auditability, lineage, and compliance‑grade traceability for post‑death arrangements.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Registrar Office or Authority</td>
+<td>Death Registrar Office or Authority identifies the official organisation, governmental body, or authorised civil registration office responsible for formally registering the death and issuing the death registration number or the death certificate. It represents the legal authority of record for the death event and forms part of the authoritative identity lineage.  This attribute ensures auditability, jurisdictional clarity, and traceability across public‑sector, health, and identity‑management systems.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Next of Kin</td>
+<td>Next of Kin (NoK) is the designated individual(s) identified by a person — or recognised by law or policy — as their primary emergency, legal, or contact person in the event of serious illness, incapacity, or death. It expresses a relationship link, not a legal authority, unless explicitly granted through additional documentation (e.g., power of attorney).  Next of Kin is a person-to-person relationship attribute, not an identity attribute of the individual being described.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-7">Relationships</h4>
+<ul>
+<li><a href="#69a4901bf751de507cd50856">Person Event MayInclude Death</a> ← <a href="#699dbe0ef751de507cd23a3f">Person Event</a></li>
+</ul>
+<hr />
+<p><a id="69a4a915f751de507cd611f1"></a></p>
+<h3 id="ethnicity-cultural-identify">Ethnicity (Cultural identify)</h3>
+<p>Ethnicity is a cultural identity concept that reflects a person’s connection to a group or community defined by shared heritage, ancestry, traditions, culture, language, and/or social experience. It describes how people identify culturally, socially, or historically, not their legal status or nationality.</p>
+<p>In a conceptual model, Ethnicity is a self‑identified, culturally grounded attribute of a Natural Person and is separate from Nationality (cultural/national belonging) and Citizenship (legal status).</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-7">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ethnicity (Cultural identify)</td>
+<td>Ethnicity is a cultural identity concept that reflects a person’s connection to a group or community defined by shared heritage, ancestry, traditions, culture, language, and/or social experience. It describes how people identify culturally, socially, or historically, not their legal status or nationality.  In a conceptual model, Ethnicity is a self‑identified, culturally grounded attribute of a Natural Person and is separate from Nationality (cultural/national belonging) and Citizenship (legal status).</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4a915f751de507cd611f1/image.svg" alt="Ethnicity (Cultural identify)" /></p>
+<h4 id="attributes-7">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-8">Relationships</h4>
+<ul>
+<li><a href="#69a4a92bf751de507cd61341">Person has Ethnicity (Cultural identify)</a> ← <a href="#699dbdecf751de507cd233fc">Person</a></li>
+</ul>
+<hr />
+<p><a id="69a49187f751de507cd52317"></a></p>
+<h3 id="formal-name">Formal Name</h3>
+<p>Formal Name represents the official, legally recognised version of an individual’s name, as recorded by an authoritative source such as a civil registry, passport, birth certificate, or government-issued identity document. It is the canonical name used in contexts requiring legal identity, compliance, or formal verification.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-8">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Formal Name</td>
+<td>Formal Name represents the official, legally recognised version of an individual’s name, as recorded by an authoritative source such as a civil registry, passport, birth certificate, or government-issued identity document. It is the canonical name used in contexts requiring legal identity, compliance, or formal verification.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a49187f751de507cd52317/image.svg" alt="Formal Name" /></p>
+<h4 id="attributes-8">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Given Name</td>
+<td>Given Name is the primary personal name(s) assigned to an individual, typically at birth or legal registration, and used to identify the person within family, social, and formal contexts. It represents the individual’s personal identifier within their full name structure and appears as the first name in many Western naming conventions, but may represent one or more names depending on cultural naming patterns.  This may exist in multiple forms (legal, preferred, informal), depending on the name sub‑domain.</td>
+<td>line</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Middle Name</td>
+<td>Middle Name refers to any personal name component that appears between the Given Name and the Family Name in an individual’s full name structure. It may consist of one or more name elements, and may serve cultural, familial, religious, or administrative purposes. It is a core structural name attribute, but not always used in every naming tradition.  Middle Names may appear in legal/formal contexts or as optional identity components depending on the jurisdiction.</td>
+<td>line</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Family Name</td>
+<td>Family Name (also known as surname, last name, or patronymic/matronymic element depending on culture) is the inherited or legally recorded component of a person’s name that identifies their family, lineage, or household grouping. It is a core identifier used across legal, administrative, and social systems and is typically stable across life except where changed through legal processes.  Family Name forms one of the principal anchors of identity and is part of the official full name in most naming systems worldwide.</td>
+<td>line</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Verification Source</td>
+<td>Verification Source for Name identifies the authoritative channel, document, registry, or method used to confirm the accuracy of a person’s name—whether legal, preferred, or alias—depending on the name sub‑domain. It records where the verification originated, not the document itself.  It underpins trust, traceability, and compliance for name‑related identity management.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Dates for When a Name Is in Use describe the time period during which a specific name record is valid, active, or recognised by the organisation or by legal/authoritative sources. They provide temporal boundaries for each name entry, enabling accurate historical reconstruction, identity auditing, and compliance with legal name‑change processes.  This typically consists of two attributes:  * effective_from — when the name began being valid or used * effective_to — when the name ceased to be valid or used (nullable if still active)  These dates apply to each name record, not to the person.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-9">Relationships</h4>
+<ul>
+<li><a href="#69c6d3d59f84c55e29926b22">Informal Name MayInclude Formal Name</a> ← <a href="#69a4939cf751de507cd54f65">Informal Name</a></li>
+<li><a href="#6a1834fe4055a62b0ab5926a">Formal Name MayContributeTo Full Name</a> → <a href="#6a182eac4055a62b0ab568ab">Full Name</a></li>
+<li><a href="#69a491a2f751de507cd5239e">Name MayInclude Formal Name</a> ← <a href="#69a4741df751de507cd3f284">Name</a></li>
+<li><a href="#69a492b2f751de507cd5435b">Formal Name MayContributeTo Full Name</a> ← <a href="#69a4929af751de507cd542c8">Full Name</a></li>
+</ul>
+<hr />
+<p><a id="69a4943ff751de507cd5619b"></a></p>
+<h3 id="formally-recognised-citizenship">Formally Recognised Citizenship</h3>
+<p>Formally Recognised Citizenship captures a person’s legally conferred nationality status as recognised by a sovereign state or authority. It reflects official citizenship(s) in force, with provenance to authoritative sources (e.g., passport, national identity registry, certificate of naturalisation).</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-9">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Formally Recognised Citizenship</td>
+<td>Formally Recognised Citizenship captures a person’s legally conferred nationality status as recognised by a sovereign state or authority. It reflects official citizenship(s) in force, with provenance to authoritative sources (e.g., passport, national identity registry, certificate of naturalisation).</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4943ff751de507cd5619b/image.svg" alt="Formally Recognised Citizenship " /></p>
+<h4 id="attributes-9">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Country Name</td>
+<td>Country Name (Official) is the authoritative, internationally recognised full name of a sovereign state or territory, as recorded in a trusted external standard such as ISO‑3166, the United Nations Terminology Bulletin, or a national government’s official designation. It provides a stable, canonical reference for interoperability, compliance, jurisdictional mapping, and cross‑system alignment.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Country Code</td>
+<td>Country Code is the standardised alphanumeric or numeric code assigned to a country or territory by an authoritative international standard—most commonly ISO‑3166‑1. It provides a canonical, compact, and language‑independent identifier for countries, enabling consistent interoperability, integration, and global reporting across systems.  This attribute is part of core reference data and must be stable, globally consistent, and governed.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Legal Status Type</td>
+<td>Legal Status of Citizenship describes the formal, legally recognised standing of an individual’s citizenship with respect to a specific country or jurisdiction. It indicates whether citizenship is legally conferred, retained, suspended, revoked, renounced, conditional, or otherwise formally determined under that state's nationality laws.  It reflects legal fact, not self‑identification, residency rights, or application stage. It must be based on authoritative government records, never inferred.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Status Description</td>
+<td>Citizenship Status Description is a categorical attribute that describes the current legal standing of an individual’s citizenship with respect to a specific country or authority. It expresses whether citizenship is active, revoked, renounced, suspended, conditional, or historical, and, where relevant, the administrative or legal context behind that status.  It does not store legal reasoning, detailed case information, immigration status, or residency rights.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Proof of Status</td>
+<td>Proof of Status for Citizenship is a structured evidence attribute that records the authoritative documentation or verification method used to confirm an individual’s legally recognised citizenship with a specific country. It captures what evidence was provided, how it was validated, and by whom, without storing the document itself. This attribute provides the audit trail underpinning the Legal Status of Citizenship and Citizenship Status Description records.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dual or Multiple Status</td>
+<td>Dual or Multiple Citizenship Status indicates whether an individual holds more than one legally recognised citizenship at the same time. It is a derived, categorical attribute summarising the number of active citizenships linked to the individual, based on authoritative legal citizenship records.  This attribute expresses the cardinality of citizenship, not the legal details of each citizenship.  It does not infer hierarchy, privilege, or rights — it simply describes whether citizenship is single, dual, or multiple.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Verification Source</td>
+<td>Verification Source (Citizenship) identifies the authoritative channel, system, or method through which a person’s citizenship was validated. It records where the verification came from, such as a government registry, document check, consular confirmation, or trusted digital identity service. It does not store the document itself or legal reasoning — only the verification provenance. It is metadata about how citizenship was confirmed, not evidence itself.  This attribute ensures transparency, auditability, and trust in citizenship status.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Dates for Formally Recognised Citizenship define the legal and administrative time periods during which a person’s citizenship in a specific country is valid, active, suspended, revoked, renounced, or historically recognised. These dates provide a temporal record of citizenship lifecycle, enabling accurate legal interpretation, compliance operations, and historical identity reconstruction.  The attribute set typically includes:  * citizenship_effective_from — when citizenship legally begins * citizenship_effective_to — when it legally ends (nullable if still active) * status_change_date — date a legal status transition occurs (optional) * verification_date — date citizenship was last officially verified (stored separately or linked)  These dates apply per citizenship record, not globally to the individual.</td>
+<td>date</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-10">Relationships</h4>
+<ul>
+<li><a href="#69a49565f751de507cd56e68">Citizenship Has Formally Recognised Citizenship</a> ← <a href="#69a49420f751de507cd55a75">Citizenship</a></li>
+</ul>
+<hr />
+<p><a id="6a182eac4055a62b0ab568ab"></a></p>
+<h3 id="full-name">Full Name</h3>
+<p>Full Name represents a combined or displayable expression of a person’s name.</p>
+<p>It may be formed from formal name components, informal name components, or both, depending on context.</p>
+<p>In some cases, Full Name may reflect the authoritative identity as it is presented or used.</p>
+<p>However, it is not the authoritative structured identity record and must not replace Formal Name or Informal Name in the underlying model.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-10">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full Name</td>
+<td>Full Name represents a combined or displayable expression of a person’s name. It may be formed from formal name components, informal name components, or both, depending on context. In some cases, Full Name may reflect the authoritative identity as it is presented or used. However, it is not the authoritative structured identity record and must not replace Formal Name or Informal Name in the underlying model</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/6a182eac4055a62b0ab568ab/image.svg" alt="Full Name" /></p>
+<h4 id="attributes-10">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full Name Value</td>
+<td>Full Name Value stores the combined or displayable expression of a person’s name. It may be formed from formal name components, informal name components, or both, depending on context. In some cases, it may reflect the authoritative identity as it is presented or used; however, it is not the authoritative structured identity record.</td>
+<td>line</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Dates describe the period during which a Full Name instance is valid or in use.  This may include attributes such as effective_from, effective_to, and capture_date.  Temporal information enables the representation of name history and supports multiple Full Name instances over time.</td>
+<td>data type</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-11">Relationships</h4>
+<ul>
+<li><a href="#69d4ee109f84c55e2993a1aa">Informal Name May contribute to Full Name</a> ← <a href="#69a4939cf751de507cd54f65">Informal Name</a></li>
+<li><a href="#6a1834fe4055a62b0ab5926a">Formal Name MayContributeTo Full Name</a> ← <a href="#69a49187f751de507cd52317">Formal Name</a></li>
+</ul>
+<hr />
+<p><a id="69a4a737f751de507cd60353"></a></p>
+<h3 id="genetic-ethnicity">Genetic Ethnicity</h3>
+<p>A scientific estimate of a person’s ancestral origins based on the analysis of their DNA. It represents inferred biological population groups, expressed as probabilities or percentages, and reflects patterns of genetic similarity shared with reference populations.</p>
+<p>It does not represent cultural identity, heritage, nationality, or citizenship—it is a biologically inferred attribute, not a social or legal one.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-11">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Genetic Ethnicity</td>
+<td>A scientific estimate of a person’s ancestral origins based on the analysis of their DNA. It represents inferred biological population groups, expressed as probabilities or percentages, and reflects patterns of genetic similarity shared with reference populations.  It does not represent cultural identity, heritage, nationality, or citizenship—it is a biologically inferred attribute, not a social or legal one.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4a737f751de507cd60353/image.svg" alt="Genetic Ethnicity" /></p>
+<h4 id="attributes-11">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-12">Relationships</h4>
+<ul>
+<li><a href="#69a4a8fdf751de507cd60a2e">Person Has Genetic Ethnicity</a> ← <a href="#699dbdecf751de507cd233fc">Person</a></li>
+</ul>
+<hr />
+<p><a id="69a4a242f751de507cd5cfb1"></a></p>
+<h3 id="identifiers">Identifiers</h3>
+<p>Unique references that distinguish one Natural Person from all others within a given context, system, or jurisdiction. They are assigned by an authority (e.g., a government, organisation, or system) for the purpose of uniquely recognising, managing, or relating to that person across processes and datasets.</p>
+<p>Identifiers are not the person, and they are not personal attributes (like name, gender, or date of birth). They are tokens that point to the person.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-12">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifiers</td>
+<td>Unique references that distinguish one Natural Person from all others within a given context, system, or jurisdiction. They are assigned by an authority (e.g., a government, organisation, or system) for the purpose of uniquely recognising, managing, or relating to that person across processes and datasets.  Identifiers are not the person, and they are not personal attributes (like name, gender, or date of birth). They are tokens that point to the person.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4a242f751de507cd5cfb1/image.svg" alt="Identifiers" /></p>
+<h4 id="attributes-12">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biometric Identifiers</td>
+<td></td>
+<td>structure</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Personal Identifiers</td>
+<td>Reference numbers</td>
+<td>structure</td>
+<td>once</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-13">Relationships</h4>
+<ul>
+<li><a href="#69a4a25bf751de507cd5d0d5">Person Has Identifiers</a> ← <a href="#699dbdecf751de507cd233fc">Person</a></li>
+<li><a href="#69a4a288f751de507cd5d20d">Identifiers Includes Biometric Identifiers</a> → <a href="#69a4a1c2f751de507cd5c494">Biometric Identifiers</a></li>
+<li><a href="#69a4a312f751de507cd5dafa">Identifiers MayInclude Personal Identifiers</a> → <a href="#69a4a2f7f751de507cd5d9d0">Personal Identifiers</a></li>
+</ul>
+<hr />
+<p><a id="69a4939cf751de507cd54f65"></a></p>
+<h3 id="informal-name">Informal Name</h3>
+<p>The Informal Name sub‑domain captures non‑legal, non‑official name forms that an individual uses in everyday social, cultural, or operational contexts. These names support familiarity, personal preference, and communication ease but hold no legal standing and should not be used for identity verification or regulatory decisioning.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-13">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Informal Name</td>
+<td>The Informal Name sub‑domain captures non‑legal, non‑official name forms that an individual uses in everyday social, cultural, or operational contexts. These names support familiarity, personal preference, and communication ease but hold no legal standing and should not be used for identity verification or regulatory decisioning. It may be used as formal name, informal name, or family name. It can be a shortened version of the formal given name or middle name, or family name.&#x20;</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4939cf751de507cd54f65/image.svg" alt="Informal Name" /></p>
+<h4 id="attributes-13">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nick Name</td>
+<td>A Nick Name is an informal, non‑legal, personally or socially used variant of an individual’s name. It is a familiar, casual, or culturally specific form that the person may be known by in social, internal, or low‑formality contexts.  It is not legally authoritative, not used for identity verification, and must only be stored when voluntarily self‑reported.  A Nick Name may:  * Shorten a formal name (e.g., Ben for Benjamin) * Modify it culturally (e.g., Sasha for Alexander, Lulu for Louise) * Be an informal or affectionate form (e.g., Buddy, Ace) * Be used only in certain communities or internal teams</td>
+<td>line</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Preferred Name</td>
+<td>Preferred Name is the non‑legal, self‑chosen name an individual wishes to be addressed by in day‑to‑day communication, services, internal systems, or user‑experience contexts. It may or may not match the person’s legal/formal name. Preferred Name may change over time as the individual's preferences evolve and may include:  * A shortened form of the legal given name * A culturally chosen name used in social or professional contexts * An anglicised or localised form * A chosen first name reflecting personal identity  Preferred Name is authoritative for communication, but not valid for legal, regulatory, or identity verification purposes.</td>
+<td>line</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Alias</td>
+<td>An Alias is an alternative name that an individual uses in a specific professional, legal, operational, cultural, or pseudonymous context, distinct from their legal name, preferred name, or informal nickname. Aliases may include professional names, stage names, pseudonyms, maiden names used professionally, or documented historical names used in particular roles or activities.  An Alias is not self‑evidently a legal name, but may still require governance depending on usage.  Aliases are used where a person is known by multiple identities in different legitimate contexts.</td>
+<td>line</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Verification Source</td>
+<td>Verification Source for Informal Names identifies how an informal name (nickname or casual name) was obtained, confirming its origin, provenance, and reliability. Because informal names are non‑legal, non‑authoritative, and self‑expressive, the verification source typically indicates self‑report or low‑assurance internal capture, rather than any formal identity check.  It supports auditability and appropriate use of informal names without elevating them to official identity attributes.</td>
+<td>line</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Dates for Informal Name specify the period of time during which a specific informal name (nickname or casual name) is valid, active, or in use for an individual. Because informal names are self‑reported, non‑legal, and changeable, these dates provide temporal boundaries that support correct display, respectful communication, and accurate identity history without elevating informal names to legal status.  Typical fields include:  * effective_from — the date the informal name began being used or recorded * effective_to — the date the informal name ceased being used (nullable if still active) * capture_date — when the name entry was created (optional but common)  These dates apply per informal name record.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-14">Relationships</h4>
+<ul>
+<li><a href="#69c6d3d59f84c55e29926b22">Informal Name MayInclude Formal Name</a> → <a href="#69a49187f751de507cd52317">Formal Name</a></li>
+<li><a href="#69d4ee109f84c55e2993a1aa">Informal Name May contribute to Full Name</a> → <a href="#6a182eac4055a62b0ab568ab">Full Name</a></li>
+<li><a href="#6a183a704055a62b0ab5a6b7">Informal Name May Be Included In Full Name</a> → <a href="#69a4929af751de507cd542c8">Full Name</a></li>
+<li><a href="#69a493f2f751de507cd55354">Name MayInclude Informal Name</a> ← <a href="#69a4741df751de507cd3f284">Name</a></li>
+</ul>
+<hr />
+<p><a id="69a4bc47f751de507cd64638"></a></p>
+<h3 id="military-titles">Military Titles</h3>
+<p>Military Titles represent the official ranks, grades, and honorific forms of address assigned to individuals within armed forces or uniformed services (e.g., Lieutenant, Captain, Colonel). These titles indicate hierarchical position, authority, and command responsibility. They are role‑based, not personal, and may change throughout a career.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-14">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Military Titles</td>
+<td>Military Titles represent the official ranks, grades, and honorific forms of address assigned to individuals within armed forces or uniformed services (e.g., Lieutenant, Captain, Colonel). These titles indicate hierarchical position, authority, and command responsibility. They are role‑based, not personal, and may change throughout a career.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4bc47f751de507cd64638/image.svg" alt="Military Titles" /></p>
+<h4 id="attributes-14">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Military Rank</td>
+<td>Military Rank is an official, authority‑granted title that indicates an individual’s position, hierarchy level, and role status within an armed forces organisation (e.g., Army, Navy, Air Force, Marines, Space Force). It is a formal, regulated, and legally controlled title issued by a recognised military authority and subject to strict rules, protocols, and temporal validity.  Military Rank is distinct from:  * Job role titles (e.g., Platoon Commander) * Professional titles (e.g., Dr, Prof) * Civil courtesy titles (Mr, Ms) * Honorary military titles (different governance)</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Service Branch</td>
+<td>Service Branch identifies the specific branch of the armed forces in which an individual serves or has served (e.g., Army, Navy, Air Force, Marine Corps, Space Force). It provides the contextual organisational structure for interpreting military rank, military titles, service numbers, and authority-based entitlements.  It is a formal identity attribute within the military domain and must be authoritatively sourced from official service records.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Service Number</td>
+<td>Service Number is the unique identifier assigned to an individual by a military authority upon enlistment, commission, or service enrolment. It serves as the primary official identifier for the individual within the context of military personnel systems, similar to but distinct from:  * National identity numbers * Unit assignment identifiers * Veteran reference numbers * Military occupational codes  It enables unambiguous identification of service members throughout their military career, across promotions, transfers, deployments, and administrative processes.</td>
+<td>line</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Country</td>
+<td>Country of Defence Force identifies the nation‑state or recognised sovereign entity to which the defence force the individual serves (or has served) belongs. It anchors the Service Branch, Military Rank, and Service Number to the correct national military authority, clarifying jurisdiction, regulatory rules, rank hierarchy, and entitlements.  It does not infer nationality, citizenship, or ethnicity — it strictly identifies the country that operates the defence force.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Country of Defence Force identifies the nation‑state or recognised sovereign entity to which the defence force the individual serves (or has served) belongs. It anchors the Service Branch, Military Rank, and Service Number to the correct national military authority, clarifying jurisdiction, regulatory rules, rank hierarchy, and entitlements.  It does not infer nationality, citizenship, or ethnicity — it strictly identifies the country that operates the defence force.</td>
+<td>yes/no</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Verification Source</td>
+<td>Verification Source of Rank identifies the authoritative system, documentation, or military body used to verify the accuracy, legitimacy, and current status of an individual’s military rank. It answers the question: “Where did we confirm this rank came from, and how do we know it is valid?”  This attribute ensures that only evidence-backed, formally recognised ranks are reflected in identity and personnel systems. It also supports governance, entitlement validation, and auditability.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Dates for Rank specify the time period during which a specific military rank is valid, active, or historically recorded for an individual. These dates define the rank lifecycle — when the rank was granted, active, suspended, superseded, revoked, or transitioned to another status (e.g., retired).  Military rank is temporal and authoritative, meaning these dates must represent official, evidence‑based events (e.g., promotion orders, demotion decisions, retirement notices).  Typical fields include:  * rank_effective_from — the date the rank officially took effect * rank_effective_to — the date the rank ceased to be active (nullable if current) * rank_grant_date — when promotion/appointment was formally approved * rank_revocation_date — where applicable * capture_date — when the system recorded the rank  These dates apply per rank record, not per person.</td>
+<td>date</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-15">Relationships</h4>
+<ul>
+<li><a href="#69a4bc5ef751de507cd647c1">Titles May Include Military Titles</a> ← <a href="#69a4a95ef751de507cd61b0a">Titles</a></li>
+</ul>
+<hr />
+<p><a id="69a4741df751de507cd3f284"></a></p>
+<h3 id="name">Name</h3>
+<p>A textual identifier used to refer to or represent a Natural Person, Organisation, Place, or other entity. In conceptual modelling, a Name describes how something is known or addressed, not what it is. Names may consist of multiple components, may vary by context, and may change over time.</p>
+<p>At least one Formal Name is required for a Person to ensure a minimum identity representation, while Informal Name remains optional.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-15">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>A textual identifier used to refer to or represent a Natural Person, Organisation, Place, or other entity. In conceptual modelling, a Name describes how something is known or addressed, not what it is. Names may consist of multiple components, may vary by context, and may change over time.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4741df751de507cd3f284/image.svg" alt="Name" /></p>
+<h4 id="attributes-15">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Formal Name</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Informal Name</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Full Name</td>
+<td></td>
+<td></td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-16">Relationships</h4>
+<ul>
+<li><a href="#69a4743cf751de507cd3f2b3">Person MayHave Name</a> ← <a href="#699dbdecf751de507cd233fc">Person</a></li>
+<li><a href="#69a491a2f751de507cd5239e">Name MayInclude Formal Name</a> → <a href="#69a49187f751de507cd52317">Formal Name</a></li>
+<li><a href="#69a492c8f751de507cd543ec">Name MayInclude Full Name</a> → <a href="#69a4929af751de507cd542c8">Full Name</a></li>
+<li><a href="#69a493f2f751de507cd55354">Name MayInclude Informal Name</a> → <a href="#69a4939cf751de507cd54f65">Informal Name</a></li>
+</ul>
+<hr />
+<p><a id="69a4a3e2f751de507cd5e547"></a></p>
+<h3 id="nationality">Nationality</h3>
+<p>Describes how an individual identifies with one or more nations, countries, or national groups.</p>
+<p>In the Person domain, nationality is treated as a matter of personal identity and self‑expression, rather than legal status. Formal legal nationality or citizenship is modelled separately under Citizenship.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-16">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nationality</td>
+<td>A person’s formal affiliation to a nation or cultural identity, typically associated with the country or nation with which they identify or are recognised as belonging. In a conceptual model, Nationality represents a descriptive, identity‑based attribute of a Natural Person that may be based on heritage, birth, culture, or personal identification.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4a3e2f751de507cd5e547/image.svg" alt="Nationality" /></p>
+<h4 id="attributes-16">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Self-Identified Nationality</td>
+<td>Represents how an individual self-identifies their nationality or affiliation to one or more countries or recognised groups. Values should be drawn from a controlled vocabulary (e.g. ISO country codes or recognised classifications), rather than free text input. A specific value set is not mandated at this stage and will be defined through future governance. This attribute captures self-identified identity and is distinct from formal legal nationality or citizenship, which is modelled separately.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-17">Relationships</h4>
+<ul>
+<li><a href="#69a4a6ddf751de507cd5fb94">Nationality MayInclude Self-Identified Nationality</a> → <a href="#69a4a6a0f751de507cd5f910">Self-Identified Nationality</a></li>
+<li><a href="#69a4a6bdf751de507cd5fa55">Person Has Nationality</a> ← <a href="#699dbdecf751de507cd233fc">Person</a></li>
+</ul>
+<hr />
+<p><a id="699dbdecf751de507cd233fc"></a></p>
+<h3 id="person">Person</h3>
+<p>An individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-17">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Person</td>
+<td>An individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/699dbdecf751de507cd233fc/image.svg" alt="Person" /></p>
+<h4 id="attributes-17">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biological Attributes</td>
+<td></td>
+<td>structure</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Citizenship</td>
+<td></td>
+<td>structure</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Ethnicity (Cultural identify)</td>
+<td></td>
+<td>structure</td>
+<td></td>
+</tr>
+<tr>
+<td>Genetic Ethnicity</td>
+<td></td>
+<td>structure</td>
+<td></td>
+</tr>
+<tr>
+<td>Name</td>
+<td></td>
+<td>structure</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Nationality</td>
+<td></td>
+<td>structure</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Person Event</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Identifiers</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Titles</td>
+<td></td>
+<td>structure</td>
+<td>once</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-18">Relationships</h4>
+<ul>
+<li><a href="#69b2cab8c3a89f06e1a0fb00">Person May have Residence</a> → <a href="#69b2a6ddc3a89f06e1a0de69">Residence</a></li>
+<li><a href="#69a4a8fdf751de507cd60a2e">Person Has Genetic Ethnicity</a> → <a href="#69a4a737f751de507cd60353">Genetic Ethnicity</a></li>
+<li><a href="#69a4a92bf751de507cd61341">Person has Ethnicity (Cultural identify)</a> → <a href="#69a4a915f751de507cd611f1">Ethnicity (Cultural identify)</a></li>
+<li><a href="#69a4a973f751de507cd61c5e">Person MayHave Titles</a> → <a href="#69a4a95ef751de507cd61b0a">Titles</a></li>
+<li><a href="#69a4a6bdf751de507cd5fa55">Person Has Nationality</a> → <a href="#69a4a3e2f751de507cd5e547">Nationality</a></li>
+<li><a href="#69a49621f751de507cd5773a">Person has Biological Attributes</a> → <a href="#69a49610f751de507cd5766e">Biological Attributes</a></li>
+<li><a href="#69a4743cf751de507cd3f2b3">Person MayHave Name</a> → <a href="#69a4741df751de507cd3f284">Name</a></li>
+<li><a href="#69a49576f751de507cd56f2d">Person Has Citizenship</a> → <a href="#69a49420f751de507cd55a75">Citizenship</a></li>
+<li><a href="#699dbe50f751de507cd23a63">Person Has Person Event</a> → <a href="#699dbe0ef751de507cd23a3f">Person Event</a></li>
+<li><a href="#69a4a25bf751de507cd5d0d5">Person Has Identifiers</a> → <a href="#69a4a242f751de507cd5cfb1">Identifiers</a></li>
+</ul>
+<hr />
+<p><a id="699dbe0ef751de507cd23a3f"></a></p>
+<h3 id="person-event">Person Event</h3>
+<p>An occurrence or change in circumstance that happens to a specific Natural Person at a point in time (or over a period of time) and is relevant to business processes, reporting, or understanding that person’s history. It captures something that happens to or is experienced by the person, rather than a role or relationship they hold.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-18">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Person Event</td>
+<td>An occurrence or change in circumstance that happens to a specific Natural Person at a point in time (or over a period of time) and is relevant to business processes, reporting, or understanding that person’s history. It captures something that happens to or is experienced by the person, rather than a role or relationship they hold.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/699dbe0ef751de507cd23a3f/image.svg" alt="Person Event" /></p>
+<h4 id="attributes-18">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Birth</td>
+<td></td>
+<td>structure</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Death</td>
+<td></td>
+<td>structure</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Pregnancy</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-19">Relationships</h4>
+<ul>
+<li><a href="#69a87073f751de507cd77c94">Person Event MayInclude Pregnancy</a> → <a href="#69a87051f751de507cd77aec">Pregnancy</a></li>
+<li><a href="#69a48c8ff751de507cd4eac0">Person Event MayInclude Birth</a> → <a href="#69a48be5f751de507cd4e22e">Birth</a></li>
+<li><a href="#69a4901bf751de507cd50856">Person Event MayInclude Death</a> → <a href="#69a49009f751de507cd507d6">Death</a></li>
+<li><a href="#699dbe50f751de507cd23a63">Person Has Person Event</a> ← <a href="#699dbdecf751de507cd233fc">Person</a></li>
+</ul>
+<hr />
+<p><a id="69a4a2f7f751de507cd5d9d0"></a></p>
+<h3 id="personal-identifiers">Personal Identifiers</h3>
+<p>Personal Identifier IDs are unique identifiers assigned to a person by an authority or system for identification, linkage, or entitlement. This domain includes government‑issued IDs (e.g., national IDs), organisational master IDs, and cross‑system surrogate keys used to unambiguously reference a person across processes and systems.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-19">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Personal Identifiers</td>
+<td>Personal Identifier IDs are unique identifiers assigned to a person by an authority or system for identification, linkage, or entitlement. This domain includes government‑issued IDs (e.g., national IDs), organisational master IDs, and cross‑system surrogate keys used to unambiguously reference a person across processes and systems.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4a2f7f751de507cd5d9d0/image.svg" alt="Personal Identifiers" /></p>
+<h4 id="attributes-19">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-20">Relationships</h4>
+<ul>
+<li><a href="#69a4a312f751de507cd5dafa">Identifiers MayInclude Personal Identifiers</a> ← <a href="#69a4a242f751de507cd5cfb1">Identifiers</a></li>
+</ul>
+<hr />
+<p><a id="69a49864f751de507cd59150"></a></p>
+<h3 id="physical-characteristics">Physical Characteristics</h3>
+<p>Physical Characteristics refers to observable, measurable, and non‑biometric biological traits of an individual. These features describe physical form or appearance but do not uniquely identify a person on their own. The sub‑domain includes raw descriptive attributes and standardised measurements recorded for classification, profiling, or operational purposes.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-20">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physical Characteristics</td>
+<td>Physical Characteristics refers to observable, measurable, and non‑biometric biological traits of an individual. These features describe physical form or appearance but do not uniquely identify a person on their own. The sub‑domain includes raw descriptive attributes and standardised measurements recorded for classification, profiling, or operational purposes.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a49864f751de507cd59150/image.svg" alt="Physical Characteristics" /></p>
+<h4 id="attributes-20">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Height</td>
+<td>Height is a measured physical attribute representing an individual’s vertical body length from the soles of the feet to the top of the head. It is a non‑biometric, non‑clinical, descriptive physical characteristic, used for identification support, profiling, equipment fitting, health &amp; safety contexts, and demographic analytics. It is not unique enough to identify a person on its own.</td>
+<td>number</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Weight</td>
+<td>Weight is a measured physical attribute representing the mass of an individual’s body at a specific point in time. It is a non‑biometric, non‑clinical physiological measurement used for operational safety, sizing, wellness, and descriptive profiling. It cannot uniquely identify a person and must not be treated as a health diagnosis.</td>
+<td>number</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Body Build</td>
+<td>Body Build (also known as body frame or body shape) is a general, non‑clinical descriptive attribute that characterises the overall physique or structural appearance of an individual. It captures broad physical proportions (e.g., slim, stocky, athletic, broad) or frame types (e.g., small, medium, large frame) for identification support, equipment provisioning, and anthropometric profiling.  It is not a health assessment, diagnostic category, or body‑composition measurement.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Eye Colour</td>
+<td>A visible physical characteristic describing the colour(s) of an individual’s irises. It is a non‑biometric, non‑clinical, descriptive attribute used for identification support, profiling, documentation, and certain operational or compliance contexts.  Multiple values may be recorded to support rare but valid cases (for example differing eye colours), without prescribing anatomical detail (such as left/right eye). This attribute is not unique enough to identify a person on its own and does not reveal medical conditions or genetic diagnoses.  Tranche 1 does not mandate a controlled value set; standardisation may be introduced in later iterations where supported by use case evidence.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Hair Colour</td>
+<td>Hair Colour is a descriptive physical attribute representing either:  1. Natural Hair Colour — the genetically determined or typical baseline hair colour; or 2. Current Hair Colour — the individual’s present hair colour, which may be natural or non‑natural (e.g., dyed, bleached, fashion colours).  This attribute is non‑biometric, non‑clinical, and used solely for descriptive and operational purposes. Neither natural nor current hair colour may be used to infer health, age, ethnicity, or identity.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Skin Tone</td>
+<td>Skin Tone is a visible physical characteristic describing the general pigmentation or colour range of a person’s skin. It is a non‑clinical, non‑biometric, non‑diagnostic descriptor captured only for specific, justified operational purposes (e.g., identity support, safeguarding, uniform or equipment contexts). It must be broad, neutral, respectful, and standardised—never evaluative or culturally loaded.  Skin Tone cannot be used to infer ethnicity, race, health status, or genetic traits.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Distinguishing Features</td>
+<td>Distinguishing Features are visible, non‑clinical physical attributes that can help differentiate an individual from others in descriptive or identity‑support contexts. These features are voluntary, non‑sensitive descriptors such as scars, tattoos, birthmarks, moles, or other notable visible characteristics. They must be non‑judgmental, categorical, and minimally descriptive—never detailed, medical, or identifying in a forensic or biometric sense.  This attribute supports operational identification, not biometric matching or surveillance.</td>
+<td>text</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Facial Hair</td>
+<td>Facial Hair is a visible, non‑clinical, non-biometric physical characteristic describing the presence, absence, type, and general style of hair on the face (e.g., beard, moustache, stubble). It is used for descriptive identification, operational contexts, and appearance‑based workflows where relevant. It is not used for biometric identification, profiling, or inference of age, culture, or gender.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Dates for Physical Characteristics specify the time period during which a specific physical characteristic value is valid or actively in use for the individual. This includes when the characteristic was observed, self‑reported, measured, confirmed, or superseded.  This attribute set creates a temporal identity record, ensuring accurate history and preventing outdated or inaccurate physical descriptors from being used operationally.  Common fields include:  * observation_date — when the characteristic was captured * effective_from — start of validity * effective_to — end of validity (nullable if still active)  These dates are per characteristic, not global.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-21">Relationships</h4>
+<ul>
+<li><a href="#69a49878f751de507cd59245">Biological Attributes Includes Physical Characteristics</a> ← <a href="#69a49610f751de507cd5766e">Biological Attributes</a></li>
+</ul>
+<hr />
+<p><a id="69a49fbdf751de507cd5a26c"></a></p>
+<h3 id="physiological-information">Physiological Information</h3>
+<p>Physiological Information describes non‑clinical, non‑diagnostic information about an individual’s biological and bodily functions. It includes physiological or biologically‑derived attributes such as blood type, genetic traits, self‑reported disability, and organ donor status. These attributes are descriptive and operational in nature, rather than cognitive, emotional, or behavioural characteristics, and do not uniquely identify a person</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-21">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physiological Information</td>
+<td>Physiological Information in the Person domain represents non‑clinical, non‑diagnostic information about an individual’s biological and bodily functions. This includes measurable or observable physiological attributes that describe how the body operates (for example blood type, genetic traits, or organ donor status), rather than cognitive, emotional, or behavioural characteristics. These attributes are descriptive and operational in nature and do not, by themselves, uniquely identify a person</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a49fbdf751de507cd5a26c/image.svg" alt="Physiological Information" /></p>
+<h4 id="attributes-21">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blood Type</td>
+<td>Blood Type is a categorical physiological attribute representing an individual’s blood group classification based on recognised antigen systems, primarily the ABO and RhD systems (e.g., A+, O‑, AB−). It describes a stable biological characteristic with operational relevance in certain safety, welfare, and emergency contexts. It is not a diagnostic or medical condition.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Genetic Traits</td>
+<td>Genetic Traits represent stable, inherited biological characteristics that are encoded in an individual’s DNA and manifest as observable, non‑clinical traits (e.g., eye colour predisposition, lactose tolerance, natural hair colour tendency). This attribute captures general genetic tendencies, not medical diagnoses, disease markers, or full genomic data.</td>
+<td>text</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Self-reported disability</td>
+<td>Also known as impairment.  Self-reported disability is a rights‑based characteristic indicating that an individual has a long‑term physical, mental, cognitive, or sensory impairment which, in interaction with barriers, may limit equal participation in daily activities or environments. This attribute reflects functional impact and support needs, not medical diagnoses or clinical details.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Organ Donor</td>
+<td>Organ Donor indicates whether an individual has formally recorded consent, objection, or preference regarding the donation of their organs and/or tissues after death. This attribute reflects a person’s legally or administratively recognized donor decision, not medical suitability or clinical screening.  It records consent status, not medical data.  May be known as Tissue donor.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Dates for Physiological Information define the time period during which a specific physiological measurement or observation is valid, active, or considered accurate for operational or analytical use. Because physiological attributes (e.g., heart rate, oxygen saturation, resting blood pressure, metabolic rate) can change frequently, these dates provide temporal context for correctness, safety, and interpretation.  The attribute set typically includes:  * measurement_date — when the physiological value was captured * effective_from — when the value first becomes valid for use * effective_to — when it stops being valid (nullable if still active)  These are per‑attribute timestamps, not global to the person.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-22">Relationships</h4>
+<ul>
+<li><a href="#69a4a0dbf751de507cd5b9d4">Biological Attributes Includes Physiological Information</a> ← <a href="#69a49610f751de507cd5766e">Biological Attributes</a></li>
+</ul>
+<hr />
+<p><a id="69a4bd06f751de507cd65b7f"></a></p>
+<h3 id="post-nominal-titles">Post-Nominal Titles</h3>
+<p>Post‑Nominal Titles are letters placed after a person’s name that denote orders, decorations, honours, academic degrees, professional memberships, licensure, or fellowships (e.g., OBE, PhD, FRCS, CPA). They confer recognition or qualification, not forms of address, and are typically governed by awarding bodies with formal usage rules.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-22">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Post-Nominal Titles</td>
+<td>Post‑Nominal Titles are letters placed after a person’s name that denote orders, decorations, honours, academic degrees, professional memberships, licensure, or fellowships (e.g., OBE, PhD, FRCS, CPA). They confer recognition or qualification, not forms of address, and are typically governed by awarding bodies with formal usage rules.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4bd06f751de507cd65b7f/image.svg" alt="Post-Nominal Titles" /></p>
+<h4 id="attributes-22">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-23">Relationships</h4>
+<ul>
+<li><a href="#69a4bd1bf751de507cd65d15">Titles MayInclude Post-Nominal Titles</a> ← <a href="#69a4a95ef751de507cd61b0a">Titles</a></li>
+</ul>
+<hr />
+<p><a id="69a87051f751de507cd77aec"></a></p>
+<h3 id="pregnancy">Pregnancy</h3>
+<p>Pregnancy is a time‑bound life event that records the fact that an individual is pregnant, including the start, expected milestones, and outcome of the pregnancy where relevant for operational, safeguarding, or service‑eligibility purposes. It captures non‑clinical, administrative facts only—not medical diagnoses, treatment notes, or clinical assessments.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-23">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pregnancy</td>
+<td>Pregnancy is a time‑bound life event that records the fact that an individual is pregnant, including the start, expected milestones, and outcome of the pregnancy where relevant for operational, safeguarding, or service‑eligibility purposes. It captures non‑clinical, administrative facts only—not medical diagnoses, treatment notes, or clinical assessments.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a87051f751de507cd77aec/image.svg" alt="Pregnancy" /></p>
+<h4 id="relationships-24">Relationships</h4>
+<ul>
+<li><a href="#69a87073f751de507cd77c94">Person Event MayInclude Pregnancy</a> ← <a href="#699dbe0ef751de507cd23a3f">Person Event</a></li>
+</ul>
+<hr />
+<p><a id="69a4aa60f751de507cd6338d"></a></p>
+<h3 id="professional-occupational-titles">Professional Occupational Titles</h3>
+<p>Professional Occupational Titles are titles or prefixes associated with a person’s profession, occupation, or accredited role, used to indicate an individual’s professional standing, qualification, or occupational function. They are not academic degrees or post‑nominals, but pre‑nominal markers tied to recognised professions (e.g., Dr, Prof, Eng, Nurse, Architect). These titles support appropriate address, professional recognition, and role‑based communication.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-24">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Professional Occupational Titles</td>
+<td>Professional Occupational Titles are titles or prefixes associated with a person’s profession, occupation, or accredited role, used to indicate an individual’s professional standing, qualification, or occupational function. They are not academic degrees or post‑nominals, but pre‑nominal markers tied to recognised professions (e.g., Dr, Prof, Eng, Nurse, Architect). These titles support appropriate address, professional recognition, and role‑based communication.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4aa60f751de507cd6338d/image.svg" alt="Professional Occupational Titles" /></p>
+<h4 id="attributes-23">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Professional Title</td>
+<td>A Professional Title is a formally recognised title, credential, or designation that indicates an individual’s professional status, qualification, licensure, accreditation, or role-based authority within a specific domain (e.g., medicine, law, engineering, academia). It signals that a person has achieved a professionally governed standing, often regulated by a professional body, accreditation authority, educational institution, or licensing regulator.  Professional Titles differ from:  * Civil courtesy titles (Mr, Ms, Mx) * Military ranks (Captain, Major) * Religious titles (Rev, Imam) * Job role titles (Head of Digital, Finance Manager) * Post‑nominals (PhD, MSc, CPA — qualification identifiers)  Professional Titles are role-, competence-, or licence‑based and often carry legal or operational implications.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Field Profession</td>
+<td>Field Profession describes the broad professional field, discipline, or domain of practice within which an individual’s professional title, occupation, or role is situated. It captures the sector‑level classification (e.g., Medicine, Engineering, Law, Education) rather than a specific job title or qualification.  Field Profession creates a normalised, high‑level professional grouping that supports reporting, entitlement logic, governance, and rendering rules without storing overly granular occupational details.  It is not a job title, skill, qualification, or occupational code—rather, it is the professionally recognised field or discipline.</td>
+<td>line</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Dates Professional Title Held specify the time period during which an individual legitimately holds, is authorised to use, or is recognised as possessing a specific professional title (e.g., Dr (Medical), Professor, Chartered Engineer, Solicitor). These dates define the validity window of a professional title, reflecting licensure, certification, employment status, or accreditation from a professional body or authority.  Unlike Preferred Name or Courtesy Titles, professional titles are not self-declared — their timeline must reflect formal evidence.  Typical fields include:  * effective_from — when the professional title became valid * effective_to — when the professional title ceased being valid (nullable if still active) * grant_date / conferment_date — when the accrediting authority formally awarded the title * expiry_date (if the title requires renewal, e.g., licences) * capture_date — when the system recorded it (optional)  These dates are per professional title, not person‑wide.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-25">Relationships</h4>
+<ul>
+<li><a href="#69a49fd8f751de507cd5a36d">Titles MayInclude Professional Occupational Titles</a> ← <a href="#69a4a95ef751de507cd61b0a">Titles</a></li>
+</ul>
+<hr />
+<p><a id="69a4a08df751de507cd5b7c3"></a></p>
+<h3 id="psychological-characteristics">Psychological Characteristics</h3>
+<p>Psychological Characteristics refer to non‑clinical, non‑diagnostic attributes that describe an individual’s typical cognitive, emotional, and behavioural tendencies. These characteristics represent stable patterns of thinking and behaviour, not mental health conditions, and do not uniquely identify a person. They may include personality traits, cognitive style descriptors, and general behavioural dispositions.</p>
+<p><img src="entities/69a4a08df751de507cd5b7c3/image.svg" alt="Psychological Characteristics" /></p>
+<h4 id="relationships-26">Relationships</h4>
+<ul>
+<li><a href="#69a4a127f751de507cd5bc26">Biological Attributes Includes Psychological Characteristics</a> ← <a href="#69a49610f751de507cd5766e">Biological Attributes</a></li>
+</ul>
+<hr />
+<p><a id="69a4bccef751de507cd651e0"></a></p>
+<h3 id="religious-titles">Religious Titles</h3>
+<p>Religious Titles are formal honorifics, ranks, or styles of address associated with roles, positions, or consecrated statuses within recognised religious traditions (e.g., Reverend, Rabbi, Imam, Sister, Monsignor, Guru). These titles indicate spiritual authority, clerical office, or religious vocation, and are used in formal or community contexts to show respect and denote role-based standing.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-25">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Religious Titles</td>
+<td>Religious Titles are formal honorifics, ranks, or styles of address associated with roles, positions, or consecrated statuses within recognised religious traditions (e.g., Reverend, Rabbi, Imam, Sister, Monsignor, Guru). These titles indicate spiritual authority, clerical office, or religious vocation, and are used in formal or community contexts to show respect and denote role-based standing.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4bccef751de507cd651e0/image.svg" alt="Religious Titles" /></p>
+<h4 id="attributes-24">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Religious Title Granted</td>
+<td>Religious Title Granted refers to the formal religious title, rank, or designation conferred on an individual by a recognised religious authority, institution, or governing body. It reflects a spiritually or institutionally recognised status, such as ordination, consecration, clergy appointment, or religious office.  Religious titles differ from civil courtesy titles (Mr, Ms), professional titles (Dr, Prof), military ranks (Captain), and job roles. They often carry ceremonial, pastoral, or leadership responsibilities within a faith community.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Religious Order</td>
+<td>Religious Order identifies the specific monastic, clerical, or spiritual community, congregation, or tradition to which an individual belongs, has taken vows within, or is formally associated with. It represents a structured affiliation within a broader religion, typically defined by:  * A rule or charism (e.g., Franciscan, Benedictine) * A community or organisation (e.g., Jesuit community, Carmelite Order) * A tradition or lineage (e.g., Nichiren Buddhist order, Sufi tariqa)  This attribute is not the same as a religious title; it captures affiliation, not rank.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Religious Appointing Authority</td>
+<td>Religious Order identifies the specific monastic, clerical, or spiritual community, congregation, or tradition to which an individual belongs, has taken vows within, or is formally associated with. It represents a structured affiliation within a broader religion, typically defined by:  * A rule or charism (e.g., Franciscan, Benedictine) * A community or organisation (e.g., Jesuit community, Carmelite Order) * A tradition or lineage (e.g., Nichiren Buddhist order, Sufi tariqa)  This attribute is not the same as a religious title; it captures affiliation, not rank.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Dates of Religious Title define the time period during which a specific religious title, role, clerical status, or spiritual office is valid, active, recognised, or historically recorded for an individual. These dates reflect formal ecclesiastical or religious processes such as ordination, appointment, consecration, commissioning, elevation, transfer, emeritus designation, revocation, or release.  This attribute ensures temporal accuracy, lineage, and authority-compliant handling of religious titles.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-27">Relationships</h4>
+<ul>
+<li><a href="#69a4bce3f751de507cd65374">Titles MayInclude Religious Titles</a> ← <a href="#69a4a95ef751de507cd61b0a">Titles</a></li>
+</ul>
+<hr />
+<p><a id="69b2a6ddc3a89f06e1a0de69"></a></p>
+<h3 id="residence">Residence</h3>
+<p>A time‑bounded assertion that a Person resides at a Location with a specified Residence. Includes legal/primary residence, secondary residences, historical changes, validation against jurisdictional reference data. Excludes temporary contact addresses, delivery addresses, lodging/travel events, property ownership details (unless used to evidence residence).</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-26">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residence</td>
+<td>A time‑bounded assertion that a Person resides at a Location with a specified Residence. Includes legal/primary residence, secondary residences, historical changes, validation against jurisdictional reference data. Excludes temporary contact addresses, delivery addresses, lodging/travel events, property ownership details (unless used to evidence residence).</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69b2a6ddc3a89f06e1a0de69/image.svg" alt="Residence" /></p>
+<h4 id="attributes-25">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residence Handling</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Residence Status</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Residence Verification</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Residence Identification</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-28">Relationships</h4>
+<ul>
+<li><a href="#69b2cab8c3a89f06e1a0fb00">Person May have Residence</a> ← <a href="#699dbdecf751de507cd233fc">Person</a></li>
+<li><a href="#69b2cae2c3a89f06e1a0fcae">Residence MayHave Residence identification</a> → <a href="#69b2a79fc3a89f06e1a0e8c8">Residence identification</a></li>
+<li><a href="#69b2df3ec3a89f06e1a1655f">Residence may have Residence Status</a> → <a href="#69b2df27c3a89f06e1a16153">Residence Status</a></li>
+<li><a href="#69b2e018c3a89f06e1a17e95">Residence may have Residence Verification</a> → <a href="#69b2e007c3a89f06e1a17a7d">Residence Verification</a></li>
+<li><a href="#69b2e072c3a89f06e1a18933">Residence Requires Residence Handling</a> → <a href="#69b2e04bc3a89f06e1a1850f">Residence Handling</a></li>
+</ul>
+<hr />
+<p><a id="69b2e04bc3a89f06e1a1850f"></a></p>
+<h3 id="residence-handling">Residence Handling</h3>
+<p>Residence Handling refers to the governed rules, behaviours, and constraints that define how residency data may be collected, processed, stored, shared, updated, retained, secured, and used within a data domain.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-27">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residence Handling</td>
+<td>Residence Handling refers to the governed rules, behaviours, and constraints that define how residency data may be collected, processed, stored, shared, updated, retained, secured, and used within a data domain.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69b2e04bc3a89f06e1a1850f/image.svg" alt="Residence Handling" /></p>
+<h4 id="attributes-26">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residence Confidentiality</td>
+<td>Residence Confidentiality is the governed classification that determines the level of privacy protection applied to a residency fact, ensuring that residence information is disclosed, stored, accessed, and shared only in accordance with the required confidentiality level.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Special Handling indicator</td>
+<td>Residence Special Handling indicator confirms if additional controls are required and how access will be permitted.&#x20;</td>
+<td>yes/no</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Residence accessibility</td>
+<td>Residence Data Accessibility specifies the authorised access levels for residency facts, determining how much information can be viewed, by whom, and in which contexts, aligned with privacy, risk, legal, and safeguarding constraints.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-29">Relationships</h4>
+<ul>
+<li><a href="#69b2e072c3a89f06e1a18933">Residence Requires Residence Handling</a> ← <a href="#69b2a6ddc3a89f06e1a0de69">Residence</a></li>
+</ul>
+<hr />
+<p><a id="69b2df27c3a89f06e1a16153"></a></p>
+<h3 id="residence-status">Residence Status</h3>
+<p>Residence Type specifies the role, purpose, and legal/operational meaning of a residency relationship between a place or property and a person.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-28">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residence Status</td>
+<td>Residence Type specifies the role, purpose, and legal/operational meaning of a residency relationship between a place or property and a person.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69b2df27c3a89f06e1a16153/image.svg" alt="Residence Status" /></p>
+<h4 id="attributes-27">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residence type</td>
+<td>Residence Type describes what kind of residence a Residence Fact represents — such as primary, secondary, historical, declared, inferred, or statutory — providing semantic clarity for business rules, compliance, and interpretation.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Current</td>
+<td>Current Residence is the Residence Fact for which the Residence Status is Active, the effective period includes today, and the record has not been superseded or ended.</td>
+<td>yes/no</td>
+<td>once</td>
+</tr>
+<tr>
+<td>For Taxation</td>
+<td>Residence for Tax is the legally recognised tax residency of a Party, determined by statutory criteria and supported by verified residency facts, used to establish tax obligations, compliance, reporting, and regulatory responsibilities.</td>
+<td>yes/no</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Status source</td>
+<td>Declared and Observed are semantic qualifiers that describe how a residence fact was created or asserted:  * Declared Residence — the Party (person or legal entity representative) told you this is their residence. * Observed Residence — the organisation inferred or detected this residence from system behaviour, external signals, or passive data sources.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-30">Relationships</h4>
+<ul>
+<li><a href="#69b2df3ec3a89f06e1a1655f">Residence may have Residence Status</a> ← <a href="#69b2a6ddc3a89f06e1a0de69">Residence</a></li>
+</ul>
+<hr />
+<p><a id="69b2e007c3a89f06e1a17a7d"></a></p>
+<h3 id="residence-verification">Residence Verification</h3>
+<p>Residence Verification describes the degree of confidence, method, and evidence supporting the assertion that a Party (Person or Legal Entity) resides at a given Location.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-29">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residence Verification</td>
+<td>Residence Verification describes the degree of confidence, method, and evidence supporting the assertion that a Party (Person or Legal Entity) resides at a given Location.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69b2e007c3a89f06e1a17a7d/image.svg" alt="Residence Verification" /></p>
+<h4 id="attributes-28">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verification Status</td>
+<td>Verification Status indicates whether a residency fact has been confirmed, is awaiting verification, remains unverified, or has been rejected based on the evaluation of evidence and authorised checks.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Validation source</td>
+<td>Residence Validation Source describes the origin of the information or evidence used to confirm, refute, or assess the validity of a residence fact.</td>
+<td>line</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Validation Dates</td>
+<td>Residence Validation Dates are the time‑based semantic properties that define the verification timestamp, validity window, and re‑verification schedule associated with a residency fact.</td>
+<td>date</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-31">Relationships</h4>
+<ul>
+<li><a href="#69b2e018c3a89f06e1a17e95">Residence may have Residence Verification</a> ← <a href="#69b2a6ddc3a89f06e1a0de69">Residence</a></li>
+</ul>
+<hr />
+<p><a id="69b2a79fc3a89f06e1a0e8c8"></a></p>
+<h3 id="residence-identification">Residence identification</h3>
+<p>Residence Identification refers uniquely and consistently identify, reference, and distinguish one residence fact from another within a Party domain.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-30">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residence identification</td>
+<td>Residence Identification refers uniquely and consistently identify, reference, and distinguish one residence fact from another within a Party domain.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69b2a79fc3a89f06e1a0e8c8/image.svg" alt="Residence identification" /></p>
+<h4 id="attributes-29">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residence ID</td>
+<td>Residence ID is the globally unique, immutable identifier assigned to a Residence Fact — the relationship between a Person and a Location, with associated type, status, verification, and temporal attributes.</td>
+<td>line</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Jurisdiction of residence</td>
+<td>Jurisdiction of Residence is the legal or administrative authority that governs the residences Location.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td></td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-32">Relationships</h4>
+<ul>
+<li><a href="#69b2cae2c3a89f06e1a0fcae">Residence MayHave Residence identification</a> ← <a href="#69b2a6ddc3a89f06e1a0de69">Residence</a></li>
+</ul>
+<hr />
+<p><a id="69a4a6a0f751de507cd5f910"></a></p>
+<h3 id="self-identified-nationality">Self-Identified Nationality</h3>
+<p>Self‑Identified Nationality represents how an individual personally defines or expresses their own national identity, independent of citizenship, passport, or legal status. It reflects cultural affiliation, heritage, or personal identification, and is self‑reported, non‑authoritative, and used solely for demographic, engagement, or inclusion‑related purposes.</p>
+<p>This attribute does not confer any legal rights or obligations.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-31">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Self-Identified Nationality</td>
+<td>Self‑Identified Nationality represents how an individual personally defines or expresses their own national identity, independent of citizenship, passport, or legal status. It reflects cultural affiliation, heritage, or personal identification, and is self‑reported, non‑authoritative, and used solely for demographic, engagement, or inclusion‑related purposes.  This attribute does not confer any legal rights or obligations.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4a6a0f751de507cd5f910/image.svg" alt="Self-Identified Nationality" /></p>
+<h4 id="attributes-30">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Self-Identified Country or Group</td>
+<td>Self‑Identified Country or Group represents the country, cultural group, territory, people, or national identity that an individual personally associates with, irrespective of legal citizenship or official nationality. It is self‑reported, non‑authoritative, and used exclusively for demographic insight, inclusion, and respectful identity handling.  This attribute captures the label the individual uses for their own national or cultural identity, such as Scottish, Basque, Catalan, Hong Konger, Welsh, Kurdish, Sámi, Galician, Palestinian, Tamil, Bavarian, Inuit, or American.  It is a personal identity expression, not a legal classification.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Type of Affiliation</td>
+<td>Type of Affiliation describes the basis or nature of a person’s self‑identified national or group identity. It categorises how an individual relates to a self‑identified country, territory, cultural group, or people — whether through heritage, cultural identity, lived experience, belonging, community membership, or personal self‑identification.  This attribute is self‑reported, non‑authoritative, and strictly for demographic insight, inclusion, and respectful representation — not for legal, operational, or compliance decisions.  Values should be drawn from a controlled vocabulary rather than free text, to ensure consistency and interoperability. A specific value set is not mandated at this stage and will be defined through future governance and alignment.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Recognition Status</td>
+<td>Recognition Status indicates how receiving organisations or systems may acknowledge, interpret, or display an individual’s self‑identified nationality, country, or group in operational systems or reporting.&#x20;  It captures organisational handling rules (e.g. approved, restricted, suppressed) applied to a self‑reported identity that has no legal standing but is relevant to inclusion, engagement, or user experience.&#x20;  Values should be drawn from a controlled vocabulary rather than free text, to ensure consistency and interoperability.&#x20;  This represents how the self‑identified value is handled in practice, not whether a state or international body formally recognises the group.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Primary Motivation</td>
+<td>Primary Motivation describes the main reason or basis an individual chooses to self‑identify with a specific nationality, country, territory, cultural group, or people.  It captures the personal rationale behind the identity — such as heritage, upbringing, cultural alignment, lived experience, or personal meaning — and is self‑reported, non‑authoritative, and used solely for identity expression, inclusion, and engagement insights.  This attribute clarifies why the self‑identified nationality is meaningful to the individual.  Values should be drawn from a controlled vocabulary rather than free text, to ensure consistency and interoperability</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>A self‑identified nationality is a statement made by the person about the nationality (or nationalities) they identify with. The date fields should describe the validity period of that self‑identification, not necessarily legal citizenship dates.  Self‑Identified Nationality Start Date (Valid From) - The date the person first reports (or you first record) that they self‑identify with the specified nationality.  Self‑Identified Nationality End Date (Valid To) - The date the person stops reporting (or you stop treating as current) that they self‑identify with the specified nationality.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-33">Relationships</h4>
+<ul>
+<li><a href="#69a4a6ddf751de507cd5fb94">Nationality MayInclude Self-Identified Nationality</a> ← <a href="#69a4a3e2f751de507cd5e547">Nationality</a></li>
+</ul>
+<hr />
+<p><a id="69a4a038f751de507cd5b038"></a></p>
+<h3 id="sex-and-gender">Sex and Gender</h3>
+<p>The Sex and Gender sub‑domain covers data elements that describe an individual’s biological sex characteristics and gender identity attributes for the purposes of identity management, demographic classification, and service personalisation. It differentiates between sex‑related biological attributes and self‑described gender identity, reflecting both regulatory expectations and modern data‑standards practice. It also include how these relate to and define Legal Sex.</p>
+<p><img src="entities/69a4a038f751de507cd5b038/image.svg" alt="Sex and Gender" /></p>
+<h4 id="relationships-34">Relationships</h4>
+<ul>
+<li><a href="#69a4a0c7f751de507cd5b8cb">Biological Attributes Has Sex and Gender</a> ← <a href="#69a49610f751de507cd5766e">Biological Attributes</a></li>
+</ul>
+<hr />
+<p><a id="69a4a95ef751de507cd61b0a"></a></p>
+<h3 id="titles">Titles</h3>
+<p>An honorific or form of address associated with a Natural Person, used to indicate courtesy, social status, professional standing, or preference. It does not identify the person and does not imply any legal role or relationship—it's simply an attribute describing how the person chooses (or is required) to be addressed.</p>
+<h4 id="implements-concepts-from-person-domain-concept-model-32">Implements Concepts from Person Domain, Concept Model</h4>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Titles</td>
+<td>An honorific or form of address associated with a Natural Person, used to indicate courtesy, social status, professional standing, or preference. It does not identify the person and does not imply any legal role or relationship—it's simply an attribute describing how the person chooses (or is required) to be addressed.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="entities/69a4a95ef751de507cd61b0a/image.svg" alt="Titles" /></p>
+<h4 id="attributes-31">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Civil Social Titles</td>
+<td>Professional Occupational Titles are titles or prefixes associated with a person’s profession, occupation, or accredited role, used to indicate an individual’s professional standing, qualification, or occupational function. They are not academic degrees or post‑nominals, but pre‑nominal markers tied to recognised professions (e.g., Dr, Prof, Eng, Nurse, Architect). These titles support appropriate address, professional recognition, and role‑based communication.</td>
+<td>structure</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Military Titles</td>
+<td>Military Titles represent the official ranks, grades, and honorific forms of address assigned to individuals within armed forces or uniformed services (e.g., Lieutenant, Captain, Colonel). These titles indicate hierarchical position, authority, and command responsibility. They are role‑based, not personal, and may change throughout a career.</td>
+<td>structure</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Professional Occupational Titles</td>
+<td>Professional / Occupational Titles are role‑based or qualification‑based titles that indicate a person’s profession, occupation, licensure, position, or accredited status within a recognised field. They reflect professional standing, licensed capacity, or institutionally granted rank, and may be:  * legally protected, * regulated by a professional body, or * organisationally assigned.  These titles are distinct from civil courtesy titles (Mr, Ms), preferred/social titles (Mx, preferred forms), religious titles (Rev), and military ranks (Captain).</td>
+<td>structure</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Religious Titles</td>
+<td>Religious Titles are formal honorifics, ranks, or styles of address associated with roles, positions, or consecrated statuses within recognised religious traditions (e.g., Reverend, Rabbi, Imam, Sister, Monsignor, Guru). These titles indicate spiritual authority, clerical office, or religious vocation, and are used in formal or community contexts to show respect and denote role-based standing.</td>
+<td>structure</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Post-Nominal Titles</td>
+<td>Post‑Nominal Titles are letters placed after a person’s name that denote orders, decorations, honours, academic degrees, professional memberships, licensure, or fellowships (e.g., OBE, PhD, FRCS, CPA). They confer recognition or qualification, not forms of address, and are typically governed by awarding bodies with formal usage rules.</td>
+<td></td>
+<td>once</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relationships-35">Relationships</h4>
+<ul>
+<li><a href="#69a4a973f751de507cd61c5e">Person MayHave Titles</a> ← <a href="#699dbdecf751de507cd233fc">Person</a></li>
+<li><a href="#69a4aa2ff751de507cd62bac">Titles MayInclude Civil Social Titles</a> → <a href="#69a4a99af751de507cd6242d">Civil Social Titles</a></li>
+<li><a href="#69a4bc5ef751de507cd647c1">Titles May Include Military Titles</a> → <a href="#69a4bc47f751de507cd64638">Military Titles</a></li>
+<li><a href="#69a4bce3f751de507cd65374">Titles MayInclude Religious Titles</a> → <a href="#69a4bccef751de507cd651e0">Religious Titles</a></li>
+<li><a href="#69a4bd1bf751de507cd65d15">Titles MayInclude Post-Nominal Titles</a> → <a href="#69a4bd06f751de507cd65b7f">Post-Nominal Titles</a></li>
+<li><a href="#69a49fd8f751de507cd5a36d">Titles MayInclude Professional Occupational Titles</a> → <a href="#69a4aa60f751de507cd6338d">Professional Occupational Titles</a></li>
+</ul>
+<h2 id="relationships-36">Relationships</h2>
+<p><a id="69b2cab8c3a89f06e1a0fb00"></a></p>
+<h3 id="person-may-have-residence">Person May have Residence</h3>
+<p><strong>Entity from:</strong> <a href="#699dbdecf751de507cd233fc">Person</a><br />
+<strong>Entity to:</strong> <a href="#69b2a6ddc3a89f06e1a0de69">Residence</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a4a6ddf751de507cd5fb94"></a></p>
+<h3 id="nationality-mayinclude-self-identified-nationality">Nationality MayInclude Self-Identified Nationality</h3>
+<p><strong>Entity from:</strong> <a href="#69a4a3e2f751de507cd5e547">Nationality</a><br />
+<strong>Entity to:</strong> <a href="#69a4a6a0f751de507cd5f910">Self-Identified Nationality</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a4a8fdf751de507cd60a2e"></a></p>
+<h3 id="person-has-genetic-ethnicity">Person Has Genetic Ethnicity</h3>
+<p><strong>Entity from:</strong> <a href="#699dbdecf751de507cd233fc">Person</a><br />
+<strong>Entity to:</strong> <a href="#69a4a737f751de507cd60353">Genetic Ethnicity</a><br />
+<strong>Cardinality:</strong> one to one  </p>
+<hr />
+<p><a id="69a4a92bf751de507cd61341"></a></p>
+<h3 id="person-has-ethnicity-cultural-identify">Person has Ethnicity (Cultural identify)</h3>
+<p><strong>Entity from:</strong> <a href="#699dbdecf751de507cd233fc">Person</a><br />
+<strong>Entity to:</strong> <a href="#69a4a915f751de507cd611f1">Ethnicity (Cultural identify)</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a4a973f751de507cd61c5e"></a></p>
+<h3 id="person-mayhave-titles">Person MayHave Titles</h3>
+<p><strong>Entity from:</strong> <a href="#699dbdecf751de507cd233fc">Person</a><br />
+<strong>Entity to:</strong> <a href="#69a4a95ef751de507cd61b0a">Titles</a><br />
+<strong>Cardinality:</strong> one to one  </p>
+<hr />
+<p><a id="69a4aa2ff751de507cd62bac"></a></p>
+<h3 id="titles-mayinclude-civil-social-titles">Titles MayInclude Civil Social Titles</h3>
+<p><strong>Entity from:</strong> <a href="#69a4a95ef751de507cd61b0a">Titles</a><br />
+<strong>Entity to:</strong> <a href="#69a4a99af751de507cd6242d">Civil Social Titles</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a4bc5ef751de507cd647c1"></a></p>
+<h3 id="titles-may-include-military-titles">Titles May Include Military Titles</h3>
+<p><strong>Entity from:</strong> <a href="#69a4a95ef751de507cd61b0a">Titles</a><br />
+<strong>Entity to:</strong> <a href="#69a4bc47f751de507cd64638">Military Titles</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a4bce3f751de507cd65374"></a></p>
+<h3 id="titles-mayinclude-religious-titles">Titles MayInclude Religious Titles</h3>
+<p><strong>Entity from:</strong> <a href="#69a4a95ef751de507cd61b0a">Titles</a><br />
+<strong>Entity to:</strong> <a href="#69a4bccef751de507cd651e0">Religious Titles</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a4bd1bf751de507cd65d15"></a></p>
+<h3 id="titles-mayinclude-post-nominal-titles">Titles MayInclude Post-Nominal Titles</h3>
+<p><strong>Entity from:</strong> <a href="#69a4a95ef751de507cd61b0a">Titles</a><br />
+<strong>Entity to:</strong> <a href="#69a4bd06f751de507cd65b7f">Post-Nominal Titles</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a87073f751de507cd77c94"></a></p>
+<h3 id="person-event-mayinclude-pregnancy">Person Event MayInclude Pregnancy</h3>
+<p><strong>Entity from:</strong> <a href="#699dbe0ef751de507cd23a3f">Person Event</a><br />
+<strong>Entity to:</strong> <a href="#69a87051f751de507cd77aec">Pregnancy</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a4a6bdf751de507cd5fa55"></a></p>
+<h3 id="person-has-nationality">Person Has Nationality</h3>
+<p><strong>Entity from:</strong> <a href="#699dbdecf751de507cd233fc">Person</a><br />
+<strong>Entity to:</strong> <a href="#69a4a3e2f751de507cd5e547">Nationality</a><br />
+<strong>Cardinality:</strong> one to one  </p>
+<hr />
+<p><a id="69b2cae2c3a89f06e1a0fcae"></a></p>
+<h3 id="residence-mayhave-residence-identification">Residence MayHave Residence identification</h3>
+<p><strong>Entity from:</strong> <a href="#69b2a6ddc3a89f06e1a0de69">Residence</a><br />
+<strong>Entity to:</strong> <a href="#69b2a79fc3a89f06e1a0e8c8">Residence identification</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69b2df3ec3a89f06e1a1655f"></a></p>
+<h3 id="residence-may-have-residence-status">Residence may have Residence Status</h3>
+<p><strong>Entity from:</strong> <a href="#69b2a6ddc3a89f06e1a0de69">Residence</a><br />
+<strong>Entity to:</strong> <a href="#69b2df27c3a89f06e1a16153">Residence Status</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69b2e018c3a89f06e1a17e95"></a></p>
+<h3 id="residence-may-have-residence-verification">Residence may have Residence Verification</h3>
+<p><strong>Entity from:</strong> <a href="#69b2a6ddc3a89f06e1a0de69">Residence</a><br />
+<strong>Entity to:</strong> <a href="#69b2e007c3a89f06e1a17a7d">Residence Verification</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69b2e072c3a89f06e1a18933"></a></p>
+<h3 id="residence-requires-residence-handling">Residence Requires Residence Handling</h3>
+<p><strong>Entity from:</strong> <a href="#69b2a6ddc3a89f06e1a0de69">Residence</a><br />
+<strong>Entity to:</strong> <a href="#69b2e04bc3a89f06e1a1850f">Residence Handling</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69c6d3d59f84c55e29926b22"></a></p>
+<h3 id="informal-name-mayinclude-formal-name">Informal Name MayInclude Formal Name</h3>
+<p><strong>Entity from:</strong> <a href="#69a4939cf751de507cd54f65">Informal Name</a><br />
+<strong>Entity to:</strong> <a href="#69a49187f751de507cd52317">Formal Name</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69d4ee109f84c55e2993a1aa"></a></p>
+<h3 id="informal-name-may-contribute-to-full-name">Informal Name May contribute to Full Name</h3>
+<p><strong>Entity from:</strong> <a href="#69a4939cf751de507cd54f65">Informal Name</a><br />
+<strong>Entity to:</strong> <a href="#6a182eac4055a62b0ab568ab">Full Name</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<p>Informal Name may contribute to a Full Name representation. Full Name may be composed from informal or contextual name components depending on context.</p>
+<hr />
+<p><a id="69fb6770ea1f7a349307e89d"></a></p>
+<h3 id="birth-was-on-date-of-birth">Birth Was on Date of Birth</h3>
+<p><strong>Entity from:</strong> <a href="#69a48be5f751de507cd4e22e">Birth</a><br />
+<strong>Entity to:</strong> <a href="#69fb660aea1f7a349307ba09">Birth Date</a><br />
+<strong>Cardinality:</strong> one to one  </p>
+<hr />
+<p><a id="6a1834fe4055a62b0ab5926a"></a></p>
+<h3 id="formal-name-maycontributeto-full-name">Formal Name MayContributeTo Full Name</h3>
+<p><strong>Entity from:</strong> <a href="#69a49187f751de507cd52317">Formal Name</a><br />
+<strong>Entity to:</strong> <a href="#6a182eac4055a62b0ab568ab">Full Name</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="6a183a704055a62b0ab5a6b7"></a></p>
+<h3 id="informal-name-may-be-included-in-full-name">Informal Name May Be Included In Full Name</h3>
+<p><strong>Entity from:</strong> <a href="#69a4939cf751de507cd54f65">Informal Name</a><br />
+<strong>Entity to:</strong> <a href="#69a4929af751de507cd542c8">Full Name</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<p>Informal Name may contribute to a Full Name representation. Full Name may include informal or contextual name components depending on context.</p>
+<hr />
+<p><a id="69a49621f751de507cd5773a"></a></p>
+<h3 id="person-has-biological-attributes">Person has Biological Attributes</h3>
+<p><strong>Entity from:</strong> <a href="#699dbdecf751de507cd233fc">Person</a><br />
+<strong>Entity to:</strong> <a href="#69a49610f751de507cd5766e">Biological Attributes</a><br />
+<strong>Cardinality:</strong> one to one  </p>
+<hr />
+<p><a id="69a4743cf751de507cd3f2b3"></a></p>
+<h3 id="person-mayhave-name">Person MayHave Name</h3>
+<p><strong>Entity from:</strong> <a href="#699dbdecf751de507cd233fc">Person</a><br />
+<strong>Entity to:</strong> <a href="#69a4741df751de507cd3f284">Name</a><br />
+<strong>Cardinality:</strong> one to one  </p>
+<hr />
+<p><a id="69a48c8ff751de507cd4eac0"></a></p>
+<h3 id="person-event-mayinclude-birth">Person Event MayInclude Birth</h3>
+<p><strong>Entity from:</strong> <a href="#699dbe0ef751de507cd23a3f">Person Event</a><br />
+<strong>Entity to:</strong> <a href="#69a48be5f751de507cd4e22e">Birth</a><br />
+<strong>Cardinality:</strong> one to one  </p>
+<hr />
+<p><a id="69a4901bf751de507cd50856"></a></p>
+<h3 id="person-event-mayinclude-death">Person Event MayInclude Death</h3>
+<p><strong>Entity from:</strong> <a href="#699dbe0ef751de507cd23a3f">Person Event</a><br />
+<strong>Entity to:</strong> <a href="#69a49009f751de507cd507d6">Death</a><br />
+<strong>Cardinality:</strong> one to one  </p>
+<hr />
+<p><a id="69a491a2f751de507cd5239e"></a></p>
+<h3 id="name-mayinclude-formal-name">Name MayInclude Formal Name</h3>
+<p><strong>Entity from:</strong> <a href="#69a4741df751de507cd3f284">Name</a><br />
+<strong>Entity to:</strong> <a href="#69a49187f751de507cd52317">Formal Name</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a492b2f751de507cd5435b"></a></p>
+<h3 id="formal-name-maycontributeto-full-name-1">Formal Name MayContributeTo Full Name</h3>
+<p><strong>Entity from:</strong> <a href="#69a4929af751de507cd542c8">Full Name</a><br />
+<strong>Entity to:</strong> <a href="#69a49187f751de507cd52317">Formal Name</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a492c8f751de507cd543ec"></a></p>
+<h3 id="name-mayinclude-full-name">Name MayInclude Full Name</h3>
+<p><strong>Entity from:</strong> <a href="#69a4741df751de507cd3f284">Name</a><br />
+<strong>Entity to:</strong> <a href="#69a4929af751de507cd542c8">Full Name</a><br />
+<strong>Cardinality:</strong> one to one  </p>
+<hr />
+<p><a id="69a493f2f751de507cd55354"></a></p>
+<h3 id="name-mayinclude-informal-name">Name MayInclude Informal Name</h3>
+<p><strong>Entity from:</strong> <a href="#69a4741df751de507cd3f284">Name</a><br />
+<strong>Entity to:</strong> <a href="#69a4939cf751de507cd54f65">Informal Name</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a49565f751de507cd56e68"></a></p>
+<h3 id="citizenship-has-formally-recognised-citizenship">Citizenship Has Formally Recognised Citizenship</h3>
+<p><strong>Entity from:</strong> <a href="#69a49420f751de507cd55a75">Citizenship</a><br />
+<strong>Entity to:</strong> <a href="#69a4943ff751de507cd5619b">Formally Recognised Citizenship </a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a49576f751de507cd56f2d"></a></p>
+<h3 id="person-has-citizenship">Person Has Citizenship</h3>
+<p><strong>Entity from:</strong> <a href="#699dbdecf751de507cd233fc">Person</a><br />
+<strong>Entity to:</strong> <a href="#69a49420f751de507cd55a75">Citizenship</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="699dbe50f751de507cd23a63"></a></p>
+<h3 id="person-has-person-event">Person Has Person Event</h3>
+<p><strong>Entity from:</strong> <a href="#699dbdecf751de507cd233fc">Person</a><br />
+<strong>Entity to:</strong> <a href="#699dbe0ef751de507cd23a3f">Person Event</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<p>has a person event</p>
+<hr />
+<p><a id="69a49878f751de507cd59245"></a></p>
+<h3 id="biological-attributes-includes-physical-characteristics">Biological Attributes Includes Physical Characteristics</h3>
+<p><strong>Entity from:</strong> <a href="#69a49610f751de507cd5766e">Biological Attributes</a><br />
+<strong>Entity to:</strong> <a href="#69a49864f751de507cd59150">Physical Characteristics</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a49fd8f751de507cd5a36d"></a></p>
+<h3 id="titles-mayinclude-professional-occupational-titles">Titles MayInclude Professional Occupational Titles</h3>
+<p><strong>Entity from:</strong> <a href="#69a4a95ef751de507cd61b0a">Titles</a><br />
+<strong>Entity to:</strong> <a href="#69a4aa60f751de507cd6338d">Professional Occupational Titles</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a4a0c7f751de507cd5b8cb"></a></p>
+<h3 id="biological-attributes-has-sex-and-gender">Biological Attributes Has Sex and Gender</h3>
+<p><strong>Entity from:</strong> <a href="#69a49610f751de507cd5766e">Biological Attributes</a><br />
+<strong>Entity to:</strong> <a href="#69a4a038f751de507cd5b038">Sex and Gender</a><br />
+<strong>Cardinality:</strong> one to one  </p>
+<hr />
+<p><a id="69a4a0dbf751de507cd5b9d4"></a></p>
+<h3 id="biological-attributes-includes-physiological-information">Biological Attributes Includes Physiological Information</h3>
+<p><strong>Entity from:</strong> <a href="#69a49610f751de507cd5766e">Biological Attributes</a><br />
+<strong>Entity to:</strong> <a href="#69a49fbdf751de507cd5a26c">Physiological Information</a><br />
+<strong>Cardinality:</strong> one to one  </p>
+<hr />
+<p><a id="69a4a127f751de507cd5bc26"></a></p>
+<h3 id="biological-attributes-includes-psychological-characteristics">Biological Attributes Includes Psychological Characteristics</h3>
+<p><strong>Entity from:</strong> <a href="#69a49610f751de507cd5766e">Biological Attributes</a><br />
+<strong>Entity to:</strong> <a href="#69a4a08df751de507cd5b7c3">Psychological Characteristics</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a4a25bf751de507cd5d0d5"></a></p>
+<h3 id="person-has-identifiers">Person Has Identifiers</h3>
+<p><strong>Entity from:</strong> <a href="#699dbdecf751de507cd233fc">Person</a><br />
+<strong>Entity to:</strong> <a href="#69a4a242f751de507cd5cfb1">Identifiers</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a4a288f751de507cd5d20d"></a></p>
+<h3 id="identifiers-includes-biometric-identifiers">Identifiers Includes Biometric Identifiers</h3>
+<p><strong>Entity from:</strong> <a href="#69a4a242f751de507cd5cfb1">Identifiers</a><br />
+<strong>Entity to:</strong> <a href="#69a4a1c2f751de507cd5c494">Biometric Identifiers</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+<hr />
+<p><a id="69a4a312f751de507cd5dafa"></a></p>
+<h3 id="identifiers-mayinclude-personal-identifiers">Identifiers MayInclude Personal Identifiers</h3>
+<p><strong>Entity from:</strong> <a href="#69a4a242f751de507cd5cfb1">Identifiers</a><br />
+<strong>Entity to:</strong> <a href="#69a4a2f7f751de507cd5d9d0">Personal Identifiers</a><br />
+<strong>Cardinality:</strong> one to many  </p>
+  </main>
+</body>
+</html>

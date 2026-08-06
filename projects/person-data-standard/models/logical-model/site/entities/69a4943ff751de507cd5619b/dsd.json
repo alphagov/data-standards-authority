@@ -1,0 +1,308 @@
+{
+    "name": "Formally Recognised Citizenship ",
+    "Concepts": [
+        {
+            "idConcept": "69987a14f751de507ccfe26e",
+            "_id": "69a4943ff751de507cd5619c",
+            "Concept": {
+                "name": "Formally Recognised Citizenship",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 299,
+                "_id": "69987a14f751de507ccfe26e",
+                "createdAt": "2026-02-20T15:13:24.893Z",
+                "updatedAt": "2026-03-04T17:20:27.869Z",
+                "description": "Formally Recognised Citizenship captures a person’s legally conferred nationality status as recognised by a sovereign state or authority. It reflects official citizenship(s) in force, with provenance to authoritative sources (e.g., passport, national identity registry, certificate of naturalisation).",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Attributes": [
+        {
+            "name": "Country Name",
+            "description": "Country Name (Official) is the authoritative, internationally recognised full name of a sovereign state or territory, as recorded in a trusted external standard such as ISO‑3166, the United Nations Terminology Bulletin, or a national government’s official designation.\nIt provides a stable, canonical reference for interoperability, compliance, jurisdictional mapping, and cross‑system alignment.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "yes",
+            "_id": "69a49525f751de507cd56791"
+        },
+        {
+            "name": "Country Code",
+            "description": "Country Code is the standardised alphanumeric or numeric code assigned to a country or territory by an authoritative international standard—most commonly ISO‑3166‑1. It provides a canonical, compact, and language‑independent identifier for countries, enabling consistent interoperability, integration, and global reporting across systems.\n\nThis attribute is part of core reference data and must be stable, globally consistent, and governed.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "yes",
+            "_id": "69a49525f751de507cd56792"
+        },
+        {
+            "name": "Legal Status Type",
+            "description": "Legal Status of Citizenship describes the formal, legally recognised standing of an individual’s citizenship with respect to a specific country or jurisdiction. It indicates whether citizenship is legally conferred, retained, suspended, revoked, renounced, conditional, or otherwise formally determined under that state's nationality laws.\n\nIt reflects legal fact, not self‑identification, residency rights, or application stage.\nIt must be based on authoritative government records, never inferred.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "yes",
+            "_id": "69a49525f751de507cd56793"
+        },
+        {
+            "name": "Status Description",
+            "description": "Citizenship Status Description is a categorical attribute that describes the current legal standing of an individual’s citizenship with respect to a specific country or authority. It expresses whether citizenship is active, revoked, renounced, suspended, conditional, or historical, and, where relevant, the administrative or legal context behind that status.\n\nIt does not store legal reasoning, detailed case information, immigration status, or residency rights.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a49525f751de507cd56794"
+        },
+        {
+            "name": "Proof of Status",
+            "description": "Proof of Status for Citizenship is a structured evidence attribute that records the authoritative documentation or verification method used to confirm an individual’s legally recognised citizenship with a specific country.\nIt captures what evidence was provided, how it was validated, and by whom, without storing the document itself.\nThis attribute provides the audit trail underpinning the Legal Status of Citizenship and Citizenship Status Description records.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "yes",
+            "_id": "69a49525f751de507cd56797"
+        },
+        {
+            "name": "Dual or Multiple Status",
+            "description": "Dual or Multiple Citizenship Status indicates whether an individual holds more than one legally recognised citizenship at the same time. It is a derived, categorical attribute summarising the number of active citizenships linked to the individual, based on authoritative legal citizenship records.\n\nThis attribute expresses the cardinality of citizenship, not the legal details of each citizenship.\n\nIt does not infer hierarchy, privilege, or rights — it simply describes whether citizenship is single, dual, or multiple.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "yes",
+            "_id": "69a49525f751de507cd56798"
+        },
+        {
+            "name": "Verification Source",
+            "description": "Verification Source (Citizenship) identifies the authoritative channel, system, or method through which a person’s citizenship was validated. It records where the verification came from, such as a government registry, document check, consular confirmation, or trusted digital identity service.\nIt does not store the document itself or legal reasoning — only the verification provenance. It is metadata about how citizenship was confirmed, not evidence itself.\n\nThis attribute ensures transparency, auditability, and trust in citizenship status.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "yes",
+            "_id": "69a49525f751de507cd56799"
+        },
+        {
+            "name": "Dates",
+            "description": "Dates for Formally Recognised Citizenship define the legal and administrative time periods during which a person’s citizenship in a specific country is valid, active, suspended, revoked, renounced, or historically recognised.\nThese dates provide a temporal record of citizenship lifecycle, enabling accurate legal interpretation, compliance operations, and historical identity reconstruction.\n\nThe attribute set typically includes:\n\n* citizenship\\_effective\\_from — when citizenship legally begins\n* citizenship\\_effective\\_to — when it legally ends (nullable if still active)\n* status\\_change\\_date — date a legal status transition occurs (optional)\n* verification\\_date — date citizenship was last officially verified (stored separately or linked)\n\nThese dates apply per citizenship record, not globally to the individual.",
+            "type": "data type",
+            "dataType": "date",
+            "occurs": "many",
+            "required": "yes",
+            "_id": "69a49525f751de507cd56795"
+        }
+    ],
+    "status": "in use",
+    "seq": 78,
+    "_id": "69a4943ff751de507cd5619b",
+    "createdAt": "2026-03-01T19:32:15.091Z",
+    "updatedAt": "2026-05-07T21:26:56.993Z",
+    "description": "Formally Recognised Citizenship captures a person’s legally conferred nationality status as recognised by a sovereign state or authority. It reflects official citizenship(s) in force, with provenance to authoritative sources (e.g., passport, national identity registry, certificate of naturalisation).",
+    "Links": [
+        {
+            "name": "Formal Citizenship as Citizenship",
+            "label": "Has",
+            "inverseLabel": "",
+            "idConceptFrom": "69945984f751de507ccc2ced",
+            "idConceptTo": "69987a14f751de507ccfe26e",
+            "status": "in use",
+            "seq": 299,
+            "_id": "69a471c6f751de507cd3b354",
+            "createdAt": "2026-03-01T17:05:10.414Z",
+            "updatedAt": "2026-03-01T17:34:51.103Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Citizenship",
+                "description": "A person’s legal relationship with a state, which grants rights, protections, and obligations under that state’s laws. In a conceptual model, Citizenship is a legal‑status attribute of a Natural Person that identifies the country or sovereign entity recognising them as a citizen.",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 235,
+                "_id": "69945984f751de507ccc2ced",
+                "createdAt": "2026-02-17T12:05:24.130Z",
+                "updatedAt": "2026-03-01T16:00:11.032Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Formally Recognised Citizenship",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 299,
+                "_id": "69987a14f751de507ccfe26e",
+                "createdAt": "2026-02-20T15:13:24.893Z",
+                "updatedAt": "2026-03-04T17:20:27.869Z",
+                "description": "Formally Recognised Citizenship captures a person’s legally conferred nationality status as recognised by a sovereign state or authority. It reflects official citizenship(s) in force, with provenance to authoritative sources (e.g., passport, national identity registry, certificate of naturalisation).",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Revisions": [
+        {
+            "_id": "69a49525f751de507cd56744",
+            "idAbout": "69a4943ff751de507cd5619b",
+            "report": true,
+            "idUser": 999,
+            "seq": 558,
+            "createdAt": "2026-03-01T19:36:05.234Z",
+            "updatedAt": "2026-03-01T19:36:05.234Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a4bdb5f751de507cd66cc2",
+            "idAbout": "69a4943ff751de507cd5619b",
+            "report": true,
+            "idUser": 999,
+            "seq": 575,
+            "createdAt": "2026-03-01T22:29:09.418Z",
+            "updatedAt": "2026-03-01T22:29:09.418Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a4bdcdf751de507cd67229",
+            "idAbout": "69a4943ff751de507cd5619b",
+            "report": true,
+            "idUser": 999,
+            "seq": 576,
+            "createdAt": "2026-03-01T22:29:33.831Z",
+            "updatedAt": "2026-03-01T22:29:33.831Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a86ef3f751de507cd738bb",
+            "idAbout": "69a4943ff751de507cd5619b",
+            "report": true,
+            "idUser": 999,
+            "seq": 624,
+            "createdAt": "2026-03-04T17:42:11.874Z",
+            "updatedAt": "2026-03-04T17:42:11.874Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a876dff751de507cd7b6f5",
+            "idAbout": "69a4943ff751de507cd5619b",
+            "report": true,
+            "idUser": 999,
+            "seq": 646,
+            "createdAt": "2026-03-04T18:15:59.785Z",
+            "updatedAt": "2026-03-04T18:15:59.785Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a8788bf751de507cd7d146",
+            "idAbout": "69a4943ff751de507cd5619b",
+            "report": true,
+            "idUser": 999,
+            "seq": 651,
+            "createdAt": "2026-03-04T18:23:07.044Z",
+            "updatedAt": "2026-03-04T18:23:07.044Z",
+            "__v": 0
+        },
+        {
+            "_id": "69f7f0ffea1f7a3493070168",
+            "idAbout": "69a4943ff751de507cd5619b",
+            "report": true,
+            "idUser": 999,
+            "seq": 1124,
+            "createdAt": "2026-05-04T01:06:07.739Z",
+            "updatedAt": "2026-05-04T01:06:07.739Z",
+            "__v": 0
+        },
+        {
+            "_id": "69f7f45aea1f7a34930712b9",
+            "idAbout": "69a4943ff751de507cd5619b",
+            "report": true,
+            "idUser": 999,
+            "seq": 1125,
+            "createdAt": "2026-05-04T01:20:26.956Z",
+            "updatedAt": "2026-05-04T01:20:26.956Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd0208ea1f7a349310093c",
+            "idAbout": "69a4943ff751de507cd5619b",
+            "report": true,
+            "idUser": 999,
+            "seq": 1248,
+            "createdAt": "2026-05-07T21:20:08.061Z",
+            "updatedAt": "2026-05-07T21:20:08.061Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd03a1ea1f7a3493101f13",
+            "idAbout": "69a4943ff751de507cd5619b",
+            "report": true,
+            "idUser": 999,
+            "seq": 1249,
+            "createdAt": "2026-05-07T21:26:57.110Z",
+            "updatedAt": "2026-05-07T21:26:57.110Z",
+            "__v": 0
+        }
+    ],
+    "LogicalModel": {
+        "_id": "699dbdcbf751de507cd22dc5",
+        "name": "Person Domain, Logical Model",
+        "description": "Person Logical Domain Model.\n\nModel ID: DEPoP013.&#x20;\n\nLinking concepts to data items in the Person Domain.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202604.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+        "idUser": 999,
+        "status": "under construction",
+        "seq": 10,
+        "createdAt": "2026-02-24T15:03:39.212Z",
+        "updatedAt": "2026-06-02T16:18:27.733Z",
+        "__v": 0,
+        "id": "699dbdcbf751de507cd22dc5",
+        "uri": "http://def.digitalservicedesigner.com/logicalmodel/10",
+        "Owner": {
+            "id": 999,
+            "username": "madeup",
+            "organisation": "Made Up Organisation - as a Sandbox for the Designer",
+            "uriOrganisation": "http://id.savviuk.org/organisations/madeup"
+        },
+        "Version": {
+            "_id": "6a1f03840eda6fffbbdd9e83",
+            "idAbout": "699dbdcbf751de507cd22dc5",
+            "name": "Logical Model:Person Domain, Logical Model V1 02/06/2026",
+            "type": "logicalmodel",
+            "idUser": 999,
+            "seq": 69,
+            "createdAt": "2026-06-02T16:23:33.248Z",
+            "updatedAt": "2026-06-02T16:23:33.248Z",
+            "__v": 0
+        }
+    }
+}

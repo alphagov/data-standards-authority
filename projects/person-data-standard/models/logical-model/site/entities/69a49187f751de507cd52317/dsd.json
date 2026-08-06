@@ -1,0 +1,361 @@
+{
+    "name": "Formal Name",
+    "Concepts": [
+        {
+            "idConcept": "69987879f751de507ccf8939",
+            "_id": "69a49187f751de507cd52318",
+            "Concept": {
+                "name": "Formal Name",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 284,
+                "_id": "69987879f751de507ccf8939",
+                "createdAt": "2026-02-20T15:06:33.996Z",
+                "updatedAt": "2026-03-04T17:19:21.578Z",
+                "description": "Formal Name represents the official, legally recognised version of an individual’s name, as recorded by an authoritative source such as a civil registry, passport, birth certificate, or government-issued identity document. It is the canonical name used in contexts requiring legal identity, compliance, or formal verification.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Attributes": [
+        {
+            "name": "Given Name",
+            "description": "Given Name is the primary personal name(s) assigned to an individual, typically at birth or legal registration, and used to identify the person within family, social, and formal contexts.\nIt represents the individual’s personal identifier within their full name structure and appears as the first name in many Western naming conventions, but may represent one or more names depending on cultural naming patterns.\n\nThis may exist in multiple forms (legal, preferred, informal), depending on the name sub‑domain.",
+            "type": "data type",
+            "dataType": "line",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a49187f751de507cd52319"
+        },
+        {
+            "name": "Middle Name",
+            "description": "Middle Name refers to any personal name component that appears between the Given Name and the Family Name in an individual’s full name structure.\nIt may consist of one or more name elements, and may serve cultural, familial, religious, or administrative purposes.\nIt is a core structural name attribute, but not always used in every naming tradition.\n\nMiddle Names may appear in legal/formal contexts or as optional identity components depending on the jurisdiction.",
+            "type": "data type",
+            "dataType": "line",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a49187f751de507cd5231a"
+        },
+        {
+            "name": "Family Name",
+            "description": "Family Name (also known as surname, last name, or patronymic/matronymic element depending on culture) is the inherited or legally recorded component of a person’s name that identifies their family, lineage, or household grouping.\nIt is a core identifier used across legal, administrative, and social systems and is typically stable across life except where changed through legal processes.\n\nFamily Name forms one of the principal anchors of identity and is part of the official full name in most naming systems worldwide.",
+            "type": "data type",
+            "dataType": "line",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a49187f751de507cd5231b"
+        },
+        {
+            "name": "Verification Source",
+            "description": "Verification Source for Name identifies the authoritative channel, document, registry, or method used to confirm the accuracy of a person’s name—whether legal, preferred, or alias—depending on the name sub‑domain.\nIt records where the verification originated, not the document itself.\n\nIt underpins trust, traceability, and compliance for name‑related identity management.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "yes",
+            "_id": "69a49328f751de507cd54812"
+        },
+        {
+            "name": "Dates",
+            "description": "Dates for When a Name Is in Use describe the time period during which a specific name record is valid, active, or recognised by the organisation or by legal/authoritative sources.\nThey provide temporal boundaries for each name entry, enabling accurate historical reconstruction, identity auditing, and compliance with legal name‑change processes.\n\nThis typically consists of two attributes:\n\n* effective\\_from — when the name began being valid or used\n* effective\\_to — when the name ceased to be valid or used (nullable if still active)\n\nThese dates apply to each name record, not to the person.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "yes",
+            "_id": "69a49328f751de507cd54811"
+        }
+    ],
+    "status": "in use",
+    "seq": 74,
+    "_id": "69a49187f751de507cd52317",
+    "createdAt": "2026-03-01T19:20:39.727Z",
+    "updatedAt": "2026-05-29T14:21:18.682Z",
+    "description": "Formal Name represents the official, legally recognised version of an individual’s name, as recorded by an authoritative source such as a civil registry, passport, birth certificate, or government-issued identity document. It is the canonical name used in contexts requiring legal identity, compliance, or formal verification.",
+    "Links": [
+        {
+            "name": "Formal name of Name",
+            "label": "MayInclude",
+            "idConceptFrom": "69945770f751de507ccc13f5",
+            "idConceptTo": "69987879f751de507ccf8939",
+            "status": "in use",
+            "seq": 300,
+            "_id": "69a47339f751de507cd3e0d6",
+            "createdAt": "2026-03-01T17:11:21.639Z",
+            "updatedAt": "2026-03-01T17:12:33.439Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Name",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 231,
+                "_id": "69945770f751de507ccc13f5",
+                "createdAt": "2026-02-17T11:56:32.926Z",
+                "updatedAt": "2026-03-04T17:33:10.109Z",
+                "description": "A textual identifier used to refer to or represent a Natural Person, Organisation, Place, or other entity. In conceptual modelling, a Name describes how something is known or addressed, not what it is. Names may consist of multiple components, may vary by context, and may change over time.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Formal Name",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 284,
+                "_id": "69987879f751de507ccf8939",
+                "createdAt": "2026-02-20T15:06:33.996Z",
+                "updatedAt": "2026-03-04T17:19:21.578Z",
+                "description": "Formal Name represents the official, legally recognised version of an individual’s name, as recorded by an authoritative source such as a civil registry, passport, birth certificate, or government-issued identity document. It is the canonical name used in contexts requiring legal identity, compliance, or formal verification.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        },
+        {
+            "name": "Full Name of Formal name",
+            "label": "MayContributeTo",
+            "idConceptFrom": "69987879f751de507ccf8939",
+            "idConceptTo": "69a49213f751de507cd52799",
+            "status": "in use",
+            "seq": 319,
+            "_id": "69a49278f751de507cd53bcd",
+            "createdAt": "2026-03-01T19:24:40.394Z",
+            "updatedAt": "2026-06-02T15:14:04.588Z",
+            "inverseLabel": "May be formed from",
+            "description": "Formal Name may contribute to a Full Name representation. Full Name is a contextual or temporal expression of a person’s name and may be formed from formal name components depending on context and use",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Formal Name",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 284,
+                "_id": "69987879f751de507ccf8939",
+                "createdAt": "2026-02-20T15:06:33.996Z",
+                "updatedAt": "2026-03-04T17:19:21.578Z",
+                "description": "Formal Name represents the official, legally recognised version of an individual’s name, as recorded by an authoritative source such as a civil registry, passport, birth certificate, or government-issued identity document. It is the canonical name used in contexts requiring legal identity, compliance, or formal verification.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Full Name",
+                "description": "Full Name represents a combined or displayable expression of a person’s name. It may be formed from formal name components, informal name components, or both, depending on context. In some cases, Full Name may reflect the authoritative identity as it is presented or used. However, it is not the authoritative structured identity record and must not replace Formal Name or Informal Name in the underlying model",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 349,
+                "_id": "69a49213f751de507cd52799",
+                "createdAt": "2026-03-01T19:22:59.897Z",
+                "updatedAt": "2026-05-28T14:10:56.814Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        },
+        {
+            "name": "Formal name to Informal name",
+            "label": "MayInclude",
+            "inverseLabel": "from ",
+            "idConceptFrom": "6998788df751de507ccf90b9",
+            "idConceptTo": "69987879f751de507ccf8939",
+            "status": "in use",
+            "seq": 396,
+            "_id": "69d4edc19f84c55e2993987c",
+            "createdAt": "2026-04-07T11:42:57.366Z",
+            "updatedAt": "2026-05-28T13:25:08.334Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Informal Name",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 285,
+                "_id": "6998788df751de507ccf90b9",
+                "createdAt": "2026-02-20T15:06:53.843Z",
+                "updatedAt": "2026-04-07T11:51:05.494Z",
+                "description": "The Informal Name sub‑domain captures non‑legal, non‑official name forms that an individual uses in everyday social, cultural, or operational contexts. These names support familiarity, personal preference, and communication ease but hold no legal standing and should not be used for identity verification or regulatory decisioning. It may be used as formal name, informal name, or family name. It can be a shortened version of the formal given name or middle name, or family name.&#x20;",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Formal Name",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 284,
+                "_id": "69987879f751de507ccf8939",
+                "createdAt": "2026-02-20T15:06:33.996Z",
+                "updatedAt": "2026-03-04T17:19:21.578Z",
+                "description": "Formal Name represents the official, legally recognised version of an individual’s name, as recorded by an authoritative source such as a civil registry, passport, birth certificate, or government-issued identity document. It is the canonical name used in contexts requiring legal identity, compliance, or formal verification.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Revisions": [
+        {
+            "_id": "69a49328f751de507cd547cf",
+            "idAbout": "69a49187f751de507cd52317",
+            "report": true,
+            "idUser": 999,
+            "seq": 556,
+            "createdAt": "2026-03-01T19:27:36.072Z",
+            "updatedAt": "2026-03-01T19:27:36.072Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a86eddf751de507cd731c5",
+            "idAbout": "69a49187f751de507cd52317",
+            "report": true,
+            "idUser": 999,
+            "seq": 623,
+            "createdAt": "2026-03-04T17:41:49.864Z",
+            "updatedAt": "2026-03-04T17:41:49.864Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a877e0f751de507cd7bb65",
+            "idAbout": "69a49187f751de507cd52317",
+            "report": true,
+            "idUser": 999,
+            "seq": 647,
+            "createdAt": "2026-03-04T18:20:16.256Z",
+            "updatedAt": "2026-03-04T18:20:16.256Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a878a5f751de507cd7d656",
+            "idAbout": "69a49187f751de507cd52317",
+            "report": true,
+            "idUser": 999,
+            "seq": 652,
+            "createdAt": "2026-03-04T18:23:33.786Z",
+            "updatedAt": "2026-03-04T18:23:33.786Z",
+            "__v": 0
+        },
+        {
+            "_id": "6a19a0de4055a62b0ab6a039",
+            "idAbout": "69a49187f751de507cd52317",
+            "report": true,
+            "idUser": 999,
+            "seq": 1602,
+            "createdAt": "2026-05-29T14:21:18.933Z",
+            "updatedAt": "2026-05-29T14:21:18.933Z",
+            "__v": 0
+        }
+    ],
+    "LogicalModel": {
+        "_id": "699dbdcbf751de507cd22dc5",
+        "name": "Person Domain, Logical Model",
+        "description": "Person Logical Domain Model.\n\nModel ID: DEPoP013.&#x20;\n\nLinking concepts to data items in the Person Domain.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202604.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+        "idUser": 999,
+        "status": "under construction",
+        "seq": 10,
+        "createdAt": "2026-02-24T15:03:39.212Z",
+        "updatedAt": "2026-06-02T16:18:27.733Z",
+        "__v": 0,
+        "id": "699dbdcbf751de507cd22dc5",
+        "uri": "http://def.digitalservicedesigner.com/logicalmodel/10",
+        "Owner": {
+            "id": 999,
+            "username": "madeup",
+            "organisation": "Made Up Organisation - as a Sandbox for the Designer",
+            "uriOrganisation": "http://id.savviuk.org/organisations/madeup"
+        },
+        "Version": {
+            "_id": "6a1f03840eda6fffbbdd9e83",
+            "idAbout": "699dbdcbf751de507cd22dc5",
+            "name": "Logical Model:Person Domain, Logical Model V1 02/06/2026",
+            "type": "logicalmodel",
+            "idUser": 999,
+            "seq": 69,
+            "createdAt": "2026-06-02T16:23:33.248Z",
+            "updatedAt": "2026-06-02T16:23:33.248Z",
+            "__v": 0
+        }
+    }
+}

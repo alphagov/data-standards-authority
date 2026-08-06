@@ -1,0 +1,305 @@
+{
+    "name": "Physical Characteristics",
+    "Concepts": [
+        {
+            "idConcept": "6998794cf751de507ccfc4d2",
+            "_id": "69a49864f751de507cd59151",
+            "Concept": {
+                "name": "Physical Characteristics",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 294,
+                "_id": "6998794cf751de507ccfc4d2",
+                "createdAt": "2026-02-20T15:10:04.162Z",
+                "updatedAt": "2026-03-04T17:14:38.357Z",
+                "description": "Physical Characteristics refers to observable, measurable, and non‑biometric biological traits of an individual. These features describe physical form or appearance but do not uniquely identify a person on their own. The sub‑domain includes raw descriptive attributes and standardised measurements recorded for classification, profiling, or operational purposes.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Attributes": [
+        {
+            "name": "Height",
+            "description": "Height is a measured physical attribute representing an individual’s vertical body length from the soles of the feet to the top of the head. It is a non‑biometric, non‑clinical, descriptive physical characteristic, used for identification support, profiling, equipment fitting, health & safety contexts, and demographic analytics.\nIt is not unique enough to identify a person on its own.",
+            "type": "data type",
+            "dataType": "number",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a49864f751de507cd59152"
+        },
+        {
+            "name": "Weight",
+            "description": "Weight is a measured physical attribute representing the mass of an individual’s body at a specific point in time. It is a non‑biometric, non‑clinical physiological measurement used for operational safety, sizing, wellness, and descriptive profiling.\nIt cannot uniquely identify a person and must not be treated as a health diagnosis.",
+            "type": "data type",
+            "dataType": "number",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a49864f751de507cd59153"
+        },
+        {
+            "name": "Body Build",
+            "description": "Body Build (also known as body frame or body shape) is a general, non‑clinical descriptive attribute that characterises the overall physique or structural appearance of an individual. It captures broad physical proportions (e.g., slim, stocky, athletic, broad) or frame types (e.g., small, medium, large frame) for identification support, equipment provisioning, and anthropometric profiling.\n\nIt is not a health assessment, diagnostic category, or body‑composition measurement.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a49864f751de507cd59154"
+        },
+        {
+            "name": "Eye Colour",
+            "description": "A visible physical characteristic describing the colour(s) of an individual’s irises. It is a non‑biometric, non‑clinical, descriptive attribute used for identification support, profiling, documentation, and certain operational or compliance contexts.\n\nMultiple values may be recorded to support rare but valid cases (for example differing eye colours), without prescribing anatomical detail (such as left/right eye). This attribute is not unique enough to identify a person on its own and does not reveal medical conditions or genetic diagnoses.\n\nTranche 1 does not mandate a controlled value set; standardisation may be introduced in later iterations where supported by use case evidence.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a49864f751de507cd59155"
+        },
+        {
+            "name": "Hair Colour",
+            "description": "Hair Colour is a descriptive physical attribute representing either:\n\n1. Natural Hair Colour — the genetically determined or typical baseline hair colour; or\n2. Current Hair Colour — the individual’s present hair colour, which may be natural or non‑natural (e.g., dyed, bleached, fashion colours).\n\nThis attribute is non‑biometric, non‑clinical, and used solely for descriptive and operational purposes. Neither natural nor current hair colour may be used to infer health, age, ethnicity, or identity.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a49864f751de507cd59156"
+        },
+        {
+            "name": "Skin Tone",
+            "description": "Skin Tone is a visible physical characteristic describing the general pigmentation or colour range of a person’s skin. It is a non‑clinical, non‑biometric, non‑diagnostic descriptor captured only for specific, justified operational purposes (e.g., identity support, safeguarding, uniform or equipment contexts).\nIt must be broad, neutral, respectful, and standardised—never evaluative or culturally loaded.\n\nSkin Tone cannot be used to infer ethnicity, race, health status, or genetic traits.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a49864f751de507cd59157"
+        },
+        {
+            "name": "Distinguishing Features",
+            "description": "Distinguishing Features are visible, non‑clinical physical attributes that can help differentiate an individual from others in descriptive or identity‑support contexts. These features are voluntary, non‑sensitive descriptors such as scars, tattoos, birthmarks, moles, or other notable visible characteristics.\nThey must be non‑judgmental, categorical, and minimally descriptive—never detailed, medical, or identifying in a forensic or biometric sense.\n\nThis attribute supports operational identification, not biometric matching or surveillance.",
+            "dataType": "text",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a49864f751de507cd59158"
+        },
+        {
+            "name": "Facial Hair",
+            "description": "Facial Hair is a visible, non‑clinical, non-biometric physical characteristic describing the presence, absence, type, and general style of hair on the face (e.g., beard, moustache, stubble). It is used for descriptive identification, operational contexts, and appearance‑based workflows where relevant.\nIt is not used for biometric identification, profiling, or inference of age, culture, or gender.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a49864f751de507cd59159"
+        },
+        {
+            "name": "Dates",
+            "description": "Dates for Physical Characteristics specify the time period during which a specific physical characteristic value is valid or actively in use for the individual.\nThis includes when the characteristic was observed, self‑reported, measured, confirmed, or superseded.\n\nThis attribute set creates a temporal identity record, ensuring accurate history and preventing outdated or inaccurate physical descriptors from being used operationally.\n\nCommon fields include:\n\n* observation\\_date — when the characteristic was captured\n* effective\\_from — start of validity\n* effective\\_to — end of validity (nullable if still active)\n\nThese dates are per characteristic, not global.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a49864f751de507cd5915a"
+        }
+    ],
+    "status": "in use",
+    "seq": 80,
+    "_id": "69a49864f751de507cd59150",
+    "createdAt": "2026-03-01T19:49:56.860Z",
+    "updatedAt": "2026-05-07T21:11:40.569Z",
+    "description": "Physical Characteristics refers to observable, measurable, and non‑biometric biological traits of an individual. These features describe physical form or appearance but do not uniquely identify a person on their own. The sub‑domain includes raw descriptive attributes and standardised measurements recorded for classification, profiling, or operational purposes.",
+    "Links": [
+        {
+            "name": "Physical Characteristics as Biological Attribute",
+            "label": "Includes",
+            "idConceptFrom": "69945ad7f751de507ccc3db5",
+            "idConceptTo": "6998794cf751de507ccfc4d2",
+            "status": "in use",
+            "seq": 308,
+            "_id": "69a4773af751de507cd45058",
+            "createdAt": "2026-03-01T17:28:26.903Z",
+            "updatedAt": "2026-03-01T17:28:26.903Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Biological Attributes",
+                "description": "Inherent physical, physiological, or genetic characteristics of a Natural Person that arise from biology rather than social, cultural, or legal identity.&#x20;\n\nBiological Attributes describe intrinsic properties of the human body and are distinct from personal identity attributes (e.g., name), demographic identity (e.g., ethnicity), or legal identity (e.g., citizenship).",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 239,
+                "_id": "69945ad7f751de507ccc3db5",
+                "createdAt": "2026-02-17T12:11:03.090Z",
+                "updatedAt": "2026-03-04T17:28:49.435Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Physical Characteristics",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 294,
+                "_id": "6998794cf751de507ccfc4d2",
+                "createdAt": "2026-02-20T15:10:04.162Z",
+                "updatedAt": "2026-03-04T17:14:38.357Z",
+                "description": "Physical Characteristics refers to observable, measurable, and non‑biometric biological traits of an individual. These features describe physical form or appearance but do not uniquely identify a person on their own. The sub‑domain includes raw descriptive attributes and standardised measurements recorded for classification, profiling, or operational purposes.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Revisions": [
+        {
+            "_id": "69a4bd65f751de507cd662f3",
+            "idAbout": "69a49864f751de507cd59150",
+            "report": true,
+            "idUser": 999,
+            "seq": 573,
+            "createdAt": "2026-03-01T22:27:49.511Z",
+            "updatedAt": "2026-03-01T22:27:49.511Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a86feef751de507cd76a76",
+            "idAbout": "69a49864f751de507cd59150",
+            "report": true,
+            "idUser": 999,
+            "seq": 635,
+            "createdAt": "2026-03-04T17:46:22.102Z",
+            "updatedAt": "2026-03-04T17:46:22.102Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a87508f751de507cd7b15a",
+            "idAbout": "69a49864f751de507cd59150",
+            "report": true,
+            "idUser": 999,
+            "seq": 645,
+            "createdAt": "2026-03-04T18:08:08.516Z",
+            "updatedAt": "2026-03-04T18:08:08.516Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a87844f751de507cd7c75a",
+            "idAbout": "69a49864f751de507cd59150",
+            "report": true,
+            "idUser": 999,
+            "seq": 649,
+            "createdAt": "2026-03-04T18:21:56.681Z",
+            "updatedAt": "2026-03-04T18:21:56.681Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a8784ef751de507cd7cadf",
+            "idAbout": "69a49864f751de507cd59150",
+            "report": true,
+            "idUser": 999,
+            "seq": 650,
+            "createdAt": "2026-03-04T18:22:06.739Z",
+            "updatedAt": "2026-03-04T18:22:06.739Z",
+            "__v": 0
+        },
+        {
+            "_id": "69f23fe92f9c85da4fb45ef7",
+            "idAbout": "69a49864f751de507cd59150",
+            "report": true,
+            "idUser": 999,
+            "seq": 1116,
+            "createdAt": "2026-04-29T17:29:13.523Z",
+            "updatedAt": "2026-04-29T17:29:13.523Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fc6083ea1f7a34930ac290",
+            "idAbout": "69a49864f751de507cd59150",
+            "report": true,
+            "idUser": 999,
+            "seq": 1180,
+            "createdAt": "2026-05-07T09:50:59.701Z",
+            "updatedAt": "2026-05-07T09:50:59.701Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fcf7deea1f7a34930ea937",
+            "idAbout": "69a49864f751de507cd59150",
+            "report": true,
+            "idUser": 999,
+            "seq": 1229,
+            "createdAt": "2026-05-07T20:36:46.090Z",
+            "updatedAt": "2026-05-07T20:36:46.090Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd000cea1f7a34930fd846",
+            "idAbout": "69a49864f751de507cd59150",
+            "report": true,
+            "idUser": 999,
+            "seq": 1246,
+            "createdAt": "2026-05-07T21:11:40.891Z",
+            "updatedAt": "2026-05-07T21:11:40.891Z",
+            "__v": 0
+        }
+    ],
+    "LogicalModel": {
+        "_id": "699dbdcbf751de507cd22dc5",
+        "name": "Person Domain, Logical Model",
+        "description": "Person Logical Domain Model.\n\nModel ID: DEPoP013.&#x20;\n\nLinking concepts to data items in the Person Domain.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202604.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+        "idUser": 999,
+        "status": "under construction",
+        "seq": 10,
+        "createdAt": "2026-02-24T15:03:39.212Z",
+        "updatedAt": "2026-06-02T16:18:27.733Z",
+        "__v": 0,
+        "id": "699dbdcbf751de507cd22dc5",
+        "uri": "http://def.digitalservicedesigner.com/logicalmodel/10",
+        "Owner": {
+            "id": 999,
+            "username": "madeup",
+            "organisation": "Made Up Organisation - as a Sandbox for the Designer",
+            "uriOrganisation": "http://id.savviuk.org/organisations/madeup"
+        },
+        "Version": {
+            "_id": "6a1f03840eda6fffbbdd9e83",
+            "idAbout": "699dbdcbf751de507cd22dc5",
+            "name": "Logical Model:Person Domain, Logical Model V1 02/06/2026",
+            "type": "logicalmodel",
+            "idUser": 999,
+            "seq": 69,
+            "createdAt": "2026-06-02T16:23:33.248Z",
+            "updatedAt": "2026-06-02T16:23:33.248Z",
+            "__v": 0
+        }
+    }
+}

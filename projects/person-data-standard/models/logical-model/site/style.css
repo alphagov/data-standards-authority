@@ -1,0 +1,118 @@
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                   Oxygen, Ubuntu, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1a1a1a;          /* contrast ratio > 7:1 on white — WCAG AAA */
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* ── Typography ── */
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 1.25;
+      margin-top: 1.5em;
+      margin-bottom: 0.4em;
+    }
+    h1 { font-size: 2rem;    border-bottom: 2px solid #949494; padding-bottom: 0.3em; }
+    h2 { font-size: 1.5rem;  border-bottom: 1px solid #949494; padding-bottom: 0.2em; }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.1rem;  }
+    p  { margin: 0.4em 0 0.9em; }
+
+    a       { color: #0550ae; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus { outline: 2px solid #0550ae; outline-offset: 2px; } /* keyboard nav */
+
+    /* ── Images — fluid, never overflow ── */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1em 0;
+    }
+
+    /* ── Tables — horizontally scrollable on small screens ── */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      display: block;
+      overflow-x: auto;          /* scroll rather than overflow on narrow screens */
+      -webkit-overflow-scrolling: touch;
+    }
+    th, td {
+      border: 1px solid #949494;
+      padding: 0.45em 0.75em;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f6f8fa;
+      font-weight: 600;
+    }
+    tr:nth-child(even) td { background: #f9f9f9; }
+
+    /* ── Code ── */
+    code {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 0.875em;
+      background: #f0f0f0;
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f6f8fa;
+      border: 1px solid #949494;
+      border-radius: 6px;
+      padding: 1em;
+      overflow-x: auto;
+    }
+    pre code { background: none; padding: 0; font-size: 0.875em; }
+
+    /* ── Blockquotes (used for version sections) ── */
+    blockquote {
+      border-left: 4px solid #949494;
+      margin: 0.5em 0;
+      padding: 0.25em 1em;
+      color: #555;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #949494;
+      margin: 2em 0;
+    }
+
+    /* ── Skip link (site pages only; harmless in makeHtmlPage which has no .skip-link element) ── */
+    .skip-link { position: absolute; top: -40px; left: 0; background: #0550ae; color: #fff; padding: 0.5rem 1rem; z-index: 100; text-decoration: none; }
+    .skip-link:focus { top: 0; }
+    /* ── Breadcrumb (site pages only; harmless without a #breadcrumb element) ── */
+    #breadcrumb { padding: 0.5rem 1.5rem; font-size: 0.875em; background: #f6f8fa; border-bottom: 1px solid #949494; }
+    #breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; }
+    #breadcrumb li { display: flex; align-items: center; }
+    #breadcrumb li + li::before { content: '›'; margin: 0 0.4rem; color: #57606a; }
+    #breadcrumb a { color: #0550ae; }
+
+    /* ── Responsive breakpoint ── */
+    @media (max-width: 640px) {
+      .page-content { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.25rem; }
+    }
+
+    /* ── Print ── */
+    @media print {
+      a            { color: #000; }
+      a::after     { content: ' (' attr(href) ')'; font-size: 0.8em; color: #555; }
+      .page-content { max-width: 100%; padding: 0; }
+      table        { display: table; overflow: visible; }
+    }

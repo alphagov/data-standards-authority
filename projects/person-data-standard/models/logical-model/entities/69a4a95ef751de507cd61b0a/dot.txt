@@ -1,0 +1,30 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a4a95ef751de507cd61b0a [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Titles</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Civil Social Titles</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4bf04f751de507cd6891f' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Military Titles</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4bf04f751de507cd68920' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Professional Occupational Titles</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4bf04f751de507cd68922' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Religious Titles</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4bf04f751de507cd68923' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Post-Nominal Titles</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a886e2f751de507cd81563' align='left' balign='left' valign='top'>once</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a4a95ef751de507cd61b0a"]; 
+        concept_69945d25f751de507ccc6be5 [ label="Person", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945d25f751de507ccc6be5"]; 
+        concept_699878dff751de507ccfa7ab [ label="Civil Social Titles", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_699878dff751de507ccfa7ab"]; 
+        concept_69987904f751de507ccfb34a [ label="Military Titles", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69987904f751de507ccfb34a"]; 
+        concept_69987929f751de507ccfbef5 [ label="Post-Nominal Titles", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69987929f751de507ccfbef5"]; 
+        concept_69987917f751de507ccfb91d [ label="Religious Titles", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69987917f751de507ccfb91d"]; 
+        concept_699878f5f751de507ccfad7c [ label="Professional
+Occupational Titles", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_699878f5f751de507ccfad7c"]; 
+        concept_69945d25f751de507ccc6be5 -> entity_69a4a95ef751de507cd61b0a [style="solid" xlabel="MayHave\l" ];
+        entity_69a4a95ef751de507cd61b0a -> concept_699878dff751de507ccfa7ab [style="solid" xlabel="MayInclude\l" ];
+        entity_69a4a95ef751de507cd61b0a -> concept_69987904f751de507ccfb34a [style="solid" xlabel="May Include\l" ];
+        entity_69a4a95ef751de507cd61b0a -> concept_69987929f751de507ccfbef5 [style="solid" xlabel="MayInclude\l" ];
+        entity_69a4a95ef751de507cd61b0a -> concept_69987917f751de507ccfb91d [style="solid" xlabel="MayInclude\l" ];
+        entity_69a4a95ef751de507cd61b0a -> concept_699878f5f751de507ccfad7c [style="solid" xlabel="MayInclude\l" ];}
+        

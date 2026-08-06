@@ -1,0 +1,164 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        structure_69fc53cdea1f7a34930a8b12 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+            <tr>
+                <td colspan='3' bgcolor='grey'> Physical Characteristics</td>
+            </tr>
+            <tr>
+                <td bgcolor='grey'>Attribute</td><td bgcolor='grey'>Data Type</td><td bgcolor='grey'>Occurs</td>
+            </tr>
+                        <tr><td align='left' balign='left' valign='top'>Height</td><td align='left' balign='left' valign='top'>number</td><td PORT='attribute_69fc53cdea1f7a34930a8b13' align='left' balign='left' valign='top'>once</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Weight</td><td align='left' balign='left' valign='top'>number</td><td PORT='attribute_69fc53cdea1f7a34930a8b14' align='left' balign='left' valign='top'>once</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Body Build</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69fc53cdea1f7a34930a8b15' align='left' balign='left' valign='top'>once</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Eye Colour</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69fc601aea1f7a34930aaa26' align='left' balign='left' valign='top'>many</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Hair Colour</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69fc601aea1f7a34930aaa27' align='left' balign='left' valign='top'>many</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Skin Tone</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69fc601aea1f7a34930aaa28' align='left' balign='left' valign='top'>many</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Distinguishing features</td><td align='left' balign='left' valign='top'>text</td><td PORT='attribute_69fc601aea1f7a34930aaa29' align='left' balign='left' valign='top'>many</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Facial Hair</td><td align='left' balign='left' valign='top'>text</td><td PORT='attribute_69fc601aea1f7a34930aaa2a' align='left' balign='left' valign='top'>many</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Dates</td><td align='left' balign='left' valign='top'>From To</td><td PORT='attribute_69fc601aea1f7a34930aaa2b' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, fillcolor="grey", URL="structure_69fc53cdea1f7a34930a8b12"]; 
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c [ label=<<table border='0' cellborder='1' cellspacing='0'>
+            <tr>
+                <td colspan='3' bgcolor='grey'> From To</td>
+            </tr>
+            <tr>
+                <td bgcolor='grey'>Attribute</td><td bgcolor='grey'>Data Type</td><td bgcolor='grey'>Occurs</td>
+            </tr>
+                        <tr><td align='left' balign='left' valign='top'>Date From</td><td align='left' balign='left' valign='top'>Date - 8 Attribute model</td><td PORT='attribute_69fb788aea1f7a349308ae6d' align='left' balign='left' valign='top'>many</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Date To</td><td align='left' balign='left' valign='top'>Date 8 Format</td><td PORT='attribute_69fb788aea1f7a349308ae6e' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, fillcolor="grey", URL="structure_69fb788aea1f7a349308ae6c"]; 
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69c422a89f84c55e298fbdcb [ label=<<table border='0' cellborder='1' cellspacing='0'>
+            <tr>
+                <td colspan='3' bgcolor='grey'> Date - 8 Attribute model</td>
+            </tr>
+            <tr>
+                <td bgcolor='grey'>Attribute</td><td bgcolor='grey'>Data Type</td><td bgcolor='grey'>Occurs</td>
+            </tr>
+                        <tr><td align='left' balign='left' valign='top'>Day</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69c422a89f84c55e298fbdcc' align='left' balign='left' valign='top'>once</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Month Number</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69c423079f84c55e298fc44b' align='left' balign='left' valign='top'>once</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Year</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69c423079f84c55e298fc44c' align='left' balign='left' valign='top'>once</td></tr>
+        </table>>, shape=plaintext, fillcolor="grey", URL="structure_69c422a89f84c55e298fbdcb"]; 
+        enumeration_69c3fae79f84c55e298dbbe3 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+            <tr><td colspan='2' bgcolor='seagreen1'>Day Value Domain</td></tr>
+            <tr>
+                <td bgcolor='seagreen1'>Term</td>
+                <td bgcolor='seagreen1'>Description</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>1 to 29</td>
+                <td align='left' balign='left' valign='top'>February if it is a leap year</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>1 to 28</td>
+                <td align='left' balign='left' valign='top'>February if it is not a leap year</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>1 to 30 </td>
+                <td align='left' balign='left' valign='top'>April, June, September, November</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>1 to 31</td>
+                <td align='left' balign='left' valign='top'>January, March, May, July, August,<br/>October, December</td>
+            </tr>
+        </table>>, shape=plaintext, fillcolor="seagreen1", URL="enumeration_69c3fae79f84c55e298dbbe3"]; 
+        enumeration_69c3f7e99f84c55e298d8490 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+            <tr><td colspan='2' bgcolor='seagreen1'>Month number Value Domain</td></tr>
+            <tr>
+                <td bgcolor='seagreen1'>Term</td>
+                <td bgcolor='seagreen1'>Description</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>1</td>
+                <td align='left' balign='left' valign='top'>Equates to January, the first month of<br/>the calendar year.</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>2</td>
+                <td align='left' balign='left' valign='top'>Equates to February, the second month of<br/>the calendar year.</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>3</td>
+                <td align='left' balign='left' valign='top'>Equates to March, the third month of the<br/>calendar year.</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>4</td>
+                <td align='left' balign='left' valign='top'>Equates to April, the fourth month of the<br/>calendar year.</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>5</td>
+                <td align='left' balign='left' valign='top'>Equates to May, the fifth month of the<br/>calendar year.</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>6</td>
+                <td align='left' balign='left' valign='top'>Equates to June, the sixth month of the<br/>calendar year.</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>7</td>
+                <td align='left' balign='left' valign='top'>Equates to July, the seventh month of the<br/>calendar year.</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>8</td>
+                <td align='left' balign='left' valign='top'>Equates to August, the eighth month of<br/>the calendar year.</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>9</td>
+                <td align='left' balign='left' valign='top'>Equates to September, the nineth month of<br/>the calendar year.</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>10</td>
+                <td align='left' balign='left' valign='top'>Equates to October, the tenth month of<br/>the calendar year.</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>11</td>
+                <td align='left' balign='left' valign='top'>Equates to November, the eleventh month<br/>of the calendar year.</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>12</td>
+                <td align='left' balign='left' valign='top'>Equates to December, the twelfth month of<br/>the calendar year.</td>
+            </tr>
+        </table>>, shape=plaintext, fillcolor="seagreen1", URL="enumeration_69c3f7e99f84c55e298d8490"]; 
+        enumeration_69c3f5599f84c55e298d3ff0 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+            <tr><td colspan='2' bgcolor='seagreen1'>Year operational Value Domain</td></tr>
+            <tr>
+                <td bgcolor='seagreen1'>Term</td>
+                <td bgcolor='seagreen1'>Description</td>
+            </tr>
+            <tr>
+                <td align='left' balign='left' valign='top'>1900 to TODAY</td>
+                <td align='left' balign='left' valign='top'>Year for operational use</td>
+            </tr>
+        </table>>, shape=plaintext, fillcolor="seagreen1", URL="enumeration_69c3f5599f84c55e298d3ff0"]; 
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69fb7637ea1f7a3493084a38 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+            <tr>
+                <td colspan='3' bgcolor='grey'> Date 8 Format</td>
+            </tr>
+            <tr>
+                <td bgcolor='grey'>Attribute</td><td bgcolor='grey'>Data Type</td><td bgcolor='grey'>Occurs</td>
+            </tr>
+                        <tr><td align='left' balign='left' valign='top'>dd/mm/yyyyy</td><td align='left' balign='left' valign='top'>Date - 8 Attribute model</td><td PORT='attribute_69fb7637ea1f7a3493084a39' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, fillcolor="grey", URL="structure_69fb7637ea1f7a3493084a38"]; 
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69fb7637ea1f7a3493084a38_structure_69c422a89f84c55e298fbdcb [ label=<<table border='0' cellborder='1' cellspacing='0'>
+            <tr>
+                <td colspan='3' bgcolor='grey'> Date - 8 Attribute model</td>
+            </tr>
+            <tr>
+                <td bgcolor='grey'>Attribute</td><td bgcolor='grey'>Data Type</td><td bgcolor='grey'>Occurs</td>
+            </tr>
+                        <tr><td align='left' balign='left' valign='top'>Day</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69c422a89f84c55e298fbdcc' align='left' balign='left' valign='top'>once</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Month Number</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69c423079f84c55e298fc44b' align='left' balign='left' valign='top'>once</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Year</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69c423079f84c55e298fc44c' align='left' balign='left' valign='top'>once</td></tr>
+        </table>>, shape=plaintext, fillcolor="grey", URL="structure_69c422a89f84c55e298fbdcb"]; 
+        structure_69fc53cdea1f7a34930a8b12:attribute_69fc601aea1f7a34930aaa2b -> structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c [style="solid"  arrowhead=none arrowtail=none];
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c:attribute_69fb788aea1f7a349308ae6d -> structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69c422a89f84c55e298fbdcb [style="solid"  arrowhead=none arrowtail=none];
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69c422a89f84c55e298fbdcb:attribute_69c422a89f84c55e298fbdcc -> enumeration_69c3fae79f84c55e298dbbe3 [style="solid"  arrowhead=none arrowtail=none];
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69c422a89f84c55e298fbdcb:attribute_69c423079f84c55e298fc44b -> enumeration_69c3f7e99f84c55e298d8490 [style="solid"  arrowhead=none arrowtail=none];
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69c422a89f84c55e298fbdcb:attribute_69c423079f84c55e298fc44c -> enumeration_69c3f5599f84c55e298d3ff0 [style="solid"  arrowhead=none arrowtail=none];
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c:attribute_69fb788aea1f7a349308ae6e -> structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69fb7637ea1f7a3493084a38 [style="solid"  arrowhead=none arrowtail=none];
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69fb7637ea1f7a3493084a38:attribute_69fb7637ea1f7a3493084a39 -> structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69fb7637ea1f7a3493084a38_structure_69c422a89f84c55e298fbdcb [style="solid"  arrowhead=none arrowtail=none];
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69fb7637ea1f7a3493084a38_structure_69c422a89f84c55e298fbdcb:attribute_69c422a89f84c55e298fbdcc -> enumeration_69c3fae79f84c55e298dbbe3 [style="solid"  arrowhead=none arrowtail=none];
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69fb7637ea1f7a3493084a38_structure_69c422a89f84c55e298fbdcb:attribute_69c423079f84c55e298fc44b -> enumeration_69c3f7e99f84c55e298d8490 [style="solid"  arrowhead=none arrowtail=none];
+        structure_69fc53cdea1f7a34930a8b12_structure_69fb788aea1f7a349308ae6c_structure_69fb7637ea1f7a3493084a38_structure_69c422a89f84c55e298fbdcb:attribute_69c423079f84c55e298fc44c -> enumeration_69c3f5599f84c55e298d3ff0 [style="solid"  arrowhead=none arrowtail=none];}
+        

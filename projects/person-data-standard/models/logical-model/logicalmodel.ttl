@@ -1,0 +1,1962 @@
+
+  @prefix owl: <http://www.w3.org/2002/07/owl#> .
+  @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+  @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+  @prefix xml: <http://www.w3.org/XML/1998/namespace> .
+  @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+  @prefix dct: <http://purl.org/dc/terms/> .
+  @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+  
+  @prefix : <699dbdcbf751de507cd22dc5> .
+  @prefix : <699dbdcbf751de507cd22dc5> .
+  @prefix ns1: <6994571df751de507ccc0b5d> .
+  @prefix ns2: <69fb72fbea1f7a349308088b> .
+  
+  :
+      a owl:Ontology;
+      owl:versionInfo "1.0";
+      rdfs:label "Person Domain, Logical Model"@en;
+      rdfs:comment """Person Logical Domain Model.
+
+Model ID: DEPoP013.&#x20;
+
+Linking concepts to data items in the Person Domain.&#x20;
+
+Published as part of the Person Data Standard (Alpha), PRG202604.
+
+An individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.
+
+The Department for Science, Innovation and Technology"""^^<text/markdown>;
+      .                
+  
+  :Biological_Attributes
+      a owl:Class, rdfs:Class;
+      rdfs:label "Biological Attributes"@en;
+      rdfs:comment """Inherent physical, physiological, or genetic characteristics of a Natural Person that arise from biology rather than social, cultural, or legal identity.
+
+Biological Attributes describe intrinsic properties of the human body and are distinct from personal identity attributes (e.g., name), demographic identity (e.g. ethnicity), or legal identity (e.g, citizenship)."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Biological_Attributes ;
+      .
+  
+  :69a49703f751de507cd57b86
+      a owl:DatatypeProperty;
+      rdfs:label "Physical Characteristics"@en;
+      rdfs:domain :Biological_Attributes ;
+      .
+  
+  :69a49703f751de507cd57b88
+      a owl:DatatypeProperty;
+      rdfs:label "Physiological Information"@en;
+      rdfs:domain :Biological_Attributes ;
+      .
+  
+  :69a49703f751de507cd57b87
+      a owl:DatatypeProperty;
+      rdfs:label "Psychological Characteristics"@en;
+      rdfs:domain :Biological_Attributes ;
+      .
+  
+  :69a49703f751de507cd57b89
+      a owl:DatatypeProperty;
+      rdfs:label "Sex and Gender"@en;
+      rdfs:domain :Biological_Attributes ;
+      .
+  
+  :Biometric_Identifiers
+      a owl:Class, rdfs:Class;
+      rdfs:label "Biometric Identifiers"@en;
+      rdfs:comment """Biometric Identifiers are data elements that capture a person’s unique biological or behavioural traits for the purpose of identification, authentication, or verification. This includes raw biometric measurements (e.g., fingerprints), biometric templates derived from those measurements, and any metadata required to process or match them."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Biometric_Identifiers ;
+      .
+  
+  :69a4a1c2f751de507cd5c496
+      a owl:ObjectProperty;
+      rdfs:label "Fingerprints"@en;
+      rdfs:comment """Fingerprints are unique biometric identifiers derived from the ridge patterns present on an individual’s fingers. They are captured as digital biometric templates, images, or encoded representations, and used solely for high‑assurance identity verification, authentication, or law‑enforcement purposes where legally justified.
+
+Fingerprints are immutable, uniquely identifying, and classified as special category biometric data under data‑protection law.
+
+This attribute does not store raw images unless explicitly permitted. Biometric templates (mathematically encoded forms) are the standard for secure storage."""^^<text/markdown> ;
+      rdfs:domain :Biometric_Identifiers ;
+      .
+  
+  :69a4a1c2f751de507cd5c497
+      a owl:ObjectProperty;
+      rdfs:label "Facial Recognition Data"@en;
+      rdfs:comment """Facial Recognition Data refers to biometric templates or encoded vectors generated from an individual’s facial features for the purpose of identity verification, authentication, or uniqueness checks, under strictly governed legal circumstances.
+
+It may include:
+
+* Face embeddings (vectorised mathematical representations)
+* Biometric templates compliant with standards (e.g., ISO/IEC 19794‑5)
+* Minimal faceprint data necessary for matching
+
+It does not include raw photographs unless stored separately under distinct image-governance policies.
+
+Facial recognition data is unique, unavoidable, permanent, and highly sensitive, and therefore must never be used outside lawful, authorised workflows."""^^<text/markdown> ;
+      rdfs:domain :Biometric_Identifiers ;
+      .
+  
+  :69a4a1c2f751de507cd5c498
+      a owl:ObjectProperty;
+      rdfs:label "Voice Pattern"@en;
+      rdfs:comment """Voice Pattern refers to the digitally captured and mathematically encoded representation of an individual’s vocal characteristics (pitch, timbre, rhythm, formants, spectral features).
+It is stored as a voice biometric template or voiceprint, not as raw audio.
+
+Voice patterns enable high‑assurance identity verification or authentication when legally authorised, but must never be used for emotion detection, demographic inference, or behavioural profiling.
+
+Voice Pattern ≠ raw recording; it is an irreversible, encrypted biometric template."""^^<text/markdown> ;
+      rdfs:domain :Biometric_Identifiers ;
+      .
+  
+  :69a4a1c2f751de507cd5c499
+      a owl:DatatypeProperty;
+      rdfs:label "Biometric ID Reference"@en;
+      rdfs:comment """Biometric IDs are unique, immutable physiological or behavioural identifiers derived from an individual's biological characteristics (e.g., fingerprints, facial geometry, iris patterns, voice patterns) used for high‑assurance identity verification or authentication under strict legal and governance controls.
+
+A Biometric ID refers specifically to the unique biometric template or identifier representing a biometric modality—not the raw data itself.
+Examples: fingerprint template ID, facial recognition template ID, iris scan template ID.
+
+Biometric IDs must be stored as non-reversible encrypted templates or reference tokens, never as raw biometric images or recordings."""^^<text/markdown> ;
+      rdfs:domain :Biometric_Identifiers ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69fd0551ea1f7a3493105f6d
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """Biometrics are time‑bounded credentials
+
+Biometric Identifier Valid From (Effective From) - The date/time from which the biometric identifier is considered valid for use (e.g., after successful enrolment and any required verification/quality checks).
+
+Biometric Identifier Valid To (Effective To) - The date/time at which the biometric identifier ceases to be valid for use, due to expiry, revocation, replacement, compromise, or policy change."""^^<text/markdown> ;
+      rdfs:domain :Biometric_Identifiers ;
+      .
+  
+  :Birth
+      a owl:Class, rdfs:Class;
+      rdfs:label "Birth"@en;
+      rdfs:comment """Birth covers data elements that record the circumstances of an individual’s birth. It includes factual, verifiable attributes such as date, place, and conditions of birth, along with any official registration details issued by an authority."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Birth ;
+      .
+  
+  :69a48be5f751de507cd4e230
+      a owl:DatatypeProperty;
+      rdfs:label "Date of Birth Registration Date "@en;
+      rdfs:comment """Date of Birth Registration Date is the official date on which a birth is formally recorded by the relevant civil authority (e.g., civil registry, vital records office, statistical authority).
+It reflects the administrative recognition of the birth event and is distinct from the Date of Birth itself.
+
+This date marks when the birth record enters the official civil registration system, thereby enabling issuance of certificates, identity documentation, and subsequent legal processes."""^^<text/markdown> ;
+      rdfs:domain :Birth ;
+      rdfs:range xsd:date ;
+      .
+  
+  :69a48be5f751de507cd4e231
+      a owl:ObjectProperty;
+      rdfs:label "Birth Date"@en;
+      rdfs:comment """Date of Birth (DOB) is the official calendar date on which an individual was born, as recognised by the appropriate civil authority or as evidenced by legally accepted documentation.
+It is a core identity anchor, used across legal, administrative, operational, and analytical systems, and is typically immutable once verified.
+
+DOB is distinct from the Birth Registration Date (administrative) and the Birth Notification Date (clinical/operational)."""^^<text/markdown> ;
+      rdfs:domain :Birth ;
+      .
+  
+  :69a48be5f751de507cd4e232
+      a owl:DatatypeProperty;
+      rdfs:label "Place of Birth"@en;
+      rdfs:comment """Place of Birth is the geographical location where the birth took place, as recorded by the relevant civil authority or evidenced through legally recognised documentation.
+It is a core identity attribute, supporting identity verification, eligibility checks, historical lineage, and demographic reporting.
+It denotes the physical location of the birth event, not the parents’ domicile, ancestral origins, or nationality."""^^<text/markdown> ;
+      rdfs:domain :Birth ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a48be5f751de507cd4e233
+      a owl:DatatypeProperty;
+      rdfs:label "Country of Birth"@en;
+      rdfs:comment """Country of Birth is the sovereign state or recognised territory in which an individual was born, recorded as part of the Birth life event.
+It reflects the geopolitical jurisdiction at the time of birth, typically captured using ISO‑3166‑1 country codes, and is often used as part of a person’s core identity record.
+
+It is distinct from:
+
+* Place of Birth (full locality: region, town, facility)
+* Nationality (legal status)
+* Self‑Identified Nationality (identity expression)
+* Ancestry or ethnicity (demographic domain)"""^^<text/markdown> ;
+      rdfs:domain :Birth ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a48efef751de507cd50261
+      a owl:DatatypeProperty;
+      rdfs:label "Time of Birth"@en;
+      rdfs:comment """Time of Birth is the precise time at which an individual was born, recorded in hours and minutes (and optionally seconds) according to the local time zone of the birth location.
+It is a supplementary birth event attribute, not always available in all jurisdictions, and is typically captured when medically or administratively relevant (e.g., in maternity hospitals or civil registries that store time).
+
+Time of Birth supports identity accuracy, medical lineage, and birth event completeness, but is not a core identity anchor in the same way that Date of Birth is."""^^<text/markdown> ;
+      rdfs:domain :Birth ;
+      rdfs:range xsd:time ;
+      .
+  
+  :69a48efef751de507cd50262
+      a owl:DatatypeProperty;
+      rdfs:label "Birth Registration Number"@en;
+      rdfs:comment """Birth Registration Number is the unique identifier assigned by a civil registration authority to a recorded birth event.
+It serves as the official reference number for the birth within the civil registry system and is used to:
+
+* Link the birth record to authoritative registers
+* Support identity establishment
+* Enable issuance of certificates and identity documents
+* Ensure auditability and traceability of birth‑related updates
+
+This number is assigned by the registering authority, not by the individual or the organisation storing it."""^^<text/markdown> ;
+      rdfs:domain :Birth ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a48efef751de507cd50263
+      a owl:DatatypeProperty;
+      rdfs:label "Multiple Birth Indicator"@en;
+      rdfs:comment """Multiple Birth Indicator identifies whether an individual is part of a multiple birth event, such as twins, triplets, quadruplets, or higher‑order multiples.
+It provides a binary and/or categorical classification that indicates:
+
+* Whether the birth was part of a multi‑child event, and
+* Optionally, which child in the birth order the individual is.
+
+This attribute supports identity integrity, clinical lineage, and birth record linkage.
+It does not store medical detail about pregnancy or delivery."""^^<text/markdown> ;
+      rdfs:domain :Birth ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a48efef751de507cd50264
+      a owl:DatatypeProperty;
+      rdfs:label "Facility/ Location Type"@en;
+      rdfs:comment """Birth Facility Location Type identifies the kind of location where an individual was born.
+It classifies the type of physical setting in which the birth occurred — such as a hospital, clinic, home, or other medically or administratively recognised environment.
+
+This attribute enables a structured and standardised classification, independent of the specific facility name or address.
+
+It does not store clinical details or health outcomes."""^^<text/markdown> ;
+      rdfs:domain :Birth ;
+      rdfs:range xsd:string ;
+      .
+  
+  :Birth_Date
+      a owl:Class, rdfs:Class;
+      rdfs:label "Birth Date"@en;
+      rdfs:comment """This is the structure defining date of birth and how it's been defined.&#x20;"""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Date_of_Birth ;
+      .
+  
+  :69fb660aea1f7a349307ba0a
+      a owl:DatatypeProperty;
+      rdfs:label "Date of Birth"@en;
+      rdfs:comment """Date of Birth (DOB) is the official calendar date on which an individual was born, as recognised by the appropriate civil authority or as evidenced by legally accepted documentation.
+
+It is a core identity anchor, used across legal, administrative, operational, and analytical systems, and is typically immutable once verified.
+
+DOB is distinct from the Birth Registration Date (administrative) and the Birth Notification Date (clinical/operational)."""^^<text/markdown> ;
+      rdfs:domain :Birth_Date ;
+      rdfs:range xsd:date ;
+      .
+  
+  :69fb660aea1f7a349307ba0b
+      a owl:DatatypeProperty;
+      rdfs:label "Estimated DOB"@en;
+      rdfs:comment """Estimated DOB is a data quality indicator used when precise dates of birth are unavailable for identification purposes. Per POLE Data Standards, estimated DOB must pass validation checks: must not be future dates, current dates, or ages exceeding 120 years"""^^<text/markdown> ;
+      rdfs:domain :Birth_Date ;
+      rdfs:range xsd:boolean ;
+      .
+  
+  :Citizenship
+      a owl:Class, rdfs:Class;
+      rdfs:label "Citizenship"@en;
+      rdfs:comment """A person’s legal relationship with a state, which grants rights, protections, and obligations under that state’s laws. In a conceptual model, Citizenship is a legal‑status attribute of a Natural Person that identifies the country or sovereign entity recognising them as a citizen."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Citizenship ;
+      .
+  
+  :69a49544f751de507cd56a88
+      a owl:ObjectProperty;
+      rdfs:label "Formally Recognized Citizenship "@en;
+      rdfs:domain :Citizenship ;
+      .
+  
+  :Civil_Social_Titles
+      a owl:Class, rdfs:Class;
+      rdfs:label "Civil Social Titles"@en;
+      rdfs:comment """Civil Social Titles are non‑professional, non‑noble honorifics used in everyday civil contexts to address or refer to individuals (e.g., Mr, Mrs, Miss, Ms, Mx). They facilitate respectful forms of address, correspondence, and identity presentation but do not indicate rank, role, or qualification."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Civil_Social_Titles ;
+      .
+  
+  :69a4aa19f751de507cd62a47
+      a owl:DatatypeProperty;
+      rdfs:label "Preferred Form of Address"@en;
+      rdfs:comment """Preferred Form of Address captures how a person wishes to be addressed in communications, independent of legal name or formal titles.
+
+It reflects user preference, not legal identity."""^^<text/markdown> ;
+      rdfs:domain :Civil_Social_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4aa19f751de507cd62a45
+      a owl:DatatypeProperty;
+      rdfs:label "Civil Title"@en;
+      rdfs:comment """Civil Social Titles are non‑professional, non‑noble honorifics used in everyday civil contexts to address or refer to individuals (e.g., Mr, Mrs, Miss, Ms, Mx). They facilitate respectful forms of address, correspondence, and identity presentation but do not indicate rank, role, or qualification."""^^<text/markdown> ;
+      rdfs:domain :Civil_Social_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4aa19f751de507cd62a49
+      a owl:DatatypeProperty;
+      rdfs:label "Title Source"@en;
+      rdfs:comment """Title Source identifies where a person’s title comes from, i.e., the origin, authority, or method by which the title is recognised.
+It specifies whether the title:
+
+* is legally granted,
+* assigned by a professional body,
+* self‑declared,
+* organisationally assigned,
+* or derived from official documents.
+
+Title Source tells the system why this title exists and how it should be trusted, without conflating different types of titles.
+
+It is critical for determining verification, usage rights, display rules, and legal compliance."""^^<text/markdown> ;
+      rdfs:domain :Civil_Social_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4aa19f751de507cd62a48
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """Dates for Titles define the period of time during which a given title is valid, active, recognised, or in use for an individual.
+Titles may be permanent (e.g., “Sir”), fixed-term (e.g., elected roles), conditional (e.g., military rank), or time-limited (e.g., honorary fellowships).
+Temporal attributes allow organisations to manage title history, render names correctly, and respect changes in status, role, or personal preference.
+
+Typical date fields include:
+
+* effective\_from — when the title became valid or was first adopted
+* effective\_to — when the title ceased being valid or used (nullable if active)
+* capture\_date — when the system recorded the title (optional)
+
+These dates apply per title record."""^^<text/markdown> ;
+      rdfs:domain :Civil_Social_Titles ;
+      .
+  
+  :Death
+      a owl:Class, rdfs:Class;
+      rdfs:label "Death"@en;
+      rdfs:comment """The factual, legally recognised details surrounding the end of an individual’s life. It includes authoritative attributes such as the date, time, and location of death, as well as official registration information issued by a competent authority. This event provides a definitive closure point for identity records and downstream operational processes."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Death ;
+      .
+  
+  :69a49009f751de507cd507d7
+      a owl:DatatypeProperty;
+      rdfs:label "Registered Date of Death"@en;
+      rdfs:comment """Registered Date of Death is the official date on which a death is formally recorded by the competent civil authority (e.g., civil registry, vital statistics office, municipal registration authority).
+It reflects the administrative timestamp at which the death was legally recognised and entered into the official civil registration system.
+It is distinct from the Date of Death (the factual date the individual died).
+
+This attribute underpins legality, auditability, entitlement cessation, and identity lifecycle closure."""^^<text/markdown> ;
+      rdfs:domain :Death ;
+      rdfs:range xsd:date ;
+      .
+  
+  :69a883bcf751de507cd7f0fd
+      a owl:DatatypeProperty;
+      rdfs:label "Date of Death"@en;
+      rdfs:comment """Date of Death is the official calendar date on which an individual died, as determined by an authorised certifying professional (e.g., medical practitioner, coroner) or documented on an official death certificate.
+It represents the actual event date of death — distinct from administrative or registration dates.
+
+This attribute is a core life‑event anchor used across legal, identity, civil‑registration, financial, and operational systems."""^^<text/markdown> ;
+      rdfs:domain :Death ;
+      rdfs:range xsd:date ;
+      .
+  
+  :69a49009f751de507cd507d8
+      a owl:DatatypeProperty;
+      rdfs:label "Time of Death"@en;
+      rdfs:comment """Time of Death is the precise time at which an individual is determined to have died, as recorded by a qualified certifying authority (e.g., medical practitioner, coroner, forensic examiner).
+It is a clinical and/or legal timestamp, distinct from the Date of Death and the Registered Date of Death, and may represent:
+
+* Physiological time of death (actual biological death), or
+* Pronounced time of death (time a clinician confirmed death), depending on jurisdictional standards."""^^<text/markdown> ;
+      rdfs:domain :Death ;
+      rdfs:range xsd:time ;
+      .
+  
+  :69a49009f751de507cd507d9
+      a owl:DatatypeProperty;
+      rdfs:label "Place of Death"@en;
+      rdfs:comment """Place of Death is the geographical location where the individual died, as recorded by the certifying authority (medical practitioner, coroner, hospital administrator) or entered by a civil registration body.
+It describes the physical setting and locality of the death event, not the registration location or the place where the body was later moved.
+
+Place of Death is a legally relevant identity event attribute that provides context for verification, audit, lineage, and civil‑registration accuracy."""^^<text/markdown> ;
+      rdfs:domain :Death ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49009f751de507cd507da
+      a owl:DatatypeProperty;
+      rdfs:label "Country of Death"@en;
+      rdfs:comment """Country of Death is the sovereign state or recognised territory in which an individual died, as recorded by a certifying authority (medical practitioner, coroner, registrar) or by an official civil registration system.
+It identifies the geopolitical jurisdiction where the death event occurred, using ISO‑3166‑1 country codes for canonical storage.
+
+It is separate from:
+
+* Place of Death (region, city, facility name)
+* Registered Place of Death (administrative location)
+* Cause of Death (clinical domain)
+* Country of Birth (birth event)"""^^<text/markdown> ;
+      rdfs:domain :Death ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49009f751de507cd507db
+      a owl:DatatypeProperty;
+      rdfs:label "Death Registration Number"@en;
+      rdfs:comment """Death Registration Number is the unique identifier assigned by a civil registration authority to the official record of an individual’s death.
+It provides the authoritative reference for the death entry within the vital records or civil registration system, enabling:
+
+* Legal recognition of the death
+* Issuance of death certificates
+* Identity lifecycle closure across systems
+* Audit and verification of death‑related updates
+
+This identifier is assigned by the registering authority, not by the data‑processing organisation."""^^<text/markdown> ;
+      rdfs:domain :Death ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49009f751de507cd507dc
+      a owl:DatatypeProperty;
+      rdfs:label "Burial or Cremation Number"@en;
+      rdfs:comment """Burial or Cremation Number is the official identifier assigned to a burial or cremation event by the relevant authority (e.g., cemetery authority, crematorium, local registrar, funeral director, or municipal burial office).
+It serves as a formal reference number linking the deceased to the specific burial or cremation record, supporting auditability, traceability, and compliance with local regulatory requirements.
+
+It is distinct from the Death Registration Number and any Coroner/Medical Examiner references."""^^<text/markdown> ;
+      rdfs:domain :Death ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49009f751de507cd507dd
+      a owl:DatatypeProperty;
+      rdfs:label "Place of Burial or Cremation"@en;
+      rdfs:comment """Place of Burial or Cremation is the geographical location where the deceased was formally buried, cremated, or otherwise disposed of, according to the disposition method legally recorded.
+It identifies the country, region, locality, and facility associated with the post‑death disposition event and is distinct from:
+
+* Place of Death (where the person died)
+* Registered Place of Death (administrative)
+* Death Registration Number (legal identifier)
+* Burial/Cremation Number (disposition identifier)
+
+It provides auditability, lineage, and compliance‑grade traceability for post‑death arrangements."""^^<text/markdown> ;
+      rdfs:domain :Death ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49009f751de507cd507de
+      a owl:DatatypeProperty;
+      rdfs:label "Registrar Office or Authority"@en;
+      rdfs:comment """Death Registrar Office or Authority identifies the official organisation, governmental body, or authorised civil registration office responsible for formally registering the death and issuing the death registration number or the death certificate.
+It represents the legal authority of record for the death event and forms part of the authoritative identity lineage.
+
+This attribute ensures auditability, jurisdictional clarity, and traceability across public‑sector, health, and identity‑management systems."""^^<text/markdown> ;
+      rdfs:domain :Death ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49009f751de507cd507df
+      a owl:ObjectProperty;
+      rdfs:label "Next of Kin"@en;
+      rdfs:comment """Next of Kin (NoK) is the designated individual(s) identified by a person — or recognised by law or policy — as their primary emergency, legal, or contact person in the event of serious illness, incapacity, or death.
+It expresses a relationship link, not a legal authority, unless explicitly granted through additional documentation (e.g., power of attorney).
+
+Next of Kin is a person-to-person relationship attribute, not an identity attribute of the individual being described."""^^<text/markdown> ;
+      rdfs:domain :Death ;
+      .
+  
+  :Ethnicity_(Cultural_identify)
+      a owl:Class, rdfs:Class;
+      rdfs:label "Ethnicity (Cultural identify)"@en;
+      rdfs:comment """Ethnicity is a cultural identity concept that reflects a person’s connection to a group or community defined by shared heritage, ancestry, traditions, culture, language, and/or social experience. It describes how people identify culturally, socially, or historically, not their legal status or nationality.
+
+In a conceptual model, Ethnicity is a self‑identified, culturally grounded attribute of a Natural Person and is separate from Nationality (cultural/national belonging) and Citizenship (legal status)."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Ethnicity_(Cultural_identify) ;
+      .
+  
+  :Formal_Name
+      a owl:Class, rdfs:Class;
+      rdfs:label "Formal Name"@en;
+      rdfs:comment """Formal Name represents the official, legally recognised version of an individual’s name, as recorded by an authoritative source such as a civil registry, passport, birth certificate, or government-issued identity document. It is the canonical name used in contexts requiring legal identity, compliance, or formal verification."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Formal_Name ;
+      .
+  
+  :69a49187f751de507cd52319
+      a owl:DatatypeProperty;
+      rdfs:label "Given Name"@en;
+      rdfs:comment """Given Name is the primary personal name(s) assigned to an individual, typically at birth or legal registration, and used to identify the person within family, social, and formal contexts.
+It represents the individual’s personal identifier within their full name structure and appears as the first name in many Western naming conventions, but may represent one or more names depending on cultural naming patterns.
+
+This may exist in multiple forms (legal, preferred, informal), depending on the name sub‑domain."""^^<text/markdown> ;
+      rdfs:domain :Formal_Name ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49187f751de507cd5231a
+      a owl:DatatypeProperty;
+      rdfs:label "Middle Name"@en;
+      rdfs:comment """Middle Name refers to any personal name component that appears between the Given Name and the Family Name in an individual’s full name structure.
+It may consist of one or more name elements, and may serve cultural, familial, religious, or administrative purposes.
+It is a core structural name attribute, but not always used in every naming tradition.
+
+Middle Names may appear in legal/formal contexts or as optional identity components depending on the jurisdiction."""^^<text/markdown> ;
+      rdfs:domain :Formal_Name ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49187f751de507cd5231b
+      a owl:DatatypeProperty;
+      rdfs:label "Family Name"@en;
+      rdfs:comment """Family Name (also known as surname, last name, or patronymic/matronymic element depending on culture) is the inherited or legally recorded component of a person’s name that identifies their family, lineage, or household grouping.
+It is a core identifier used across legal, administrative, and social systems and is typically stable across life except where changed through legal processes.
+
+Family Name forms one of the principal anchors of identity and is part of the official full name in most naming systems worldwide."""^^<text/markdown> ;
+      rdfs:domain :Formal_Name ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49328f751de507cd54812
+      a owl:DatatypeProperty;
+      rdfs:label "Verification Source"@en;
+      rdfs:comment """Verification Source for Name identifies the authoritative channel, document, registry, or method used to confirm the accuracy of a person’s name—whether legal, preferred, or alias—depending on the name sub‑domain.
+It records where the verification originated, not the document itself.
+
+It underpins trust, traceability, and compliance for name‑related identity management."""^^<text/markdown> ;
+      rdfs:domain :Formal_Name ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49328f751de507cd54811
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """Dates for When a Name Is in Use describe the time period during which a specific name record is valid, active, or recognised by the organisation or by legal/authoritative sources.
+They provide temporal boundaries for each name entry, enabling accurate historical reconstruction, identity auditing, and compliance with legal name‑change processes.
+
+This typically consists of two attributes:
+
+* effective\_from — when the name began being valid or used
+* effective\_to — when the name ceased to be valid or used (nullable if still active)
+
+These dates apply to each name record, not to the person."""^^<text/markdown> ;
+      rdfs:domain :Formal_Name ;
+      .
+  
+  :Formally_Recognised_Citizenship_
+      a owl:Class, rdfs:Class;
+      rdfs:label "Formally Recognised Citizenship "@en;
+      rdfs:comment """Formally Recognised Citizenship captures a person’s legally conferred nationality status as recognised by a sovereign state or authority. It reflects official citizenship(s) in force, with provenance to authoritative sources (e.g., passport, national identity registry, certificate of naturalisation)."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Formally_Recognised_Citizenship ;
+      .
+  
+  :69a49525f751de507cd56791
+      a owl:DatatypeProperty;
+      rdfs:label "Country Name"@en;
+      rdfs:comment """Country Name (Official) is the authoritative, internationally recognised full name of a sovereign state or territory, as recorded in a trusted external standard such as ISO‑3166, the United Nations Terminology Bulletin, or a national government’s official designation.
+It provides a stable, canonical reference for interoperability, compliance, jurisdictional mapping, and cross‑system alignment."""^^<text/markdown> ;
+      rdfs:domain :Formally_Recognised_Citizenship_ ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49525f751de507cd56792
+      a owl:ObjectProperty;
+      rdfs:label "Country Code"@en;
+      rdfs:comment """Country Code is the standardised alphanumeric or numeric code assigned to a country or territory by an authoritative international standard—most commonly ISO‑3166‑1. It provides a canonical, compact, and language‑independent identifier for countries, enabling consistent interoperability, integration, and global reporting across systems.
+
+This attribute is part of core reference data and must be stable, globally consistent, and governed."""^^<text/markdown> ;
+      rdfs:domain :Formally_Recognised_Citizenship_ ;
+      .
+  
+  :69a49525f751de507cd56793
+      a owl:DatatypeProperty;
+      rdfs:label "Legal Status Type"@en;
+      rdfs:comment """Legal Status of Citizenship describes the formal, legally recognised standing of an individual’s citizenship with respect to a specific country or jurisdiction. It indicates whether citizenship is legally conferred, retained, suspended, revoked, renounced, conditional, or otherwise formally determined under that state's nationality laws.
+
+It reflects legal fact, not self‑identification, residency rights, or application stage.
+It must be based on authoritative government records, never inferred."""^^<text/markdown> ;
+      rdfs:domain :Formally_Recognised_Citizenship_ ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49525f751de507cd56794
+      a owl:DatatypeProperty;
+      rdfs:label "Status Description"@en;
+      rdfs:comment """Citizenship Status Description is a categorical attribute that describes the current legal standing of an individual’s citizenship with respect to a specific country or authority. It expresses whether citizenship is active, revoked, renounced, suspended, conditional, or historical, and, where relevant, the administrative or legal context behind that status.
+
+It does not store legal reasoning, detailed case information, immigration status, or residency rights."""^^<text/markdown> ;
+      rdfs:domain :Formally_Recognised_Citizenship_ ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49525f751de507cd56797
+      a owl:DatatypeProperty;
+      rdfs:label "Proof of Status"@en;
+      rdfs:comment """Proof of Status for Citizenship is a structured evidence attribute that records the authoritative documentation or verification method used to confirm an individual’s legally recognised citizenship with a specific country.
+It captures what evidence was provided, how it was validated, and by whom, without storing the document itself.
+This attribute provides the audit trail underpinning the Legal Status of Citizenship and Citizenship Status Description records."""^^<text/markdown> ;
+      rdfs:domain :Formally_Recognised_Citizenship_ ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49525f751de507cd56798
+      a owl:DatatypeProperty;
+      rdfs:label "Dual or Multiple Status"@en;
+      rdfs:comment """Dual or Multiple Citizenship Status indicates whether an individual holds more than one legally recognised citizenship at the same time. It is a derived, categorical attribute summarising the number of active citizenships linked to the individual, based on authoritative legal citizenship records.
+
+This attribute expresses the cardinality of citizenship, not the legal details of each citizenship.
+
+It does not infer hierarchy, privilege, or rights — it simply describes whether citizenship is single, dual, or multiple."""^^<text/markdown> ;
+      rdfs:domain :Formally_Recognised_Citizenship_ ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49525f751de507cd56799
+      a owl:DatatypeProperty;
+      rdfs:label "Verification Source"@en;
+      rdfs:comment """Verification Source (Citizenship) identifies the authoritative channel, system, or method through which a person’s citizenship was validated. It records where the verification came from, such as a government registry, document check, consular confirmation, or trusted digital identity service.
+It does not store the document itself or legal reasoning — only the verification provenance. It is metadata about how citizenship was confirmed, not evidence itself.
+
+This attribute ensures transparency, auditability, and trust in citizenship status."""^^<text/markdown> ;
+      rdfs:domain :Formally_Recognised_Citizenship_ ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49525f751de507cd56795
+      a owl:DatatypeProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """Dates for Formally Recognised Citizenship define the legal and administrative time periods during which a person’s citizenship in a specific country is valid, active, suspended, revoked, renounced, or historically recognised.
+These dates provide a temporal record of citizenship lifecycle, enabling accurate legal interpretation, compliance operations, and historical identity reconstruction.
+
+The attribute set typically includes:
+
+* citizenship\_effective\_from — when citizenship legally begins
+* citizenship\_effective\_to — when it legally ends (nullable if still active)
+* status\_change\_date — date a legal status transition occurs (optional)
+* verification\_date — date citizenship was last officially verified (stored separately or linked)
+
+These dates apply per citizenship record, not globally to the individual."""^^<text/markdown> ;
+      rdfs:domain :Formally_Recognised_Citizenship_ ;
+      rdfs:range xsd:date ;
+      .
+  
+  :Full_Name
+      a owl:Class, rdfs:Class;
+      rdfs:label "Full Name"@en;
+      rdfs:comment """Full Name represents a combined or displayable expression of a person’s name.
+
+It may be formed from formal name components, informal name components, or both, depending on context.
+
+In some cases, Full Name may reflect the authoritative identity as it is presented or used.
+
+However, it is not the authoritative structured identity record and must not replace Formal Name or Informal Name in the underlying model."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Full_Name ;
+      .
+  
+  :6a186ef24055a62b0ab66915
+      a owl:DatatypeProperty;
+      rdfs:label "Full Name Value"@en;
+      rdfs:comment """Full Name Value stores the combined or displayable expression of a person’s name. It may be formed from formal name components, informal name components, or both, depending on context. In some cases, it may reflect the authoritative identity as it is presented or used; however, it is not the authoritative structured identity record."""^^<text/markdown> ;
+      rdfs:domain :Full_Name ;
+      rdfs:range xsd:string ;
+      .
+  
+  :6a186ef24055a62b0ab66916
+      a owl:DatatypeProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """Dates describe the period during which a Full Name instance is valid or in use.
+
+This may include attributes such as effective\_from, effective\_to, and capture\_date.
+
+Temporal information enables the representation of name history and supports multiple Full Name instances over time."""^^<text/markdown> ;
+      rdfs:domain :Full_Name ;
+      .
+  
+  :Genetic_Ethnicity
+      a owl:Class, rdfs:Class;
+      rdfs:label "Genetic Ethnicity"@en;
+      rdfs:comment """A scientific estimate of a person’s ancestral origins based on the analysis of their DNA. It represents inferred biological population groups, expressed as probabilities or percentages, and reflects patterns of genetic similarity shared with reference populations.
+
+It does not represent cultural identity, heritage, nationality, or citizenship—it is a biologically inferred attribute, not a social or legal one."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Genetic_Ethnicity ;
+      .
+  
+  :Identifiers
+      a owl:Class, rdfs:Class;
+      rdfs:label "Identifiers"@en;
+      rdfs:comment """Unique references that distinguish one Natural Person from all others within a given context, system, or jurisdiction. They are assigned by an authority (e.g., a government, organisation, or system) for the purpose of uniquely recognising, managing, or relating to that person across processes and datasets.
+
+Identifiers are not the person, and they are not personal attributes (like name, gender, or date of birth). They are tokens that point to the person."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Identifiers ;
+      .
+  
+  :69a4a242f751de507cd5cfb3
+      a owl:ObjectProperty;
+      rdfs:label "Biometric Identifiers"@en;
+      rdfs:domain :Identifiers ;
+      .
+  
+  :69fc1b36ea1f7a349309dc6d
+      a owl:ObjectProperty;
+      rdfs:label "Personal Identifiers"@en;
+      rdfs:comment """Reference numbers"""^^<text/markdown> ;
+      rdfs:domain :Identifiers ;
+      .
+  
+  :Informal_Name
+      a owl:Class, rdfs:Class;
+      rdfs:label "Informal Name"@en;
+      rdfs:comment """The Informal Name sub‑domain captures non‑legal, non‑official name forms that an individual uses in everyday social, cultural, or operational contexts. These names support familiarity, personal preference, and communication ease but hold no legal standing and should not be used for identity verification or regulatory decisioning."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Informal_Name ;
+      .
+  
+  :69a4939cf751de507cd54f67
+      a owl:DatatypeProperty;
+      rdfs:label "Nick Name"@en;
+      rdfs:comment """A Nick Name is an informal, non‑legal, personally or socially used variant of an individual’s name. It is a familiar, casual, or culturally specific form that the person may be known by in social, internal, or low‑formality contexts.
+
+It is not legally authoritative, not used for identity verification, and must only be stored when voluntarily self‑reported.
+
+A Nick Name may:
+
+* Shorten a formal name (e.g., Ben for Benjamin)
+* Modify it culturally (e.g., Sasha for Alexander, Lulu for Louise)
+* Be an informal or affectionate form (e.g., Buddy, Ace)
+* Be used only in certain communities or internal teams"""^^<text/markdown> ;
+      rdfs:domain :Informal_Name ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4939cf751de507cd54f68
+      a owl:DatatypeProperty;
+      rdfs:label "Preferred Name"@en;
+      rdfs:comment """Preferred Name is the non‑legal, self‑chosen name an individual wishes to be addressed by in day‑to‑day communication, services, internal systems, or user‑experience contexts.
+It may or may not match the person’s legal/formal name. Preferred Name may change over time as the individual's preferences evolve and may include:
+
+* A shortened form of the legal given name
+* A culturally chosen name used in social or professional contexts
+* An anglicised or localised form
+* A chosen first name reflecting personal identity
+
+Preferred Name is authoritative for communication, but not valid for legal, regulatory, or identity verification purposes."""^^<text/markdown> ;
+      rdfs:domain :Informal_Name ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4939cf751de507cd54f69
+      a owl:DatatypeProperty;
+      rdfs:label "Alias"@en;
+      rdfs:comment """An Alias is an alternative name that an individual uses in a specific professional, legal, operational, cultural, or pseudonymous context, distinct from their legal name, preferred name, or informal nickname.
+Aliases may include professional names, stage names, pseudonyms, maiden names used professionally, or documented historical names used in particular roles or activities.
+
+An Alias is not self‑evidently a legal name, but may still require governance depending on usage.
+
+Aliases are used where a person is known by multiple identities in different legitimate contexts."""^^<text/markdown> ;
+      rdfs:domain :Informal_Name ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a493e1f751de507cd552ac
+      a owl:DatatypeProperty;
+      rdfs:label "Verification Source"@en;
+      rdfs:comment """Verification Source for Informal Names identifies how an informal name (nickname or casual name) was obtained, confirming its origin, provenance, and reliability.
+Because informal names are non‑legal, non‑authoritative, and self‑expressive, the verification source typically indicates self‑report or low‑assurance internal capture, rather than any formal identity check.
+
+It supports auditability and appropriate use of informal names without elevating them to official identity attributes."""^^<text/markdown> ;
+      rdfs:domain :Informal_Name ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4939cf751de507cd54f6a
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """Dates for Informal Name specify the period of time during which a specific informal name (nickname or casual name) is valid, active, or in use for an individual.
+Because informal names are self‑reported, non‑legal, and changeable, these dates provide temporal boundaries that support correct display, respectful communication, and accurate identity history without elevating informal names to legal status.
+
+Typical fields include:
+
+* effective\_from — the date the informal name began being used or recorded
+* effective\_to — the date the informal name ceased being used (nullable if still active)
+* capture\_date — when the name entry was created (optional but common)
+
+These dates apply per informal name record."""^^<text/markdown> ;
+      rdfs:domain :Informal_Name ;
+      .
+  
+  :Military_Titles
+      a owl:Class, rdfs:Class;
+      rdfs:label "Military Titles"@en;
+      rdfs:comment """Military Titles represent the official ranks, grades, and honorific forms of address assigned to individuals within armed forces or uniformed services (e.g., Lieutenant, Captain, Colonel). These titles indicate hierarchical position, authority, and command responsibility. They are role‑based, not personal, and may change throughout a career."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Military_Titles ;
+      .
+  
+  :69a4bc47f751de507cd6463a
+      a owl:DatatypeProperty;
+      rdfs:label "Military Rank"@en;
+      rdfs:comment """Military Rank is an official, authority‑granted title that indicates an individual’s position, hierarchy level, and role status within an armed forces organisation (e.g., Army, Navy, Air Force, Marines, Space Force).
+It is a formal, regulated, and legally controlled title issued by a recognised military authority and subject to strict rules, protocols, and temporal validity.
+
+Military Rank is distinct from:
+
+* Job role titles (e.g., Platoon Commander)
+* Professional titles (e.g., Dr, Prof)
+* Civil courtesy titles (Mr, Ms)
+* Honorary military titles (different governance)"""^^<text/markdown> ;
+      rdfs:domain :Military_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4bc47f751de507cd6463b
+      a owl:DatatypeProperty;
+      rdfs:label "Service Branch"@en;
+      rdfs:comment """Service Branch identifies the specific branch of the armed forces in which an individual serves or has served (e.g., Army, Navy, Air Force, Marine Corps, Space Force).
+It provides the contextual organisational structure for interpreting military rank, military titles, service numbers, and authority-based entitlements.
+
+It is a formal identity attribute within the military domain and must be authoritatively sourced from official service records."""^^<text/markdown> ;
+      rdfs:domain :Military_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4bc47f751de507cd6463c
+      a owl:DatatypeProperty;
+      rdfs:label "Service Number"@en;
+      rdfs:comment """Service Number is the unique identifier assigned to an individual by a military authority upon enlistment, commission, or service enrolment.
+It serves as the primary official identifier for the individual within the context of military personnel systems, similar to but distinct from:
+
+* National identity numbers
+* Unit assignment identifiers
+* Veteran reference numbers
+* Military occupational codes
+
+It enables unambiguous identification of service members throughout their military career, across promotions, transfers, deployments, and administrative processes."""^^<text/markdown> ;
+      rdfs:domain :Military_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4bc47f751de507cd6463e
+      a owl:DatatypeProperty;
+      rdfs:label "Country"@en;
+      rdfs:comment """Country of Defence Force identifies the nation‑state or recognised sovereign entity to which the defence force the individual serves (or has served) belongs.
+It anchors the Service Branch, Military Rank, and Service Number to the correct national military authority, clarifying jurisdiction, regulatory rules, rank hierarchy, and entitlements.
+
+It does not infer nationality, citizenship, or ethnicity — it strictly identifies the country that operates the defence force."""^^<text/markdown> ;
+      rdfs:domain :Military_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4bc47f751de507cd6463f
+      a owl:DatatypeProperty;
+      rdfs:label "Status"@en;
+      rdfs:comment """Country of Defence Force identifies the nation‑state or recognised sovereign entity to which the defence force the individual serves (or has served) belongs.
+It anchors the Service Branch, Military Rank, and Service Number to the correct national military authority, clarifying jurisdiction, regulatory rules, rank hierarchy, and entitlements.
+
+It does not infer nationality, citizenship, or ethnicity — it strictly identifies the country that operates the defence force."""^^<text/markdown> ;
+      rdfs:domain :Military_Titles ;
+      rdfs:range xsd:boolean ;
+      .
+  
+  :69a4bc47f751de507cd64640
+      a owl:DatatypeProperty;
+      rdfs:label "Verification Source"@en;
+      rdfs:comment """Verification Source of Rank identifies the authoritative system, documentation, or military body used to verify the accuracy, legitimacy, and current status of an individual’s military rank.
+It answers the question:
+“Where did we confirm this rank came from, and how do we know it is valid?”
+
+This attribute ensures that only evidence-backed, formally recognised ranks are reflected in identity and personnel systems. It also supports governance, entitlement validation, and auditability."""^^<text/markdown> ;
+      rdfs:domain :Military_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4bc47f751de507cd6463d
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """Dates for Rank specify the time period during which a specific military rank is valid, active, or historically recorded for an individual.
+These dates define the rank lifecycle — when the rank was granted, active, suspended, superseded, revoked, or transitioned to another status (e.g., retired).
+
+Military rank is temporal and authoritative, meaning these dates must represent official, evidence‑based events (e.g., promotion orders, demotion decisions, retirement notices).
+
+Typical fields include:
+
+* rank\_effective\_from — the date the rank officially took effect
+* rank\_effective\_to — the date the rank ceased to be active (nullable if current)
+* rank\_grant\_date — when promotion/appointment was formally approved
+* rank\_revocation\_date — where applicable
+* capture\_date — when the system recorded the rank
+
+These dates apply per rank record, not per person."""^^<text/markdown> ;
+      rdfs:domain :Military_Titles ;
+      .
+  
+  :Name
+      a owl:Class, rdfs:Class;
+      rdfs:label "Name"@en;
+      rdfs:comment """A textual identifier used to refer to or represent a Natural Person, Organisation, Place, or other entity. In conceptual modelling, a Name describes how something is known or addressed, not what it is. Names may consist of multiple components, may vary by context, and may change over time.
+
+At least one Formal Name is required for a Person to ensure a minimum identity representation, while Informal Name remains optional."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Name ;
+      .
+  
+  :69a4741df751de507cd3f285
+      a owl:ObjectProperty;
+      rdfs:label "Formal Name"@en;
+      rdfs:domain :Name ;
+      .
+  
+  :69a4741df751de507cd3f286
+      a owl:ObjectProperty;
+      rdfs:label "Informal Name"@en;
+      rdfs:domain :Name ;
+      .
+  
+  :6a182bf94055a62b0ab54993
+      a owl:DatatypeProperty;
+      rdfs:label "Full Name"@en;
+      rdfs:domain :Name ;
+      .
+  
+  :Nationality
+      a owl:Class, rdfs:Class;
+      rdfs:label "Nationality"@en;
+      rdfs:comment """Describes how an individual identifies with one or more nations, countries, or national groups.
+
+In the Person domain, nationality is treated as a matter of personal identity and self‑expression, rather than legal status. Formal legal nationality or citizenship is modelled separately under Citizenship."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Nationality ;
+      .
+  
+  :69a4a422f751de507cd5eeb8
+      a owl:ObjectProperty;
+      rdfs:label "Self-Identified Nationality"@en;
+      rdfs:comment """Represents how an individual self-identifies their nationality or affiliation to one or more countries or recognised groups. Values should be drawn from a controlled vocabulary (e.g. ISO country codes or recognised classifications), rather than free text input. A specific value set is not mandated at this stage and will be defined through future governance. This attribute captures self-identified identity and is distinct from formal legal nationality or citizenship, which is modelled separately."""^^<text/markdown> ;
+      rdfs:domain :Nationality ;
+      .
+  
+  :Person
+      a owl:Class, rdfs:Class;
+      rdfs:label "Person"@en;
+      rdfs:comment """An individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Person ;
+      .
+  
+  :69a474fdf751de507cd3ff5e
+      a owl:ObjectProperty;
+      rdfs:label "Biological Attributes"@en;
+      rdfs:domain :Person ;
+      .
+  
+  :69a474fdf751de507cd3ff5f
+      a owl:ObjectProperty;
+      rdfs:label "Citizenship"@en;
+      rdfs:domain :Person ;
+      .
+  
+  :69a47aadf751de507cd4a5ee
+      a owl:ObjectProperty;
+      rdfs:label "Ethnicity (Cultural identify)"@en;
+      rdfs:domain :Person ;
+      .
+  
+  :69a47aadf751de507cd4a5ef
+      a owl:ObjectProperty;
+      rdfs:label "Genetic Ethnicity"@en;
+      rdfs:domain :Person ;
+      .
+  
+  :69a47aadf751de507cd4a5f0
+      a owl:ObjectProperty;
+      rdfs:label "Name"@en;
+      rdfs:domain :Person ;
+      .
+  
+  :69a47aadf751de507cd4a5f1
+      a owl:ObjectProperty;
+      rdfs:label "Nationality"@en;
+      rdfs:domain :Person ;
+      .
+  
+  :69a47aadf751de507cd4a5f2
+      a owl:ObjectProperty;
+      rdfs:label "Person Event"@en;
+      rdfs:domain :Person ;
+      .
+  
+  :69a47aadf751de507cd4a5f3
+      a owl:ObjectProperty;
+      rdfs:label "Identifiers"@en;
+      rdfs:domain :Person ;
+      .
+  
+  :69a47aadf751de507cd4a5f5
+      a owl:ObjectProperty;
+      rdfs:label "Titles"@en;
+      rdfs:domain :Person ;
+      .
+  
+  :Person_Event
+      a owl:Class, rdfs:Class;
+      rdfs:label "Person Event"@en;
+      rdfs:comment """An occurrence or change in circumstance that happens to a specific Natural Person at a point in time (or over a period of time) and is relevant to business processes, reporting, or understanding that person’s history. It captures something that happens to or is experienced by the person, rather than a role or relationship they hold."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Person_Event ;
+      .
+  
+  :69a48ccdf751de507cd4ee4d
+      a owl:ObjectProperty;
+      rdfs:label "Birth"@en;
+      rdfs:domain :Person_Event ;
+      .
+  
+  :69a48ccdf751de507cd4ee4e
+      a owl:ObjectProperty;
+      rdfs:label "Death"@en;
+      rdfs:domain :Person_Event ;
+      .
+  
+  :69a48ccdf751de507cd4ee4f
+      a owl:ObjectProperty;
+      rdfs:label "Pregnancy"@en;
+      rdfs:domain :Person_Event ;
+      .
+  
+  :Personal_Identifiers
+      a owl:Class, rdfs:Class;
+      rdfs:label "Personal Identifiers"@en;
+      rdfs:comment """Personal Identifier IDs are unique identifiers assigned to a person by an authority or system for identification, linkage, or entitlement. This domain includes government‑issued IDs (e.g., national IDs), organisational master IDs, and cross‑system surrogate keys used to unambiguously reference a person across processes and systems."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Personal_Identifiers ;
+      .
+  
+  :Physical_Characteristics
+      a owl:Class, rdfs:Class;
+      rdfs:label "Physical Characteristics"@en;
+      rdfs:comment """Physical Characteristics refers to observable, measurable, and non‑biometric biological traits of an individual. These features describe physical form or appearance but do not uniquely identify a person on their own. The sub‑domain includes raw descriptive attributes and standardised measurements recorded for classification, profiling, or operational purposes."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Physical_Characteristics ;
+      .
+  
+  :69a49864f751de507cd59152
+      a owl:DatatypeProperty;
+      rdfs:label "Height"@en;
+      rdfs:comment """Height is a measured physical attribute representing an individual’s vertical body length from the soles of the feet to the top of the head. It is a non‑biometric, non‑clinical, descriptive physical characteristic, used for identification support, profiling, equipment fitting, health & safety contexts, and demographic analytics.
+It is not unique enough to identify a person on its own."""^^<text/markdown> ;
+      rdfs:domain :Physical_Characteristics ;
+      rdfs:range xsd:decimal ;
+      .
+  
+  :69a49864f751de507cd59153
+      a owl:DatatypeProperty;
+      rdfs:label "Weight"@en;
+      rdfs:comment """Weight is a measured physical attribute representing the mass of an individual’s body at a specific point in time. It is a non‑biometric, non‑clinical physiological measurement used for operational safety, sizing, wellness, and descriptive profiling.
+It cannot uniquely identify a person and must not be treated as a health diagnosis."""^^<text/markdown> ;
+      rdfs:domain :Physical_Characteristics ;
+      rdfs:range xsd:decimal ;
+      .
+  
+  :69a49864f751de507cd59154
+      a owl:DatatypeProperty;
+      rdfs:label "Body Build"@en;
+      rdfs:comment """Body Build (also known as body frame or body shape) is a general, non‑clinical descriptive attribute that characterises the overall physique or structural appearance of an individual. It captures broad physical proportions (e.g., slim, stocky, athletic, broad) or frame types (e.g., small, medium, large frame) for identification support, equipment provisioning, and anthropometric profiling.
+
+It is not a health assessment, diagnostic category, or body‑composition measurement."""^^<text/markdown> ;
+      rdfs:domain :Physical_Characteristics ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49864f751de507cd59155
+      a owl:DatatypeProperty;
+      rdfs:label "Eye Colour"@en;
+      rdfs:comment """A visible physical characteristic describing the colour(s) of an individual’s irises. It is a non‑biometric, non‑clinical, descriptive attribute used for identification support, profiling, documentation, and certain operational or compliance contexts.
+
+Multiple values may be recorded to support rare but valid cases (for example differing eye colours), without prescribing anatomical detail (such as left/right eye). This attribute is not unique enough to identify a person on its own and does not reveal medical conditions or genetic diagnoses.
+
+Tranche 1 does not mandate a controlled value set; standardisation may be introduced in later iterations where supported by use case evidence."""^^<text/markdown> ;
+      rdfs:domain :Physical_Characteristics ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49864f751de507cd59156
+      a owl:DatatypeProperty;
+      rdfs:label "Hair Colour"@en;
+      rdfs:comment """Hair Colour is a descriptive physical attribute representing either:
+
+1. Natural Hair Colour — the genetically determined or typical baseline hair colour; or
+2. Current Hair Colour — the individual’s present hair colour, which may be natural or non‑natural (e.g., dyed, bleached, fashion colours).
+
+This attribute is non‑biometric, non‑clinical, and used solely for descriptive and operational purposes. Neither natural nor current hair colour may be used to infer health, age, ethnicity, or identity."""^^<text/markdown> ;
+      rdfs:domain :Physical_Characteristics ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49864f751de507cd59157
+      a owl:DatatypeProperty;
+      rdfs:label "Skin Tone"@en;
+      rdfs:comment """Skin Tone is a visible physical characteristic describing the general pigmentation or colour range of a person’s skin. It is a non‑clinical, non‑biometric, non‑diagnostic descriptor captured only for specific, justified operational purposes (e.g., identity support, safeguarding, uniform or equipment contexts).
+It must be broad, neutral, respectful, and standardised—never evaluative or culturally loaded.
+
+Skin Tone cannot be used to infer ethnicity, race, health status, or genetic traits."""^^<text/markdown> ;
+      rdfs:domain :Physical_Characteristics ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49864f751de507cd59158
+      a owl:DatatypeProperty;
+      rdfs:label "Distinguishing Features"@en;
+      rdfs:comment """Distinguishing Features are visible, non‑clinical physical attributes that can help differentiate an individual from others in descriptive or identity‑support contexts. These features are voluntary, non‑sensitive descriptors such as scars, tattoos, birthmarks, moles, or other notable visible characteristics.
+They must be non‑judgmental, categorical, and minimally descriptive—never detailed, medical, or identifying in a forensic or biometric sense.
+
+This attribute supports operational identification, not biometric matching or surveillance."""^^<text/markdown> ;
+      rdfs:domain :Physical_Characteristics ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49864f751de507cd59159
+      a owl:DatatypeProperty;
+      rdfs:label "Facial Hair"@en;
+      rdfs:comment """Facial Hair is a visible, non‑clinical, non-biometric physical characteristic describing the presence, absence, type, and general style of hair on the face (e.g., beard, moustache, stubble). It is used for descriptive identification, operational contexts, and appearance‑based workflows where relevant.
+It is not used for biometric identification, profiling, or inference of age, culture, or gender."""^^<text/markdown> ;
+      rdfs:domain :Physical_Characteristics ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49864f751de507cd5915a
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """Dates for Physical Characteristics specify the time period during which a specific physical characteristic value is valid or actively in use for the individual.
+This includes when the characteristic was observed, self‑reported, measured, confirmed, or superseded.
+
+This attribute set creates a temporal identity record, ensuring accurate history and preventing outdated or inaccurate physical descriptors from being used operationally.
+
+Common fields include:
+
+* observation\_date — when the characteristic was captured
+* effective\_from — start of validity
+* effective\_to — end of validity (nullable if still active)
+
+These dates are per characteristic, not global."""^^<text/markdown> ;
+      rdfs:domain :Physical_Characteristics ;
+      .
+  
+  :Physiological_Information
+      a owl:Class, rdfs:Class;
+      rdfs:label "Physiological Information"@en;
+      rdfs:comment """Physiological Information describes non‑clinical, non‑diagnostic information about an individual’s biological and bodily functions. It includes physiological or biologically‑derived attributes such as blood type, genetic traits, self‑reported disability, and organ donor status. These attributes are descriptive and operational in nature, rather than cognitive, emotional, or behavioural characteristics, and do not uniquely identify a person"""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Physiological_Information ;
+      .
+  
+  :69a49fbdf751de507cd5a26e
+      a owl:DatatypeProperty;
+      rdfs:label "Blood Type"@en;
+      rdfs:comment """Blood Type is a categorical physiological attribute representing an individual’s blood group classification based on recognised antigen systems, primarily the ABO and RhD systems (e.g., A+, O‑, AB−). It describes a stable biological characteristic with operational relevance in certain safety, welfare, and emergency contexts.
+It is not a diagnostic or medical condition."""^^<text/markdown> ;
+      rdfs:domain :Physiological_Information ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49fbdf751de507cd5a26f
+      a owl:DatatypeProperty;
+      rdfs:label "Genetic Traits"@en;
+      rdfs:comment """Genetic Traits represent stable, inherited biological characteristics that are encoded in an individual’s DNA and manifest as observable, non‑clinical traits (e.g., eye colour predisposition, lactose tolerance, natural hair colour tendency).
+This attribute captures general genetic tendencies, not medical diagnoses, disease markers, or full genomic data."""^^<text/markdown> ;
+      rdfs:domain :Physiological_Information ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a49fbdf751de507cd5a270
+      a owl:ObjectProperty;
+      rdfs:label "Self-reported disability"@en;
+      rdfs:comment """Also known as impairment.
+
+Self-reported disability is a rights‑based characteristic indicating that an individual has a long‑term physical, mental, cognitive, or sensory impairment which, in interaction with barriers, may limit equal participation in daily activities or environments.
+This attribute reflects functional impact and support needs, not medical diagnoses or clinical details."""^^<text/markdown> ;
+      rdfs:domain :Physiological_Information ;
+      .
+  
+  :69a49fbdf751de507cd5a272
+      a owl:ObjectProperty;
+      rdfs:label "Organ Donor"@en;
+      rdfs:comment """Organ Donor indicates whether an individual has formally recorded consent, objection, or preference regarding the donation of their organs and/or tissues after death. This attribute reflects a person’s legally or administratively recognized donor decision, not medical suitability or clinical screening.
+
+It records consent status, not medical data.
+
+May be known as Tissue donor."""^^<text/markdown> ;
+      rdfs:domain :Physiological_Information ;
+      .
+  
+  :69a4a003f751de507cd5a8bf
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """Dates for Physiological Information define the time period during which a specific physiological measurement or observation is valid, active, or considered accurate for operational or analytical use.
+Because physiological attributes (e.g., heart rate, oxygen saturation, resting blood pressure, metabolic rate) can change frequently, these dates provide temporal context for correctness, safety, and interpretation.
+
+The attribute set typically includes:
+
+* measurement\_date — when the physiological value was captured
+* effective\_from — when the value first becomes valid for use
+* effective\_to — when it stops being valid (nullable if still active)
+
+These are per‑attribute timestamps, not global to the person."""^^<text/markdown> ;
+      rdfs:domain :Physiological_Information ;
+      .
+  
+  :Post-Nominal_Titles
+      a owl:Class, rdfs:Class;
+      rdfs:label "Post-Nominal Titles"@en;
+      rdfs:comment """Post‑Nominal Titles are letters placed after a person’s name that denote orders, decorations, honours, academic degrees, professional memberships, licensure, or fellowships (e.g., OBE, PhD, FRCS, CPA). They confer recognition or qualification, not forms of address, and are typically governed by awarding bodies with formal usage rules."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Post-Nominal_Titles ;
+      .
+  
+  :Pregnancy
+      a owl:Class, rdfs:Class;
+      rdfs:label "Pregnancy"@en;
+      rdfs:comment """Pregnancy is a time‑bound life event that records the fact that an individual is pregnant, including the start, expected milestones, and outcome of the pregnancy where relevant for operational, safeguarding, or service‑eligibility purposes. It captures non‑clinical, administrative facts only—not medical diagnoses, treatment notes, or clinical assessments."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Pregnancy ;
+      .
+  
+  :Professional_Occupational_Titles
+      a owl:Class, rdfs:Class;
+      rdfs:label "Professional Occupational Titles"@en;
+      rdfs:comment """Professional Occupational Titles are titles or prefixes associated with a person’s profession, occupation, or accredited role, used to indicate an individual’s professional standing, qualification, or occupational function. They are not academic degrees or post‑nominals, but pre‑nominal markers tied to recognised professions (e.g., Dr, Prof, Eng, Nurse, Architect). These titles support appropriate address, professional recognition, and role‑based communication."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Professional_Occupational_Titles ;
+      .
+  
+  :69a4aaf7f751de507cd63ba2
+      a owl:DatatypeProperty;
+      rdfs:label "Professional Title"@en;
+      rdfs:comment """A Professional Title is a formally recognised title, credential, or designation that indicates an individual’s professional status, qualification, licensure, accreditation, or role-based authority within a specific domain (e.g., medicine, law, engineering, academia).
+It signals that a person has achieved a professionally governed standing, often regulated by a professional body, accreditation authority, educational institution, or licensing regulator.
+
+Professional Titles differ from:
+
+* Civil courtesy titles (Mr, Ms, Mx)
+* Military ranks (Captain, Major)
+* Religious titles (Rev, Imam)
+* Job role titles (Head of Digital, Finance Manager)
+* Post‑nominals (PhD, MSc, CPA — qualification identifiers)
+
+Professional Titles are role-, competence-, or licence‑based and often carry legal or operational implications."""^^<text/markdown> ;
+      rdfs:domain :Professional_Occupational_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4aaf7f751de507cd63ba3
+      a owl:DatatypeProperty;
+      rdfs:label "Field Profession"@en;
+      rdfs:comment """Field Profession describes the broad professional field, discipline, or domain of practice within which an individual’s professional title, occupation, or role is situated.
+It captures the sector‑level classification (e.g., Medicine, Engineering, Law, Education) rather than a specific job title or qualification.
+
+Field Profession creates a normalised, high‑level professional grouping that supports reporting, entitlement logic, governance, and rendering rules without storing overly granular occupational details.
+
+It is not a job title, skill, qualification, or occupational code—rather, it is the professionally recognised field or discipline."""^^<text/markdown> ;
+      rdfs:domain :Professional_Occupational_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4aaf7f751de507cd63ba4
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """Dates Professional Title Held specify the time period during which an individual legitimately holds, is authorised to use, or is recognised as possessing a specific professional title (e.g., Dr (Medical), Professor, Chartered Engineer, Solicitor).
+These dates define the validity window of a professional title, reflecting licensure, certification, employment status, or accreditation from a professional body or authority.
+
+Unlike Preferred Name or Courtesy Titles, professional titles are not self-declared — their timeline must reflect formal evidence.
+
+Typical fields include:
+
+* effective\_from — when the professional title became valid
+* effective\_to — when the professional title ceased being valid (nullable if still active)
+* grant\_date / conferment\_date — when the accrediting authority formally awarded the title
+* expiry\_date (if the title requires renewal, e.g., licences)
+* capture\_date — when the system recorded it (optional)
+
+These dates are per professional title, not person‑wide."""^^<text/markdown> ;
+      rdfs:domain :Professional_Occupational_Titles ;
+      .
+  
+  :Psychological_Characteristics
+      a owl:Class, rdfs:Class;
+      rdfs:label "Psychological Characteristics"@en;
+      rdfs:comment """Psychological Characteristics refer to non‑clinical, non‑diagnostic attributes that describe an individual’s typical cognitive, emotional, and behavioural tendencies. These characteristics represent stable patterns of thinking and behaviour, not mental health conditions, and do not uniquely identify a person. They may include personality traits, cognitive style descriptors, and general behavioural dispositions."""^^<text/markdown> ;
+      .
+  
+  :Religious_Titles
+      a owl:Class, rdfs:Class;
+      rdfs:label "Religious Titles"@en;
+      rdfs:comment """Religious Titles are formal honorifics, ranks, or styles of address associated with roles, positions, or consecrated statuses within recognised religious traditions (e.g., Reverend, Rabbi, Imam, Sister, Monsignor, Guru). These titles indicate spiritual authority, clerical office, or religious vocation, and are used in formal or community contexts to show respect and denote role-based standing."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Religious_Titles ;
+      .
+  
+  :69a4bccef751de507cd651e2
+      a owl:DatatypeProperty;
+      rdfs:label "Religious Title Granted"@en;
+      rdfs:comment """Religious Title Granted refers to the formal religious title, rank, or designation conferred on an individual by a recognised religious authority, institution, or governing body.
+It reflects a spiritually or institutionally recognised status, such as ordination, consecration, clergy appointment, or religious office.
+
+Religious titles differ from civil courtesy titles (Mr, Ms), professional titles (Dr, Prof), military ranks (Captain), and job roles. They often carry ceremonial, pastoral, or leadership responsibilities within a faith community."""^^<text/markdown> ;
+      rdfs:domain :Religious_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4bccef751de507cd651e3
+      a owl:DatatypeProperty;
+      rdfs:label "Religious Order"@en;
+      rdfs:comment """Religious Order identifies the specific monastic, clerical, or spiritual community, congregation, or tradition to which an individual belongs, has taken vows within, or is formally associated with.
+It represents a structured affiliation within a broader religion, typically defined by:
+
+* A rule or charism (e.g., Franciscan, Benedictine)
+* A community or organisation (e.g., Jesuit community, Carmelite Order)
+* A tradition or lineage (e.g., Nichiren Buddhist order, Sufi tariqa)
+
+This attribute is not the same as a religious title; it captures affiliation, not rank."""^^<text/markdown> ;
+      rdfs:domain :Religious_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4bccef751de507cd651e4
+      a owl:DatatypeProperty;
+      rdfs:label "Religious Appointing Authority"@en;
+      rdfs:comment """Religious Order identifies the specific monastic, clerical, or spiritual community, congregation, or tradition to which an individual belongs, has taken vows within, or is formally associated with.
+It represents a structured affiliation within a broader religion, typically defined by:
+
+* A rule or charism (e.g., Franciscan, Benedictine)
+* A community or organisation (e.g., Jesuit community, Carmelite Order)
+* A tradition or lineage (e.g., Nichiren Buddhist order, Sufi tariqa)
+
+This attribute is not the same as a religious title; it captures affiliation, not rank."""^^<text/markdown> ;
+      rdfs:domain :Religious_Titles ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4bccef751de507cd651e5
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """Dates of Religious Title define the time period during which a specific religious title, role, clerical status, or spiritual office is valid, active, recognised, or historically recorded for an individual.
+These dates reflect formal ecclesiastical or religious processes such as ordination, appointment, consecration, commissioning, elevation, transfer, emeritus designation, revocation, or release.
+
+This attribute ensures temporal accuracy, lineage, and authority-compliant handling of religious titles."""^^<text/markdown> ;
+      rdfs:domain :Religious_Titles ;
+      .
+  
+  :Residence
+      a owl:Class, rdfs:Class;
+      rdfs:label "Residence"@en;
+      rdfs:comment """A time‑bounded assertion that a Person resides at a Location with a specified Residence. Includes legal/primary residence, secondary residences, historical changes, validation against jurisdictional reference data. Excludes temporary contact addresses, delivery addresses, lodging/travel events, property ownership details (unless used to evidence residence)."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Residence ;
+      .
+  
+  :69b2a6f8c3a89f06e1a0e717
+      a owl:ObjectProperty;
+      rdfs:label "Residence Handling"@en;
+      rdfs:domain :Residence ;
+      .
+  
+  :69c417f79f84c55e298e6fc8
+      a owl:ObjectProperty;
+      rdfs:label "Residence Status"@en;
+      rdfs:domain :Residence ;
+      .
+  
+  :69c417f79f84c55e298e6fc9
+      a owl:ObjectProperty;
+      rdfs:label "Residence Verification"@en;
+      rdfs:domain :Residence ;
+      .
+  
+  :69c417f79f84c55e298e6fca
+      a owl:ObjectProperty;
+      rdfs:label "Residence Identification"@en;
+      rdfs:domain :Residence ;
+      .
+  
+  :Residence_Handling
+      a owl:Class, rdfs:Class;
+      rdfs:label "Residence Handling"@en;
+      rdfs:comment """Residence Handling refers to the governed rules, behaviours, and constraints that define how residency data may be collected, processed, stored, shared, updated, retained, secured, and used within a data domain."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Residence_Handling ;
+      .
+  
+  :69b2e435c3a89f06e1a1aa47
+      a owl:DatatypeProperty;
+      rdfs:label "Residence Confidentiality"@en;
+      rdfs:comment """Residence Confidentiality is the governed classification that determines the level of privacy protection applied to a residency fact, ensuring that residence information is disclosed, stored, accessed, and shared only in accordance with the required confidentiality level."""^^<text/markdown> ;
+      rdfs:domain :Residence_Handling ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69b2e435c3a89f06e1a1aa48
+      a owl:DatatypeProperty;
+      rdfs:label "Special Handling indicator"@en;
+      rdfs:comment """Residence Special Handling indicator confirms if additional controls are required and how access will be permitted.&#x20;"""^^<text/markdown> ;
+      rdfs:domain :Residence_Handling ;
+      rdfs:range xsd:boolean ;
+      .
+  
+  :69b2e435c3a89f06e1a1aa49
+      a owl:DatatypeProperty;
+      rdfs:label "Residence accessibility"@en;
+      rdfs:comment """Residence Data Accessibility specifies the authorised access levels for residency facts, determining how much information can be viewed, by whom, and in which contexts, aligned with privacy, risk, legal, and safeguarding constraints."""^^<text/markdown> ;
+      rdfs:domain :Residence_Handling ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69b2e435c3a89f06e1a1aa4a
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:domain :Residence_Handling ;
+      .
+  
+  :Residence_Status
+      a owl:Class, rdfs:Class;
+      rdfs:label "Residence Status"@en;
+      rdfs:comment """Residence Type specifies the role, purpose, and legal/operational meaning of a residency relationship between a place or property and a person."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Residence_Status ;
+      .
+  
+  :69b2df99c3a89f06e1a17195
+      a owl:DatatypeProperty;
+      rdfs:label "Residence type"@en;
+      rdfs:comment """Residence Type describes what kind of residence a Residence Fact represents — such as primary, secondary, historical, declared, inferred, or statutory — providing semantic clarity for business rules, compliance, and interpretation."""^^<text/markdown> ;
+      rdfs:domain :Residence_Status ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69b2e331c3a89f06e1a19e07
+      a owl:DatatypeProperty;
+      rdfs:label "Current"@en;
+      rdfs:comment """Current Residence is the Residence Fact for which the Residence Status is Active, the effective period includes today, and the record has not been superseded or ended."""^^<text/markdown> ;
+      rdfs:domain :Residence_Status ;
+      rdfs:range xsd:boolean ;
+      .
+  
+  :69b2e331c3a89f06e1a19e08
+      a owl:DatatypeProperty;
+      rdfs:label "For Taxation"@en;
+      rdfs:comment """Residence for Tax is the legally recognised tax residency of a Party, determined by statutory criteria and supported by verified residency facts, used to establish tax obligations, compliance, reporting, and regulatory responsibilities."""^^<text/markdown> ;
+      rdfs:domain :Residence_Status ;
+      rdfs:range xsd:boolean ;
+      .
+  
+  :69b2e331c3a89f06e1a19e09
+      a owl:DatatypeProperty;
+      rdfs:label "Status source"@en;
+      rdfs:comment """Declared and Observed are semantic qualifiers that describe how a residence fact was created or asserted:
+
+* Declared Residence — the Party (person or legal entity representative) told you this is their residence.
+* Observed Residence — the organisation inferred or detected this residence from system behaviour, external signals, or passive data sources."""^^<text/markdown> ;
+      rdfs:domain :Residence_Status ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69b2e451c3a89f06e1a1b006
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:domain :Residence_Status ;
+      .
+  
+  :Residence_Verification
+      a owl:Class, rdfs:Class;
+      rdfs:label "Residence Verification"@en;
+      rdfs:comment """Residence Verification describes the degree of confidence, method, and evidence supporting the assertion that a Party (Person or Legal Entity) resides at a given Location."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Residence_Verification ;
+      .
+  
+  :69b2e203c3a89f06e1a192fa
+      a owl:DatatypeProperty;
+      rdfs:label "Verification Status"@en;
+      rdfs:comment """Verification Status indicates whether a residency fact has been confirmed, is awaiting verification, remains unverified, or has been rejected based on the evaluation of evidence and authorised checks."""^^<text/markdown> ;
+      rdfs:domain :Residence_Verification ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69b2e203c3a89f06e1a192fb
+      a owl:DatatypeProperty;
+      rdfs:label "Validation source"@en;
+      rdfs:comment """Residence Validation Source describes the origin of the information or evidence used to confirm, refute, or assess the validity of a residence fact."""^^<text/markdown> ;
+      rdfs:domain :Residence_Verification ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69b2e203c3a89f06e1a192fc
+      a owl:DatatypeProperty;
+      rdfs:label "Validation Dates"@en;
+      rdfs:comment """Residence Validation Dates are the time‑based semantic properties that define the verification timestamp, validity window, and re‑verification schedule associated with a residency fact."""^^<text/markdown> ;
+      rdfs:domain :Residence_Verification ;
+      rdfs:range xsd:date ;
+      .
+  
+  :Residence_identification
+      a owl:Class, rdfs:Class;
+      rdfs:label "Residence identification"@en;
+      rdfs:comment """Residence Identification refers uniquely and consistently identify, reference, and distinguish one residence fact from another within a Party domain."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Residence_identification ;
+      .
+  
+  :69b2df5ac3a89f06e1a16bc5
+      a owl:DatatypeProperty;
+      rdfs:label "Residence ID"@en;
+      rdfs:comment """Residence ID is the globally unique, immutable identifier assigned to a Residence Fact — the relationship between a Person and a Location, with associated type, status, verification, and temporal attributes."""^^<text/markdown> ;
+      rdfs:domain :Residence_identification ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69b2e15cc3a89f06e1a18d56
+      a owl:DatatypeProperty;
+      rdfs:label "Jurisdiction of residence"@en;
+      rdfs:comment """Jurisdiction of Residence is the legal or administrative authority that governs the residences Location."""^^<text/markdown> ;
+      rdfs:domain :Residence_identification ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69b2e472c3a89f06e1a1b5c3
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:domain :Residence_identification ;
+      .
+  
+  :Self-Identified_Nationality
+      a owl:Class, rdfs:Class;
+      rdfs:label "Self-Identified Nationality"@en;
+      rdfs:comment """Self‑Identified Nationality represents how an individual personally defines or expresses their own national identity, independent of citizenship, passport, or legal status. It reflects cultural affiliation, heritage, or personal identification, and is self‑reported, non‑authoritative, and used solely for demographic, engagement, or inclusion‑related purposes.
+
+This attribute does not confer any legal rights or obligations."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Self-Identified_Nationality ;
+      .
+  
+  :69a4a6a0f751de507cd5f912
+      a owl:DatatypeProperty;
+      rdfs:label "Self-Identified Country or Group"@en;
+      rdfs:comment """Self‑Identified Country or Group represents the country, cultural group, territory, people, or national identity that an individual personally associates with, irrespective of legal citizenship or official nationality.
+It is self‑reported, non‑authoritative, and used exclusively for demographic insight, inclusion, and respectful identity handling.
+
+This attribute captures the label the individual uses for their own national or cultural identity, such as Scottish, Basque, Catalan, Hong Konger, Welsh, Kurdish, Sámi, Galician, Palestinian, Tamil, Bavarian, Inuit, or American.
+
+It is a personal identity expression, not a legal classification."""^^<text/markdown> ;
+      rdfs:domain :Self-Identified_Nationality ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4a6a0f751de507cd5f913
+      a owl:DatatypeProperty;
+      rdfs:label "Type of Affiliation"@en;
+      rdfs:comment """Type of Affiliation describes the basis or nature of a person’s self‑identified national or group identity. It categorises how an individual relates to a self‑identified country, territory, cultural group, or people — whether through heritage, cultural identity, lived experience, belonging, community membership, or personal self‑identification.
+
+This attribute is self‑reported, non‑authoritative, and strictly for demographic insight, inclusion, and respectful representation — not for legal, operational, or compliance decisions.
+
+Values should be drawn from a controlled vocabulary rather than free text, to ensure consistency and interoperability. A specific value set is not mandated at this stage and will be defined through future governance and alignment."""^^<text/markdown> ;
+      rdfs:domain :Self-Identified_Nationality ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4a6a0f751de507cd5f914
+      a owl:DatatypeProperty;
+      rdfs:label "Recognition Status"@en;
+      rdfs:comment """Recognition Status indicates how receiving organisations or systems may acknowledge, interpret, or display an individual’s self‑identified nationality, country, or group in operational systems or reporting.&#x20;
+
+It captures organisational handling rules (e.g. approved, restricted, suppressed) applied to a self‑reported identity that has no legal standing but is relevant to inclusion, engagement, or user experience.&#x20;
+
+Values should be drawn from a controlled vocabulary rather than free text, to ensure consistency and interoperability.&#x20;
+
+This represents how the self‑identified value is handled in practice, not whether a state or international body formally recognises the group."""^^<text/markdown> ;
+      rdfs:domain :Self-Identified_Nationality ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4a6a0f751de507cd5f915
+      a owl:DatatypeProperty;
+      rdfs:label "Primary Motivation"@en;
+      rdfs:comment """Primary Motivation describes the main reason or basis an individual chooses to self‑identify with a specific nationality, country, territory, cultural group, or people.
+
+It captures the personal rationale behind the identity — such as heritage, upbringing, cultural alignment, lived experience, or personal meaning — and is self‑reported, non‑authoritative, and used solely for identity expression, inclusion, and engagement insights.
+
+This attribute clarifies why the self‑identified nationality is meaningful to the individual.
+
+Values should be drawn from a controlled vocabulary rather than free text, to ensure consistency and interoperability"""^^<text/markdown> ;
+      rdfs:domain :Self-Identified_Nationality ;
+      rdfs:range xsd:string ;
+      .
+  
+  :69a4a6a0f751de507cd5f916
+      a owl:ObjectProperty;
+      rdfs:label "Dates"@en;
+      rdfs:comment """A self‑identified nationality is a statement made by the person about the nationality (or nationalities) they identify with. The date fields should describe the validity period of that self‑identification, not necessarily legal citizenship dates.
+
+Self‑Identified Nationality Start Date (Valid From) - The date the person first reports (or you first record) that they self‑identify with the specified nationality.
+
+Self‑Identified Nationality End Date (Valid To) - The date the person stops reporting (or you stop treating as current) that they self‑identify with the specified nationality."""^^<text/markdown> ;
+      rdfs:domain :Self-Identified_Nationality ;
+      .
+  
+  :Sex_and_Gender
+      a owl:Class, rdfs:Class;
+      rdfs:label "Sex and Gender"@en;
+      rdfs:comment """The Sex and Gender sub‑domain covers data elements that describe an individual’s biological sex characteristics and gender identity attributes for the purposes of identity management, demographic classification, and service personalisation. It differentiates between sex‑related biological attributes and self‑described gender identity, reflecting both regulatory expectations and modern data‑standards practice. It also include how these relate to and define Legal Sex."""^^<text/markdown> ;
+      .
+  
+  :Titles
+      a owl:Class, rdfs:Class;
+      rdfs:label "Titles"@en;
+      rdfs:comment """An honorific or form of address associated with a Natural Person, used to indicate courtesy, social status, professional standing, or preference. It does not identify the person and does not imply any legal role or relationship—it's simply an attribute describing how the person chooses (or is required) to be addressed."""^^<text/markdown> ;
+      rdfs:subClassOf ns1:Titles ;
+      .
+  
+  :69a4bf04f751de507cd6891f
+      a owl:ObjectProperty;
+      rdfs:label "Civil Social Titles"@en;
+      rdfs:comment """Professional Occupational Titles are titles or prefixes associated with a person’s profession, occupation, or accredited role, used to indicate an individual’s professional standing, qualification, or occupational function. They are not academic degrees or post‑nominals, but pre‑nominal markers tied to recognised professions (e.g., Dr, Prof, Eng, Nurse, Architect). These titles support appropriate address, professional recognition, and role‑based communication."""^^<text/markdown> ;
+      rdfs:domain :Titles ;
+      .
+  
+  :69a4bf04f751de507cd68920
+      a owl:ObjectProperty;
+      rdfs:label "Military Titles"@en;
+      rdfs:comment """Military Titles represent the official ranks, grades, and honorific forms of address assigned to individuals within armed forces or uniformed services (e.g., Lieutenant, Captain, Colonel). These titles indicate hierarchical position, authority, and command responsibility. They are role‑based, not personal, and may change throughout a career."""^^<text/markdown> ;
+      rdfs:domain :Titles ;
+      .
+  
+  :69a4bf04f751de507cd68922
+      a owl:ObjectProperty;
+      rdfs:label "Professional Occupational Titles"@en;
+      rdfs:comment """Professional / Occupational Titles are role‑based or qualification‑based titles that indicate a person’s profession, occupation, licensure, position, or accredited status within a recognised field.
+They reflect professional standing, licensed capacity, or institutionally granted rank, and may be:
+
+* legally protected,
+* regulated by a professional body, or
+* organisationally assigned.
+
+These titles are distinct from civil courtesy titles (Mr, Ms), preferred/social titles (Mx, preferred forms), religious titles (Rev), and military ranks (Captain)."""^^<text/markdown> ;
+      rdfs:domain :Titles ;
+      .
+  
+  :69a4bf04f751de507cd68923
+      a owl:ObjectProperty;
+      rdfs:label "Religious Titles"@en;
+      rdfs:comment """Religious Titles are formal honorifics, ranks, or styles of address associated with roles, positions, or consecrated statuses within recognised religious traditions (e.g., Reverend, Rabbi, Imam, Sister, Monsignor, Guru). These titles indicate spiritual authority, clerical office, or religious vocation, and are used in formal or community contexts to show respect and denote role-based standing."""^^<text/markdown> ;
+      rdfs:domain :Titles ;
+      .
+  
+  :69a886e2f751de507cd81563
+      a owl:DatatypeProperty;
+      rdfs:label "Post-Nominal Titles"@en;
+      rdfs:comment """Post‑Nominal Titles are letters placed after a person’s name that denote orders, decorations, honours, academic degrees, professional memberships, licensure, or fellowships (e.g., OBE, PhD, FRCS, CPA). They confer recognition or qualification, not forms of address, and are typically governed by awarding bodies with formal usage rules."""^^<text/markdown> ;
+      rdfs:domain :Titles ;
+      .
+  
+  :69b2cab8c3a89f06e1a0fb00
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Person's_residence;
+      rdfs:label "May have"@en;
+      rdfs:domain :Person;
+      rdfs:range :Residence ;
+  .
+  
+  :69a4a6ddf751de507cd5fb94
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Self-Identified_Nationality_as_Nationality;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Nationality;
+      rdfs:range :Self-Identified_Nationality ;
+  .
+  
+  :69a4a8fdf751de507cd60a2e
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Genetic_Ethnicity_of_Person;
+      rdfs:label "Has"@en;
+      rdfs:domain :Person;
+      rdfs:range :Genetic_Ethnicity ;
+  .
+  
+  :69a4a92bf751de507cd61341
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Ethnicity_CI_of_Person;
+      rdfs:label "has"@en;
+      rdfs:domain :Person;
+      rdfs:range :Ethnicity_(Cultural_identify) ;
+  .
+  
+  :69a4a973f751de507cd61c5e
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Title_of_Person;
+      rdfs:label "MayHave"@en;
+      rdfs:domain :Person;
+      rdfs:range :Titles ;
+  .
+  
+  :69a4aa2ff751de507cd62bac
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Civil_Social_Titles_for_Title;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Titles;
+      rdfs:range :Civil_Social_Titles ;
+  .
+  
+  :69a4bc5ef751de507cd647c1
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Military_Titles_Included_in_Title;
+      rdfs:label "May Include"@en;
+      rdfs:domain :Titles;
+      rdfs:range :Military_Titles ;
+  .
+  
+  :69a4bce3f751de507cd65374
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Religious_Titles_included_in_Title;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Titles;
+      rdfs:range :Religious_Titles ;
+  .
+  
+  :69a4bd1bf751de507cd65d15
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Post-Nominal_Titles_included_in_Title;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Titles;
+      rdfs:range :Post-Nominal_Titles ;
+  .
+  
+  :69a87073f751de507cd77c94
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Pregnancy_of_Person;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Person_Event;
+      rdfs:range :Pregnancy ;
+  .
+  
+  :69a4a6bdf751de507cd5fa55
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Nationality_of_Person;
+      rdfs:label "Has"@en;
+      rdfs:domain :Person;
+      rdfs:range :Nationality ;
+  .
+  
+  :69b2cae2c3a89f06e1a0fcae
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Residence_Identification;
+      rdfs:label "MayHave"@en;
+      rdfs:domain :Residence;
+      rdfs:range :Residence_identification ;
+  .
+  
+  :69b2df3ec3a89f06e1a1655f
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Residence_type;
+      rdfs:label "may have"@en;
+      rdfs:domain :Residence;
+      rdfs:range :Residence_Status ;
+  .
+  
+  :69b2e018c3a89f06e1a17e95
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Residence_verification;
+      rdfs:label "may have"@en;
+      rdfs:domain :Residence;
+      rdfs:range :Residence_Verification ;
+  .
+  
+  :69b2e072c3a89f06e1a18933
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Residence_Handling;
+      rdfs:label "Requires"@en;
+      rdfs:domain :Residence;
+      rdfs:range :Residence_Handling ;
+  .
+  
+  :69c6d3d59f84c55e29926b22
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Formal_name_to_Informal_name;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Informal_Name;
+      rdfs:range :Formal_Name ;
+  .
+  
+  :69d4ee109f84c55e2993a1aa
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Informal_Name_to_Full_Name.;
+      rdfs:label "May contribute to"@en;
+      rdfs:domain :Informal_Name;
+      rdfs:range :Full_Name ;                            
+      rdfs:comment """Informal Name may contribute to a Full Name representation. Full Name may be composed from informal or contextual name components depending on context."""^^<text/markdown> ;
+  .
+  
+  :69fb6770ea1f7a349307e89d
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Birth_-_Date_of_Birth;
+      rdfs:label "Was on"@en;
+      rdfs:domain :Birth;
+      rdfs:range :Birth_Date ;
+  .
+  
+  :6a1834fe4055a62b0ab5926a
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Full_Name_of_Formal_name;
+      rdfs:label "MayContributeTo"@en;
+      rdfs:domain :Formal_Name;
+      rdfs:range :Full_Name ;
+  .
+  
+  :6a183a704055a62b0ab5a6b7
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Informal_Name_to_Full_Name;
+      rdfs:label "May Be Included In"@en;
+      rdfs:domain :Informal_Name;
+      rdfs:range :Full_Name ;                            
+      rdfs:comment """Informal Name may contribute to a Full Name representation. Full Name may include informal or contextual name components depending on context."""^^<text/markdown> ;
+  .
+  
+  :69a49621f751de507cd5773a
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Biological_Attributes_of_Person;
+      rdfs:label "has"@en;
+      rdfs:domain :Person;
+      rdfs:range :Biological_Attributes ;
+  .
+  
+  :69a4743cf751de507cd3f2b3
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Name_of_Person;
+      rdfs:label "MayHave"@en;
+      rdfs:domain :Person;
+      rdfs:range :Name ;
+  .
+  
+  :69a48c8ff751de507cd4eac0
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Birth_of_Person;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Person_Event;
+      rdfs:range :Birth ;
+  .
+  
+  :69a4901bf751de507cd50856
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Death_of_Person;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Person_Event;
+      rdfs:range :Death ;
+  .
+  
+  :69a491a2f751de507cd5239e
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Formal_name_of_Name;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Name;
+      rdfs:range :Formal_Name ;
+  .
+  
+  :69a492b2f751de507cd5435b
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Full_Name_of_Formal_name;
+      rdfs:label "MayContributeTo"@en;
+      rdfs:domain :Full_Name;
+      rdfs:range :Formal_Name ;
+  .
+  
+  :69a492c8f751de507cd543ec
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Full_Name_of_Name;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Name;
+      rdfs:range :Full_Name ;
+  .
+  
+  :69a493f2f751de507cd55354
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Informal_name_for_Name;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Name;
+      rdfs:range :Informal_Name ;
+  .
+  
+  :69a49565f751de507cd56e68
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Formal_Citizenship_as_Citizenship;
+      rdfs:label "Has"@en;
+      rdfs:domain :Citizenship;
+      rdfs:range :Formally_Recognised_Citizenship_ ;
+  .
+  
+  :69a49576f751de507cd56f2d
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Citizenship_of_Person;
+      rdfs:label "Has"@en;
+      rdfs:domain :Person;
+      rdfs:range :Citizenship ;
+  .
+  
+  :699dbe50f751de507cd23a63
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Person_Event_of_Person;
+      rdfs:label "Has"@en;
+      rdfs:domain :Person;
+      rdfs:range :Person_Event ;                            
+      rdfs:comment """has a person event"""^^<text/markdown> ;
+  .
+  
+  :69a49878f751de507cd59245
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Physical_Characteristics_as_Biological_Attribute;
+      rdfs:label "Includes"@en;
+      rdfs:domain :Biological_Attributes;
+      rdfs:range :Physical_Characteristics ;
+  .
+  
+  :69a49fd8f751de507cd5a36d
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Professional_Titles_Included_in_Title;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Titles;
+      rdfs:range :Professional_Occupational_Titles ;
+  .
+  
+  :69a4a0c7f751de507cd5b8cb
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Sex_and_Gender_of_Person;
+      rdfs:label "Has"@en;
+      rdfs:domain :Biological_Attributes;
+      rdfs:range :Sex_and_Gender ;
+  .
+  
+  :69a4a0dbf751de507cd5b9d4
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Physiological_Information_as_Biological_Attribute;
+      rdfs:label "Includes"@en;
+      rdfs:domain :Biological_Attributes;
+      rdfs:range :Physiological_Information ;
+  .
+  
+  :69a4a127f751de507cd5bc26
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Psychological_Characteristics_as_Biological_Attributes;
+      rdfs:label "Includes"@en;
+      rdfs:domain :Biological_Attributes;
+      rdfs:range :Psychological_Characteristics ;
+  .
+  
+  :69a4a25bf751de507cd5d0d5
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Personal_Identifiers_of_Person;
+      rdfs:label "Has"@en;
+      rdfs:domain :Person;
+      rdfs:range :Identifiers ;
+  .
+  
+  :69a4a288f751de507cd5d20d
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Biometric_Identifiers_as_Person's_Identifier;
+      rdfs:label "Includes"@en;
+      rdfs:domain :Identifiers;
+      rdfs:range :Biometric_Identifiers ;
+  .
+  
+  :69a4a312f751de507cd5dafa
+      a owl:ObjectProperty;
+      rdfs:subPropertyOf ns1:Personal_Identifiers_as_Personal_Identifier;
+      rdfs:label "MayInclude"@en;
+      rdfs:domain :Identifiers;
+      rdfs:range :Personal_Identifiers ;
+  .
+  

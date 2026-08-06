@@ -1,0 +1,17 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69b2a79fc3a89f06e1a0e8c8 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Residence identification</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Residence ID</td><td align='left' balign='left' valign='top'>line</td><td PORT='attribute_69b2df5ac3a89f06e1a16bc5' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Jurisdiction of residence</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69b2e15cc3a89f06e1a18d56' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Dates</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69b2e472c3a89f06e1a1b5c3' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69b2a79fc3a89f06e1a0e8c8"]; 
+        concept_69b2a1bcc3a89f06e1a0948e [ label="Residence", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69b2a1bcc3a89f06e1a0948e"]; 
+        concept_69b2a1bcc3a89f06e1a0948e -> entity_69b2a79fc3a89f06e1a0e8c8 [style="solid" xlabel="MayHave\l" ];}
+        

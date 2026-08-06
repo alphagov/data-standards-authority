@@ -1,0 +1,18 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a4bccef751de507cd651e0 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Religious Titles</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Religious Title Granted</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a4bccef751de507cd651e2' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Religious Order</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a4bccef751de507cd651e3' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Religious Appointing Authority</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a4bccef751de507cd651e4' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Dates</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4bccef751de507cd651e5' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a4bccef751de507cd651e0"]; 
+        concept_6994574ff751de507ccc0fa3 [ label="Titles", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_6994574ff751de507ccc0fa3"]; 
+        concept_6994574ff751de507ccc0fa3 -> entity_69a4bccef751de507cd651e0 [style="solid" xlabel="MayInclude\l" ];}
+        

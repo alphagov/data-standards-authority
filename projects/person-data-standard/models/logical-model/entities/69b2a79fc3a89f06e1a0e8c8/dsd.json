@@ -1,0 +1,275 @@
+{
+    "name": "Residence identification",
+    "description": "Residence Identification refers uniquely and consistently identify, reference, and distinguish one residence fact from another within a Party domain.",
+    "Concepts": [
+        {
+            "idConcept": "69b2a3e0c3a89f06e1a0a0fb",
+            "_id": "69b2df5ac3a89f06e1a16bc4",
+            "Concept": {
+                "name": "Residence identification",
+                "description": "Residence Identification refers uniquely and consistently identify, reference, and distinguish one residence fact from another within a Party domain.",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 354,
+                "_id": "69b2a3e0c3a89f06e1a0a0fb",
+                "createdAt": "2026-03-12T11:30:40.175Z",
+                "updatedAt": "2026-03-12T15:32:13.669Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Attributes": [
+        {
+            "name": "Residence ID",
+            "description": "Residence ID is the globally unique, immutable identifier assigned to a Residence Fact — the relationship between a Person and a Location, with associated type, status, verification, and temporal attributes.",
+            "type": "data type",
+            "dataType": "line",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69b2df5ac3a89f06e1a16bc5"
+        },
+        {
+            "name": "Jurisdiction of residence",
+            "description": "Jurisdiction of Residence is the legal or administrative authority that governs the residences Location.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69b2e15cc3a89f06e1a18d56"
+        },
+        {
+            "name": "Dates",
+            "type": "structure",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69b2e472c3a89f06e1a1b5c3"
+        }
+    ],
+    "status": "in use",
+    "seq": 99,
+    "_id": "69b2a79fc3a89f06e1a0e8c8",
+    "createdAt": "2026-03-12T11:46:39.767Z",
+    "updatedAt": "2026-03-27T22:13:21.610Z",
+    "Links": [
+        {
+            "name": "Residence ID",
+            "label": "has",
+            "idConceptFrom": "69b2a1bcc3a89f06e1a0948e",
+            "idConceptTo": "69b2a3e0c3a89f06e1a0a0fb",
+            "status": "deprecated",
+            "seq": 357,
+            "_id": "69b2a513c3a89f06e1a0c972",
+            "createdAt": "2026-03-12T11:35:47.260Z",
+            "updatedAt": "2026-03-12T15:33:57.219Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Residence",
+                "description": "A time‑bounded assertion that a Person resides at a Location with a specified Residence. Includes legal/primary residence, secondary residences, historical changes, validation against jurisdictional reference data. Excludes temporary contact addresses, delivery addresses, lodging/travel events, property ownership details (unless used to evidence residence).",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 353,
+                "_id": "69b2a1bcc3a89f06e1a0948e",
+                "createdAt": "2026-03-12T11:21:32.063Z",
+                "updatedAt": "2026-03-12T11:21:32.063Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Residence identification",
+                "description": "Residence Identification refers uniquely and consistently identify, reference, and distinguish one residence fact from another within a Party domain.",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 354,
+                "_id": "69b2a3e0c3a89f06e1a0a0fb",
+                "createdAt": "2026-03-12T11:30:40.175Z",
+                "updatedAt": "2026-03-12T15:32:13.669Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        },
+        {
+            "name": "Residence Identification",
+            "label": "MayHave",
+            "idConceptFrom": "69b2a1bcc3a89f06e1a0948e",
+            "idConceptTo": "69b2a3e0c3a89f06e1a0a0fb",
+            "status": "in use",
+            "seq": 358,
+            "_id": "69b2cbefc3a89f06e1a11cd0",
+            "createdAt": "2026-03-12T14:21:35.733Z",
+            "updatedAt": "2026-03-12T15:34:19.431Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Residence",
+                "description": "A time‑bounded assertion that a Person resides at a Location with a specified Residence. Includes legal/primary residence, secondary residences, historical changes, validation against jurisdictional reference data. Excludes temporary contact addresses, delivery addresses, lodging/travel events, property ownership details (unless used to evidence residence).",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 353,
+                "_id": "69b2a1bcc3a89f06e1a0948e",
+                "createdAt": "2026-03-12T11:21:32.063Z",
+                "updatedAt": "2026-03-12T11:21:32.063Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Residence identification",
+                "description": "Residence Identification refers uniquely and consistently identify, reference, and distinguish one residence fact from another within a Party domain.",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 354,
+                "_id": "69b2a3e0c3a89f06e1a0a0fb",
+                "createdAt": "2026-03-12T11:30:40.175Z",
+                "updatedAt": "2026-03-12T15:32:13.669Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Revisions": [
+        {
+            "_id": "69b2df5ac3a89f06e1a16c9b",
+            "idAbout": "69b2a79fc3a89f06e1a0e8c8",
+            "report": true,
+            "idUser": 999,
+            "seq": 788,
+            "createdAt": "2026-03-12T15:44:26.588Z",
+            "updatedAt": "2026-03-12T15:44:26.588Z",
+            "__v": 0
+        },
+        {
+            "_id": "69b2e15cc3a89f06e1a18e35",
+            "idAbout": "69b2a79fc3a89f06e1a0e8c8",
+            "report": true,
+            "idUser": 999,
+            "seq": 793,
+            "createdAt": "2026-03-12T15:53:00.519Z",
+            "updatedAt": "2026-03-12T15:53:00.519Z",
+            "__v": 0
+        },
+        {
+            "_id": "69b2e230c3a89f06e1a1993e",
+            "idAbout": "69b2a79fc3a89f06e1a0e8c8",
+            "report": true,
+            "idUser": 999,
+            "seq": 795,
+            "createdAt": "2026-03-12T15:56:32.507Z",
+            "updatedAt": "2026-03-12T15:56:32.507Z",
+            "__v": 0
+        },
+        {
+            "_id": "69b2e472c3a89f06e1a1b6ae",
+            "idAbout": "69b2a79fc3a89f06e1a0e8c8",
+            "report": true,
+            "idUser": 999,
+            "seq": 799,
+            "createdAt": "2026-03-12T16:06:10.368Z",
+            "updatedAt": "2026-03-12T16:06:10.368Z",
+            "__v": 0
+        },
+        {
+            "_id": "69c701019f84c55e29933b14",
+            "idAbout": "69b2a79fc3a89f06e1a0e8c8",
+            "report": true,
+            "idUser": 999,
+            "seq": 1006,
+            "createdAt": "2026-03-27T22:13:21.904Z",
+            "updatedAt": "2026-03-27T22:13:21.904Z",
+            "__v": 0
+        }
+    ],
+    "LogicalModel": {
+        "_id": "699dbdcbf751de507cd22dc5",
+        "name": "Person Domain, Logical Model",
+        "description": "Person Logical Domain Model.\n\nModel ID: DEPoP013.&#x20;\n\nLinking concepts to data items in the Person Domain.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202604.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+        "idUser": 999,
+        "status": "under construction",
+        "seq": 10,
+        "createdAt": "2026-02-24T15:03:39.212Z",
+        "updatedAt": "2026-06-02T16:18:27.733Z",
+        "__v": 0,
+        "id": "699dbdcbf751de507cd22dc5",
+        "uri": "http://def.digitalservicedesigner.com/logicalmodel/10",
+        "Owner": {
+            "id": 999,
+            "username": "madeup",
+            "organisation": "Made Up Organisation - as a Sandbox for the Designer",
+            "uriOrganisation": "http://id.savviuk.org/organisations/madeup"
+        },
+        "Version": {
+            "_id": "6a1f03840eda6fffbbdd9e83",
+            "idAbout": "699dbdcbf751de507cd22dc5",
+            "name": "Logical Model:Person Domain, Logical Model V1 02/06/2026",
+            "type": "logicalmodel",
+            "idUser": 999,
+            "seq": 69,
+            "createdAt": "2026-06-02T16:23:33.248Z",
+            "updatedAt": "2026-06-02T16:23:33.248Z",
+            "__v": 0
+        }
+    }
+}

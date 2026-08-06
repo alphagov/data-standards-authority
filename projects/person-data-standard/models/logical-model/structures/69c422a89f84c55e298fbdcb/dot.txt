@@ -1,0 +1,18 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        structure_69c422a89f84c55e298fbdcb [ label=<<table border='0' cellborder='1' cellspacing='0'>
+            <tr>
+                <td colspan='3' bgcolor='grey'> Date - 8 Attribute model</td>
+            </tr>
+            <tr>
+                <td bgcolor='grey'>Attribute</td><td bgcolor='grey'>Data Type</td><td bgcolor='grey'>Occurs</td>
+            </tr>
+                        <tr><td align='left' balign='left' valign='top'>Day</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69c422a89f84c55e298fbdcc' align='left' balign='left' valign='top'>once</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Month Number</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69c423079f84c55e298fc44b' align='left' balign='left' valign='top'>once</td></tr>
+                        <tr><td align='left' balign='left' valign='top'>Year</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69c423079f84c55e298fc44c' align='left' balign='left' valign='top'>once</td></tr>
+        </table>>, shape=plaintext, fillcolor="grey", URL="structure_69c422a89f84c55e298fbdcb"]; }
+        

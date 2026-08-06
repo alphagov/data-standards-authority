@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formally Recognised Citizenship </title>
+  <link rel="stylesheet" href="../../style.css">
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m817f42addf14c9a838da36e78800043 msdt:dt="string">GDS|444fcede-209e-4852-86df-859b7c4e54f8</mso:m817f42addf14c9a838da36e78800043>
+<mso:c6f593ada1854b629148449de059396b msdt:dt="string">DSIT|9b2b16d8-8f0e-f9f9-8d2e-30d6eeb93788</mso:c6f593ada1854b629148449de059396b>
+<mso:h573c97cf80c4aa6b446c5363dc3ac94 msdt:dt="string">Office of the Government Chief Data Officer|5618b818-b448-4ff4-8bc4-3bf6387f1b52</mso:h573c97cf80c4aa6b446c5363dc3ac94>
+<mso:TaxCatchAll msdt:dt="string">3;#DSIT;#2;#Office of the Government Chief Data Officer;#1;#GDS</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">M7F6KF7KFYNX-983861426-91117</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">157ae2bd-2674-49ca-817b-749108ca3f5e</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://beisgov.sharepoint.com/sites/OCDO/_layouts/15/DocIdRedir.aspx?ID=M7F6KF7KFYNX-983861426-91117, M7F6KF7KFYNX-983861426-91117</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav aria-label="Breadcrumb" id="breadcrumb" hidden></nav>
+  <main class="page-content" id="main-content">
+    <h1 id="formally-recognised-citizenship">Formally Recognised Citizenship</h1>
+<p>Formally Recognised Citizenship captures a person’s legally conferred nationality status as recognised by a sovereign state or authority. It reflects official citizenship(s) in force, with provenance to authoritative sources (e.g., passport, national identity registry, certificate of naturalisation).</p>
+<h2 id="implements-concepts-from-person-domain-concept-model">Implements Concepts from Person Domain, Concept Model</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Formally Recognised Citizenship</td>
+<td>Formally Recognised Citizenship captures a person’s legally conferred nationality status as recognised by a sovereign state or authority. It reflects official citizenship(s) in force, with provenance to authoritative sources (e.g., passport, national identity registry, certificate of naturalisation).</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../../entities/69a4943ff751de507cd5619b/image.svg" alt="Formally Recognised Citizenship " /></p>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Country Name</td>
+<td>Country Name (Official) is the authoritative, internationally recognised full name of a sovereign state or territory, as recorded in a trusted external standard such as ISO‑3166, the United Nations Terminology Bulletin, or a national government’s official designation. It provides a stable, canonical reference for interoperability, compliance, jurisdictional mapping, and cross‑system alignment.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Country Code</td>
+<td>Country Code is the standardised alphanumeric or numeric code assigned to a country or territory by an authoritative international standard—most commonly ISO‑3166‑1. It provides a canonical, compact, and language‑independent identifier for countries, enabling consistent interoperability, integration, and global reporting across systems.  This attribute is part of core reference data and must be stable, globally consistent, and governed.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Legal Status Type</td>
+<td>Legal Status of Citizenship describes the formal, legally recognised standing of an individual’s citizenship with respect to a specific country or jurisdiction. It indicates whether citizenship is legally conferred, retained, suspended, revoked, renounced, conditional, or otherwise formally determined under that state's nationality laws.  It reflects legal fact, not self‑identification, residency rights, or application stage. It must be based on authoritative government records, never inferred.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Status Description</td>
+<td>Citizenship Status Description is a categorical attribute that describes the current legal standing of an individual’s citizenship with respect to a specific country or authority. It expresses whether citizenship is active, revoked, renounced, suspended, conditional, or historical, and, where relevant, the administrative or legal context behind that status.  It does not store legal reasoning, detailed case information, immigration status, or residency rights.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Proof of Status</td>
+<td>Proof of Status for Citizenship is a structured evidence attribute that records the authoritative documentation or verification method used to confirm an individual’s legally recognised citizenship with a specific country. It captures what evidence was provided, how it was validated, and by whom, without storing the document itself. This attribute provides the audit trail underpinning the Legal Status of Citizenship and Citizenship Status Description records.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dual or Multiple Status</td>
+<td>Dual or Multiple Citizenship Status indicates whether an individual holds more than one legally recognised citizenship at the same time. It is a derived, categorical attribute summarising the number of active citizenships linked to the individual, based on authoritative legal citizenship records.  This attribute expresses the cardinality of citizenship, not the legal details of each citizenship.  It does not infer hierarchy, privilege, or rights — it simply describes whether citizenship is single, dual, or multiple.</td>
+<td>lookup</td>
+<td>once</td>
+</tr>
+<tr>
+<td>Verification Source</td>
+<td>Verification Source (Citizenship) identifies the authoritative channel, system, or method through which a person’s citizenship was validated. It records where the verification came from, such as a government registry, document check, consular confirmation, or trusted digital identity service. It does not store the document itself or legal reasoning — only the verification provenance. It is metadata about how citizenship was confirmed, not evidence itself.  This attribute ensures transparency, auditability, and trust in citizenship status.</td>
+<td>lookup</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Dates for Formally Recognised Citizenship define the legal and administrative time periods during which a person’s citizenship in a specific country is valid, active, suspended, revoked, renounced, or historically recognised. These dates provide a temporal record of citizenship lifecycle, enabling accurate legal interpretation, compliance operations, and historical identity reconstruction.  The attribute set typically includes:  * citizenship_effective_from — when citizenship legally begins * citizenship_effective_to — when it legally ends (nullable if still active) * status_change_date — date a legal status transition occurs (optional) * verification_date — date citizenship was last officially verified (stored separately or linked)  These dates apply per citizenship record, not globally to the individual.</td>
+<td>date</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relationships">Relationships</h2>
+<ul>
+<li><a href="../../relationships/69a49565f751de507cd56e68/index.html">Citizenship Has Formally Recognised Citizenship</a> ← <a href="../../entities/69a49420f751de507cd55a75/index.html">Citizenship</a></li>
+</ul>
+  </main>
+  <script>(function(){
+  var K='dsd_trail',pid="entities/69a4943ff751de507cd5619b",ptitle="Formally Recognised Citizenship ",phref="entities/69a4943ff751de507cd5619b/index.html";
+  var rootPfx="../../";
+  function h(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  var nav=document.getElementById('breadcrumb');
+  var trail=[];
+  try{trail=JSON.parse(sessionStorage.getItem(K)||'[]');}catch(e){}
+  var idx=-1;
+  for(var i=0;i<trail.length;i++){if(trail[i].id===pid){idx=i;break;}}
+  if(idx>=0){trail=trail.slice(0,idx+1);}
+  else{trail.push({id:pid,href:phref,title:ptitle});}
+  sessionStorage.setItem(K,JSON.stringify(trail));
+  if(!nav)return;
+  var ht="Person Domain, Logical Model";
+  var c='<ol><li><a href="'+rootPfx+'index.html">'+h(ht)+'</a></li>';
+  for(var j=0;j<trail.length-1;j++){c+='<li><a href="'+rootPfx+h(trail[j].href)+'">'+h(trail[j].title)+'</a></li>';}
+  c+='<li><span aria-current="page">'+h(ptitle)+'</span></li></ol>';
+  nav.innerHTML=c;
+  nav.removeAttribute('hidden');
+})();</script>
+</body>
+</html>

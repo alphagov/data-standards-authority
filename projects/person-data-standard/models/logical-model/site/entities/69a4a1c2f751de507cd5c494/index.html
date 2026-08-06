@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biometric Identifiers</title>
+  <link rel="stylesheet" href="../../style.css">
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m817f42addf14c9a838da36e78800043 msdt:dt="string">GDS|444fcede-209e-4852-86df-859b7c4e54f8</mso:m817f42addf14c9a838da36e78800043>
+<mso:c6f593ada1854b629148449de059396b msdt:dt="string">DSIT|9b2b16d8-8f0e-f9f9-8d2e-30d6eeb93788</mso:c6f593ada1854b629148449de059396b>
+<mso:h573c97cf80c4aa6b446c5363dc3ac94 msdt:dt="string">Office of the Government Chief Data Officer|5618b818-b448-4ff4-8bc4-3bf6387f1b52</mso:h573c97cf80c4aa6b446c5363dc3ac94>
+<mso:TaxCatchAll msdt:dt="string">3;#DSIT;#2;#Office of the Government Chief Data Officer;#1;#GDS</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">M7F6KF7KFYNX-983861426-91147</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">9dddc5df-39ac-446c-9657-1ebc770cc7d9</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://beisgov.sharepoint.com/sites/OCDO/_layouts/15/DocIdRedir.aspx?ID=M7F6KF7KFYNX-983861426-91147, M7F6KF7KFYNX-983861426-91147</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav aria-label="Breadcrumb" id="breadcrumb" hidden></nav>
+  <main class="page-content" id="main-content">
+    <h1 id="biometric-identifiers">Biometric Identifiers</h1>
+<p>Biometric Identifiers are data elements that capture a person’s unique biological or behavioural traits for the purpose of identification, authentication, or verification. This includes raw biometric measurements (e.g., fingerprints), biometric templates derived from those measurements, and any metadata required to process or match them.</p>
+<h2 id="implements-concepts-from-person-domain-concept-model">Implements Concepts from Person Domain, Concept Model</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biometric Identifiers</td>
+<td>Biometric Identifiers are data elements that capture a person’s unique biological or behavioural traits for the purpose of identification, authentication, or verification. This includes raw biometric measurements (e.g., fingerprints), biometric templates derived from those measurements, and any metadata required to process or match them.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../../entities/69a4a1c2f751de507cd5c494/image.svg" alt="Biometric Identifiers" /></p>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Data type</th>
+<th>Occurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fingerprints</td>
+<td>Fingerprints are unique biometric identifiers derived from the ridge patterns present on an individual’s fingers. They are captured as digital biometric templates, images, or encoded representations, and used solely for high‑assurance identity verification, authentication, or law‑enforcement purposes where legally justified.  Fingerprints are immutable, uniquely identifying, and classified as special category biometric data under data‑protection law.  This attribute does not store raw images unless explicitly permitted. Biometric templates (mathematically encoded forms) are the standard for secure storage.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Facial Recognition Data</td>
+<td>Facial Recognition Data refers to biometric templates or encoded vectors generated from an individual’s facial features for the purpose of identity verification, authentication, or uniqueness checks, under strictly governed legal circumstances.  It may include:  * Face embeddings (vectorised mathematical representations) * Biometric templates compliant with standards (e.g., ISO/IEC 19794‑5) * Minimal faceprint data necessary for matching  It does not include raw photographs unless stored separately under distinct image-governance policies.  Facial recognition data is unique, unavoidable, permanent, and highly sensitive, and therefore must never be used outside lawful, authorised workflows.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Voice Pattern</td>
+<td>Voice Pattern refers to the digitally captured and mathematically encoded representation of an individual’s vocal characteristics (pitch, timbre, rhythm, formants, spectral features). It is stored as a voice biometric template or voiceprint, not as raw audio.  Voice patterns enable high‑assurance identity verification or authentication when legally authorised, but must never be used for emotion detection, demographic inference, or behavioural profiling.  Voice Pattern ≠ raw recording; it is an irreversible, encrypted biometric template.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Biometric ID Reference</td>
+<td>Biometric IDs are unique, immutable physiological or behavioural identifiers derived from an individual's biological characteristics (e.g., fingerprints, facial geometry, iris patterns, voice patterns) used for high‑assurance identity verification or authentication under strict legal and governance controls.  A Biometric ID refers specifically to the unique biometric template or identifier representing a biometric modality—not the raw data itself. Examples: fingerprint template ID, facial recognition template ID, iris scan template ID.  Biometric IDs must be stored as non-reversible encrypted templates or reference tokens, never as raw biometric images or recordings.</td>
+<td>line</td>
+<td>many</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Biometrics are time‑bounded credentials  Biometric Identifier Valid From (Effective From) - The date/time from which the biometric identifier is considered valid for use (e.g., after successful enrolment and any required verification/quality checks).  Biometric Identifier Valid To (Effective To) - The date/time at which the biometric identifier ceases to be valid for use, due to expiry, revocation, replacement, compromise, or policy change.</td>
+<td>structure</td>
+<td>many</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relationships">Relationships</h2>
+<ul>
+<li><a href="../../relationships/69a4a288f751de507cd5d20d/index.html">Identifiers Includes Biometric Identifiers</a> ← <a href="../../entities/69a4a242f751de507cd5cfb1/index.html">Identifiers</a></li>
+</ul>
+  </main>
+  <script>(function(){
+  var K='dsd_trail',pid="entities/69a4a1c2f751de507cd5c494",ptitle="Biometric Identifiers",phref="entities/69a4a1c2f751de507cd5c494/index.html";
+  var rootPfx="../../";
+  function h(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  var nav=document.getElementById('breadcrumb');
+  var trail=[];
+  try{trail=JSON.parse(sessionStorage.getItem(K)||'[]');}catch(e){}
+  var idx=-1;
+  for(var i=0;i<trail.length;i++){if(trail[i].id===pid){idx=i;break;}}
+  if(idx>=0){trail=trail.slice(0,idx+1);}
+  else{trail.push({id:pid,href:phref,title:ptitle});}
+  sessionStorage.setItem(K,JSON.stringify(trail));
+  if(!nav)return;
+  var ht="Person Domain, Logical Model";
+  var c='<ol><li><a href="'+rootPfx+'index.html">'+h(ht)+'</a></li>';
+  for(var j=0;j<trail.length-1;j++){c+='<li><a href="'+rootPfx+h(trail[j].href)+'">'+h(trail[j].title)+'</a></li>';}
+  c+='<li><span aria-current="page">'+h(ptitle)+'</span></li></ol>';
+  nav.innerHTML=c;
+  nav.removeAttribute('hidden');
+})();</script>
+</body>
+</html>
