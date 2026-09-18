@@ -1,6 +1,6 @@
 # logical model: Person Domain, Logical Model
 
-> ## Version: Logical Model:Person Domain, Logical Model V1 02/06/2026
+> ## Version: Person Domain, Logical Model V1 02/06/2026
 >
 > *Created: 2 June 2026*
 >
@@ -17,7 +17,7 @@ An individual human who participates in business activities or interactions. The
 
 The Department for Science, Innovation and Technology
 
-![Person Domain, Logical Model](./image.svg)
+![Person Domain, Logical Model](./logical-model.svg)
 
 
 ## Index
