@@ -23,7 +23,7 @@ This folder contains the working materials for the Person Data Standard and is o
 ## Where to Start
 
 Users new may find it useful to start with:
- - [attribute-definitions/attributes-specification-for-person.docx](./attributes-specification-for-person.docx): A document containing specifications for the "core" attributes of a Person
+ - [attribute-definitions/attributes-specification-for-person.docx](./attribute-definitions/attributes-specification-for-person.docx): A document containing specifications for the "core" attributes of a Person
  - [models/domain-model/domain-model.md](./models/domain-model/domain-model.md): The Domain Model, the approach by which the Person Domain has been broken down into different categories and attributes.
 
 ## Making Changes
