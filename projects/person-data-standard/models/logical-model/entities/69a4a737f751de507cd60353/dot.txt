@@ -1,0 +1,14 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a4a737f751de507cd60353 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Genetic Ethnicity</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a4a737f751de507cd60353"]; 
+        concept_69945d25f751de507ccc6be5 [ label="Person", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945d25f751de507ccc6be5"]; 
+        concept_69945d25f751de507ccc6be5 -> entity_69a4a737f751de507cd60353 [style="solid" xlabel="Has\l" ];}
+        

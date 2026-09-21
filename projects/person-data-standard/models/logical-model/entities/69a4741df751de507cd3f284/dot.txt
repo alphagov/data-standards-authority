@@ -1,0 +1,21 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a4741df751de507cd3f284 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Name</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Formal Name</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4741df751de507cd3f285' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Informal Name</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4741df751de507cd3f286' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Full Name</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_6a182bf94055a62b0ab54993' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a4741df751de507cd3f284"]; 
+        concept_69945d25f751de507ccc6be5 [ label="Person", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945d25f751de507ccc6be5"]; 
+        concept_69987879f751de507ccf8939 [ label="Formal Name", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69987879f751de507ccf8939"]; 
+        concept_6998788df751de507ccf90b9 [ label="Informal Name", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_6998788df751de507ccf90b9"]; 
+        concept_69945d25f751de507ccc6be5 -> entity_69a4741df751de507cd3f284 [style="solid" xlabel="MayHave\l" ];
+        entity_69a4741df751de507cd3f284 -> concept_69987879f751de507ccf8939 [style="solid" xlabel="MayInclude\l" ];
+        entity_69a4741df751de507cd3f284 -> concept_6998788df751de507ccf90b9 [style="solid" xlabel="MayInclude\l" ];}
+        

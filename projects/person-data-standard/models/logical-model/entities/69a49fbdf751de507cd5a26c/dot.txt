@@ -1,0 +1,20 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a49fbdf751de507cd5a26c [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Physiological Information</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Blood Type</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49fbdf751de507cd5a26e' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Genetic Traits</td><td align='left' balign='left' valign='top'>text</td><td PORT='attribute_69a49fbdf751de507cd5a26f' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Self-reported disability</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a49fbdf751de507cd5a270' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Organ Donor</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a49fbdf751de507cd5a272' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Dates</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4a003f751de507cd5a8bf' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a49fbdf751de507cd5a26c"]; 
+        concept_69945ad7f751de507ccc3db5 [ label="Biological
+Attributes", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945ad7f751de507ccc3db5"]; 
+        concept_69945ad7f751de507ccc3db5 -> entity_69a49fbdf751de507cd5a26c [style="solid" xlabel="Includes\l" ];}
+        

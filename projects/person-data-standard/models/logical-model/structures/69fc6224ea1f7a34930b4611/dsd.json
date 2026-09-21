@@ -1,0 +1,19 @@
+{
+    "name": "Sex and Gender",
+    "description": "The Sex and Gender sub‑domain covers data elements that describe an individual’s biological sex characteristics and gender identity attributes for the purposes of identity management, demographic classification, and service personalisation. It differentiates between sex‑related biological attributes and self‑described gender identity, reflecting both regulatory expectations and modern data‑standards practice. It also include how these relate to and define Legal Sex.",
+    "Attributes": [],
+    "status": "in use",
+    "_id": "69fc6224ea1f7a34930b4611",
+    "createdAt": "2026-05-07T09:57:56.884Z",
+    "updatedAt": "2026-05-07T09:57:56.884Z",
+    "DataDictionary": {
+        "_id": "69fb72fbea1f7a349308088b",
+        "name": "Person Domain",
+        "description": "Common reusable structures for the Person Domain\n\n\n\nJames Strachan",
+        "idUser": 999,
+        "seq": 12,
+        "createdAt": "2026-05-06T16:57:31.054Z",
+        "updatedAt": "2026-05-07T09:59:33.898Z",
+        "__v": 0
+    }
+}

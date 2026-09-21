@@ -1,0 +1,22 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a4943ff751de507cd5619b [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Formally Recognised Citizenship </td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Country Name</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49525f751de507cd56791' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Country Code</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a49525f751de507cd56792' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Legal Status Type</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49525f751de507cd56793' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Status Description</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49525f751de507cd56794' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Proof of Status</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49525f751de507cd56797' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Dual or Multiple Status</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49525f751de507cd56798' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Verification Source</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49525f751de507cd56799' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Dates</td><td align='left' balign='left' valign='top'>date</td><td PORT='attribute_69a49525f751de507cd56795' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a4943ff751de507cd5619b"]; 
+        concept_69945984f751de507ccc2ced [ label="Citizenship", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945984f751de507ccc2ced"]; 
+        concept_69945984f751de507ccc2ced -> entity_69a4943ff751de507cd5619b [style="solid" xlabel="Has\l" ];}
+        

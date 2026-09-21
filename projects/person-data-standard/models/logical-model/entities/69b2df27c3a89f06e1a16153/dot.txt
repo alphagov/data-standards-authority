@@ -1,0 +1,19 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69b2df27c3a89f06e1a16153 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Residence Status</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Residence type</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69b2df99c3a89f06e1a17195' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Current</td><td align='left' balign='left' valign='top'>yes/no</td><td PORT='attribute_69b2e331c3a89f06e1a19e07' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>For Taxation</td><td align='left' balign='left' valign='top'>yes/no</td><td PORT='attribute_69b2e331c3a89f06e1a19e08' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Status source</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69b2e331c3a89f06e1a19e09' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Dates</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69b2e451c3a89f06e1a1b006' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69b2df27c3a89f06e1a16153"]; 
+        concept_69b2a1bcc3a89f06e1a0948e [ label="Residence", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69b2a1bcc3a89f06e1a0948e"]; 
+        concept_69b2a1bcc3a89f06e1a0948e -> entity_69b2df27c3a89f06e1a16153 [style="solid" xlabel="may have\l" ];}
+        

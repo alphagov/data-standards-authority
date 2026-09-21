@@ -1,0 +1,16 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69fb660aea1f7a349307ba09 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Birth Date</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Date of Birth</td><td align='left' balign='left' valign='top'>date</td><td PORT='attribute_69fb660aea1f7a349307ba0a' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Estimated DOB</td><td align='left' balign='left' valign='top'>yes/no</td><td PORT='attribute_69fb660aea1f7a349307ba0b' align='left' balign='left' valign='top'>once</td></tr>
+        </table>>, shape=plaintext, URL="entity_69fb660aea1f7a349307ba09"]; 
+        concept_699878a9f751de507ccf966e [ label="Birth", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_699878a9f751de507ccf966e"]; 
+        concept_699878a9f751de507ccf966e -> entity_69fb660aea1f7a349307ba09 [style="solid" xlabel="Was on\l" ];}
+        

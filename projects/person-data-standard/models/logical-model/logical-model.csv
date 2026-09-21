@@ -1,0 +1,184 @@
+Entity,Label,Description,AttributeName,DataType,Structure,Occurs,Required
+Biological_Attributes,Biological Attributes,"Inherent physical, physiological, or genetic characteristics of a Natural Person that arise from biology rather than social, cultural, or legal identity.
+
+Biological Attributes describe intrinsic properties of the human body and are distinct from personal identity attributes (e.g., name), demographic identity (e.g. ethnicity), or legal identity (e.g, citizenship).",,,,,
+,,,Physical Characteristics,,,once,no
+,,,Physiological Information,,,once,no
+,,,Psychological Characteristics,,,once,no
+,,,Sex and Gender,,,once,yes
+Biometric_Identifiers,Biometric Identifiers,"Biometric Identifiers are data elements that capture a person’s unique biological or behavioural traits for the purpose of identification, authentication, or verification. This includes raw biometric measurements (e.g., fingerprints), biometric templates derived from those measurements, and any metadata required to process or match them.",,,,,
+,,,Fingerprints,,,many,no
+,,,Facial Recognition Data,,,many,no
+,,,Voice Pattern,,,many,no
+,,,Biometric ID Reference,line,,many,no
+,,,Dates,,,many,no
+Birth,Birth,"Birth covers data elements that record the circumstances of an individual’s birth. It includes factual, verifiable attributes such as date, place, and conditions of birth, along with any official registration details issued by an authority.",,,,,
+,,,Date of Birth Registration Date ,date,,once,yes
+,,,Birth Date,,,once,yes
+,,,Place of Birth,line,,once,yes
+,,,Time of Birth,time,,once,yes
+,,,Birth Registration Number,line,,once,yes
+,,,Multiple Birth Indicator,lookup,,once,yes
+,,,Facility/ Location Type,lookup,,once,yes
+Birth_Date,Birth Date,This is the structure defining date of birth and how it's been defined.&#x20;,,,,,
+,,,Date of Birth,date,,once,yes
+,,,Estimated DOB,yes/no,,once,yes
+Citizenship,Citizenship,"A person’s legal relationship with a state, which grants rights, protections, and obligations under that state’s laws. In a conceptual model, Citizenship is a legal‑status attribute of a Natural Person that identifies the country or sovereign entity recognising them as a citizen.",,,,,
+,,,Formally Recognized Citizenship ,,,many,yes
+Civil_Social_Titles,Civil Social Titles,"Civil Social Titles are non‑professional, non‑noble honorifics used in everyday civil contexts to address or refer to individuals (e.g., Mr, Mrs, Miss, Ms, Mx). They facilitate respectful forms of address, correspondence, and identity presentation but do not indicate rank, role, or qualification.",,,,,
+,,,Preferred Form of Address,lookup,,once,no
+,,,Title Source,line,,many,no
+,,,Dates,,,many,no
+Death,Death,"The factual, legally recognised details surrounding the end of an individual’s life. It includes authoritative attributes such as the date, time, and location of death, as well as official registration information issued by a competent authority. This event provides a definitive closure point for identity records and downstream operational processes.",,,,,
+,,,Registered Date of Death,date,,once,yes
+,,,Date of Death,date,,once,yes
+,,,Time of Death,time,,once,yes
+,,,Place of Death,line,,once,yes
+,,,Country of Death,lookup,,once,yes
+,,,Death Registration Number,line,,once,yes
+,,,Burial or Cremation Number,line,,once,yes
+,,,Place of Burial or Cremation,lookup,,once,yes
+,,,Registrar Office or Authority,lookup,,once,yes
+,,,Next of Kin,,,many,yes
+Ethnicity_(Cultural_identify),Ethnicity (Cultural identify),"Ethnicity is a cultural identity concept that reflects a person’s connection to a group or community defined by shared heritage, ancestry, traditions, culture, language, and/or social experience. It describes how people identify culturally, socially, or historically, not their legal status or nationality.
+
+In a conceptual model, Ethnicity is a self‑identified, culturally grounded attribute of a Natural Person and is separate from Nationality (cultural/national belonging) and Citizenship (legal status).",,,,,
+Formal_Name,Formal Name,"Formal Name represents the official, legally recognised version of an individual’s name, as recorded by an authoritative source such as a civil registry, passport, birth certificate, or government-issued identity document. It is the canonical name used in contexts requiring legal identity, compliance, or formal verification.",,,,,
+,,,Given Name,line,,once,no
+,,,Middle Name,line,,many,no
+,,,Family Name,line,,once,no
+,,,Verification Source,lookup,,many,yes
+,,,Dates,,,many,yes
+Formally_Recognised_Citizenship_,Formally Recognised Citizenship ,"Formally Recognised Citizenship captures a person’s legally conferred nationality status as recognised by a sovereign state or authority. It reflects official citizenship(s) in force, with provenance to authoritative sources (e.g., passport, national identity registry, certificate of naturalisation).",,,,,
+,,,Country Name,lookup,,many,yes
+,,,Country Code,,,many,yes
+,,,Legal Status Type,lookup,,once,yes
+,,,Status Description,lookup,,many,no
+,,,Proof of Status,lookup,,many,yes
+,,,Dual or Multiple Status,lookup,,once,yes
+,,,Verification Source,lookup,,many,yes
+,,,Dates,date,,many,yes
+Full_Name,Full Name,"Full Name represents a combined or displayable expression of a person’s name.
+
+It may be formed from formal name components, informal name components, or both, depending on context.
+
+In some cases, Full Name may reflect the authoritative identity as it is presented or used.
+
+However, it is not the authoritative structured identity record and must not replace Formal Name or Informal Name in the underlying model.",,,,,
+,,,Dates,,,many,no
+Full_Name,Full Name,"update;
+Deprecated in the Logical Model to align with the V2 Attributes Specification, which does not define Full Name as a standard data item.
+
+
+Captured separately as separate item or a concatenate of Given Name and Family, which may also include middle names.",,,,,
+,,,Full Name,line,,once,no
+Genetic_Ethnicity,Genetic Ethnicity,"A scientific estimate of a person’s ancestral origins based on the analysis of their DNA. It represents inferred biological population groups, expressed as probabilities or percentages, and reflects patterns of genetic similarity shared with reference populations.
+
+It does not represent cultural identity, heritage, nationality, or citizenship—it is a biologically inferred attribute, not a social or legal one.",,,,,
+Identifiers,Identifiers,"Unique references that distinguish one Natural Person from all others within a given context, system, or jurisdiction. They are assigned by an authority (e.g., a government, organisation, or system) for the purpose of uniquely recognising, managing, or relating to that person across processes and datasets.
+
+Identifiers are not the person, and they are not personal attributes (like name, gender, or date of birth). They are tokens that point to the person.",,,,,
+,,,Biometric Identifiers,,,once,no
+,,,Personal Identifiers,,,once,no
+Informal_Name,Informal Name,"The Informal Name sub‑domain captures non‑legal, non‑official name forms that an individual uses in everyday social, cultural, or operational contexts. These names support familiarity, personal preference, and communication ease but hold no legal standing and should not be used for identity verification or regulatory decisioning.",,,,,
+,,,Nick Name,line,,many,no
+,,,Preferred Name,line,,many,no
+,,,Alias,line,,many,no
+,,,Verification Source,line,,many,no
+,,,Dates,,,many,yes
+Military_Titles,Military Titles,"Military Titles represent the official ranks, grades, and honorific forms of address assigned to individuals within armed forces or uniformed services (e.g., Lieutenant, Captain, Colonel). These titles indicate hierarchical position, authority, and command responsibility. They are role‑based, not personal, and may change throughout a career.",,,,,
+,,,Military Rank,lookup,,many,no
+,,,Service Branch,lookup,,many,no
+,,,Service Number,line,,many,no
+,,,Country,lookup,,many,no
+,,,Status,yes/no,,many,no
+,,,Verification Source,lookup,,many,no
+,,,Dates,,,many,no
+Name,Name,"A textual identifier used to refer to or represent a Natural Person, Organisation, Place, or other entity. In conceptual modelling, a Name describes how something is known or addressed, not what it is. Names may consist of multiple components, may vary by context, and may change over time.
+
+At least one Formal Name is required for a Person to ensure a minimum identity representation, while Informal Name remains optional.",,,,,
+,,,Formal Name,,,many,yes
+,,,Informal Name,,,many,no
+Nationality,Nationality,"Describes how an individual identifies with one or more nations, countries, or national groups.
+
+In the Person domain, nationality is treated as a matter of personal identity and self‑expression, rather than legal status. Formal legal nationality or citizenship is modelled separately under Citizenship.",,,,,
+,,,Self-Identified Nationality,,,many,no
+Person,Person,"An individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.",,,,,
+,,,Biological Attributes,,,once,no
+,,,Citizenship,,,once,no
+,,,Ethnicity (Cultural identify),,,,no
+,,,Genetic Ethnicity,,,,no
+,,,Name,,,once,no
+,,,Nationality,,,once,no
+,,,Person Event,,,many,no
+,,,Identifiers,,,many,no
+,,,Titles,,,once,no
+Person_Event,Person Event,"An occurrence or change in circumstance that happens to a specific Natural Person at a point in time (or over a period of time) and is relevant to business processes, reporting, or understanding that person’s history. It captures something that happens to or is experienced by the person, rather than a role or relationship they hold.",,,,,
+,,,Birth,,,once,no
+,,,Death,,,once,no
+,,,Pregnancy,,,many,no
+Personal_Identifiers,Personal Identifiers,"Personal Identifier IDs are unique identifiers assigned to a person by an authority or system for identification, linkage, or entitlement. This domain includes government‑issued IDs (e.g., national IDs), organisational master IDs, and cross‑system surrogate keys used to unambiguously reference a person across processes and systems.",,,,,
+Physical_Characteristics,Physical Characteristics,"Physical Characteristics refers to observable, measurable, and non‑biometric biological traits of an individual. These features describe physical form or appearance but do not uniquely identify a person on their own. The sub‑domain includes raw descriptive attributes and standardised measurements recorded for classification, profiling, or operational purposes.",,,,,
+,,,Height,number,,once,no
+,,,Weight,number,,once,no
+,,,Body Build,lookup,,once,no
+,,,Eye Colour,lookup,,many,no
+,,,Hair Colour,lookup,,many,no
+,,,Skin Tone,lookup,,once,no
+,,,Facial Hair,lookup,,many,no
+,,,Dates,,,many,no
+Physiological_Information,Physiological Information,"Physiological Information describes non‑clinical, non‑diagnostic information about an individual’s biological and bodily functions. It includes physiological or biologically‑derived attributes such as blood type, genetic traits, self‑reported disability, and organ donor status. These attributes are descriptive and operational in nature, rather than cognitive, emotional, or behavioural characteristics, and do not uniquely identify a person",,,,,
+,,,Blood Type,lookup,,once,no
+,,,Genetic Traits,text,,many,no
+,,,Self-reported disability,,,many,no
+,,,Organ Donor,,,many,no
+,,,Dates,,,many,no
+Post-Nominal_Titles,Post-Nominal Titles,"Post‑Nominal Titles are letters placed after a person’s name that denote orders, decorations, honours, academic degrees, professional memberships, licensure, or fellowships (e.g., OBE, PhD, FRCS, CPA). They confer recognition or qualification, not forms of address, and are typically governed by awarding bodies with formal usage rules.",,,,,
+Pregnancy,Pregnancy,"Pregnancy is a time‑bound life event that records the fact that an individual is pregnant, including the start, expected milestones, and outcome of the pregnancy where relevant for operational, safeguarding, or service‑eligibility purposes. It captures non‑clinical, administrative facts only—not medical diagnoses, treatment notes, or clinical assessments.",,,,,
+Professional_Occupational_Titles,Professional Occupational Titles,"Professional Occupational Titles are titles or prefixes associated with a person’s profession, occupation, or accredited role, used to indicate an individual’s professional standing, qualification, or occupational function. They are not academic degrees or post‑nominals, but pre‑nominal markers tied to recognised professions (e.g., Dr, Prof, Eng, Nurse, Architect). These titles support appropriate address, professional recognition, and role‑based communication.",,,,,
+,,,Professional Title,lookup,,once,no
+,,,Field Profession,line,,once,no
+,,,Dates,,,many,no
+Psychological_Characteristics,Psychological Characteristics,"Psychological Characteristics refer to non‑clinical, non‑diagnostic attributes that describe an individual’s typical cognitive, emotional, and behavioural tendencies. These characteristics represent stable patterns of thinking and behaviour, not mental health conditions, and do not uniquely identify a person. They may include personality traits, cognitive style descriptors, and general behavioural dispositions.",,,,,
+Religious_Titles,Religious Titles,"Religious Titles are formal honorifics, ranks, or styles of address associated with roles, positions, or consecrated statuses within recognised religious traditions (e.g., Reverend, Rabbi, Imam, Sister, Monsignor, Guru). These titles indicate spiritual authority, clerical office, or religious vocation, and are used in formal or community contexts to show respect and denote role-based standing.",,,,,
+,,,Religious Title Granted,lookup,,many,no
+,,,Religious Order,lookup,,many,no
+,,,Religious Appointing Authority,lookup,,many,no
+,,,Dates,,,many,no
+Residence,Residence,"A time‑bounded assertion that a Person resides at a Location with a specified Residence. Includes legal/primary residence, secondary residences, historical changes, validation against jurisdictional reference data. Excludes temporary contact addresses, delivery addresses, lodging/travel events, property ownership details (unless used to evidence residence).",,,,,
+,,,Residence Handling,,,many,no
+,,,Residence Status,,,many,no
+,,,Residence Verification,,,many,no
+,,,Residence Identification,,,many,no
+Residence_Handling,Residence Handling,"Residence Handling refers to the governed rules, behaviours, and constraints that define how residency data may be collected, processed, stored, shared, updated, retained, secured, and used within a data domain.",,,,,
+,,,Residence Confidentiality,lookup,,many,no
+,,,Special Handling indicator,yes/no,,many,no
+,,,Residence accessibility,lookup,,many,no
+,,,Dates,,,many,no
+Residence_Status,Residence Status,"Residence Type specifies the role, purpose, and legal/operational meaning of a residency relationship between a place or property and a person.",,,,,
+,,,Residence type,lookup,,many,no
+,,,Current,yes/no,,once,no
+,,,For Taxation,yes/no,,once,no
+,,,Status source,lookup,,many,no
+,,,Dates,,,many,no
+Residence_Verification,Residence Verification,"Residence Verification describes the degree of confidence, method, and evidence supporting the assertion that a Party (Person or Legal Entity) resides at a given Location.",,,,,
+,,,Verification Status,lookup,,many,no
+,,,Validation source,line,,many,no
+,,,Validation Dates,date,,many,no
+Residence_identification,Residence identification,"Residence Identification refers uniquely and consistently identify, reference, and distinguish one residence fact from another within a Party domain.",,,,,
+,,,Residence ID,line,,many,no
+,,,Jurisdiction of residence,lookup,,many,no
+,,,Dates,,,many,no
+Self-Identified_Nationality,Self-Identified Nationality,"Self‑Identified Nationality represents how an individual personally defines or expresses their own national identity, independent of citizenship, passport, or legal status. It reflects cultural affiliation, heritage, or personal identification, and is self‑reported, non‑authoritative, and used solely for demographic, engagement, or inclusion‑related purposes.
+
+This attribute does not confer any legal rights or obligations.",,,,,
+,,,Self-Identified Country or Group,lookup,,once,no
+,,,Type of Affiliation,lookup,,once,no
+,,,Recognition Status,lookup,,once,no
+,,,Dates,,,many,no
+Sex_and_Gender,Sex and Gender,"The Sex and Gender sub‑domain covers data elements that describe an individual’s biological sex characteristics and gender identity attributes for the purposes of identity management, demographic classification, and service personalisation. It differentiates between sex‑related biological attributes and self‑described gender identity, reflecting both regulatory expectations and modern data‑standards practice. It also include how these relate to and define Legal Sex.",,,,,
+Titles,Titles,"An honorific or form of address associated with a Natural Person, used to indicate courtesy, social status, professional standing, or preference. It does not identify the person and does not imply any legal role or relationship—it's simply an attribute describing how the person chooses (or is required) to be addressed.",,,,,
+,,,Civil Social Titles,,,once,no
+,,,Military Titles,,,once,no
+,,,Professional Occupational Titles,,,once,no
+,,,Religious Titles,,,once,no

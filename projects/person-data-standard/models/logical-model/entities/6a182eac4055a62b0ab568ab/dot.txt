@@ -1,0 +1,18 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_6a182eac4055a62b0ab568ab [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Full Name</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Full Name Value</td><td align='left' balign='left' valign='top'>line</td><td PORT='attribute_6a186ef24055a62b0ab66915' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Dates</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_6a186ef24055a62b0ab66916' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_6a182eac4055a62b0ab568ab"]; 
+        concept_69987879f751de507ccf8939 [ label="Formal Name", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69987879f751de507ccf8939"]; 
+        concept_6998788df751de507ccf90b9 [ label="Informal Name", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_6998788df751de507ccf90b9"]; 
+        concept_69987879f751de507ccf8939 -> entity_6a182eac4055a62b0ab568ab [style="solid" xlabel="MayContributeTo\l" ];
+        concept_6998788df751de507ccf90b9 -> entity_6a182eac4055a62b0ab568ab [style="solid" xlabel="May contribute to\l" ];}
+        

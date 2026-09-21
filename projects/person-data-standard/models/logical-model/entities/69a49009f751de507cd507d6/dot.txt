@@ -1,0 +1,24 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a49009f751de507cd507d6 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Death</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Registered Date of Death</td><td align='left' balign='left' valign='top'>date</td><td PORT='attribute_69a49009f751de507cd507d7' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Date of Death</td><td align='left' balign='left' valign='top'>date</td><td PORT='attribute_69a883bcf751de507cd7f0fd' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Time of Death</td><td align='left' balign='left' valign='top'>time</td><td PORT='attribute_69a49009f751de507cd507d8' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Place of Death</td><td align='left' balign='left' valign='top'>line</td><td PORT='attribute_69a49009f751de507cd507d9' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Country of Death</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49009f751de507cd507da' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Death Registration Number</td><td align='left' balign='left' valign='top'>line</td><td PORT='attribute_69a49009f751de507cd507db' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Burial or Cremation Number</td><td align='left' balign='left' valign='top'>line</td><td PORT='attribute_69a49009f751de507cd507dc' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Place of Burial or Cremation</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49009f751de507cd507dd' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Registrar Office or Authority</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69a49009f751de507cd507de' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Next of Kin</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a49009f751de507cd507df' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a49009f751de507cd507d6"]; 
+        concept_699457cbf751de507ccc19df [ label="Person Event", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_699457cbf751de507ccc19df"]; 
+        concept_699457cbf751de507ccc19df -> entity_69a49009f751de507cd507d6 [style="solid" xlabel="MayInclude\l" ];}
+        

@@ -1,0 +1,28 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69b2a6ddc3a89f06e1a0de69 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Residence</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Residence Handling</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69b2a6f8c3a89f06e1a0e717' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Residence Status</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69c417f79f84c55e298e6fc8' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Residence Verification</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69c417f79f84c55e298e6fc9' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Residence Identification</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69c417f79f84c55e298e6fca' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69b2a6ddc3a89f06e1a0de69"]; 
+        concept_69945d25f751de507ccc6be5 [ label="Person", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945d25f751de507ccc6be5"]; 
+        concept_69b2a480c3a89f06e1a0a2cf [ label="Residence Handling", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69b2a480c3a89f06e1a0a2cf"]; 
+        concept_69b2a451c3a89f06e1a0a231 [ label="Residence
+Verification", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69b2a451c3a89f06e1a0a231"]; 
+        concept_69b2a417c3a89f06e1a0a195 [ label="Residence Status", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69b2a417c3a89f06e1a0a195"]; 
+        concept_69b2a3e0c3a89f06e1a0a0fb [ label="Residence
+identification", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69b2a3e0c3a89f06e1a0a0fb"]; 
+        concept_69945d25f751de507ccc6be5 -> entity_69b2a6ddc3a89f06e1a0de69 [style="solid" xlabel="May have\l" ];
+        entity_69b2a6ddc3a89f06e1a0de69 -> concept_69b2a480c3a89f06e1a0a2cf [style="solid" xlabel="Requires\l" ];
+        entity_69b2a6ddc3a89f06e1a0de69 -> concept_69b2a451c3a89f06e1a0a231 [style="solid" xlabel="may have\l" ];
+        entity_69b2a6ddc3a89f06e1a0de69 -> concept_69b2a417c3a89f06e1a0a195 [style="solid" xlabel="may have\l" ];
+        entity_69b2a6ddc3a89f06e1a0de69 -> concept_69b2a3e0c3a89f06e1a0a0fb [style="solid" xlabel="MayHave\l" ];}
+        

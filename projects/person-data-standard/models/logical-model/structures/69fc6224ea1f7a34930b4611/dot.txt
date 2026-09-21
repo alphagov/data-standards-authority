@@ -1,0 +1,15 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        structure_69fc6224ea1f7a34930b4611 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+            <tr>
+                <td colspan='3' bgcolor='grey'> Sex and Gender</td>
+            </tr>
+            <tr>
+                <td bgcolor='grey'>Attribute</td><td bgcolor='grey'>Data Type</td><td bgcolor='grey'>Occurs</td>
+            </tr>
+        </table>>, shape=plaintext, fillcolor="grey", URL="structure_69fc6224ea1f7a34930b4611"]; }
+        

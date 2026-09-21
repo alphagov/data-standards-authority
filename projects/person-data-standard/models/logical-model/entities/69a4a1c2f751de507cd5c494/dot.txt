@@ -1,0 +1,19 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a4a1c2f751de507cd5c494 [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Biometric Identifiers</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Fingerprints</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4a1c2f751de507cd5c496' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Facial Recognition Data</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4a1c2f751de507cd5c497' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Voice Pattern</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a4a1c2f751de507cd5c498' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Biometric ID Reference</td><td align='left' balign='left' valign='top'>line</td><td PORT='attribute_69a4a1c2f751de507cd5c499' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Dates</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69fd0551ea1f7a3493105f6d' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a4a1c2f751de507cd5c494"]; 
+        concept_69945b19f751de507ccc4842 [ label="Identifiers", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945b19f751de507ccc4842"]; 
+        concept_69945b19f751de507ccc4842 -> entity_69a4a1c2f751de507cd5c494 [style="solid" xlabel="Includes\l" ];}
+        

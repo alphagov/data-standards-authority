@@ -1,0 +1,192 @@
+{
+    "name": "Professional Occupational Titles",
+    "Concepts": [
+        {
+            "idConcept": "699878f5f751de507ccfad7c",
+            "_id": "69a4aa60f751de507cd6338e",
+            "Concept": {
+                "name": "Professional Occupational Titles",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 290,
+                "_id": "699878f5f751de507ccfad7c",
+                "createdAt": "2026-02-20T15:08:37.844Z",
+                "updatedAt": "2026-03-04T17:26:29.677Z",
+                "description": "Professional Occupational Titles are titles or prefixes associated with a person’s profession, occupation, or accredited role, used to indicate an individual’s professional standing, qualification, or occupational function. They are not academic degrees or post‑nominals, but pre‑nominal markers tied to recognised professions (e.g., Dr, Prof, Eng, Nurse, Architect). These titles support appropriate address, professional recognition, and role‑based communication.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Attributes": [
+        {
+            "name": "Professional Title",
+            "description": "A Professional Title is a formally recognised title, credential, or designation that indicates an individual’s professional status, qualification, licensure, accreditation, or role-based authority within a specific domain (e.g., medicine, law, engineering, academia).\nIt signals that a person has achieved a professionally governed standing, often regulated by a professional body, accreditation authority, educational institution, or licensing regulator.\n\nProfessional Titles differ from:\n\n* Civil courtesy titles (Mr, Ms, Mx)\n* Military ranks (Captain, Major)\n* Religious titles (Rev, Imam)\n* Job role titles (Head of Digital, Finance Manager)\n* Post‑nominals (PhD, MSc, CPA — qualification identifiers)\n\nProfessional Titles are role-, competence-, or licence‑based and often carry legal or operational implications.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a4aaf7f751de507cd63ba2"
+        },
+        {
+            "name": "Field Profession",
+            "description": "Field Profession describes the broad professional field, discipline, or domain of practice within which an individual’s professional title, occupation, or role is situated.\nIt captures the sector‑level classification (e.g., Medicine, Engineering, Law, Education) rather than a specific job title or qualification.\n\nField Profession creates a normalised, high‑level professional grouping that supports reporting, entitlement logic, governance, and rendering rules without storing overly granular occupational details.\n\nIt is not a job title, skill, qualification, or occupational code—rather, it is the professionally recognised field or discipline.",
+            "type": "data type",
+            "dataType": "line",
+            "occurs": "once",
+            "required": "no",
+            "_id": "69a4aaf7f751de507cd63ba3"
+        },
+        {
+            "name": "Dates",
+            "description": "Dates Professional Title Held specify the time period during which an individual legitimately holds, is authorised to use, or is recognised as possessing a specific professional title (e.g., Dr (Medical), Professor, Chartered Engineer, Solicitor).\nThese dates define the validity window of a professional title, reflecting licensure, certification, employment status, or accreditation from a professional body or authority.\n\nUnlike Preferred Name or Courtesy Titles, professional titles are not self-declared — their timeline must reflect formal evidence.\n\nTypical fields include:\n\n* effective\\_from — when the professional title became valid\n* effective\\_to — when the professional title ceased being valid (nullable if still active)\n* grant\\_date / conferment\\_date — when the accrediting authority formally awarded the title\n* expiry\\_date (if the title requires renewal, e.g., licences)\n* capture\\_date — when the system recorded it (optional)\n\nThese dates are per professional title, not person‑wide.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "no",
+            "_id": "69a4aaf7f751de507cd63ba4"
+        }
+    ],
+    "status": "in use",
+    "seq": 93,
+    "_id": "69a4aa60f751de507cd6338d",
+    "createdAt": "2026-03-01T21:06:40.617Z",
+    "updatedAt": "2026-03-04T19:35:55.825Z",
+    "description": "Professional Occupational Titles are titles or prefixes associated with a person’s profession, occupation, or accredited role, used to indicate an individual’s professional standing, qualification, or occupational function. They are not academic degrees or post‑nominals, but pre‑nominal markers tied to recognised professions (e.g., Dr, Prof, Eng, Nurse, Architect). These titles support appropriate address, professional recognition, and role‑based communication.",
+    "Links": [
+        {
+            "name": "Professional Titles Included in Title",
+            "label": "MayInclude",
+            "idConceptFrom": "6994574ff751de507ccc0fa3",
+            "idConceptTo": "699878f5f751de507ccfad7c",
+            "status": "in use",
+            "seq": 307,
+            "_id": "69a476e3f751de507cd447af",
+            "createdAt": "2026-03-01T17:26:59.240Z",
+            "updatedAt": "2026-03-01T17:26:59.240Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Titles",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 230,
+                "_id": "6994574ff751de507ccc0fa3",
+                "createdAt": "2026-02-17T11:55:59.821Z",
+                "updatedAt": "2026-04-29T14:02:19.981Z",
+                "description": "An honorific or form of address associated with a Natural Person, used to indicate courtesy, social status, professional standing, or preference. It does not identify the person and does not imply any legal role or relationship—it's simply an attribute describing how the person chooses (or is required) to be addressed.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Professional Occupational Titles",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 290,
+                "_id": "699878f5f751de507ccfad7c",
+                "createdAt": "2026-02-20T15:08:37.844Z",
+                "updatedAt": "2026-03-04T17:26:29.677Z",
+                "description": "Professional Occupational Titles are titles or prefixes associated with a person’s profession, occupation, or accredited role, used to indicate an individual’s professional standing, qualification, or occupational function. They are not academic degrees or post‑nominals, but pre‑nominal markers tied to recognised professions (e.g., Dr, Prof, Eng, Nurse, Architect). These titles support appropriate address, professional recognition, and role‑based communication.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Revisions": [
+        {
+            "_id": "69a4aaf7f751de507cd63c4e",
+            "idAbout": "69a4aa60f751de507cd6338d",
+            "report": true,
+            "idUser": 999,
+            "seq": 572,
+            "createdAt": "2026-03-01T21:09:11.433Z",
+            "updatedAt": "2026-03-01T21:09:11.433Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a8708bf751de507cd781bf",
+            "idAbout": "69a4aa60f751de507cd6338d",
+            "report": true,
+            "idUser": 999,
+            "seq": 638,
+            "createdAt": "2026-03-04T17:48:59.155Z",
+            "updatedAt": "2026-03-04T17:48:59.155Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a8899bf751de507cd8375b",
+            "idAbout": "69a4aa60f751de507cd6338d",
+            "report": true,
+            "idUser": 999,
+            "seq": 667,
+            "createdAt": "2026-03-04T19:35:55.938Z",
+            "updatedAt": "2026-03-04T19:35:55.938Z",
+            "__v": 0
+        }
+    ],
+    "LogicalModel": {
+        "_id": "699dbdcbf751de507cd22dc5",
+        "name": "Person Domain, Logical Model",
+        "description": "Person Logical Domain Model.\n\nModel ID: DEPoP013.&#x20;\n\nLinking concepts to data items in the Person Domain.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202604.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+        "idUser": 999,
+        "status": "under construction",
+        "seq": 10,
+        "createdAt": "2026-02-24T15:03:39.212Z",
+        "updatedAt": "2026-06-02T16:18:27.733Z",
+        "__v": 0,
+        "id": "699dbdcbf751de507cd22dc5",
+        "uri": "http://def.digitalservicedesigner.com/logicalmodel/10",
+        "Owner": {
+            "id": 999,
+            "username": "madeup",
+            "organisation": "Made Up Organisation - as a Sandbox for the Designer",
+            "uriOrganisation": "http://id.savviuk.org/organisations/madeup"
+        },
+        "Version": {
+            "_id": "6a1f03840eda6fffbbdd9e83",
+            "idAbout": "699dbdcbf751de507cd22dc5",
+            "name": "Logical Model:Person Domain, Logical Model V1 02/06/2026",
+            "type": "logicalmodel",
+            "idUser": 999,
+            "seq": 69,
+            "createdAt": "2026-06-02T16:23:33.248Z",
+            "updatedAt": "2026-06-02T16:23:33.248Z",
+            "__v": 0
+        }
+    }
+}

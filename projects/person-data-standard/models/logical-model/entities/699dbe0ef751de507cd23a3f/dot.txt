@@ -1,0 +1,23 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_699dbe0ef751de507cd23a3f [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Person Event</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Birth</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a48ccdf751de507cd4ee4d' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Death</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a48ccdf751de507cd4ee4e' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Pregnancy</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a48ccdf751de507cd4ee4f' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_699dbe0ef751de507cd23a3f"]; 
+        concept_699878a9f751de507ccf966e [ label="Birth", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_699878a9f751de507ccf966e"]; 
+        concept_69945d25f751de507ccc6be5 [ label="Person", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945d25f751de507ccc6be5"]; 
+        concept_699878b6f751de507ccf9c28 [ label="Death", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_699878b6f751de507ccf9c28"]; 
+        concept_699878c6f751de507ccfa1e7 [ label="Pregnancy", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_699878c6f751de507ccfa1e7"]; 
+        entity_699dbe0ef751de507cd23a3f -> concept_699878a9f751de507ccf966e [style="solid" xlabel="MayInclude\l" ];
+        concept_69945d25f751de507ccc6be5 -> entity_699dbe0ef751de507cd23a3f [style="solid" xlabel="Has\l" ];
+        entity_699dbe0ef751de507cd23a3f -> concept_699878b6f751de507ccf9c28 [style="solid" xlabel="MayInclude\l" ];
+        entity_699dbe0ef751de507cd23a3f -> concept_699878c6f751de507ccfa1e7 [style="solid" xlabel="MayInclude\l" ];}
+        

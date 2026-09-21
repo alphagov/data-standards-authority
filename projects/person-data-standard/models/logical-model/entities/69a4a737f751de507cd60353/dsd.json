@@ -1,0 +1,164 @@
+{
+    "name": "Genetic Ethnicity",
+    "Concepts": [
+        {
+            "idConcept": "69945a9ff751de507ccc35ed",
+            "_id": "69a4a737f751de507cd60354",
+            "Concept": {
+                "name": "Genetic Ethnicity",
+                "description": "A scientific estimate of a person’s ancestral origins based on the analysis of their DNA. It represents inferred biological population groups, expressed as probabilities or percentages, and reflects patterns of genetic similarity shared with reference populations.\n\nIt does not represent cultural identity, heritage, nationality, or citizenship—it is a biologically inferred attribute, not a social or legal one.",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 237,
+                "_id": "69945a9ff751de507ccc35ed",
+                "createdAt": "2026-02-17T12:10:07.378Z",
+                "updatedAt": "2026-03-01T16:00:50.404Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Attributes": [
+        {
+            "_id": "69a86f1ff751de507cd73f9d"
+        }
+    ],
+    "status": "in use",
+    "seq": 89,
+    "_id": "69a4a737f751de507cd60353",
+    "createdAt": "2026-03-01T20:53:11.190Z",
+    "updatedAt": "2026-03-04T17:42:55.031Z",
+    "description": "A scientific estimate of a person’s ancestral origins based on the analysis of their DNA. It represents inferred biological population groups, expressed as probabilities or percentages, and reflects patterns of genetic similarity shared with reference populations.\n\nIt does not represent cultural identity, heritage, nationality, or citizenship—it is a biologically inferred attribute, not a social or legal one.",
+    "Links": [
+        {
+            "name": "Genetic Ethnicity of Person",
+            "label": "Has",
+            "inverseLabel": "",
+            "idConceptFrom": "69945d25f751de507ccc6be5",
+            "idConceptTo": "69945a9ff751de507ccc35ed",
+            "status": "in use",
+            "seq": 253,
+            "_id": "69945e69f751de507ccc9cd6",
+            "createdAt": "2026-02-17T12:26:17.727Z",
+            "updatedAt": "2026-03-01T17:35:33.888Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Person",
+                "SuperConcepts": [
+                    {
+                        "idConcept": "699454b7f751de507ccbe9c2"
+                    }
+                ],
+                "status": "in use",
+                "seq": 245,
+                "_id": "69945d25f751de507ccc6be5",
+                "createdAt": "2026-02-17T12:20:53.312Z",
+                "updatedAt": "2026-02-17T12:21:55.077Z",
+                "description": "An individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Genetic Ethnicity",
+                "description": "A scientific estimate of a person’s ancestral origins based on the analysis of their DNA. It represents inferred biological population groups, expressed as probabilities or percentages, and reflects patterns of genetic similarity shared with reference populations.\n\nIt does not represent cultural identity, heritage, nationality, or citizenship—it is a biologically inferred attribute, not a social or legal one.",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 237,
+                "_id": "69945a9ff751de507ccc35ed",
+                "createdAt": "2026-02-17T12:10:07.378Z",
+                "updatedAt": "2026-03-01T16:00:50.404Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Revisions": [
+        {
+            "_id": "69a4a8ecf751de507cd60852",
+            "idAbout": "69a4a737f751de507cd60353",
+            "report": true,
+            "idUser": 999,
+            "seq": 569,
+            "createdAt": "2026-03-01T21:00:28.449Z",
+            "updatedAt": "2026-03-01T21:00:28.449Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a86f1ff751de507cd73ed7",
+            "idAbout": "69a4a737f751de507cd60353",
+            "report": true,
+            "idUser": 999,
+            "seq": 626,
+            "createdAt": "2026-03-04T17:42:55.017Z",
+            "updatedAt": "2026-03-04T17:42:55.017Z",
+            "__v": 0
+        }
+    ],
+    "LogicalModel": {
+        "_id": "699dbdcbf751de507cd22dc5",
+        "name": "Person Domain, Logical Model",
+        "description": "Person Logical Domain Model.\n\nModel ID: DEPoP013.&#x20;\n\nLinking concepts to data items in the Person Domain.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202604.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+        "idUser": 999,
+        "status": "under construction",
+        "seq": 10,
+        "createdAt": "2026-02-24T15:03:39.212Z",
+        "updatedAt": "2026-06-02T16:18:27.733Z",
+        "__v": 0,
+        "id": "699dbdcbf751de507cd22dc5",
+        "uri": "http://def.digitalservicedesigner.com/logicalmodel/10",
+        "Owner": {
+            "id": 999,
+            "username": "madeup",
+            "organisation": "Made Up Organisation - as a Sandbox for the Designer",
+            "uriOrganisation": "http://id.savviuk.org/organisations/madeup"
+        },
+        "Version": {
+            "_id": "6a1f03840eda6fffbbdd9e83",
+            "idAbout": "699dbdcbf751de507cd22dc5",
+            "name": "Logical Model:Person Domain, Logical Model V1 02/06/2026",
+            "type": "logicalmodel",
+            "idUser": 999,
+            "seq": 69,
+            "createdAt": "2026-06-02T16:23:33.248Z",
+            "updatedAt": "2026-06-02T16:23:33.248Z",
+            "__v": 0
+        }
+    }
+}

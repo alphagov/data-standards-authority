@@ -1,0 +1,17 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69b2e007c3a89f06e1a17a7d [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Residence Verification</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Verification Status</td><td align='left' balign='left' valign='top'>lookup</td><td PORT='attribute_69b2e203c3a89f06e1a192fa' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Validation source</td><td align='left' balign='left' valign='top'>line</td><td PORT='attribute_69b2e203c3a89f06e1a192fb' align='left' balign='left' valign='top'>many</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Validation Dates</td><td align='left' balign='left' valign='top'>date</td><td PORT='attribute_69b2e203c3a89f06e1a192fc' align='left' balign='left' valign='top'>many</td></tr>
+        </table>>, shape=plaintext, URL="entity_69b2e007c3a89f06e1a17a7d"]; 
+        concept_69b2a1bcc3a89f06e1a0948e [ label="Residence", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69b2a1bcc3a89f06e1a0948e"]; 
+        concept_69b2a1bcc3a89f06e1a0948e -> entity_69b2e007c3a89f06e1a17a7d [style="solid" xlabel="may have\l" ];}
+        

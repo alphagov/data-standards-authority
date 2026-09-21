@@ -1,0 +1,266 @@
+{
+    "name": "Death",
+    "Concepts": [
+        {
+            "idConcept": "699878b6f751de507ccf9c28",
+            "_id": "69a490c5f751de507cd51ba9",
+            "Concept": {
+                "name": "Death",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 287,
+                "_id": "699878b6f751de507ccf9c28",
+                "createdAt": "2026-02-20T15:07:34.699Z",
+                "updatedAt": "2026-03-04T17:30:04.932Z",
+                "description": "The factual, legally recognised details surrounding the end of an individual’s life. It includes authoritative attributes such as the date, time, and location of death, as well as official registration information issued by a competent authority. This event provides a definitive closure point for identity records and downstream operational processes.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Attributes": [
+        {
+            "name": "Registered Date of Death",
+            "description": "Registered Date of Death is the official date on which a death is formally recorded by the competent civil authority (e.g., civil registry, vital statistics office, municipal registration authority).\nIt reflects the administrative timestamp at which the death was legally recognised and entered into the official civil registration system.\nIt is distinct from the Date of Death (the factual date the individual died).\n\nThis attribute underpins legality, auditability, entitlement cessation, and identity lifecycle closure.",
+            "type": "data type",
+            "dataType": "date",
+            "occurs": "once",
+            "required": "yes",
+            "_id": "69a49009f751de507cd507d7"
+        },
+        {
+            "name": "Date of Death",
+            "description": "Date of Death is the official calendar date on which an individual died, as determined by an authorised certifying professional (e.g., medical practitioner, coroner) or documented on an official death certificate.\nIt represents the actual event date of death — distinct from administrative or registration dates.\n\nThis attribute is a core life‑event anchor used across legal, identity, civil‑registration, financial, and operational systems.",
+            "type": "data type",
+            "dataType": "date",
+            "occurs": "once",
+            "required": "yes",
+            "_id": "69a883bcf751de507cd7f0fd"
+        },
+        {
+            "name": "Time of Death",
+            "description": "Time of Death is the precise time at which an individual is determined to have died, as recorded by a qualified certifying authority (e.g., medical practitioner, coroner, forensic examiner).\nIt is a clinical and/or legal timestamp, distinct from the Date of Death and the Registered Date of Death, and may represent:\n\n* Physiological time of death (actual biological death), or\n* Pronounced time of death (time a clinician confirmed death), depending on jurisdictional standards.",
+            "type": "data type",
+            "dataType": "time",
+            "occurs": "once",
+            "required": "yes",
+            "_id": "69a49009f751de507cd507d8"
+        },
+        {
+            "name": "Place of Death",
+            "description": "Place of Death is the geographical location where the individual died, as recorded by the certifying authority (medical practitioner, coroner, hospital administrator) or entered by a civil registration body.\nIt describes the physical setting and locality of the death event, not the registration location or the place where the body was later moved.\n\nPlace of Death is a legally relevant identity event attribute that provides context for verification, audit, lineage, and civil‑registration accuracy.",
+            "type": "data type",
+            "dataType": "line",
+            "occurs": "once",
+            "required": "yes",
+            "_id": "69a49009f751de507cd507d9"
+        },
+        {
+            "name": "Country of Death",
+            "description": "Country of Death is the sovereign state or recognised territory in which an individual died, as recorded by a certifying authority (medical practitioner, coroner, registrar) or by an official civil registration system.\nIt identifies the geopolitical jurisdiction where the death event occurred, using ISO‑3166‑1 country codes for canonical storage.\n\nIt is separate from:\n\n* Place of Death (region, city, facility name)\n* Registered Place of Death (administrative location)\n* Cause of Death (clinical domain)\n* Country of Birth (birth event)",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "yes",
+            "_id": "69a49009f751de507cd507da"
+        },
+        {
+            "name": "Death Registration Number",
+            "description": "Death Registration Number is the unique identifier assigned by a civil registration authority to the official record of an individual’s death.\nIt provides the authoritative reference for the death entry within the vital records or civil registration system, enabling:\n\n* Legal recognition of the death\n* Issuance of death certificates\n* Identity lifecycle closure across systems\n* Audit and verification of death‑related updates\n\nThis identifier is assigned by the registering authority, not by the data‑processing organisation.",
+            "type": "data type",
+            "dataType": "line",
+            "occurs": "once",
+            "required": "yes",
+            "_id": "69a49009f751de507cd507db"
+        },
+        {
+            "name": "Burial or Cremation Number",
+            "description": "Burial or Cremation Number is the official identifier assigned to a burial or cremation event by the relevant authority (e.g., cemetery authority, crematorium, local registrar, funeral director, or municipal burial office).\nIt serves as a formal reference number linking the deceased to the specific burial or cremation record, supporting auditability, traceability, and compliance with local regulatory requirements.\n\nIt is distinct from the Death Registration Number and any Coroner/Medical Examiner references.",
+            "type": "data type",
+            "dataType": "line",
+            "occurs": "once",
+            "required": "yes",
+            "_id": "69a49009f751de507cd507dc"
+        },
+        {
+            "name": "Place of Burial or Cremation",
+            "description": "Place of Burial or Cremation is the geographical location where the deceased was formally buried, cremated, or otherwise disposed of, according to the disposition method legally recorded.\nIt identifies the country, region, locality, and facility associated with the post‑death disposition event and is distinct from:\n\n* Place of Death (where the person died)\n* Registered Place of Death (administrative)\n* Death Registration Number (legal identifier)\n* Burial/Cremation Number (disposition identifier)\n\nIt provides auditability, lineage, and compliance‑grade traceability for post‑death arrangements.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "yes",
+            "_id": "69a49009f751de507cd507dd"
+        },
+        {
+            "name": "Registrar Office or Authority",
+            "description": "Death Registrar Office or Authority identifies the official organisation, governmental body, or authorised civil registration office responsible for formally registering the death and issuing the death registration number or the death certificate.\nIt represents the legal authority of record for the death event and forms part of the authoritative identity lineage.\n\nThis attribute ensures auditability, jurisdictional clarity, and traceability across public‑sector, health, and identity‑management systems.",
+            "type": "data type",
+            "dataType": "lookup",
+            "occurs": "once",
+            "required": "yes",
+            "_id": "69a49009f751de507cd507de"
+        },
+        {
+            "name": "Next of Kin",
+            "description": "Next of Kin (NoK) is the designated individual(s) identified by a person — or recognised by law or policy — as their primary emergency, legal, or contact person in the event of serious illness, incapacity, or death.\nIt expresses a relationship link, not a legal authority, unless explicitly granted through additional documentation (e.g., power of attorney).\n\nNext of Kin is a person-to-person relationship attribute, not an identity attribute of the individual being described.",
+            "type": "structure",
+            "occurs": "many",
+            "required": "yes",
+            "_id": "69a49009f751de507cd507df"
+        }
+    ],
+    "status": "in use",
+    "seq": 73,
+    "_id": "69a49009f751de507cd507d6",
+    "createdAt": "2026-03-01T19:14:17.368Z",
+    "updatedAt": "2026-05-07T21:43:32.410Z",
+    "description": "The factual, legally recognised details surrounding the end of an individual’s life. It includes authoritative attributes such as the date, time, and location of death, as well as official registration information issued by a competent authority. This event provides a definitive closure point for identity records and downstream operational processes.",
+    "Links": [
+        {
+            "name": "Death of Person",
+            "label": "MayInclude",
+            "inverseLabel": "",
+            "idConceptFrom": "699457cbf751de507ccc19df",
+            "idConceptTo": "699878b6f751de507ccf9c28",
+            "status": "in use",
+            "seq": 296,
+            "_id": "699dd3f5f751de507cd25754",
+            "createdAt": "2026-02-24T16:38:13.272Z",
+            "updatedAt": "2026-03-01T17:09:57.968Z",
+            "ConceptModel": {
+                "_id": "6994571df751de507ccc0b5d",
+                "name": "Person Domain, Concept Model",
+                "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                "idUser": 999,
+                "status": "under construction",
+                "seq": 17,
+                "createdAt": "2026-02-17T11:55:09.155Z",
+                "updatedAt": "2026-06-02T15:18:47.142Z",
+                "__v": 0
+            },
+            "ConceptFrom": {
+                "name": "Person Event",
+                "description": "An occurrence or change in circumstance that happens to a specific Natural Person at a point in time (or over a period of time) and is relevant to business processes, reporting, or understanding that person’s history. It captures something that happens to or is experienced by the person, rather than a role or relationship they hold.",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 232,
+                "_id": "699457cbf751de507ccc19df",
+                "createdAt": "2026-02-17T11:58:03.011Z",
+                "updatedAt": "2026-03-04T17:34:59.283Z",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            },
+            "ConceptTo": {
+                "name": "Death",
+                "SuperConcepts": [],
+                "status": "in use",
+                "seq": 287,
+                "_id": "699878b6f751de507ccf9c28",
+                "createdAt": "2026-02-20T15:07:34.699Z",
+                "updatedAt": "2026-03-04T17:30:04.932Z",
+                "description": "The factual, legally recognised details surrounding the end of an individual’s life. It includes authoritative attributes such as the date, time, and location of death, as well as official registration information issued by a competent authority. This event provides a definitive closure point for identity records and downstream operational processes.",
+                "ConceptModel": {
+                    "_id": "6994571df751de507ccc0b5d",
+                    "name": "Person Domain, Concept Model",
+                    "description": "Person Concept Domain Model V1.&#x20;\n\nModel ID: DEPoP012.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202602.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+                    "idUser": 999,
+                    "status": "under construction",
+                    "seq": 17,
+                    "createdAt": "2026-02-17T11:55:09.155Z",
+                    "updatedAt": "2026-06-02T15:18:47.142Z",
+                    "__v": 0
+                }
+            }
+        }
+    ],
+    "Revisions": [
+        {
+            "_id": "69a490c5f751de507cd51b78",
+            "idAbout": "69a49009f751de507cd507d6",
+            "report": true,
+            "idUser": 999,
+            "seq": 552,
+            "createdAt": "2026-03-01T19:17:25.964Z",
+            "updatedAt": "2026-03-01T19:17:25.964Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a86eaff751de507cd72987",
+            "idAbout": "69a49009f751de507cd507d6",
+            "report": true,
+            "idUser": 999,
+            "seq": 621,
+            "createdAt": "2026-03-04T17:41:03.716Z",
+            "updatedAt": "2026-03-04T17:41:03.716Z",
+            "__v": 0
+        },
+        {
+            "_id": "69a883bcf751de507cd7f02e",
+            "idAbout": "69a49009f751de507cd507d6",
+            "report": true,
+            "idUser": 999,
+            "seq": 657,
+            "createdAt": "2026-03-04T19:10:52.602Z",
+            "updatedAt": "2026-03-04T19:10:52.602Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd0784ea1f7a349310a260",
+            "idAbout": "69a49009f751de507cd507d6",
+            "report": true,
+            "idUser": 999,
+            "seq": 1255,
+            "createdAt": "2026-05-07T21:43:32.710Z",
+            "updatedAt": "2026-05-07T21:43:32.710Z",
+            "__v": 0
+        }
+    ],
+    "LogicalModel": {
+        "_id": "699dbdcbf751de507cd22dc5",
+        "name": "Person Domain, Logical Model",
+        "description": "Person Logical Domain Model.\n\nModel ID: DEPoP013.&#x20;\n\nLinking concepts to data items in the Person Domain.&#x20;\n\nPublished as part of the Person Data Standard (Alpha), PRG202604.\n\nAn individual human who participates in business activities or interactions. The Person concept represents the identity of a human being independent of the roles they may perform, the relationships they may have, or the contexts in which they act.\n\nThe Department for Science, Innovation and Technology",
+        "idUser": 999,
+        "status": "under construction",
+        "seq": 10,
+        "createdAt": "2026-02-24T15:03:39.212Z",
+        "updatedAt": "2026-06-02T16:18:27.733Z",
+        "__v": 0,
+        "id": "699dbdcbf751de507cd22dc5",
+        "uri": "http://def.digitalservicedesigner.com/logicalmodel/10",
+        "Owner": {
+            "id": 999,
+            "username": "madeup",
+            "organisation": "Made Up Organisation - as a Sandbox for the Designer",
+            "uriOrganisation": "http://id.savviuk.org/organisations/madeup"
+        },
+        "Version": {
+            "_id": "6a1f03840eda6fffbbdd9e83",
+            "idAbout": "699dbdcbf751de507cd22dc5",
+            "name": "Logical Model:Person Domain, Logical Model V1 02/06/2026",
+            "type": "logicalmodel",
+            "idUser": 999,
+            "seq": 69,
+            "createdAt": "2026-06-02T16:23:33.248Z",
+            "updatedAt": "2026-06-02T16:23:33.248Z",
+            "__v": 0
+        }
+    }
+}

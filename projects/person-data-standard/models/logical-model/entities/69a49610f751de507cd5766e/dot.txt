@@ -1,0 +1,29 @@
+digraph  { 
+        graph [overlap=false splines=true nodesep=0.6 ranksep=0.8]
+        node [color=black fillcolor=wheat fontname=Arial fontsize=7]
+        edge [fontname=Arial fontsize=7 labelfontname=Arial labelfontsize=7 labeldistance=1.5]
+    
+        
+        entity_69a49610f751de507cd5766e [ label=<<table border='0' cellborder='1' cellspacing='0'>
+                <tr>
+                    <td colspan='3' bgcolor='wheat'> Biological Attributes</td></tr>
+                <tr><td bgcolor='wheat'>Attribute</td><td bgcolor='wheat'>Data Type</td><td bgcolor='wheat'>Occurs</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Physical Characteristics</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a49703f751de507cd57b86' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Physiological Information</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a49703f751de507cd57b88' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Psychological Characteristics</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a49703f751de507cd57b87' align='left' balign='left' valign='top'>once</td></tr>
+                <tr><td align='left' balign='left' valign='top'>Sex and Gender</td><td align='left' balign='left' valign='top'></td><td PORT='attribute_69a49703f751de507cd57b89' align='left' balign='left' valign='top'>once</td></tr>
+        </table>>, shape=plaintext, URL="entity_69a49610f751de507cd5766e"]; 
+        concept_69945d25f751de507ccc6be5 [ label="Person", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69945d25f751de507ccc6be5"]; 
+        concept_699879eff751de507ccfdc78 [ label="Sex and Gender", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_699879eff751de507ccfdc78"]; 
+        concept_6998794cf751de507ccfc4d2 [ label="Physical
+Characteristics", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_6998794cf751de507ccfc4d2"]; 
+        concept_69987985f751de507ccfd09b [ label="Physiological
+Information", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_69987985f751de507ccfd09b"]; 
+        concept_699879def751de507ccfd687 [ label="Psychological
+Characteristics", shape=oval, height=0.8, width=1, style="filled,rounded", fillcolor="lightblue", URL="concept_699879def751de507ccfd687"]; 
+        concept_69945d25f751de507ccc6be5 -> entity_69a49610f751de507cd5766e [style="solid" xlabel="has\l" ];
+        entity_69a49610f751de507cd5766e -> concept_699879eff751de507ccfdc78 [style="solid" xlabel="Has\l" ];
+        entity_69a49610f751de507cd5766e -> concept_6998794cf751de507ccfc4d2 [style="solid" xlabel="Includes\l" ];
+        entity_69a49610f751de507cd5766e -> concept_69987985f751de507ccfd09b [style="solid" xlabel="Includes\l" ];
+        entity_69a49610f751de507cd5766e -> concept_699879def751de507ccfd687 [style="solid" xlabel="Includes\l" ];}
+        
