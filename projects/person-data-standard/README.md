@@ -29,6 +29,7 @@ Users new may find it useful to start with:
 ## Making Changes
 
 This standard is still continuously being developed and iterated by the Domain Expert Group on Person.
-Specific feedback can be raised as issues under the relevant issue in the GitHub.
+
+Specific feedback/issues should be raised as sub-issues under [Issue 188](https://github.com/alphagov/data-standards-authority/issues/188).
 
 For more complex feedback and discussions, please contact data-standards-authority@dsit.gov.uk
